@@ -1,3 +1,9 @@
+title: Your awesome title
+author:
+  name: mgrl
+  email: me@mgrl.de
+
+description: >
+  Photobooth app written in Python.
+  
 theme: minima
-minima:
-  skin: dark
