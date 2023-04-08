@@ -7,3 +7,5 @@ description: >
   Photobooth app written in Python.
   
 theme: minima
+minima:
+  skin: dark
