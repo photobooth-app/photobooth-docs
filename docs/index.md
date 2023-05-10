@@ -1,5 +1,7 @@
 # Welcome to Photobooth App Documentation
 
+TODO
+
 This site contains the project documentation for the
 `calculator` project that is a toy module used in the
 Real Python tutorial
