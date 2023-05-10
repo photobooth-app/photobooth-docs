@@ -1,44 +1,27 @@
 # HowTo Guides
 
-TODO
+> **Note:** TODO:
 
 This part of the project documentation focuses on a
 **problem-oriented** approach. You'll tackle common
 tasks that you might have, with the help of the code
 provided in this project.
 
-## How To Add Two Numbers?
+## ⁉️ Troubleshooting
 
-You have two numbers and you need to add them together.
-You're in luck! The `calculator` package can help you
-get this done.
+Check following commands and files for error messages:
 
-Download the code from this GitHub repository and place
-the `calculator/` folder in the same directory as your
-Python script:
+```zsh
+# logfiles from service (last 200 lines)
+journalctl --user --unit=photobooth -n 200 --no-pager
+# logfiles created by photobooth
+cat ~/photobooth-app/log/qbooth.log
+# check CmaFree especially for Arducams if low:
+cat /proc/meminfo
+```
 
-    your_project/
-    │
-    ├── calculator/
-    │   ├── __init__.py
-    │   └── calculations.py
-    │
-    └── your_script.py
+If service crashed 💀, kill the python process:
 
-Inside of `your_script.py` you can now import the
-`add()` function from the `calculator.calculations`
-module:
-
-    # your_script.py
-    from calculator.calculations import add
-
-After you've imported the function, you can use it
-to add any two numbers that you need to add:
-
-    # your_script.py
-    from calculator.calculations import add
-
-    print(add(20, 22))  # OUTPUT: 42.0
-
-You're now able to add any two numbers, and you'll
-always get a `float` as a result.
+```zsh
+sudo pkill -9 python3
+```

@@ -1,20 +1,34 @@
 # Tutorials
 
-TODO
+## Setup the photobooth app
 
-This part of the project documentation focuses on a
-**learning-oriented** approach. You'll learn how to
-get started with the code in this project.
+### Prerequisites
 
-> **Note:** Expand this section by considering the
-> following points:
+### Installation
 
-- Help newcomers with getting started
-- Teach readers about your library by making them
-    write code
-- Inspire confidence through examples that work for
-    everyone, repeatably
-- Give readers an immediate sense of achievement
-- Show concrete examples, no abstractions
-- Provide the minimum necessary explanation
-- Avoid any distractions
+> **Note:** TODO: (for now most relevant steps are described in github repo)
+
+### Managing the service
+
+> **Note:** TODO: (for now most relevant steps are described in github repo)
+
+## Setup Camera Backends
+
+### Webcams
+
+via v4l or cv2 on windows and linux
+
+Check available webcam device numbers
+
+```bash
+python -c "from photobooth.services.backends.webcamv4l import *; print(available_camera_indexes())"
+python -c "from photobooth.services.backends.webcamcv2 import *; print(available_camera_indexes())"
+```
+
+### Raspberry Pi Camera Modules
+
+via picamera2
+
+### DSLR
+
+only linux gphoto2 currently.
