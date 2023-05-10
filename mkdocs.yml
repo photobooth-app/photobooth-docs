@@ -1,7 +1,16 @@
-site_name: Photobooth Docs1
+site_name: Photobooth App Documentation
 
 theme:
   name: "material"
 
 plugins:
   - mkdocstrings
+  - search
+
+nav:
+  - index.md
+  - tutorials.md
+  - how-to-guides.md
+  - faq.md
+  - reference.md
+  - explanation.md
