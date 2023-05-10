@@ -1,0 +1,11 @@
+title: Photobooth App
+author:
+  name: mgrl
+  email: me@mgrl.de
+
+description: >
+  Photobooth app written in Python.
+  
+theme: minima
+minima:
+  skin: dark
