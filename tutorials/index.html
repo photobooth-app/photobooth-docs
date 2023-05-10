@@ -208,9 +208,101 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Tutorials
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup-the-photobooth-app" class="md-nav__link">
+    Setup the photobooth app
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup the photobooth app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-the-service" class="md-nav__link">
+    Managing the service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-camera-backends" class="md-nav__link">
+    Setup Camera Backends
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Camera Backends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webcams" class="md-nav__link">
+    Webcams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-camera-modules" class="md-nav__link">
+    Raspberry Pi Camera Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dslr" class="md-nav__link">
+    DSLR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -311,6 +403,82 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup-the-photobooth-app" class="md-nav__link">
+    Setup the photobooth app
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup the photobooth app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-the-service" class="md-nav__link">
+    Managing the service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-camera-backends" class="md-nav__link">
+    Setup Camera Backends
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup Camera Backends">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webcams" class="md-nav__link">
+    Webcams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-camera-modules" class="md-nav__link">
+    Raspberry Pi Camera Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dslr" class="md-nav__link">
+    DSLR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -325,25 +493,27 @@
 
 
 <h1 id="tutorials">Tutorials</h1>
-<p>TODO</p>
-<p>This part of the project documentation focuses on a
-<strong>learning-oriented</strong> approach. You'll learn how to
-get started with the code in this project.</p>
+<h2 id="setup-the-photobooth-app">Setup the photobooth app</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<h3 id="installation">Installation</h3>
 <blockquote>
-<p><strong>Note:</strong> Expand this section by considering the
-following points:</p>
+<p><strong>Note:</strong> TODO: (for now most relevant steps are described in github repo)</p>
 </blockquote>
-<ul>
-<li>Help newcomers with getting started</li>
-<li>Teach readers about your library by making them
-    write code</li>
-<li>Inspire confidence through examples that work for
-    everyone, repeatably</li>
-<li>Give readers an immediate sense of achievement</li>
-<li>Show concrete examples, no abstractions</li>
-<li>Provide the minimum necessary explanation</li>
-<li>Avoid any distractions</li>
-</ul>
+<h3 id="managing-the-service">Managing the service</h3>
+<blockquote>
+<p><strong>Note:</strong> TODO: (for now most relevant steps are described in github repo)</p>
+</blockquote>
+<h2 id="setup-camera-backends">Setup Camera Backends</h2>
+<h3 id="webcams">Webcams</h3>
+<p>via v4l or cv2 on windows and linux</p>
+<p>Check available webcam device numbers</p>
+<pre><code class="language-bash">python -c &quot;from photobooth.services.backends.webcamv4l import *; print(available_camera_indexes())&quot;
+python -c &quot;from photobooth.services.backends.webcamcv2 import *; print(available_camera_indexes())&quot;
+</code></pre>
+<h3 id="raspberry-pi-camera-modules">Raspberry Pi Camera Modules</h3>
+<p>via picamera2</p>
+<h3 id="dslr">DSLR</h3>
+<p>only linux gphoto2 currently.</p>
 
 
 

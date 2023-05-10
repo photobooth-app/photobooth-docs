@@ -248,8 +248,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-add-two-numbers" class="md-nav__link">
-    How To Add Two Numbers?
+  <a href="#troubleshooting" class="md-nav__link">
+    ⁉️ Troubleshooting
   </a>
   
 </li>
@@ -349,8 +349,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-add-two-numbers" class="md-nav__link">
-    How To Add Two Numbers?
+  <a href="#troubleshooting" class="md-nav__link">
+    ⁉️ Troubleshooting
   </a>
   
 </li>
@@ -371,41 +371,25 @@
 
 
 <h1 id="howto-guides">HowTo Guides</h1>
-<p>TODO</p>
+<blockquote>
+<p><strong>Note:</strong> TODO:</p>
+</blockquote>
 <p>This part of the project documentation focuses on a
 <strong>problem-oriented</strong> approach. You'll tackle common
 tasks that you might have, with the help of the code
 provided in this project.</p>
-<h2 id="how-to-add-two-numbers">How To Add Two Numbers?</h2>
-<p>You have two numbers and you need to add them together.
-You're in luck! The <code>calculator</code> package can help you
-get this done.</p>
-<p>Download the code from this GitHub repository and place
-the <code>calculator/</code> folder in the same directory as your
-Python script:</p>
-<pre><code>your_project/
-│
-├── calculator/
-│   ├── __init__.py
-│   └── calculations.py
-│
-└── your_script.py
+<h2 id="troubleshooting">⁉️ Troubleshooting</h2>
+<p>Check following commands and files for error messages:</p>
+<pre><code class="language-zsh"># logfiles from service (last 200 lines)
+journalctl --user --unit=photobooth -n 200 --no-pager
+# logfiles created by photobooth
+cat ~/photobooth-app/log/qbooth.log
+# check CmaFree especially for Arducams if low:
+cat /proc/meminfo
 </code></pre>
-<p>Inside of <code>your_script.py</code> you can now import the
-<code>add()</code> function from the <code>calculator.calculations</code>
-module:</p>
-<pre><code># your_script.py
-from calculator.calculations import add
+<p>If service crashed 💀, kill the python process:</p>
+<pre><code class="language-zsh">sudo pkill -9 python3
 </code></pre>
-<p>After you've imported the function, you can use it
-to add any two numbers that you need to add:</p>
-<pre><code># your_script.py
-from calculator.calculations import add
-
-print(add(20, 22))  # OUTPUT: 42.0
-</code></pre>
-<p>You're now able to add any two numbers, and you'll
-always get a <code>float</code> as a result.</p>
 
 
 
