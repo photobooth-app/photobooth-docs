@@ -1,0 +1,7 @@
+site_name: Photobooth Docs1
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings
