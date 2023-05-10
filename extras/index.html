@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../how-to-guides/">
+        <link rel="prev" href="../faq/">
       
       
-        <link rel="next" href="../extras/">
+        <link rel="next" href="../reference/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
     
     
       
-        <title>FAQ - Photobooth App Documentation</title>
+        <title>Extras - Photobooth App Documentation</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#faq" class="md-skip">
+        <a href="#extras" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FAQ
+              Extras
             
           </span>
         </div>
@@ -227,6 +227,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -238,25 +253,55 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        FAQ
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../extras/" class="md-nav__link">
         Extras
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wled-integration-for-led-signaling" class="md-nav__link">
+    WLED integration for LED signaling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync-online-for-file-downloads-via-qr-code" class="md-nav__link">
+    Sync Online (for file downloads via QR Code)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-wifi-and-hotspot" class="md-nav__link">
+    Setup Wifi and Hotspot
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -311,6 +356,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wled-integration-for-led-signaling" class="md-nav__link">
+    WLED integration for LED signaling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync-online-for-file-downloads-via-qr-code" class="md-nav__link">
+    Sync Online (for file downloads via QR Code)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-wifi-and-hotspot" class="md-nav__link">
+    Setup Wifi and Hotspot
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -324,9 +398,43 @@
                   
 
 
-<h1 id="faq">FAQ</h1>
-<p>TODO
-...</p>
+<h1 id="extras">Extras</h1>
+<h2 id="wled-integration-for-led-signaling">WLED integration for LED signaling</h2>
+<p>Add animated lights to your photobooth powered by WLED. WLED is a fast and feature-rich implementation of an ESP8266/ESP32 webserver to control NeoPixel (WS2812B, WS2811, SK6812) LEDs.</p>
+<p>Head over to <a href="https://kno.wled.ge/basics/getting-started/">https://kno.wled.ge/basics/getting-started/</a> for installation instructions and hardware setup. Connect the ESP board via USB to the photobooth computer.</p>
+<p>In the WLED webfrontend define three presets:</p>
+<ul>
+<li>ID 1: standby (usually LEDs off)</li>
+<li>ID 2: countdown (animates countdown)</li>
+<li>ID 3: shoot (imitate a flash)</li>
+</ul>
+<p>Please define presets on your own in WLED webfrontend. Once added, in the photobooth enable the WLED integration and provide the serial port. Check logs on startup whether the module is detected correctly.</p>
+<h2 id="sync-online-for-file-downloads-via-qr-code">Sync Online (for file downloads via QR Code)</h2>
+<pre><code class="language-bash">sudo apt-get install rclone inotify-tools
+</code></pre>
+<pre><code class="language-bash">rclone config
+</code></pre>
+<p>Setup the remote named "boothupload"!</p>
+<pre><code class="language-bash">chmod u+x ~/photobooth-app/boothupload.sh
+cp ~/photobooth-app/boothupload.service ~/.config/systemd/user/
+systemctl --user enable boothupload.service
+systemctl --user start boothupload
+systemctl --user status boothupload
+</code></pre>
+<h2 id="setup-wifi-and-hotspot">Setup Wifi and Hotspot</h2>
+<p>At home prefer local wifi with endless data. If this is not available connect to a mobile hotspot for online sync.</p>
+<p>In file /etc/wpa_supplicant/wpa_supplicant.conf set a priority for local and hotspot wifi:</p>
+<pre><code class="language-text">network={
+    ssid=&quot;homewifi&quot;
+    psk=&quot;passwordOfhomewifi&quot;
+    priority=10
+}
+network={
+   ssid=&quot;mobileexpensivewifi&quot;
+   psk=&quot;passwordOfmobileexpensivewifi&quot;
+   priority=5
+}
+</code></pre>
 
 
 
