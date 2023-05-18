@@ -2,16 +2,27 @@ site_name: Photobooth App Documentation
 
 theme:
   name: "material"
+  features:
+    - navigation.tabs
+    - navigation.sections
 
 plugins:
   - mkdocstrings
   - search
+  - swagger-ui-tag
 
 nav:
-  - index.md
-  - tutorials.md
-  - how-to-guides.md
-  - faq.md
+  - Home:
+      - index.md
+  - Reference:
+      - reference/index.md
+      - reference/api.md
+      - reference/reference.md
+      - reference/explanation.md
+  - Help:
+      - help/index.md
+      - help/how-to-guides.md
+      - help/tutorials.md
+      - help/faq.md
+  - contribute.md
   - extras.md
-  - reference.md
-  - explanation.md
