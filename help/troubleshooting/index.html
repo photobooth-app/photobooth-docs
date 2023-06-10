@@ -173,6 +173,11 @@
         Setup Cameras
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../photobox3dprint/">
+        3D Printed Photobox
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -241,6 +246,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#photobooth-app-website-not-available">
     Photobooth app website not available
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#photobooth-command-not-found">
+    Photobooth command not found
   </a>
 </li>
 </ul>
@@ -313,6 +323,11 @@
     Photobooth app website not available
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#photobooth-command-not-found">
+    Photobooth command not found
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -350,6 +365,17 @@ sudo<span class="w"> </span>pkill<span class="w"> </span>-9<span class="w"> </sp
 <div class="highlight"><pre><span></span><code>photobooth<span class="w"> </span>
 <span class="c1">#or</span>
 python<span class="w"> </span>-m<span class="w"> </span>photobooth
+</code></pre></div>
+<h2 id="photobooth-command-not-found">Photobooth command not found</h2>
+<p>If there is a warning as following during pip installation and photobooth can't start check the PATH variable</p>
+<div class="highlight"><pre><span></span><code>WARNING: The script photobooth is installed in '/home/pi/.local/bin' which is not on PATH.
+Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+</code></pre></div>
+<p>See following is fine, might just need a restart after installation because the path .local/bin did not exist before.</p>
+<div class="highlight"><span class="filename">~/.profile</span><pre><span></span><code><span class="c1"># set PATH so it includes user's private bin if it exists</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/bin"</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="k">fi</span>
 </code></pre></div>
 </article>
 </div>
