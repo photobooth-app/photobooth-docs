@@ -1,4 +1,4 @@
-site_name: Photobooth App Documentation
+site_name: Photobooth App
 
 theme:
   name: "material"
@@ -6,23 +6,40 @@ theme:
     - navigation.tabs
     - navigation.sections
 
+markdown_extensions:
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 plugins:
   - mkdocstrings
   - search
   - swagger-ui-tag
+  - glightbox
 
 nav:
   - Home:
       - index.md
+      - screenshots.md
+      - installation.md
+      - setup.md
+      - photobox3dprint.md
   - Reference:
       - reference/index.md
       - reference/api.md
-      - reference/reference.md
-      - reference/explanation.md
+      - reference/photoboothprojectintegration.md
   - Help:
       - help/index.md
-      - help/how-to-guides.md
-      - help/tutorials.md
+      - help/troubleshooting.md
       - help/faq.md
+  - Extras:
+      - extras/index.md
+      - extras/wled.md
+      - extras/wifi.md
+      - extras/sync.md
   - contribute.md
-  - extras.md

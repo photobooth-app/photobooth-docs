@@ -1,15 +1,16 @@
-# Welcome to Photobooth App Documentation
+# Photobooth App
 
+[![python versions supported 3.9, 3.10, 3.11](https://img.shields.io/pypi/pyversions/photobooth-app)](https://pypi.org/project/photobooth-app/)
+![rpi, linux and windows platform supported](https://img.shields.io/badge/platform-rpi%20%7C%20linux%20%7C%20windows-lightgrey)
+[![ruff](https://github.com/mgrl/photobooth-app/actions/workflows/ruff.yml/badge.svg)](https://github.com/mgrl/photobooth-app/actions/workflows/ruff.yml)
+[![pytest](https://github.com/mgrl/photobooth-app/actions/workflows/pytests.yml/badge.svg)](https://github.com/mgrl/photobooth-app/actions/workflows/pytests.yml)
+[![codecov](https://codecov.io/gh/mgrl/photobooth-app/branch/dev/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/mgrl/photobooth-app)
+
+[Github source](https://github.com/mgrl/photobooth-app/) - [PyPI package](https://pypi.org/project/photobooth-app/) - [3d printable case](https://github.com/mgrl/photobooth-3d/) - [Issues](https://github.com/mgrl/photobooth-app/issues) - [Discussions](https://github.com/mgrl/photobooth-app/discussions)
+
+The photobooth app is written in Python 🐍 and coming along with a modern Vue frontend.
 This site contains the project documentation for the
-`photobooth app` project that is a python application used to drive
-a photobooth for weddings, birthdays and other events.
+photobooth app project. The app is written in python.
+Setup your own photobooth for your wedding, birthday and other occations.
 
-## Table Of Contents
-
-1. [Tutorials](help/tutorials.md)
-2. [How-To Guides](help/how-to-guides.md)
-3. [Reference](reference/reference.md)
-4. [Explanation](reference/explanation.md)
-
-Quickly find what you're looking for depending on
-your use case by looking at the different pages.
+![booth take a picture](./assets/take-picture.gif)
