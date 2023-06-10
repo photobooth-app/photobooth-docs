@@ -5,7 +5,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../contribute/" rel="prev"/>
+<link href="../help/faq/" rel="prev"/>
+<link href="wled/" rel="next"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.11" name="generator"/>
 <title>Extras - Photobooth App</title>
@@ -15,7 +16,18 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <link href="../assets/_mkdocstrings.css" rel="stylesheet"/>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+ <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
 <body dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -104,13 +116,13 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../contribute/">
-      🚀 Contribute
-    </a>
+<a class="md-tabs__link md-tabs__link--active" href="./">
+        Extras
+      </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
-      Extras
+<a class="md-tabs__link" href="../contribute/">
+      🚀 Contribute
     </a>
 </li>
 </ul>
@@ -147,13 +159,18 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../installation/">
-        🔧 Installation
+<a class="md-nav__link" href="../screenshots/">
+        Screenshots
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../basicconfig/">
-        Basic Configuration
+<a class="md-nav__link" href="../installation/">
+        Installation 🔧
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../setup/">
+        Setup Cameras
       </a>
 </li>
 </ul>
@@ -182,13 +199,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/reference/">
-        Reference
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../reference/explanation/">
-        Explanation
+<a class="md-nav__link" href="../reference/photoboothprojectintegration/">
+        Integrate Photobooth-Project and this Photobooth-App
       </a>
 </li>
 </ul>
@@ -212,13 +224,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../help/how-to-guides/">
-        HowTo Guides
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../help/tutorials/">
-        Tutorials
+<a class="md-nav__link" href="../help/troubleshooting/">
+        Troubleshooting
       </a>
 </li>
 <li class="md-nav__item">
@@ -229,43 +236,46 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Extras
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Extras
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Extras
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="wled/">
+        WLED integration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="wifi/">
+        Wifi and Hotspot
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="sync/">
+        Sync Online
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../contribute/">
         🚀 Contribute
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Extras
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-        Extras
-      </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#wled-integration-for-led-signaling">
-    WLED integration for LED signaling
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sync-online-for-file-downloads-via-qr-code">
-    Sync Online (for file downloads via QR Code)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#setup-wifi-and-hotspot">
-    Setup Wifi and Hotspot
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -276,27 +286,6 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#wled-integration-for-led-signaling">
-    WLED integration for LED signaling
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sync-online-for-file-downloads-via-qr-code">
-    Sync Online (for file downloads via QR Code)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#setup-wifi-and-hotspot">
-    Setup Wifi and Hotspot
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
@@ -304,42 +293,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="extras">Extras</h1>
-<h2 id="wled-integration-for-led-signaling">WLED integration for LED signaling</h2>
-<p>Add animated lights to your photobooth powered by WLED. WLED is a fast and feature-rich implementation of an ESP8266/ESP32 webserver to control NeoPixel (WS2812B, WS2811, SK6812) LEDs.</p>
-<p>Head over to <a href="https://kno.wled.ge/basics/getting-started/">https://kno.wled.ge/basics/getting-started/</a> for installation instructions and hardware setup. Connect the ESP board via USB to the photobooth computer.</p>
-<p>In the WLED webfrontend define three presets:</p>
-<ul>
-<li>ID 1: standby (usually LEDs off)</li>
-<li>ID 2: countdown (animates countdown)</li>
-<li>ID 3: shoot (imitate a flash)</li>
-</ul>
-<p>Please define presets on your own in WLED webfrontend. Once added, in the photobooth enable the WLED integration and provide the serial port. Check logs on startup whether the module is detected correctly.</p>
-<h2 id="sync-online-for-file-downloads-via-qr-code">Sync Online (for file downloads via QR Code)</h2>
-<pre><code class="language-bash">sudo apt-get install rclone inotify-tools
-</code></pre>
-<pre><code class="language-bash">rclone config
-</code></pre>
-<p>Setup the remote named "boothupload"!</p>
-<pre><code class="language-bash">chmod u+x ~/photobooth-app/boothupload.sh
-cp ~/photobooth-app/boothupload.service ~/.config/systemd/user/
-systemctl --user enable boothupload.service
-systemctl --user start boothupload
-systemctl --user status boothupload
-</code></pre>
-<h2 id="setup-wifi-and-hotspot">Setup Wifi and Hotspot</h2>
-<p>At home prefer local wifi with endless data. If this is not available connect to a mobile hotspot for online sync.</p>
-<p>In file /etc/wpa_supplicant/wpa_supplicant.conf set a priority for local and hotspot wifi:</p>
-<pre><code class="language-text">network={
-    ssid="homewifi"
-    psk="passwordOfhomewifi"
-    priority=10
-}
-network={
-   ssid="mobileexpensivewifi"
-   psk="passwordOfmobileexpensivewifi"
-   priority=5
-}
-</code></pre>
+<p>This sections describes additional hardware and operating system customization to enhance the photobooth.</p>
 </article>
 </div>
 </div>
@@ -428,5 +382,5 @@ network={
             }
             observer = new MutationObserver(color_scheme_callback);
             observer.observe(document.body, options);
-            })</script></body>
+            })</script><script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

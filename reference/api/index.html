@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../" rel="prev"/>
-<link href="../reference/" rel="next"/>
+<link href="../photoboothprojectintegration/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.11" name="generator"/>
 <title>HTTP API - Photobooth App</title>
@@ -16,7 +16,18 @@
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <link href="../../assets/_mkdocstrings.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
 <body dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -105,13 +116,13 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../contribute/">
-      🚀 Contribute
-    </a>
+<a class="md-tabs__link" href="../../extras/">
+        Extras
+      </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../extras/">
-      Extras
+<a class="md-tabs__link" href="../../contribute/">
+      🚀 Contribute
     </a>
 </li>
 </ul>
@@ -148,13 +159,18 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../installation/">
-        🔧 Installation
+<a class="md-nav__link" href="../../screenshots/">
+        Screenshots
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../basicconfig/">
-        Basic Configuration
+<a class="md-nav__link" href="../../installation/">
+        Installation 🔧
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../setup/">
+        Setup Cameras
       </a>
 </li>
 </ul>
@@ -184,13 +200,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/">
-        Reference
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../explanation/">
-        Explanation
+<a class="md-nav__link" href="../photoboothprojectintegration/">
+        Integrate Photobooth-Project and this Photobooth-App
       </a>
 </li>
 </ul>
@@ -214,13 +225,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../help/how-to-guides/">
-        HowTo Guides
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../help/tutorials/">
-        Tutorials
+<a class="md-nav__link" href="../../help/troubleshooting/">
+        Troubleshooting
       </a>
 </li>
 <li class="md-nav__item">
@@ -231,14 +237,44 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../contribute/">
-        🚀 Contribute
-      </a>
-</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Extras
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Extras
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../extras/">
         Extras
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../extras/wled/">
+        WLED integration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../extras/wifi/">
+        Wifi and Hotspot
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../extras/sync/">
+        Sync Online
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../contribute/">
+        🚀 Contribute
       </a>
 </li>
 </ul>
@@ -257,10 +293,8 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="http-api">HTTP API</h1>
-<p>This site contains the project documentation for the
-<code>photobooth app</code> project that is a python application used to drive
-a photobooth for weddings, birthdays and other events.</p>
-<p><iframe class="swagger-ui-iframe" frameborder="0" id="b8866ea5" src="swagger-b8866ea5.html" style="overflow:hidden;width:100%;" width="100%"></iframe></p>
+<p>Following HTTP api is provided by the photobooth app.</p>
+<p><iframe class="swagger-ui-iframe" frameborder="0" id="eff049ae" src="swagger-eff049ae.html" style="overflow:hidden;width:100%;" width="100%"></iframe></p>
 </article>
 </div>
 </div>
@@ -349,5 +383,5 @@ a photobooth for weddings, birthdays and other events.</p>
             }
             observer = new MutationObserver(color_scheme_callback);
             observer.observe(document.body, options);
-            })</script></body>
+            })</script><script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

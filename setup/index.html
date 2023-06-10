@@ -9,21 +9,32 @@
 <link href="../reference/" rel="next"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.11" name="generator"/>
-<title>Basic Configuration - Photobooth App</title>
+<title>Setup Cameras - Photobooth App</title>
 <link href="../assets/stylesheets/main.85bb2934.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <link href="../assets/_mkdocstrings.css" rel="stylesheet"/>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+ <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
 <body dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#basic-configuration">
+<a class="md-skip" href="#setup-cameras">
           Skip to content
         </a>
 </div>
@@ -47,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Basic Configuration
+              Setup Cameras
             
           </span>
 </div>
@@ -105,13 +116,13 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../contribute/">
-      🚀 Contribute
-    </a>
+<a class="md-tabs__link" href="../extras/">
+        Extras
+      </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../extras/">
-      Extras
+<a class="md-tabs__link" href="../contribute/">
+      🚀 Contribute
     </a>
 </li>
 </ul>
@@ -148,18 +159,23 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../screenshots/">
+        Screenshots
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../installation/">
-        🔧 Installation
+        Installation 🔧
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Basic Configuration
+          Setup Cameras
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Basic Configuration
+        Setup Cameras
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -168,13 +184,42 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#raspberry-camera-modules">
-    Raspberry Camera Modules
+<a class="md-nav__link" href="#raspberry-csi-camera-modules">
+    Raspberry CSI Camera Modules
+  </a>
+<nav aria-label="Raspberry CSI Camera Modules" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#camera-module-3">
+    Camera Module 3
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dslr-via-gphoto2-on-linux-platform">
-    DSLR via gphoto2 on Linux platform
+<a class="md-nav__link" href="#camera-modules-12hq">
+    Camera Modules 1/2/HQ
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arducam-imx519">
+    Arducam imx519
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-third-party-camera-modules">
+    Other third party camera modules
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dslr-via-gphoto2-linux">
+    DSLR via gphoto2 (Linux)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dslr-via-digicamcontrol-windows">
+    DSLR via digicamcontrol (Windows)
   </a>
 </li>
 <li class="md-nav__item">
@@ -183,8 +228,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hybrid-dslr-and-webcam">
-    Hybrid: DSLR and Webcam
+<a class="md-nav__link" href="#hybrid-dslr-and-second-backend-to-stream">
+    Hybrid: DSLR and second backend to stream
   </a>
 </li>
 </ul>
@@ -216,13 +261,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/reference/">
-        Reference
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../reference/explanation/">
-        Explanation
+<a class="md-nav__link" href="../reference/photoboothprojectintegration/">
+        Integrate Photobooth-Project and this Photobooth-App
       </a>
 </li>
 </ul>
@@ -246,13 +286,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../help/how-to-guides/">
-        HowTo Guides
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../help/tutorials/">
-        Tutorials
+<a class="md-nav__link" href="../help/troubleshooting/">
+        Troubleshooting
       </a>
 </li>
 <li class="md-nav__item">
@@ -263,14 +298,44 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../contribute/">
-        🚀 Contribute
-      </a>
-</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Extras
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Extras
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../extras/">
         Extras
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../extras/wled/">
+        WLED integration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../extras/wifi/">
+        Wifi and Hotspot
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../extras/sync/">
+        Sync Online
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../contribute/">
+        🚀 Contribute
       </a>
 </li>
 </ul>
@@ -288,13 +353,42 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#raspberry-camera-modules">
-    Raspberry Camera Modules
+<a class="md-nav__link" href="#raspberry-csi-camera-modules">
+    Raspberry CSI Camera Modules
+  </a>
+<nav aria-label="Raspberry CSI Camera Modules" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#camera-module-3">
+    Camera Module 3
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dslr-via-gphoto2-on-linux-platform">
-    DSLR via gphoto2 on Linux platform
+<a class="md-nav__link" href="#camera-modules-12hq">
+    Camera Modules 1/2/HQ
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arducam-imx519">
+    Arducam imx519
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-third-party-camera-modules">
+    Other third party camera modules
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dslr-via-gphoto2-linux">
+    DSLR via gphoto2 (Linux)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dslr-via-digicamcontrol-windows">
+    DSLR via digicamcontrol (Windows)
   </a>
 </li>
 <li class="md-nav__item">
@@ -303,8 +397,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hybrid-dslr-and-webcam">
-    Hybrid: DSLR and Webcam
+<a class="md-nav__link" href="#hybrid-dslr-and-second-backend-to-stream">
+    Hybrid: DSLR and second backend to stream
   </a>
 </li>
 </ul>
@@ -314,15 +408,129 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="basic-configuration">Basic Configuration</h1>
-<h2 id="raspberry-camera-modules">Raspberry Camera Modules</h2>
-<p>todo</p>
-<h2 id="dslr-via-gphoto2-on-linux-platform">DSLR via gphoto2 on Linux platform</h2>
-<p>todo</p>
+<h1 id="setup-cameras">Setup Cameras</h1>
+<p>The photobooth app supports cameras utilizing multiple backends:</p>
+<ul>
+<li>picamera2 backend supports Raspberry Pi Camera Modules</li>
+<li>gphoto2 backend supports DSLR cameras on Linux platforms</li>
+<li>digicamcontrol backend supports DSLR cameras on Windows platforms (not yet implemented!)</li>
+<li>opencv2 backend supports USB webcameras on Linux and Windows platforms</li>
+<li>v4l2 backend supports USB webcameras on Linux</li>
+</ul>
+<p>Two backends can be used simultaneously in hybrid mode.
+The first backend is used as main backend to capture high quality still images.
+The second backend is used as live backend to stream video preview only.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After changing config, the app needs to be restarted manually.</p>
+<p>If you need help setup a specific camera, <a href="https://github.com/mgrl/photobooth-app/discussions">start a new discussion on github</a>.</p>
+</div>
+<h2 id="raspberry-csi-camera-modules">Raspberry CSI Camera Modules</h2>
+<p>Camera modules are supported using picamera2 based on the new libcamera stack. Autofocus camera modules are supported.</p>
+<p>The app is tested with following devices:</p>
+<h3 id="camera-module-3">Camera Module 3</h3>
+<p>The latest <a href="https://www.raspberrypi.com/products/camera-module-3/">Camera Module 3</a> is probably the best camera module to use in the photobooth.
+It supports fast autofocus and comes with native driver in the Raspberry Pi OS.</p>
+<p>Ensure the camera is working properly using the libcamera stack:</p>
+<div class="highlight"><pre><span></span><code>libcamera-hello
+</code></pre></div>
+<p>If it does properly open the camera, the photobooth app can use it also.
+If some errors come up, try to fix the camera setup before start using it actually.
+Find <a href="https://www.raspberrypi.com/documentation/accessories/camera.html#installing-a-raspberry-pi-camera">installation instructions</a> directly at the raspberry pi foundation.</p>
+<p>Now finish setup:</p>
+<ul>
+<li>Set the index in the <a href="http://localhost:8000/#/admin/config">admin center</a>, config, tab backends.</li>
+<li>set the main backend to Picamera2</li>
+<li>Choose Picamera2 focuser module, set Continuous for camera module 3</li>
+<li>Enable livepreview if desired</li>
+<li>Change the resolution requested from the camera on common tab to width=4608, height=2592</li>
+<li>Restart the app</li>
+</ul>
+<h3 id="camera-modules-12hq">Camera Modules 1/2/HQ</h3>
+<p>All other camera modules from the Raspberry Pi ecosystem work the same way as the latest camera module 3.
+They usually come with lower image quality and do not have autofocus.
+Due to this other camera modules are not recommended for use as main camera.
+You might consider to use them only for livestream preview.</p>
+<p>Setup is the same as for camera module 3 but with different resolution and no focuser module enabled.</p>
+<h3 id="arducam-imx519">Arducam imx519</h3>
+<p>Sony's imx519 sensor used in <a href="https://www.arducam.com/product/imx519-autofocus-camera-module-for-raspberry-pi-arducam-b0371/">Arducam's imx519 camera module</a> is supported by the
+Raspberry Pi OS natively since about March 2023.</p>
+<p>This means the module can be used with or without installing Arducams custom driver packages:</p>
+<ul>
+<li>without Arducams driver:<ul>
+<li>➖No PDAF support</li>
+<li>➖Only interval based autofocus e.g. every 10 seconds</li>
+<li>➕More stable upgrades because no customized libcamera needs to be installed.</li>
+<li><a href="https://github.com/mgrl/photobooth-app/discussions/23">install as described in discussions</a></li>
+</ul>
+</li>
+<li>with Arducams driver:<ul>
+<li>➕PDAF support</li>
+<li>➕Continuous autofocus like camera module 3</li>
+<li>➖apt upgrade may break driver/libcamera from time to time</li>
+<li><a href="https://docs.arducam.com/Raspberry-Pi-Camera/Pivariety-Camera/Quick-Start-Guide/">install as described by Arducam</a></li>
+</ul>
+</li>
+</ul>
+<p>Now finish setup:</p>
+<ul>
+<li>Set the index in the <a href="http://localhost:8000/#/admin/config">admin center</a>, config, tab backends.</li>
+<li>set the main backend to Picamera2</li>
+<li>Choose Picamera2 focuser module, set Continuous if Arducams driver installed, otherwise choose Interval.</li>
+<li>Enable livepreview if desired</li>
+<li>Change the resolution requested from the camera on common tab to width=4656, height=3496</li>
+<li>Restart the app</li>
+</ul>
+<h3 id="other-third-party-camera-modules">Other third party camera modules</h3>
+<p>In principle every camera supported by libcamera / picamera2 would work.
+Since the cameras do not come with native support of the Raspberry Pi OS using them could be troublesome and it's untested.
+<a href="https://github.com/mgrl/photobooth-app/discussions/categories/howtos-and-camera-specific-topics">Start a discussion</a> if there is a camera not working properly.</p>
+<h2 id="dslr-via-gphoto2-linux">DSLR via gphoto2 (Linux)</h2>
+<p>The app is tested with a Canon 1100D. In general all <a href="http://www.gphoto.org/proj/libgphoto2/support.php">gphoto2 supported cameras</a> can be used.
+If the camera supports liveview a stream is created and being used as preview in the app.
+If the camera does not support liveview, you might want to consider setup the app in hybrid mode.
+Main camera would be the DSLR to take high quality images, the livestream is captured from a secondary backend.
+As secondary backend most suitable is a webcamera or raspberry pi camera module.</p>
+<p>Now finish setup:</p>
+<ul>
+<li>Set the index in the <a href="http://localhost:8000/#/admin/config">admin center</a>, config, tab backends.</li>
+<li>set the main backend to Gphoto2</li>
+</ul>
+<p>DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
+Tinker with available settings until it works properly. If you run into trouble, <a href="https://github.com/mgrl/photobooth-app/issues">create a new issue in the tracker</a>.</p>
+<h2 id="dslr-via-digicamcontrol-windows">DSLR via digicamcontrol (Windows)</h2>
+<blockquote>
+<p>Implementation not yet finished, feel free to <a href="../contribute/">contribute</a> 😊</p>
+</blockquote>
 <h2 id="webcam">Webcam</h2>
-<p>todo</p>
-<h2 id="hybrid-dslr-and-webcam">Hybrid: DSLR and Webcam</h2>
-<p>todo</p>
+<p>USB-webcams are integrated via two backends:</p>
+<ul>
+<li>Opencv2 (Linux/Windows) and</li>
+<li>v4l2 (Linux only).</li>
+</ul>
+<p>On Linux prefer v4l2 backend because it is more efficient in directly streaming MJPG data instead image frames like the opencv2 implementation.</p>
+<p>To use the webcam choose opencv2 or v4l2 as backend.</p>
+<p>Both backends use a camera device index to open the camera. To find which indexes are available on your system issue the following commands.</p>
+<div class="highlight"><span class="filename">check v4l2 indexes:</span><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"from photobooth.services.backends.webcamv4l import *; print(available_camera_indexes())"</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">check opencv2 indexes:</span><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"from photobooth.services.backends.webcamcv2 import *; print(available_camera_indexes())"</span>
+</code></pre></div>
+<p>The command returns an array of indexes for which a webcam was detected.</p>
+<p>Now finish setup:</p>
+<ul>
+<li>Set the index in the <a href="http://localhost:8000/#/admin/config">admin center</a>, config, tab backends.</li>
+<li>set the backend (cv2 or v4l) as main backend</li>
+<li>Consider changing the resolution requested from the camera on common tab.</li>
+</ul>
+<h2 id="hybrid-dslr-and-second-backend-to-stream">Hybrid: DSLR and second backend to stream</h2>
+<p>The app supports simultaneous use of two backends at the same time.
+This is useful to grab high quality pictures from a DSLR camera via gphoto2 and livestream from a webcamera or picamera module.
+Hybrid mode allows for live preview even if the DSLR camera is not capable to stream preview video.</p>
+<p>In hybrid mode, the main backend is used for still images, the live backend for video streaming.
+To enable hybrid mode:
+    - configure main backend as normal
+    - also configure live backend.</p>
+<p>If a live backend is set, it is requested for video preview instead of the main backend.</p>
 </article>
 </div>
 </div>
@@ -411,5 +619,5 @@
             }
             observer = new MutationObserver(color_scheme_callback);
             observer.observe(document.body, options);
-            })</script></body>
+            })</script><script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
