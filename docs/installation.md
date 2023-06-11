@@ -42,7 +42,13 @@ Following dependencies to be installed for Raspberry Pi OS 64bit Bullseye.
 Adjust for debian/ubuntu. Picamera2 is only available on Raspberry Pi.
 
 ```zsh
+# basic stuff
 sudo apt-get -y install libturbojpeg0 python3-pip libgl1 libgphoto2-dev
+# to display some nice icons and emoticons
+sudo apt-get -y install fonts-noto-color-emoji
+# to sync images online
+sudo apt-get -y install rclone inotify-tools
+# to use camera modules on rpi
 sudo apt-get -y install python3-picamera2
 ```
 
