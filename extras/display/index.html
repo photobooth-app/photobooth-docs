@@ -352,16 +352,8 @@
 <article class="md-content__inner md-typeset">
 <h1 id="display">Display</h1>
 <h2 id="disable-display-standby">Disable display standby</h2>
-<p>If the display turns off after some time, disable the screensaver and power save modes.
-Edit following file and reboot.</p>
-<div class="highlight"><span class="filename">/etc/xdg/lxsession/LXDE-pi/autostart</span><pre><span></span><code><span class="c1"># remove following line</span>
-@xscreensaver<span class="w"> </span>-no-splash
-
-<span class="c1"># add following lines</span>
-@xset<span class="w"> </span>s<span class="w"> </span>noblank<span class="w"> </span>
-@xset<span class="w"> </span>s<span class="w"> </span>off<span class="w"> </span>
-@xset<span class="w"> </span>-dpms
-</code></pre></div>
+<p>If the display turns off after some time, disable the power save mode.
+Run <code>sudo raspi-config</code> and disable "Screen Blanking".</p>
 <h2 id="hide-mouse-curser">Hide mouse curser</h2>
 <p>For touchscreen displays you might consider to remove the mouse cursor.
 Install unclutter for this. After reboot it is enabled automatically.</p>
