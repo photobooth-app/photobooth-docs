@@ -44,4 +44,5 @@ nav:
       - extras/wled.md
       - extras/wifi.md
       - extras/sync.md
+      - extras/display.md
   - contribute.md
