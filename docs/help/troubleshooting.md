@@ -91,9 +91,15 @@ To disable the monitoring services, execute following commands:
 ```sh
 systemctl --user stop gvfs-gphoto2-volume-monitor
 systemctl --user disable gvfs-gphoto2-volume-monitor 
+
+# after a reboot, the gvfs-gphoto2-volume-monitor will be enabled automatically again :(
+# permanently disable:
+sudo chmod -x /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+
+reboot
 ```
 
-Turn off the camera and turn it on again. Both processes should be ended by now:
+After a restart there should be no process any more:
 
 ```bash
 $ ps ax | grep gphoto2
