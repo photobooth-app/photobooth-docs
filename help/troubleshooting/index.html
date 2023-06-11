@@ -258,6 +258,11 @@
     Photobooth command not found
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gphoto2-camera-found-but-no-access">
+    Gphoto2 camera found but no access
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -343,6 +348,11 @@
     Photobooth command not found
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gphoto2-camera-found-but-no-access">
+    Gphoto2 camera found but no access
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -392,6 +402,35 @@ Consider adding this directory to PATH or, if you prefer to suppress this warnin
 <span class="w">    </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
 <span class="k">fi</span>
 </code></pre></div>
+<h2 id="gphoto2-camera-found-but-no-access">Gphoto2 camera found but no access</h2>
+<p>On a fresh Linux installation, there might be services running to detect cameras and allow for easy file transfer.
+For the photobooth this needs to be disabled because the application needs access to the camera.</p>
+<p>If you find errors in the log as below, read further.</p>
+<div class="highlight"><pre><span></span><code>[    INFO] found camera - 0:  usb:001,009  Canon EOS 1100D (gphoto2.py:303)
+[    INFO] (gp_libusb1_open [libusb1.c:437]) 'libusb_claim_interface (port-&gt;pl-&gt;dh, port-&gt;settings.usb.interface)' failed: Resource busy (-6) (port_log.py:89)
+[    INFO] (gp_port_set_error [gphoto2-port.c:1190]) Could not claim interface 0 (Success). Make sure no other program (gvfs-gphoto2-volume-monitor) or kernel module (such as sdc2xx, stv680, spca50x) is using the device and you have read/write access to the device. (port_log.py:89)
+[CRITICAL] camera failed to initialize. no power? no connection? (gphoto2.py:100)
+[   ERROR] [-53] Could not claim the USB device (gphoto2.py:101)
+[    INFO] (gp_libusb1_open [libusb1.c:437]) 'libusb_claim_interface (port-&gt;pl-&gt;dh, port-&gt;settings.usb.interface)' failed: Resource busy (-6) (port_log.py:89)
+[    INFO] (gp_port_set_error [gphoto2-port.c:1190]) Could not claim interface 0 (Success). Make sure no other program (gvfs-gphoto2-volume-monitor) or kernel module (such as sdc2xx, stv680, spca50x) is using the device and you have read/write access to the device. (port_log.py:89)
+</code></pre></div>
+<p>Check for running processes:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps<span class="w"> </span>ax<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>gphoto2
+<span class="m">1074</span><span class="w"> </span>?<span class="w">        </span>Ssl<span class="w">    </span><span class="m">0</span>:00<span class="w"> </span>/usr/libexec/gvfs-gphoto2-volume-monitor
+<span class="m">2785</span><span class="w"> </span>?<span class="w">        </span>Sl<span class="w">     </span><span class="m">0</span>:00<span class="w"> </span>/usr/libexec/gvfsd-gphoto2<span class="w"> </span>--spawner<span class="w"> </span>:1.7<span class="w"> </span>/org/gtk/gvfs/exec_spaw/2
+</code></pre></div>
+<p>To disable the monitoring services, execute following commands:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>stop<span class="w"> </span>gvfs-gphoto2-volume-monitor
+systemctl<span class="w"> </span>--user<span class="w"> </span>disable<span class="w"> </span>gvfs-gphoto2-volume-monitor<span class="w"> </span>
+</code></pre></div>
+<p>Turn off the camera and turn it on again. Both processes should be ended by now:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps<span class="w"> </span>ax<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>gphoto2
+<span class="c1"># nothing to see here...</span>
+</code></pre></div>
+<p>Additional references:</p>
+<ul>
+<li><a href="https://github.com/gphoto/gphoto2/issues/181">https://github.com/gphoto/gphoto2/issues/181</a></li>
+</ul>
 </article>
 </div>
 </div>
