@@ -1,4 +1,6 @@
-# Photobooth App
+# ![photobooth-app logo](https://raw.githubusercontent.com/mgrl/photobooth-app/main/assets/logo/logo-text-black-transparent.png)
+
+Written in Python 🐍, coming along with a modern Vue frontend.
 
 [![python versions supported 3.9, 3.10, 3.11](https://img.shields.io/pypi/pyversions/photobooth-app)](https://pypi.org/project/photobooth-app/)
 ![rpi, linux and windows platform supported](https://img.shields.io/badge/platform-rpi%20%7C%20linux%20%7C%20windows-lightgrey)
@@ -8,9 +10,8 @@
 
 [Github source](https://github.com/mgrl/photobooth-app/) - [PyPI package](https://pypi.org/project/photobooth-app/) - [3d printable case](https://github.com/mgrl/photobooth-3d/) - [Issues](https://github.com/mgrl/photobooth-app/issues) - [Discussions](https://github.com/mgrl/photobooth-app/discussions)
 
-The photobooth app is written in Python 🐍 and coming along with a modern Vue frontend.
 This site contains the project documentation for the
-photobooth app project. The app is written in python.
+photobooth app project.
 Setup your own photobooth for your wedding, birthday and other occations.
 
 ![booth take a picture](./assets/take-picture.gif)
