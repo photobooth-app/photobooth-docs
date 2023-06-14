@@ -5,17 +5,18 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../extras/gpio/" rel="prev"/>
-<link href="../assets/images/favicon.png" rel="icon"/>
+<link href="../display/" rel="prev"/>
+<link href="../../contribute/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.3, mkdocs-material-9.1.11" name="generator"/>
-<title>🚀 Contribute - Photobooth App</title>
-<link href="../assets/stylesheets/main.85bb2934.min.css" rel="stylesheet"/>
+<title>Raspberry Pi GPIO - Photobooth App</title>
+<link href="../../assets/stylesheets/main.85bb2934.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../assets/_mkdocstrings.css" rel="stylesheet"/>
-<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
- <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<link href="../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -26,14 +27,14 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
 <body dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#contribute">
+<a class="md-skip" href="#raspberry-pi-gpio">
           Skip to content
         </a>
 </div>
@@ -41,7 +42,7 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Photobooth App" class="md-header__button md-logo" data-md-component="logo" href=".." title="Photobooth App">
+<a aria-label="Photobooth App" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Photobooth App">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -57,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              🚀 Contribute
+              Raspberry Pi GPIO
             
           </span>
 </div>
@@ -100,27 +101,27 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="..">
+<a class="md-tabs__link" href="../..">
         Home
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../reference/">
+<a class="md-tabs__link" href="../../reference/">
         Reference
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../help/">
+<a class="md-tabs__link" href="../../help/">
         Help
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../extras/">
+<a class="md-tabs__link md-tabs__link--active" href="../">
         Extras
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
+<a class="md-tabs__link" href="../../contribute/">
       🚀 Contribute
     </a>
 </li>
@@ -134,7 +135,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Photobooth App" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Photobooth App">
+<a aria-label="Photobooth App" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Photobooth App">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
     Photobooth App
@@ -153,32 +154,32 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="..">
+<a class="md-nav__link" href="../..">
         Home
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../screenshots/">
+<a class="md-nav__link" href="../../screenshots/">
         Screenshots
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../installation/">
+<a class="md-nav__link" href="../../installation/">
         Installation 🔧
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../setup/">
+<a class="md-nav__link" href="../../setup/">
         Setup Cameras
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../photobox3dprint/">
+<a class="md-nav__link" href="../../photobox3dprint/">
         3D Printed Photobox
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../update/">
+<a class="md-nav__link" href="../../update/">
         Update
       </a>
 </li>
@@ -198,17 +199,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/">
+<a class="md-nav__link" href="../../reference/">
         Reference
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/api/">
+<a class="md-nav__link" href="../../reference/api/">
         HTTP API
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/photoboothprojectintegration/">
+<a class="md-nav__link" href="../../reference/photoboothprojectintegration/">
         Integrate Photobooth-Project and this Photobooth-App
       </a>
 </li>
@@ -228,81 +229,73 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../help/">
+<a class="md-nav__link" href="../../help/">
         Help
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../help/troubleshooting/">
+<a class="md-nav__link" href="../../help/troubleshooting/">
         Troubleshooting
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../help/faq/">
+<a class="md-nav__link" href="../../help/faq/">
         FAQ
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           Extras
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           Extras
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../extras/">
+<a class="md-nav__link" href="../">
         Extras
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../extras/onscreenkeyboard/">
+<a class="md-nav__link" href="../onscreenkeyboard/">
         Onscreen Display for Raspberry Pi
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../extras/wled/">
+<a class="md-nav__link" href="../wled/">
         WLED integration
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../extras/wifi/">
+<a class="md-nav__link" href="../wifi/">
         Wifi and Hotspot
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../extras/sync/">
+<a class="md-nav__link" href="../sync/">
         Sync Online
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../extras/display/">
+<a class="md-nav__link" href="../display/">
         Display
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../extras/gpio/">
-        Raspberry Pi GPIO
-      </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          🚀 Contribute
+          Raspberry Pi GPIO
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        🚀 Contribute
+        Raspberry Pi GPIO
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -311,34 +304,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#post-issues">
-    Post Issues
+<a class="md-nav__link" href="#raspberry-pi-gpio-wiring">
+    Raspberry Pi GPIO wiring
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#improve-documentation">
-    Improve Documentation
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#send-patches-via-pull-request">
-    Send Patches via Pull Request
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#development">
-    Development
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#automated-testing">
-    Automated Testing
-  </a>
-<nav aria-label="Automated Testing" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#selfhosted-github-runner">
-    Selfhosted Github Runner
+<a class="md-nav__link" href="#configure">
+    Configure
   </a>
 </li>
 </ul>
@@ -346,6 +318,11 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../contribute/">
+        🚀 Contribute
+      </a>
 </li>
 </ul>
 </nav>
@@ -362,38 +339,14 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#post-issues">
-    Post Issues
+<a class="md-nav__link" href="#raspberry-pi-gpio-wiring">
+    Raspberry Pi GPIO wiring
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#improve-documentation">
-    Improve Documentation
+<a class="md-nav__link" href="#configure">
+    Configure
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#send-patches-via-pull-request">
-    Send Patches via Pull Request
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#development">
-    Development
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#automated-testing">
-    Automated Testing
-  </a>
-<nav aria-label="Automated Testing" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#selfhosted-github-runner">
-    Selfhosted Github Runner
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -402,37 +355,23 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="contribute">🚀 Contribute</h1>
-<h2 id="post-issues">Post Issues</h2>
-<p>If you find an issue, please post it in the <a href="https://github.com/mgrl/photobooth-app/issues">photobooth app issue tracker</a>.</p>
-<h2 id="improve-documentation">Improve Documentation</h2>
-<p>If you find an issue in the documentation, <a href="https://github.com/mgrl/photobooth-docs">modify the documentation</a> or open a <a href="https://github.com/mgrl/photobooth-app/discussions">discussion</a>.</p>
-<h2 id="send-patches-via-pull-request">Send Patches via Pull Request</h2>
-<p>Feel free to <a href="https://github.com/mgrl/photobooth-app">fork the app</a>, improve the software and send a pull request.
-For questions use the github discussions or issue tracker.</p>
-<h2 id="development">Development</h2>
-<p>Develop on Windows or Linux using VScode.
-Dependency management is realized using poetry.</p>
-<p>Additional requirements for frontend development
-    - nodejs 16 (nodejs 18 fails proxying the devServer)
-    - yarn
-    - quasar cli <a href="https://quasar.dev/start/quasar-cli">https://quasar.dev/start/quasar-cli</a></p>
-<h2 id="automated-testing">Automated Testing</h2>
-<p>Tests are run via Github Actions.
-The tests run in the Cloud on hosted Github runners as well as on a self-hosted runner for hardware testing.
-<a href="https://app.codecov.io/gh/mgrl/photobooth-app">Coverage</a> is reported to codecov.</p>
-<h3 id="selfhosted-github-runner">Selfhosted Github Runner</h3>
-<p>Supports additional tests for hardware:</p>
+<h1 id="raspberry-pi-gpio">Raspberry Pi GPIO</h1>
+<p>The photobooth supports Raspberry Pi GPIO to trigger certain events.
+Currently supported triggers are:</p>
 <ul>
-<li>Raspberry Pi Camera Module 3 connected to test picamera2 and autofocus algorithms</li>
-<li>WLED module is connected to test LED effects on thrill and shoot</li>
-<li>gphoto2 is installed with virtual ptp device<ul>
-<li>install latest dev with gphoto2 updater,  modify configure command as described here <a href="https://github.com/gphoto/libgphoto2/issues/408">https://github.com/gphoto/libgphoto2/issues/408</a>)</li>
-<li>add photos libgphoto provides when capture is requested to /usr/share/local/libgphoto2_port/xxxversion/vcamera/</li>
+<li>Shutdown host, default GPIO 17, hold 2 seconds</li>
+<li>Reboot host, default GPIO 18, hold 2 seconds</li>
+<li>Take picture, default GPIO 27, press</li>
 </ul>
-</li>
-<li>webcamera is connected to test cv2 and v4l backends</li>
-</ul>
+<p>Internally gpiozero python implementation is used.</p>
+<h2 id="raspberry-pi-gpio-wiring">Raspberry Pi GPIO wiring</h2>
+<p>To use the hardware triggers wire a normally open button from GND to the designated GPIO.
+For example connect the button to GND and GPIO 17.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/GPIO-Pinout-Diagram-2.png"><img alt="gpio overview" src="../../assets/GPIO-Pinout-Diagram-2.png"/></a>
+<font size="2"><a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html">source</a></font></p>
+<h2 id="configure">Configure</h2>
+<p>In the admin panel tab hardwareinput enable the GPIO feature in general.
+Change the default GPIO numbers according to your wiring.</p>
 </article>
 </div>
 </div>
@@ -455,8 +394,8 @@ The tests run in the Cloud on hosted Github runners as well as on a self-hosted 
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
 <script>document$.subscribe(() => {
             window.update_swagger_ui_iframe_height = function (id) {
                 var iFrameID = document.getElementById(id);
