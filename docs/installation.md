@@ -9,6 +9,17 @@
 | Generic PC         | Debian/Ubuntu                  | [gphoto2 DSLR](http://www.gphoto.org/proj/libgphoto2/support.php) and webcams via opencv or v4l2                                                                                      |
 | Generic PC         | Windows                        | webcams via opencv                                                                      |
 
+## Reference Systems
+
+These are systems used productive or in automated testing and guaranteed to work without issues.
+Gphoto2 and the webcam backends support many different camera models but manufacturers might implement communication protocols slightly different.
+If you run into issues, create an issue or open a discussion.
+
+| Hardware-Platform  | Software-Platform              |Cameras  |
+|--------------------|--------------------------------|--------------------------------------------------------------|
+| Raspberry Pi 4 | Raspberry Pi OS 64bit Bullseye | [Camera Module v3](https://www.raspberrypi.com/documentation/accessories/camera.html)
+| Raspberry Pi 4 | Raspberry Pi OS 64bit Bullseye | [Canon 1100D](http://www.gphoto.org/proj/libgphoto2/support.php) |
+
 ## Prerequisites
 
 - Python 3.9 or later
