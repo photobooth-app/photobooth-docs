@@ -46,4 +46,5 @@ nav:
       - extras/sync.md
       - extras/display.md
       - extras/gpio.md
+      - extras/shareservice.md
   - contribute.md
