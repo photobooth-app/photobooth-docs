@@ -229,6 +229,21 @@
     Start the app
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#install-photobooth-service-on-startup">
+    Install photobooth service on startup
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desktop-shortcut-to-webfrontend">
+    Desktop shortcut to webfrontend
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autostart-webfrontend-on-system-startup">
+    Autostart webfrontend on system startup
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -448,6 +463,21 @@
     Start the app
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#install-photobooth-service-on-startup">
+    Install photobooth service on startup
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desktop-shortcut-to-webfrontend">
+    Desktop shortcut to webfrontend
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autostart-webfrontend-on-system-startup">
+    Autostart webfrontend on system startup
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -580,6 +610,52 @@ You need to <a href="../setup/">continue setting up the cameras</a>.</p>
 <p class="admonition-title">Info</p>
 <p>Have issues accessing the website or see error messages during installation and app startup? Check the <a href="../help/troubleshooting/">troubleshooting guide</a>.</p>
 </div>
+<h3 id="install-photobooth-service-on-startup">Install photobooth service on startup</h3>
+<p>Now that you ensured, the photobooth app is working properly, it's time to setup the app as a service.
+If you installed the app according to above instructions, the template .service file works for you.</p>
+<p>Create the following file at the given location:</p>
+<div class="highlight"><span class="filename">~/.local/share/systemd/user/photobooth-app.service</span><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">photobooth-app</span>
+<span class="na">After</span><span class="o">=</span><span class="s">default.target</span>
+
+<span class="k">[Service]</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="hll"><span class="c1">#you might want to adjust following line</span>
+</span><span class="hll"><span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">%h/photobooth-data/</span>
+</span><span class="na">ExecStart</span><span class="o">=</span><span class="s">python -O -m photobooth</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">default.target</span>
+</code></pre></div>
+<p>Now enable the service and start it:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>daemon-reload
+systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>photobooth-app.service
+systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>photobooth-app.service
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The service does not start? Check the <a href="../help/troubleshooting/">troubleshooting guide</a>.
+Following commands might be helpful:
+<div class="highlight"><pre><span></span><code>systemctl --user status photobooth-app.service
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>journalctl --user --unit photobooth-app.service
+</code></pre></div></p>
+</div>
+<h3 id="desktop-shortcut-to-webfrontend">Desktop shortcut to webfrontend</h3>
+<p>Create the following file at the given location:</p>
+<div class="highlight"><span class="filename">~/Desktop/photobooth-app.desktop</span><pre><span></span><code><span class="k">[Desktop Entry]</span>
+<span class="na">Version</span><span class="o">=</span><span class="s">1.3</span>
+<span class="na">Terminal</span><span class="o">=</span><span class="s">false</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">Application</span>
+<span class="na">Name</span><span class="o">=</span><span class="s">Photobooth-App</span>
+<span class="hll"><span class="na">Exec</span><span class="o">=</span><span class="s">chromium-browser --kiosk http://localhost:8000/ --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic</span>
+</span><span class="na">StartupNotify</span><span class="o">=</span><span class="s">false</span>
+</code></pre></div>
+<h3 id="autostart-webfrontend-on-system-startup">Autostart webfrontend on system startup</h3>
+<p>Create the same file as for desktop shortcut above and place it in
+<code>/etc/xdg/autostart/photobooth-app.desktop</code>.
+After reboot chromium will start automatically.</p>
 <h2 id="install-on-windows">Install on Windows</h2>
 <p>While using the app on windows works, there is no documentation yet.
 Also use is limited by now, because the digicamcontrol software is not yet implemented.
