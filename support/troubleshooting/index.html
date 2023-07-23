@@ -5,12 +5,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../troubleshooting/" rel="prev"/>
-<link href="../../extras/" rel="next"/>
+<link href="../" rel="prev"/>
+<link href="../faq/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.3, mkdocs-material-9.1.11" name="generator"/>
-<title>FAQ - Photobooth App</title>
-<link href="../../assets/stylesheets/main.85bb2934.min.css" rel="stylesheet"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.19" name="generator"/>
+<title>Troubleshooting - Photobooth App</title>
+<link href="../../assets/stylesheets/main.eebd395e.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#faq">
+<a class="md-skip" href="#troubleshooting">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              FAQ
+              Troubleshooting
             
           </span>
 </div>
@@ -112,7 +112,7 @@
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../">
-        Help
+        Support
       </a>
 </li>
 <li class="md-tabs__item">
@@ -219,28 +219,55 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Help
+          Support
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Help
+          Support
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../">
-        Help
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../troubleshooting/">
-        Troubleshooting
+        Support
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Troubleshooting
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
+        Troubleshooting
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#photobooth-app-website-not-available">
+    Photobooth app website not available
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#photobooth-command-not-found">
+    Photobooth command not found
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gphoto2-camera-found-but-no-access">
+    Gphoto2 camera found but no access
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../faq/">
         FAQ
       </a>
 </li>
@@ -316,18 +343,112 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#photobooth-app-website-not-available">
+    Photobooth app website not available
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#photobooth-command-not-found">
+    Photobooth command not found
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gphoto2-camera-found-but-no-access">
+    Gphoto2 camera found but no access
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="faq">FAQ</h1>
-<blockquote>
-<p><strong>TODO</strong>!
-No FAQ yet.</p>
-</blockquote>
-<p><a href="https://github.com/mgrl/photobooth-app/discussions">Check discussions for further help!</a></p>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="photobooth-app-website-not-available">Photobooth app website not available</h2>
+<p>In default configuration the app listens to 0.0.0.0:8000,
+so it can be reached from every computer in the same network on port 8000.</p>
+<p>If the website is not available, the reason could be</p>
+<ul>
+<li>network issues or</li>
+<li>bad configuration</li>
+</ul>
+<p>Check that the website is available on the device itself via <a href="http://localhost:8000">http://localhost:8000</a>.
+If that works, the issue is about the network.</p>
+<p>If not, the app might have crashed.</p>
+<p>The following commands help tracking down issues and gather information:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># logfiles from service (last 200 lines)</span>
+journalctl<span class="w"> </span>--user<span class="w"> </span>--unit<span class="o">=</span>photobooth-app<span class="w"> </span>-n<span class="w"> </span><span class="m">200</span><span class="w"> </span>--no-pager
+<span class="c1"># logfiles created by photobooth</span>
+cat<span class="w"> </span>~/photobooth-data/log/qbooth.log
+<span class="c1"># check CmaFree especially for Arducams if low:</span>
+cat<span class="w"> </span>/proc/meminfo
+</code></pre></div>
+<p>If service crashed 💀, kill the python process:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># check whether there is a process still running but not responsive:</span>
+ps<span class="w"> </span>ax<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>python3
+<span class="c1"># kill it</span>
+sudo<span class="w"> </span>pkill<span class="w"> </span>-9<span class="w"> </span>python3
+</code></pre></div>
+<p>Manually start the photobooth-app and watch the terminal</p>
+<div class="highlight"><pre><span></span><code>photobooth<span class="w"> </span>
+<span class="c1">#or</span>
+python<span class="w"> </span>-m<span class="w"> </span>photobooth
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>INFO: The app uses current directory as data directory!
+</code></pre></div>
+<h2 id="photobooth-command-not-found">Photobooth command not found</h2>
+<p>If there is a warning as following during pip installation and photobooth can't start check the PATH variable</p>
+<div class="highlight"><pre><span></span><code>WARNING: The script photobooth is installed in '/home/pi/.local/bin' which is not on PATH.
+Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+</code></pre></div>
+<p>See following is fine, might just need a restart after installation because the path .local/bin did not exist before.</p>
+<div class="highlight"><span class="filename">~/.profile</span><pre><span></span><code><span class="c1"># set PATH so it includes user's private bin if it exists</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/bin"</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="k">fi</span>
+</code></pre></div>
+<h2 id="gphoto2-camera-found-but-no-access">Gphoto2 camera found but no access</h2>
+<p>On a fresh Linux installation, there might be services running to detect cameras and allow for easy file transfer.
+For the photobooth this needs to be disabled because the application needs access to the camera.</p>
+<p>If you find errors in the log as below, read further.</p>
+<div class="highlight"><pre><span></span><code>[    INFO] found camera - 0:  usb:001,009  Canon EOS 1100D (gphoto2.py:303)
+[    INFO] (gp_libusb1_open [libusb1.c:437]) 'libusb_claim_interface (port-&gt;pl-&gt;dh, port-&gt;settings.usb.interface)' failed: Resource busy (-6) (port_log.py:89)
+[    INFO] (gp_port_set_error [gphoto2-port.c:1190]) Could not claim interface 0 (Success). Make sure no other program (gvfs-gphoto2-volume-monitor) or kernel module (such as sdc2xx, stv680, spca50x) is using the device and you have read/write access to the device. (port_log.py:89)
+[CRITICAL] camera failed to initialize. no power? no connection? (gphoto2.py:100)
+[   ERROR] [-53] Could not claim the USB device (gphoto2.py:101)
+[    INFO] (gp_libusb1_open [libusb1.c:437]) 'libusb_claim_interface (port-&gt;pl-&gt;dh, port-&gt;settings.usb.interface)' failed: Resource busy (-6) (port_log.py:89)
+[    INFO] (gp_port_set_error [gphoto2-port.c:1190]) Could not claim interface 0 (Success). Make sure no other program (gvfs-gphoto2-volume-monitor) or kernel module (such as sdc2xx, stv680, spca50x) is using the device and you have read/write access to the device. (port_log.py:89)
+</code></pre></div>
+<p>Check for running processes:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps<span class="w"> </span>ax<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>gphoto2
+<span class="m">1074</span><span class="w"> </span>?<span class="w">        </span>Ssl<span class="w">    </span><span class="m">0</span>:00<span class="w"> </span>/usr/libexec/gvfs-gphoto2-volume-monitor
+<span class="m">2785</span><span class="w"> </span>?<span class="w">        </span>Sl<span class="w">     </span><span class="m">0</span>:00<span class="w"> </span>/usr/libexec/gvfsd-gphoto2<span class="w"> </span>--spawner<span class="w"> </span>:1.7<span class="w"> </span>/org/gtk/gvfs/exec_spaw/2
+</code></pre></div>
+<p>To disable the monitoring services, execute following commands:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>stop<span class="w"> </span>gvfs-gphoto2-volume-monitor
+systemctl<span class="w"> </span>--user<span class="w"> </span>disable<span class="w"> </span>gvfs-gphoto2-volume-monitor<span class="w"> </span>
+
+<span class="c1"># after a reboot, the gvfs-gphoto2-volume-monitor will be enabled automatically again :(</span>
+<span class="c1"># permanently disable:</span>
+sudo<span class="w"> </span>chmod<span class="w"> </span>-x<span class="w"> </span>/usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+
+reboot
+</code></pre></div>
+<p>After a restart there should be no process any more:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps<span class="w"> </span>ax<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>gphoto2
+<span class="c1"># nothing to see here...</span>
+</code></pre></div>
+<p>Additional references:</p>
+<ul>
+<li><a href="https://github.com/gphoto/gphoto2/issues/181">https://github.com/gphoto/gphoto2/issues/181</a></li>
+</ul>
 </article>
 </div>
 </div>
@@ -350,8 +471,8 @@ No FAQ yet.</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
 <script>document$.subscribe(() => {
             window.update_swagger_ui_iframe_height = function (id) {
                 var iFrameID = document.getElementById(id);
