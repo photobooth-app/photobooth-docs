@@ -43,6 +43,10 @@ photobooth
 python -m photobooth
 ```
 
+```text
+INFO: The app uses current directory as data directory!
+```
+
 ## Photobooth command not found
 
 If there is a warning as following during pip installation and photobooth can't start check the PATH variable

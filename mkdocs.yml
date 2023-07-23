@@ -34,10 +34,10 @@ nav:
       - reference/index.md
       - reference/api.md
       - reference/photoboothprojectintegration.md
-  - Help:
-      - help/index.md
-      - help/troubleshooting.md
-      - help/faq.md
+  - Support:
+      - support/index.md
+      - support/troubleshooting.md
+      - support/faq.md
   - Extras:
       - extras/index.md
       - extras/onscreenkeyboard.md

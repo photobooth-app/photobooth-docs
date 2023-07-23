@@ -1,19 +1,32 @@
 # 🚀 Contribute
 
-## Post Issues
+## Help Improve
+
+### Post Issues
 
 If you find an issue, please post it in the [photobooth app issue tracker](https://github.com/mgrl/photobooth-app/issues).
 
-## Improve Documentation
+### Improve Documentation
 
 If you find an issue in the documentation, [modify the documentation](https://github.com/mgrl/photobooth-docs) or open a [discussion](https://github.com/mgrl/photobooth-app/discussions).
 
-## Send Patches via Pull Request
+### Send Patches via Pull Request
 
 Feel free to [fork the app](https://github.com/mgrl/photobooth-app), improve the software and send a pull request.
 For questions use the github discussions or issue tracker.
 
-## Development
+## Help Develop
+
+### Install development version
+
+Stable releases are published at [PyPI registry](https://pypi.org/project/photobooth-app/) usually.
+To test the latest development version install directly from git:
+
+```sh
+pip install git+https://github.com/mgrl/photobooth-app.git@dev
+```
+
+### Development
 
 Develop on Windows or Linux using VScode.
 Dependency management is realized using poetry.
@@ -23,13 +36,13 @@ Additional requirements for frontend development
     - yarn
     - quasar cli <https://quasar.dev/start/quasar-cli>
 
-## Automated Testing
+### Automated Testing
 
 Tests are run via Github Actions.
 The tests run in the Cloud on hosted Github runners as well as on a self-hosted runner for hardware testing.
 [Coverage](https://app.codecov.io/gh/mgrl/photobooth-app) is reported to codecov.
 
-### Selfhosted Github Runner
+#### Selfhosted Github Runner
 
 Supports additional tests for hardware:
 

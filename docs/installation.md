@@ -99,7 +99,68 @@ Per default the app uses a generated image and displays a timer only. No camera 
 You need to [continue setting up the cameras](./setup.md).
 
 !!! info
-    Have issues accessing the website or see error messages during installation and app startup? Check the [troubleshooting guide](./help/troubleshooting.md).
+    Have issues accessing the website or see error messages during installation and app startup? Check the [troubleshooting guide](./support/troubleshooting.md).
+
+### Install photobooth service on startup
+
+Now that you ensured, the photobooth app is working properly, it's time to setup the app as a service.
+If you installed the app according to above instructions, the template .service file works for you.
+
+Create the following file at the given location:
+
+```ini title="~/.local/share/systemd/user/photobooth-app.service" hl_lines="8 9"
+[Unit]
+Description=photobooth-app
+After=default.target
+
+[Service]
+Type=simple
+Restart=always
+#you might want to adjust following line
+WorkingDirectory=%h/photobooth-data/
+ExecStart=python -O -m photobooth
+
+[Install]
+WantedBy=default.target
+```
+
+Now enable the service and start it:
+
+```zsh
+systemctl --user daemon-reload
+systemctl --user enable photobooth-app.service
+systemctl --user start photobooth-app.service
+```
+
+!!! info
+    The service does not start? Check the [troubleshooting guide](./support/troubleshooting.md).
+    Following commands might be helpful:
+    ```
+    systemctl --user status photobooth-app.service
+    ```
+    ```
+    journalctl --user --unit photobooth-app.service
+    ```
+
+### Desktop shortcut to webfrontend
+
+Create the following file at the given location:
+
+```ini title="~/Desktop/photobooth-app.desktop" hl_lines="6"
+[Desktop Entry]
+Version=1.3
+Terminal=false
+Type=Application
+Name=Photobooth-App
+Exec=chromium-browser --kiosk http://localhost:8000/ --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic
+StartupNotify=false
+```
+
+### Autostart webfrontend on system startup
+
+Create the same file as for desktop shortcut above and place it in
+`/etc/xdg/autostart/photobooth-app.desktop`.
+After reboot chromium will start automatically.
 
 ## Install on Windows
 
