@@ -103,6 +103,15 @@ You need to [continue setting up the cameras](./setup.md).
 
 ### Install photobooth service on startup
 
+#### Automatic service setup
+
+Once the photobooth-app was started the service can be installed automatically on Linux systems.
+Choose in the Admin Center -> Dashboard -> Server Control -> Install Service.
+After confirmation the service is installed as described below for manual setup.
+If the setup fails, please install manually.
+
+#### Manual service setup
+
 Now that you ensured, the photobooth app is working properly, it's time to setup the app as a service.
 If you installed the app according to above instructions, the template .service file works for you.
 

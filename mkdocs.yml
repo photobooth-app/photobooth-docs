@@ -48,3 +48,6 @@ nav:
       - extras/gpio.md
       - extras/shareservice.md
   - contribute.md
+
+not_in_nav: |
+  /extras/shareservice-landing.md
