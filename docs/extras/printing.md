@@ -1,6 +1,12 @@
 # Printing
 
 Setup printing allows to get a hardcopy of the images and collages.
+Prints can be triggered by
+
+- Touchscreen button in gallery
+- [GPIO (Raspberry Pi only)](./gpio.md)
+- keyboard input
+- [API](../reference/api.md)
 
 ## Working Principle
 
