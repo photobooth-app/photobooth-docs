@@ -47,6 +47,7 @@ nav:
       - extras/display.md
       - extras/gpio.md
       - extras/shareservice.md
+      - extras/printing.md
   - contribute.md
 
 not_in_nav: |
