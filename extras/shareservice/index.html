@@ -396,6 +396,11 @@
 <h1 id="share-images-via-qr-code">Share images via QR Code</h1>
 <p>The share service allows users to easily download images on the user's phone.
 The user simply scans the QR code to download.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/screenshots/gallery_detail.jpg"><img alt="gallery_detail" src="../../assets/screenshots/gallery_detail.jpg" width="400"/></a>
+</p>
+<figcaption>Scan the QR code to download image to smartphones.</figcaption>
+</figure>
 <h2 id="working-principle">Working Principle</h2>
 <p>It's developed with ease of use in mind and shall work on most systems even with firewalled internet connection on photobooth side like cellular services.
 Once setup, the prinicple is as following:</p>
@@ -414,13 +419,13 @@ Once setup, the prinicple is as following:</p>
 </ul>
 <h2 id="setup">Setup</h2>
 <ul>
-<li>download dl.php</li>
+<li><a href="https://github.com/mgrl/photobooth-app/blob/main/extras/shareservice/dl.php">download dl.php</a></li>
 <li>edit the config variables on top of dl.php. see the comments in dl.php for reference.</li>
 <li>place the edited dl.php on a public server, for example your shared hoster. The server must be available to the photobooth and the users downloading photos later.</li>
 <li>Pair the dl.php script with photobooth app by configuring the shareservice settings in photobooth admin config, tab common:<ul>
 <li>set shareservice_apikey to same value as in dl.php</li>
-<li>set shareservice_url to the URL pointing to the dl.php script.</li>
-<li>choose whether to download the original file or the full processed version</li>
+<li>set shareservice_url to the public URL pointing to the dl.php script.</li>
+<li>choose whether to download the original file or the full processed version.</li>
 </ul>
 </li>
 <li>Now restart the photobooth app and try to scan a QR code in the gallery.</li>
