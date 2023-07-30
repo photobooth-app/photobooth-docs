@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../display/" rel="prev"/>
-<link href="../shareservice/" rel="next"/>
+<link href="../shareservice/" rel="prev"/>
+<link href="../../contribute/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.0, mkdocs-material-9.1.20" name="generator"/>
-<title>Raspberry Pi GPIO - Photobooth App</title>
+<title>Printing - Photobooth App</title>
 <link href="../../assets/stylesheets/main.eebd395e.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -34,7 +34,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#raspberry-pi-gpio">
+<a class="md-skip" href="#printing">
           Skip to content
         </a>
 </div>
@@ -58,7 +58,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Raspberry Pi GPIO
+              Printing
             
           </span>
 </div>
@@ -288,14 +288,24 @@
         Display
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gpio/">
+        Raspberry Pi GPIO
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../shareservice/">
+        Share images via QR Code
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Raspberry Pi GPIO
+          Printing
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Raspberry Pi GPIO
+        Printing
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -304,27 +314,36 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#raspberry-pi-gpio-wiring">
-    Raspberry Pi GPIO wiring
+<a class="md-nav__link" href="#working-principle">
+    Working Principle
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#configure">
-    Configure
+<a class="md-nav__link" href="#general-setup">
+    General Setup
+  </a>
+<nav aria-label="General Setup" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-on-linux">
+    Setup on Linux
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-on-windows">
+    Setup on Windows
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../shareservice/">
-        Share images via QR Code
-      </a>
+<a class="md-nav__link" href="#troubleshooting">
+    Troubleshooting
+  </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../printing/">
-        Printing
-      </a>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -349,13 +368,32 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#raspberry-pi-gpio-wiring">
-    Raspberry Pi GPIO wiring
+<a class="md-nav__link" href="#working-principle">
+    Working Principle
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#configure">
-    Configure
+<a class="md-nav__link" href="#general-setup">
+    General Setup
+  </a>
+<nav aria-label="General Setup" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-on-linux">
+    Setup on Linux
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-on-windows">
+    Setup on Windows
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#troubleshooting">
+    Troubleshooting
   </a>
 </li>
 </ul>
@@ -365,24 +403,35 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="raspberry-pi-gpio">Raspberry Pi GPIO</h1>
-<p>The photobooth supports Raspberry Pi GPIO to trigger certain events.
-Currently supported triggers are:</p>
+<h1 id="printing">Printing</h1>
+<p>Setup printing allows to get a hardcopy of the images and collages.</p>
+<h2 id="working-principle">Working Principle</h2>
+<p>The user can choose an image in the gallery to print. In the background, the photobooth-app invokes a custom command, that needs to be set.
+This way, printing works on all platforms where a print command is available.
+There is no feedback to photobooth app about the status of the print job or the printer itself.
+If the paper is empty the photobooth app is not aware of that.</p>
+<h2 id="general-setup">General Setup</h2>
+<p>The configuration is made in the Admin Center -&gt; Config -&gt; Tab: HardwareInputOutput.</p>
 <ul>
-<li>Shutdown host, default GPIO 17, hold 2 seconds</li>
-<li>Reboot host, default GPIO 18, hold 2 seconds</li>
-<li>Take picture, default GPIO 27, press</li>
-<li>Print most recent image, default GPIO 22, press</li>
+<li>Enable printservice in general</li>
+<li>Set a time to block new print jobs. The user needs to wait this time until a new print job can be triggered.</li>
+<li>The command to print is specific to your platform (Windows/Linux) and setup. Following are some recommendation help you to start.</li>
 </ul>
-<p>Internally gpiozero python implementation is used.</p>
-<h2 id="raspberry-pi-gpio-wiring">Raspberry Pi GPIO wiring</h2>
-<p>To use the hardware triggers wire a normally open button from GND to the designated GPIO.
-For example connect the button to GND and GPIO 17.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/GPIO-Pinout-Diagram-2.png"><img alt="gpio overview" src="../../assets/GPIO-Pinout-Diagram-2.png"/></a>
-<font size="2"><a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html">source</a></font></p>
-<h2 id="configure">Configure</h2>
-<p>In the admin panel tab hardwareinput enable the GPIO feature in general.
-Change the default GPIO numbers according to your wiring.</p>
+<h3 id="setup-on-linux">Setup on Linux</h3>
+<p>On Linux printing is realized with CUPS software.
+Ple</p>
+<div class="highlight"><pre><span></span><code>lp<span class="w"> </span>-d<span class="w"> </span>PRINTER_NAME_HERE<span class="w"> </span>-o<span class="w"> </span>landscape<span class="w"> </span>-o<span class="w"> </span>fit-to-page<span class="w"> </span><span class="o">{</span>filename<span class="o">}</span>
+</code></pre></div>
+<p>If you use other commands, that work better in your installation, let me know in <a href="https://github.com/mgrl/photobooth-app/discussions/">GitHub Discussions</a>.</p>
+<h3 id="setup-on-windows">Setup on Windows</h3>
+<p>As first start use mspaint to test printing. Use following print command on windows.</p>
+<div class="highlight"><pre><span></span><code>mspaint<span class="w"> </span>/p<span class="w"> </span><span class="o">{</span>filename<span class="o">}</span>
+</code></pre></div>
+<p>If you use other commands, that work better in your installation, let me know in <a href="https://github.com/mgrl/photobooth-app/discussions/">GitHub Discussions</a>.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li>check photobooth error log</li>
+</ul>
 </article>
 </div>
 </div>
