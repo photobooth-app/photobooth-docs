@@ -404,7 +404,14 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="printing">Printing</h1>
-<p>Setup printing allows to get a hardcopy of the images and collages.</p>
+<p>Setup printing allows to get a hardcopy of the images and collages.
+Prints can be triggered by</p>
+<ul>
+<li>Touchscreen button in gallery</li>
+<li><a href="../gpio/">GPIO (Raspberry Pi only)</a></li>
+<li>keyboard input</li>
+<li><a href="../../reference/api/">API</a></li>
+</ul>
 <h2 id="working-principle">Working Principle</h2>
 <p>The user can choose an image in the gallery to print. In the background, the photobooth-app invokes a custom command, that needs to be set.
 This way, printing works on all platforms where a print command is available.
