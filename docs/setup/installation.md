@@ -96,10 +96,10 @@ photobooth
 
 Browse to <http://localhost:8000> and see if the app is working properly.
 Per default the app uses a generated image and displays a timer only. No camera is started at this point.
-You need to [continue setting up the cameras](./setup.md).
+You need to [continue setting up the cameras](../setup/camera_setup.md).
 
 !!! info
-    Have issues accessing the website or see error messages during installation and app startup? Check the [troubleshooting guide](./support/troubleshooting.md).
+    Have issues accessing the website or see error messages during installation and app startup? Check the [troubleshooting guide](../support/troubleshooting.md).
 
 ### Install photobooth service on startup
 
@@ -142,7 +142,7 @@ systemctl --user start photobooth-app.service
 ```
 
 !!! info
-    The service does not start? Check the [troubleshooting guide](./support/troubleshooting.md).
+    The service does not start? Check the [troubleshooting guide](../support/troubleshooting.md).
     Following commands might be helpful:
     ```
     systemctl --user status photobooth-app.service

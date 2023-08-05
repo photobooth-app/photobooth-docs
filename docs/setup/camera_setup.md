@@ -1,5 +1,5 @@
 
-# Setup Cameras
+# Camera Setup
 
 The photobooth app supports cameras utilizing multiple backends:
 
@@ -108,7 +108,7 @@ Tinker with available settings until it works properly. If you run into trouble,
 
 ## DSLR via digicamcontrol (Windows)
 
-> Implementation not yet finished, feel free to [contribute](./contribute.md) 😊
+> Implementation not yet finished, feel free to [contribute](../contribute.md) 😊
 
 ## Webcam
 

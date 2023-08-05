@@ -6,6 +6,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.indexes
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -53,10 +54,15 @@ nav:
   - Home:
       - Home: index.md
       - screenshots.md
-      - installation.md
-      - setup.md
       - photobox3dprint.md
-      - update.md
+  - Setup:
+      - setup/index.md
+      - setup/installation.md
+      - setup/update.md
+      - setup/camera_setup.md
+      - setup/gpio.md
+      - setup/shareservice.md
+      - setup/printing.md
   - Reference:
       - reference/index.md
       - reference/api.md
@@ -72,9 +78,6 @@ nav:
       - extras/wifi.md
       - extras/sync.md
       - extras/display.md
-      - extras/gpio.md
-      - extras/shareservice.md
-      - extras/printing.md
   - contribute.md
 
 not_in_nav: |
