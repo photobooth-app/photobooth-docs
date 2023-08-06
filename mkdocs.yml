@@ -1,4 +1,6 @@
 site_name: Photobooth App
+repo_name: mgrl/photobooth-app/
+repo_url: https://github.com/mgrl/photobooth-app
 
 theme:
   name: "material"
@@ -8,14 +10,6 @@ theme:
     - navigation.sections
     - navigation.indexes
   palette:
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      primary: blue
-      accent: blue
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       primary: blue
