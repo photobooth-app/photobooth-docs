@@ -368,7 +368,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../extras/wled/">
-        WLED integration
+        LED signaling using WS281x
       </a>
 </li>
 <li class="md-nav__item">
@@ -466,8 +466,11 @@ If the paper is empty the photobooth app is not aware of that.</p>
 <li>The command to print is specific to your platform (Windows/Linux) and setup. Following are some recommendation help you to start.</li>
 </ul>
 <h3 id="setup-on-linux">Setup on Linux</h3>
-<p>On Linux printing is realized with CUPS software.
-Ple</p>
+<p>On Linux printing is realized with CUPS software. The cups webinterface is available on <a href="http://localhost:631/printers/">http://localhost:631/printers/</a> usually.
+The link only works from the Linux system itself, it's not available in the local network.
+Installing a printer is very individual to the specific printer and the setup.
+Try to install on your own. In the end, make sure the following command prints a photo. Instead of {filename} point to some image on the computer for testing.</p>
+<p>Following is an example to print. Set the command in the app. {filename} is replaced by the .jpg image to print when the job is run.</p>
 <div class="highlight"><pre><span></span><code>lp<span class="w"> </span>-d<span class="w"> </span>PRINTER_NAME_HERE<span class="w"> </span>-o<span class="w"> </span>landscape<span class="w"> </span>-o<span class="w"> </span>fit-to-page<span class="w"> </span><span class="o">{</span>filename<span class="o">}</span>
 </code></pre></div>
 <p>If you use other commands, that work better in your installation, let me know in <a href="https://github.com/mgrl/photobooth-app/discussions/">GitHub Discussions</a>.</p>
