@@ -23,6 +23,7 @@ If you run into issues, create an issue or open a discussion.
 ## Prerequisites
 
 - Python 3.9 or later
+- If Raspberry Pi: 64bit system.
 - Camera, can be one or two (first camera for stills, second camera for live view)
     - DSLR: [gphoto2](https://github.com/gonzalo/gphoto2-updater) on Linux
     - Picamera2: installed and working (test with `libcamera-hello`)

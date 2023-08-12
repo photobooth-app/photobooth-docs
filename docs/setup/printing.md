@@ -25,8 +25,12 @@ The configuration is made in the Admin Center -> Config -> Tab: HardwareInputOut
 
 ### Setup on Linux
 
-On Linux printing is realized with CUPS software.
-Ple
+On Linux printing is realized with CUPS software. The cups webinterface is available on <http://localhost:631/printers/> usually.
+The link only works from the Linux system itself, it's not available in the local network.
+Installing a printer is very individual to the specific printer and the setup.
+Try to install on your own. In the end, make sure the following command prints a photo. Instead of {filename} point to some image on the computer for testing.
+
+Following is an example to print. Set the command in the app. {filename} is replaced by the .jpg image to print when the job is run.
 
 ``` sh
 lp -d PRINTER_NAME_HERE -o landscape -o fit-to-page {filename}

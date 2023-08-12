@@ -113,3 +113,16 @@ $ ps ax | grep gphoto2
 Additional references:
 
 - <https://github.com/gphoto/gphoto2/issues/181>
+
+## Error Failed building wheel for component
+
+```text
+ERROR: Failed building wheel for cmake
+      Failed to build cmake
+      ERROR: Could not build wheels for cmake, which is required to install pyproject.toml-based projects
+```
+
+During pip installation cmake error can come up if not all prerequisites are complied with.
+
+- Check to comply with prerequisites.
+- OpenCV-python fails during installation on 32 bit Raspberry Pi OS. Use 64bit version.
