@@ -20,8 +20,8 @@ To test the latest development version update directly from git:
 
 ```sh
 # upgrade to main-branch
-pip install --upgrade git+https://github.com/mgrl/photobooth-app.git@main
+pip install --upgrade --force-reinstall git+https://github.com/mgrl/photobooth-app.git@main
 
 # or upgrade to dev-branch
-pip install --upgrade git+https://github.com/mgrl/photobooth-app.git@dev
+pip install --upgrade --force-reinstall git+https://github.com/mgrl/photobooth-app.git@dev
 ```

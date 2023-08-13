@@ -49,6 +49,7 @@ nav:
       - Home: index.md
       - screenshots.md
       - photobox3dprint.md
+      - projects.md
   - Setup:
       - setup/index.md
       - setup/installation.md

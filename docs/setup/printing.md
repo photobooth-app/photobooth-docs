@@ -23,6 +23,10 @@ The configuration is made in the Admin Center -> Config -> Tab: HardwareInputOut
 - Set a time to block new print jobs. The user needs to wait this time until a new print job can be triggered.
 - The command to print is specific to your platform (Windows/Linux) and setup. Following are some recommendation help you to start.
 
+!!! info
+    Test printing with a virtual PDF printer:
+    <https://wiki.ubuntuusers.de/CUPS-PDF/>
+
 ### Setup on Linux
 
 On Linux printing is realized with CUPS software. The cups webinterface is available on <http://localhost:631/printers/> usually.
@@ -37,6 +41,11 @@ lp -d PRINTER_NAME_HERE -o landscape -o fit-to-page {filename}
 ```
 
 If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/mgrl/photobooth-app/discussions/).
+
+!!! info
+    You might want to update to more recent driver packages. See following guide:
+    <https://www.peachyphotos.com/blog/stories/building-modern-gutenprint/>
+    Also you might need a ppd file. Here is one for [Canon Selphy CP1300](https://github.com/reuterbal/photobooth/blob/master/supplementals/Canon_SELPHY_CP1300.ppd) that works.
 
 ### Setup on Windows
 
