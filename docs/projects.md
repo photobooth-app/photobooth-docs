@@ -13,7 +13,9 @@ Lighting with permanent light sources.
 
 Additional information: [3d printed box](./photobox3dprint.md), [buzzer](https://github.com/mgrl/photobooth-buzzer), [image share one via QR code](./setup/shareservice.md)
 
-![booth take a picture](./assets/take-picture.gif){ width="400" }
+![reference photobooth](./assets/projects/reference/reference_img2.jpg){ width="300" }
+![reference photobooth](./assets/projects/reference/reference_img1.jpg){ width="300" }
+![reference photobooth](./assets/projects/reference/reference_img3.jpg){ width="300" }
 
 ## Yours here? That would be awesome! 🕶️
 
