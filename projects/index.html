@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../support/faq/" rel="prev"/>
-<link href="onscreenkeyboard/" rel="next"/>
+<link href="../photobox3dprint/" rel="prev"/>
+<link href="../setup/" rel="next"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.2, mkdocs-material-9.1.21" name="generator"/>
-<title>Extras - Photobooth App</title>
+<title>Projects and Examples - Photobooth App</title>
 <link href="../assets/stylesheets/main.eebd395e.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -35,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#extras">
+<a class="md-skip" href="#projects-and-examples">
           Skip to content
         </a>
 </div>
@@ -59,7 +59,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Extras
+              Projects and Examples
             
           </span>
 </div>
@@ -122,7 +122,7 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="..">
+<a class="md-tabs__link md-tabs__link--active" href="..">
         Home
       </a>
 </li>
@@ -142,7 +142,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
+<a class="md-tabs__link" href="../extras/">
         Extras
       </a>
 </li>
@@ -177,15 +177,15 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="..">Home</a>
 <label for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           Home
@@ -201,10 +201,42 @@
         3D printed Photobooth
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../projects/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Projects and Examples
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Projects and Examples
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-projects">
+    Example projects
+  </a>
+<nav aria-label="Example projects" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3d-printed-photobooth-reference">
+    3D Printed Photobooth Reference
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#yours-here-that-would-be-awesome">
+    Yours here? That would be awesome! 🕶️
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -310,42 +342,42 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index md-nav__link--active">
-<a href="./">Extras</a>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../extras/">Extras</a>
 <label for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           Extras
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="onscreenkeyboard/">
+<a class="md-nav__link" href="../extras/onscreenkeyboard/">
         Onscreen Display for Raspberry Pi
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="wled/">
+<a class="md-nav__link" href="../extras/wled/">
         LED signaling using WS281x
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="wifi/">
+<a class="md-nav__link" href="../extras/wifi/">
         Wifi and Hotspot
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="sync/">
+<a class="md-nav__link" href="../extras/sync/">
         Sync Online
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="display/">
+<a class="md-nav__link" href="../extras/display/">
         Display
       </a>
 </li>
@@ -366,14 +398,48 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-projects">
+    Example projects
+  </a>
+<nav aria-label="Example projects" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3d-printed-photobooth-reference">
+    3D Printed Photobooth Reference
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#yours-here-that-would-be-awesome">
+    Yours here? That would be awesome! 🕶️
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="extras">Extras</h1>
-<p>This sections describes additional hardware and operating system customization to enhance the photobooth.</p>
+<h1 id="projects-and-examples">Projects and Examples</h1>
+<p>This is a collection of user made photobooth projects. Inspire and start making yours! 🛫</p>
+<p>If you want to add your booth to this page, send a message in the <a href="https://github.com/mgrl/photobooth-app/discussions/categories/show-and-tell">discussions, category show and tell 📣</a>.</p>
+<h2 id="example-projects">Example projects</h2>
+<h3 id="3d-printed-photobooth-reference">3D Printed Photobooth Reference</h3>
+<p>Compact 3d printed photobooth. Raspberry Pi 4B and Picamera2 system. Camera is the camera module 3.
+Lighting with permanent light sources.</p>
+<p>Additional information: <a href="../photobox3dprint/">3d printed box</a>, <a href="https://github.com/mgrl/photobooth-buzzer">buzzer</a>, <a href="../setup/shareservice/">image share one via QR code</a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../assets/take-picture.gif"><img alt="booth take a picture" src="../assets/take-picture.gif" width="400"/></a></p>
+<h2 id="yours-here-that-would-be-awesome">Yours here? That would be awesome! 🕶️</h2>
+<p>If you want to add your booth to this page, send a message in the <a href="https://github.com/mgrl/photobooth-app/discussions/categories/show-and-tell">discussions, category show and tell 📣</a>.</p>
 </article>
 </div>
 </div>
