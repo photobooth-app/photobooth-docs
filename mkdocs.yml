@@ -70,6 +70,7 @@ nav:
       - extras/index.md
       - extras/onscreenkeyboard.md
       - extras/wled.md
+      - extras/buzzer.md
       - extras/wifi.md
       - extras/sync.md
       - extras/display.md
