@@ -32,7 +32,7 @@ Setup your own photobooth for your wedding, birthday and other occations.
 | Take Picture | ✅ | ✅ | ✅ |
 | Collagen | ❌ | ✅ | ✅ |
 | Video | ❌ | ❌ | ❌ |
-| Chromakeying | ❌ | ✅ | ❌ |
+| Chromakeying | ✅ | ✅ | ❌ |
 | Image Filter | ✅ [(instagram-like)](https://github.com/mgrl/pilgram2) | ✅ | ✅ |
 | **Gallery** |
 | Gallery local display | ✅ | ✅ | ❌ |

@@ -55,6 +55,7 @@ nav:
       - setup/installation.md
       - setup/update.md
       - setup/camera_setup.md
+      - setup/mediaprocessing.md
       - setup/gpio.md
       - setup/shareservice.md
       - setup/printing.md
