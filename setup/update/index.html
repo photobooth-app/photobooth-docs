@@ -434,10 +434,18 @@ If the app doesn't show up again, check the <a href="../../support/troubleshooti
 To test the latest development version update directly from git:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># upgrade to main-branch</span>
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>git+https://github.com/mgrl/photobooth-app.git@main
+<span class="c1"># or faster without updating the dependencies</span>
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>--no-deps<span class="w"> </span>git+https://github.com/mgrl/photobooth-app.git@main
 
 <span class="c1"># or upgrade to dev-branch</span>
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>git+https://github.com/mgrl/photobooth-app.git@dev
+<span class="c1"># or faster without updating the dependencies</span>
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>--no-deps<span class="w"> </span>git+https://github.com/mgrl/photobooth-app.git@dev
 </code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If dependencies changed remove <code>--no-deps</code> from above commands to also update pip packages the app relies on.</p>
+</div>
 </article>
 </div>
 </div>
