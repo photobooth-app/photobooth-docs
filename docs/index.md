@@ -30,7 +30,7 @@ Setup your own photobooth for your wedding, birthday and other occations.
 | Camera Backends Integrated | gphoto2, picamera2, v4l2py, opencv2 | all via cli commands | gphoto2, picamera, opencv2  |
 | Camera live preview | ✅ | ⏺️ | ❌ |
 | Take Picture | ✅ | ✅ | ✅ |
-| Collagen | ❌ | ✅ | ✅ |
+| Collagen | ✅ experimental | ✅ | ✅ |
 | Video | ❌ | ❌ | ❌ |
 | Chromakeying | ✅ | ✅ | ❌ |
 | Image Filter | ✅ [(instagram-like)](https://github.com/mgrl/pilgram2) | ✅ | ✅ |
@@ -43,10 +43,11 @@ Setup your own photobooth for your wedding, birthday and other occations.
 | **Personalization** |
 | Customizable Theme | ❌ | ✅ | ❌ |
 | Translateable | ❌ | ✅ | ✅ |
-| **Peripheral Hardware Integration** |
+| **Peripheral Integration** |
 | Configurable GPIO trigger (RPI) | ✅ | ✅ | ✅ |
 | Configurable keyboard trigger | ✅ | ✅ | ❌ |
 | ws281x to signal capture | ✅ | ❌ | ❌ |
+| REST-API | ✅ | ❌ | ❌ |
 | **Admin** |
 | Admin Backend | ✅ | ✅ | ❌ |
 | Plugin Architecture | ❌ | ❌ | ✅ |
