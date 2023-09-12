@@ -1,4 +1,4 @@
-# 3D printed Photobooth
+# 3D Printed Photobooth
 
 In general the photobox can be custom made out of materials you prefer.
 To develop and as starting point a reference design to 3d print is provided.

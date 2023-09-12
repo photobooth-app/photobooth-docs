@@ -47,6 +47,8 @@ plugins:
 nav:
   - Home:
       - Home: index.md
+      - download.md
+      - features.md
       - screenshots.md
       - photobox3dprint.md
       - projects.md
