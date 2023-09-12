@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="screenshots/" rel="next"/>
+<link href="download/" rel="next"/>
 <link href="assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.2, mkdocs-material-9.1.21" name="generator"/>
 <title>Home - Photobooth App</title>
@@ -191,13 +191,23 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="download/">
+        Download
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="features/">
+        Features
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="screenshots/">
         Screenshots
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="photobox3dprint/">
-        3D printed Photobooth
+        3D Printed Photobooth
       </a>
 </li>
 <li class="md-nav__item">
@@ -375,17 +385,6 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#features">
-    Features
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
@@ -404,236 +403,9 @@
 <p>This site contains the project documentation for the
 photobooth app project.
 Setup your own photobooth for your wedding, birthday and other occations.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="assets/take-picture.gif"><img alt="booth take a picture" src="assets/take-picture.gif"/></a></p>
-<h2 id="features">Features</h2>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th><a href="https://github.com/mgrl/photobooth-app/">photobooth-app</a></th>
-<th><a href="https://github.com/PhotoboothProject/photobooth">PhotoboothProject</a></th>
-<th><a href="https://github.com/pibooth/pibooth">PiBooth</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>first version release</td>
-<td>2023</td>
-<td>2016</td>
-<td>2017</td>
-</tr>
-<tr>
-<td>Stars</td>
-<td><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://img.shields.io/github/stars/mgrl/photobooth-app?style=social"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/mgrl/photobooth-app?style=social"/></a></td>
-<td><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://img.shields.io/github/stars/PhotoboothProject/photobooth?style=social"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/PhotoboothProject/photobooth?style=social"/></a></td>
-<td><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://img.shields.io/github/stars/pibooth/pibooth?style=social"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/pibooth/pibooth?style=social"/></a></td>
-</tr>
-<tr>
-<td>Community</td>
-<td>⏺️ new software, visit <a href="https://github.com/mgrl/photobooth-app/discussions">discussions</a></td>
-<td>✅</td>
-<td>❌ issue tracker only</td>
-</tr>
-<tr>
-<td>Reference system incl Box design</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td><strong>Camera and Image Features</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Cameras supported</td>
-<td>DSLR, Webcam, Pi Camera Modules</td>
-<td>DSLR, Webcam, Pi Camera Modules</td>
-<td>DSLR, Webcam, Pi Camera Modules</td>
-</tr>
-<tr>
-<td>Camera Backends Integrated</td>
-<td>gphoto2, picamera2, v4l2py, opencv2</td>
-<td>all via cli commands</td>
-<td>gphoto2, picamera, opencv2</td>
-</tr>
-<tr>
-<td>Camera live preview</td>
-<td>✅</td>
-<td>⏺️</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Take Picture</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Collagen</td>
-<td>✅ experimental</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Video</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Chromakeying</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Image Filter</td>
-<td>✅ <a href="https://github.com/mgrl/pilgram2">(instagram-like)</a></td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><strong>Gallery</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Gallery local display</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Gallery external access via IP</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Sync images to USB drive</td>
-<td>❌</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Share images online via QR code</td>
-<td>✅</td>
-<td>⏺️</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Printing</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><strong>Personalization</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Customizable Theme</td>
-<td>❌</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Translateable</td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><strong>Peripheral Integration</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Configurable GPIO trigger (RPI)</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Configurable keyboard trigger</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>ws281x to signal capture</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>REST-API</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td><strong>Admin</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Admin Backend</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Plugin Architecture</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td><strong>Dev</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Installable package</td>
-<td>✅</td>
-<td>⏺️ install script</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Automated testing including hardware</td>
-<td>✅ <a href="https://codecov.io/gh/mgrl/photobooth-app"><img alt="codecov" src="https://codecov.io/gh/mgrl/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V"/></a></td>
-<td>❌</td>
-<td>❌ <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg"><img alt="codecov" src="https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg"/></a></td>
-</tr>
-<tr>
-<td><strong>Misc</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Platforms</td>
-<td>Windows, Linux, Raspberry Pi</td>
-<td>Windows, Linux, Raspberry Pi</td>
-<td>Raspberry Pi, Linux (buster)</td>
-</tr>
-<tr>
-<td>Stack runtime</td>
-<td>python, vue-webapp</td>
-<td>apache+php, html-webapp</td>
-<td>python+pygame, desktop app</td>
-</tr>
-</tbody>
-</table>
+<video controls="">
+<source src="./assets/take-picture.mp4" type="video/mp4"/>
+</video>
 </article>
 </div>
 </div>
