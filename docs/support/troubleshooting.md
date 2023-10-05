@@ -2,8 +2,8 @@
 
 ## Photobooth app website not available
 
-In default configuration the app listens to 0.0.0.0:8000,
-so it can be reached from every computer in the same network on port 8000.
+In default configuration the app listens to port 8000,
+so it can be reached from every computer in the same network on port 8000. On the same computer go to <http://localhost:8000>.
 
 If the website is not available, the reason could be
 
@@ -15,48 +15,58 @@ If that works, the issue is about the network.
 
 If not, the app might have crashed.
 
+### Gather information to troubleshoot
+
 The following commands help tracking down issues and gather information:
 
 ```bash
 # logfiles from service (last 200 lines)
 journalctl --user --unit=photobooth-app -n 200 --no-pager
-# logfiles created by photobooth
-cat ~/photobooth-data/log/qbooth.log
+
+# logfiles created by photobooth every day
+ls ~/photobooth-data/log/
+cat ~/photobooth-data/log/photobooth_2023xxxx.log
+
 # check CmaFree especially for Arducams if low:
 cat /proc/meminfo
 ```
 
-If service crashed 💀, kill the python process:
+### Manually start the app
+
+If service crashed 💀, stop the service and maybe even kill the python process:
 
 ```bash
+# stop the photobooth service (if installed)
+systemctl --user stop photobooth-app
+
 # check whether there is a process still running but not responsive:
 ps ax | grep python3
+
 # kill it
 sudo pkill -9 python3
 ```
 
 Manually start the photobooth-app and watch the terminal
 
+!!! info
+    The app uses current directory as data directory! Ensure to `cd` to the correct directory before starting.
+
 ```bash
-photobooth 
+photobooth
 #or
 python -m photobooth
 ```
 
-```text
-INFO: The app uses current directory as data directory!
-```
+Watch the terminal for errors and try to debug. If you fail, start a [discussion](https://github.com/mgrl/photobooth-app/discussions).
 
 ## Photobooth command not found
 
 If there is a warning as following during pip installation and photobooth can't start check the PATH variable
 
-```text
-WARNING: The script photobooth is installed in '/home/pi/.local/bin' which is not on PATH.
-Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
-```
+The script `photobooth` is installed in '/home/pi/.local/bin' which is not on PATH.
+Consider adding this directory to PATH.
 
-See following is fine, might just need a restart after installation because the path .local/bin did not exist before.
+See following is fine, might just need a restart after installation because the path .local/bin did not exist on newly installed systems.
 
 ```sh  title="~/.profile"
 # set PATH so it includes user's private bin if it exists
