@@ -67,11 +67,7 @@ Adjust for debian/ubuntu. Picamera2 is only available on Raspberry Pi.
 
 ```zsh
 # basic stuff (Bullseye/Bookworm)
-sudo apt-get -y install libturbojpeg0 python3-pip libgl1 libgphoto2-dev
-# to display some nice icons and emoticons (Bullseye/Bookworm)
-sudo apt-get -y install fonts-noto-color-emoji
-# to sync images online (Bullseye/Bookworm)
-sudo apt-get -y install rclone inotify-tools
+sudo apt-get -y install pipx libturbojpeg0 python3-pip libgl1 libgphoto2-dev fonts-noto-color-emoji rclone inotify-tools
 # to use camera modules on rpi (Bullseye/Bookworm)
 sudo apt-get -y install python3-picamera2
 # fix numpy dependency in 1.2.6 (Bookworm only)
@@ -92,17 +88,35 @@ sudo usermod --append --groups tty,input {USERNAME}
 
 ### Install photobooth app
 
-It's preferred nowadays to install pypi packages in virtual environments. Latest Linux OS' start implementing [externally managed base environments](https://peps.python.org/pep-0668/) now.
+Several ways to install:
 
-#### Install in virtual environment (>=Bookworm)
+1. Install using pipx (easiest, recommended)
+2. Install using venv
+3. Install globally
+
+It's preferred nowadays to install pypi packages in virtual environments. Latest Linux OS' start implementing [externally managed base environments](https://peps.python.org/pep-0668/) now. The easiest solution to install is using pipx.
+
+#### Install using pipx
+
+Use the following commands to install with pipx in an virtual environment:
+
+```zsh
+# ensure path is registered and app globally available
+pipx ensurepath
+# initialize a pipx installation
+# allow import of system-site-packages as picamera2 is globally installed via apt in system-site
+pipx install --system-site-packages photobooth-app
+```
+
+#### Install using venv
 
 Use the following commands to install in a virtual environment:
 
 ```zsh
 # create empty directory
-mkdir ~/photobooth
+mkdir ~/photobooth-app
 # change to new directory
-cd ~/photobooth
+cd ~/photobooth-app
 # initialize a new venv called myenv
 # allow import of system-site-packages as picamera2 is globally installed via apt in system-site
 python -m venv --system-site-packages myenv
@@ -114,9 +128,9 @@ python -m pip install --prefer-binary photobooth-app
 
 Note: `--prefer-binary` is added to avoid compiling opencv and instead prefer the wheel which installs within minutes instead hours.
 
-#### Install globally (<=Bullseye only)
+#### Install globally
 
-This method was standard in the past.
+This method was default in the past.
 
 ```zsh
 # install photobooth-app
@@ -138,7 +152,11 @@ mkdir ~/photobooth-data
 
 ```zsh
 cd ~/photobooth-data
-source ~/photobooth/myenv/bin/activate
+
+# following only if installed via venv method
+source ~/photobooth-app/myenv/bin/activate
+
+# start app. Current dir will be used as working-directory!
 photobooth
 ```
 
