@@ -775,7 +775,7 @@
 <tbody>
 <tr>
 <td>Raspberry Pi 3 / 4</td>
-<td>Raspberry Pi OS 64bit Bullseye</td>
+<td>Raspberry Pi OS 64bit Bookworm</td>
 <td><a href="https://www.raspberrypi.com/documentation/accessories/camera.html">Camera Modules</a>, <a href="http://www.gphoto.org/proj/libgphoto2/support.php">gphoto2 DSLR</a> and webcams via opencv or v4l2</td>
 </tr>
 <tr>
@@ -809,6 +809,16 @@ If you run into issues, create an issue or open a discussion.</p>
 </thead>
 <tbody>
 <tr>
+<td>Raspberry Pi 5</td>
+<td>Not yet released!</td>
+<td></td>
+</tr>
+<tr>
+<td>Raspberry Pi 4</td>
+<td>Raspberry Pi OS 64bit Bookworm, Python 3.11</td>
+<td><a href="https://www.raspberrypi.com/documentation/accessories/camera.html">HQ camera</a></td>
+</tr>
+<tr>
 <td>Raspberry Pi 4</td>
 <td>Raspberry Pi OS 64bit Bullseye, Python 3.9</td>
 <td><a href="https://www.raspberrypi.com/documentation/accessories/camera.html">Camera Module v3</a></td>
@@ -819,20 +829,15 @@ If you run into issues, create an issue or open a discussion.</p>
 <td><a href="http://www.gphoto.org/proj/libgphoto2/support.php">Canon 1100D</a></td>
 </tr>
 <tr>
-<td>Raspberry Pi 4</td>
-<td>Raspberry Pi OS 64bit Bookworm Beta, Python 3.11</td>
-<td><a href="https://www.raspberrypi.com/documentation/accessories/camera.html">HQ camera</a></td>
-</tr>
-<tr>
-<td>Raspberry Pi 5</td>
-<td>Not yet released!</td>
-<td></td>
+<td>Raspberry Pi 3</td>
+<td>Raspberry Pi OS 64bit Bullseye, Python 3.9</td>
+<td><a href="https://www.raspberrypi.com/documentation/accessories/camera.html">Camera Module v3</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>Python 3.9 or later. Python 3.12 is not yet supported by all dependencies.</li>
+<li>Python 3.9 or later. Python 3.12 is not yet supported.</li>
 <li>If Raspberry Pi: <strong>64bit</strong> system, Bullseye and Bookworm are supported.</li>
 <li>Camera, can be one or two (first camera for stills, second camera for live view)<ul>
 <li>DSLR: <a href="https://github.com/gonzalo/gphoto2-updater">gphoto2</a> on Linux</li>
@@ -840,7 +845,7 @@ If you run into issues, create an issue or open a discussion.</p>
 <li>Webcamera: no additional prerequisites, ensure camera is working using native system apps</li>
 </ul>
 </li>
-<li>Raspberry Pi Bullseye for Picamera2 or any other linux/windows system</li>
+<li>Raspberry Pi Bullseye/Bookworm for Picamera2 or any other linux/windows system</li>
 <li>Turbojpeg (via apt on linux, manually install on windows)</li>
 <li><a href="https://github.com/mgrl/photobooth-3d">works probably best with 3d printed photobooth and parts listed in the BOM</a></li>
 </ul>
@@ -851,10 +856,6 @@ see separate description.</p>
 <p>There are no dedicated installation instructions available by now.
 It should work similar to Raspberry Pi installation, please try these. Feel free to send a pull request to improve the instructions.</p>
 <h2 id="install-on-raspberrypi-os">Install on RaspberryPi OS</h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Raspberry Pi Bookwork is not released yet, but it will be compatible with the photobooth. The beta version is tested. Instructions may change any time.</p>
-</div>
 <p>On a fresh Raspberry Pi OS 64bit, run following commands:</p>
 <h3 id="update-system">Update System</h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
@@ -892,7 +893,7 @@ Replace {USERNAME} by actual username, for example pi.</p>
 pipx<span class="w"> </span>ensurepath
 <span class="c1"># initialize a pipx installation</span>
 <span class="c1"># allow import of system-site-packages as picamera2 is globally installed via apt in system-site</span>
-pipx<span class="w"> </span>install<span class="w"> </span>--system-site-packages<span class="w"> </span>photobooth-app
+pipx<span class="w"> </span>install<span class="w"> </span>--system-site-packages<span class="w"> </span>photobooth-app<span class="w"> </span>--pip-args<span class="o">=</span><span class="s1">'--prefer-binary'</span>
 </code></pre></div>
 <h4 id="install-using-venv">Install using venv</h4>
 <p>Use the following commands to install in a virtual environment:</p>
