@@ -7,7 +7,7 @@ The app is available as [PyPI package](https://pypi.org/project/photobooth-app/)
 
 | Hardware-Platform  | Software-Platform              | Supported Cameras                                                                                                                                                                     |
 |--------------------|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Raspberry Pi 3 / 4 | Raspberry Pi OS 64bit Bullseye | [Camera Modules](https://www.raspberrypi.com/documentation/accessories/camera.html), [gphoto2 DSLR](http://www.gphoto.org/proj/libgphoto2/support.php) and webcams via opencv or v4l2 |
+| Raspberry Pi 3 / 4 | Raspberry Pi OS 64bit Bookworm | [Camera Modules](https://www.raspberrypi.com/documentation/accessories/camera.html), [gphoto2 DSLR](http://www.gphoto.org/proj/libgphoto2/support.php) and webcams via opencv or v4l2 |
 | Raspberry Pi 5 > Tested after release | Raspberry Pi OS 64bit Bookworm | [Camera Modules](https://www.raspberrypi.com/documentation/accessories/camera.html), [gphoto2 DSLR](http://www.gphoto.org/proj/libgphoto2/support.php) and webcams via opencv or v4l2 |
 | Generic PC         | Debian/Ubuntu                  | [gphoto2 DSLR](http://www.gphoto.org/proj/libgphoto2/support.php) and webcams via opencv or v4l2                                                                                      |
 | Generic PC         | Windows                        | webcams via opencv                                                                      |
@@ -20,20 +20,21 @@ If you run into issues, create an issue or open a discussion.
 
 | Hardware-Platform  | Software-Platform              |Cameras  |
 |--------------------|--------------------------------|--------------------------------------------------------------|
-| Raspberry Pi 4 | Raspberry Pi OS 64bit Bullseye, Python 3.9 | [Camera Module v3](https://www.raspberrypi.com/documentation/accessories/camera.html)
-| Raspberry Pi 4 | Raspberry Pi OS 64bit Bullseye, Python 3.9 | [Canon 1100D](http://www.gphoto.org/proj/libgphoto2/support.php) |
-| Raspberry Pi 4 | Raspberry Pi OS 64bit Bookworm Beta, Python 3.11 | [HQ camera](https://www.raspberrypi.com/documentation/accessories/camera.html) |
 | Raspberry Pi 5 | Not yet released! |  |
+| Raspberry Pi 4 | Raspberry Pi OS 64bit Bookworm, Python 3.11 | [HQ camera](https://www.raspberrypi.com/documentation/accessories/camera.html) |
+| Raspberry Pi 4 | Raspberry Pi OS 64bit Bullseye, Python 3.9 | [Camera Module v3](https://www.raspberrypi.com/documentation/accessories/camera.html) |
+| Raspberry Pi 4 | Raspberry Pi OS 64bit Bullseye, Python 3.9 | [Canon 1100D](http://www.gphoto.org/proj/libgphoto2/support.php) |
+| Raspberry Pi 3 | Raspberry Pi OS 64bit Bullseye, Python 3.9 | [Camera Module v3](https://www.raspberrypi.com/documentation/accessories/camera.html) |
 
 ## Prerequisites
 
-- Python 3.9 or later. Python 3.12 is not yet supported by all dependencies.
+- Python 3.9 or later. Python 3.12 is not yet supported.
 - If Raspberry Pi: **64bit** system, Bullseye and Bookworm are supported.
 - Camera, can be one or two (first camera for stills, second camera for live view)
     - DSLR: [gphoto2](https://github.com/gonzalo/gphoto2-updater) on Linux
     - Picamera2: installed and working (test with `libcamera-hello`)
     - Webcamera: no additional prerequisites, ensure camera is working using native system apps
-- Raspberry Pi Bullseye for Picamera2 or any other linux/windows system
+- Raspberry Pi Bullseye/Bookworm for Picamera2 or any other linux/windows system
 - Turbojpeg (via apt on linux, manually install on windows)
 - [works probably best with 3d printed photobooth and parts listed in the BOM](https://github.com/mgrl/photobooth-3d)
 
@@ -47,9 +48,6 @@ There are no dedicated installation instructions available by now.
 It should work similar to Raspberry Pi installation, please try these. Feel free to send a pull request to improve the instructions.
 
 ## Install on RaspberryPi OS
-
-!!! info
-    Raspberry Pi Bookwork is not released yet, but it will be compatible with the photobooth. The beta version is tested. Instructions may change any time.
 
 On a fresh Raspberry Pi OS 64bit, run following commands:
 
@@ -105,7 +103,7 @@ Use the following commands to install with pipx in an virtual environment:
 pipx ensurepath
 # initialize a pipx installation
 # allow import of system-site-packages as picamera2 is globally installed via apt in system-site
-pipx install --system-site-packages photobooth-app
+pipx install --system-site-packages photobooth-app --pip-args='--prefer-binary'
 ```
 
 #### Install using venv
