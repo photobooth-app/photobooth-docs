@@ -7,24 +7,28 @@ Commercial software like DSLRbooth is not taken into account.
 |---|---|---|---|
 | first version release | 2023 | 2016 | 2017 |
 | Stars |![GitHub Repo stars](https://img.shields.io/github/stars/mgrl/photobooth-app?style=social)| ![GitHub Repo stars](https://img.shields.io/github/stars/PhotoboothProject/photobooth?style=social) |![GitHub Repo stars](https://img.shields.io/github/stars/pibooth/pibooth?style=social) |
-| Community | ⏺️ new software, visit [discussions](https://github.com/mgrl/photobooth-app/discussions) | ✅ | ❌ issue tracker only |
+| Community | ➕➕ | ➕➕➕ | ➕ |
 | Reference system incl Box design | ✅ | ❌ | ❌ |
-| **Camera and Image Features** |
-| DSLR cameras | ✅ | ✅ | ✅ |
-| Webcameras | ✅ | ✅ | ✅ |
-| Raspberry Pi Camera Modules | ✅ | ⏺️ | ✅ < v2.1 only |
-| Camera backends integrated | gphoto2, picamera2, v4l2py, opencv2 | all via cli commands | gphoto2, picamera, opencv2  |
-| Camera live preview | ✅ | ⏺️ | ❌ |
-| Take Picture | ✅ | ✅ | ✅ |
-| Collagen | ✅ | ✅ | ✅ |
-| Video | ❌ | ❌ | ❌ |
-| Chromakeying | ✅ | ✅ | ❌ |
-| [Instagram-Like Filter](https://github.com/mgrl/pilgram2) | ✅ | ❌ | ❌ |
+| **Supported Cameras and Image Features** |
+| Raspberry Pi Cameras: Picamera2 | ✅ | ⏺️[^2] | ⏺️[^1] |
+| DSLR: Gphoto2 | ✅ | ✅[^2] | ✅ |
+| DSLR: Digicamcontrol | ✅ | ✅[^2] | ❌ |
+| Webcameras: opencv2 | ✅ | ✅[^2] | ✅ |
+| Webcameras: v4l2py[^3] | ✅ | ❌ | ❌ |
+| Camera live preview streaming | ✅ | ⏺️[^5] | ❌ |
+| **Image Features and Postprocessing** |
+| Capture single picture | ✅ | ✅ | ✅ |
+| Capture collages | ✅ | ✅ | ✅ |
+| Capture video/GIF | ❌ | ❌ | ❌ |
+| [Instagram-Like Image Filter](https://github.com/mgrl/pilgram2) | ✅ | ❌ | ❌ |
+| Background removal: Chromakeying | ✅ | ✅ | ❌ |
+| Add predefined background | ✅ | ✅ | ❌ |
+| Add frame with transparency to pictures | ✅ | ✅ | ❌ |
 | **Gallery** |
 | Gallery local display | ✅ | ✅ | ❌ |
 | Gallery external access via IP | ✅ | ✅ | ❌ |
 | Sync images to USB drive | ❌ | ✅ | ❌ |
-| Share images online via QR code | ✅ | ⏺️ | ✅ |
+| Share images online via QR code | ✅ | ⏺️[^4] | ✅ |
 | Printing | ✅ | ✅ | ✅ |
 | **Personalization** |
 | Customizable Theme | ❌ | ✅ | ❌ |
@@ -36,10 +40,20 @@ Commercial software like DSLRbooth is not taken into account.
 | REST-API | ✅ | ❌ | ❌ |
 | **Admin** |
 | Admin Backend | ✅ | ✅ | ❌ |
+| Admin Configuration Panel | ✅ | ✅ | ❌ |
+| Admin Backend Protected | ❌ | ✅ | ❌ |
 | Plugin Architecture | ❌ | ❌ | ✅ |
 | **Dev** |
 | Installable package | ✅ | ⏺️ install script | ✅ |
-| Automated testing including hardware | ✅ <br> [![codecov](https://codecov.io/gh/mgrl/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/mgrl/photobooth-app) | ❌ | ❌ <br> ![codecov](https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg) |
-| **Misc** |
-| Platforms | Windows, Linux, Raspberry Pi | Windows, Linux, Raspberry Pi | Raspberry Pi, Linux (buster) |
-| Stack runtime | python, vue-webapp | apache+php, html-webapp | python+pygame, desktop app |
+| Automated testing including hardware |  [![codecov](https://codecov.io/gh/mgrl/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/mgrl/photobooth-app) | ❌ | ![codecov](https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg) |
+| **Supported OS** |
+| Raspberry Pi Bookworm | ✅ | ✅ | ❌ |
+| Raspberry Pi Bullseye | ✅ | ✅ | ❌ |
+| Debian/Ubuntu | ✅ | ✅ | ✅ |
+| Windows | ✅ | ✅ | ❌ |
+
+[^1]: Picamera1 only, modules <= v2.1 only, no camera module 3 supported
+[^2]: Integrated via command line interface and external programs
+[^3]: Less CPU utilization than opencv2
+[^4]: Manual custom sync to implement or client need to access wifi accesspoint
+[^5]: local preview only
