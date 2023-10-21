@@ -355,14 +355,14 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../reference/api/">
 <span class="md-ellipsis">
-    HTTP API
+    REST API
   </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../reference/photoboothprojectintegration/">
 <span class="md-ellipsis">
-    Integrate Photobooth-Project and this Photobooth-App
+    Integrate with Photobooth-Project
   </span>
 </a>
 </li>
@@ -516,9 +516,9 @@ Commercial software like DSLRbooth is not taken into account.</p>
 </tr>
 <tr>
 <td>Community</td>
-<td>⏺️ new software, visit <a href="https://github.com/mgrl/photobooth-app/discussions">discussions</a></td>
-<td>✅</td>
-<td>❌ issue tracker only</td>
+<td>➕➕</td>
+<td>➕➕➕</td>
+<td>➕</td>
 </tr>
 <tr>
 <td>Reference system incl Box design</td>
@@ -527,69 +527,93 @@ Commercial software like DSLRbooth is not taken into account.</p>
 <td>❌</td>
 </tr>
 <tr>
-<td><strong>Camera and Image Features</strong></td>
+<td><strong>Supported Cameras and Image Features</strong></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>DSLR cameras</td>
+<td>Raspberry Pi Cameras: Picamera2</td>
 <td>✅</td>
+<td>⏺️<sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td>⏺️<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+</tr>
+<tr>
+<td>DSLR: Gphoto2</td>
 <td>✅</td>
+<td>✅<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
 <td>✅</td>
 </tr>
 <tr>
-<td>Webcameras</td>
+<td>DSLR: Digicamcontrol</td>
 <td>✅</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Raspberry Pi Camera Modules</td>
-<td>✅</td>
-<td>⏺️</td>
-<td>✅ &lt; v2.1 only</td>
-</tr>
-<tr>
-<td>Camera backends integrated</td>
-<td>gphoto2, picamera2, v4l2py, opencv2</td>
-<td>all via cli commands</td>
-<td>gphoto2, picamera, opencv2</td>
-</tr>
-<tr>
-<td>Camera live preview</td>
-<td>✅</td>
-<td>⏺️</td>
+<td>✅<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
 <td>❌</td>
 </tr>
 <tr>
-<td>Take Picture</td>
+<td>Webcameras: opencv2</td>
 <td>✅</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Collagen</td>
-<td>✅</td>
-<td>✅</td>
+<td>✅<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
 <td>✅</td>
 </tr>
 <tr>
-<td>Video</td>
-<td>❌</td>
+<td>Webcameras: v4l2py<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td>✅</td>
 <td>❌</td>
 <td>❌</td>
 </tr>
 <tr>
-<td>Chromakeying</td>
+<td>Camera live preview streaming</td>
+<td>✅</td>
+<td>⏺️<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Image Features and Postprocessing</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Capture single picture</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Capture collages</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Capture video/GIF</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mgrl/pilgram2">Instagram-Like Image Filter</a></td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Background removal: Chromakeying</td>
 <td>✅</td>
 <td>✅</td>
 <td>❌</td>
 </tr>
 <tr>
-<td><a href="https://github.com/mgrl/pilgram2">Instagram-Like Filter</a></td>
+<td>Add predefined background</td>
+<td>✅</td>
 <td>✅</td>
 <td>❌</td>
+</tr>
+<tr>
+<td>Add frame with transparency to pictures</td>
+<td>✅</td>
+<td>✅</td>
 <td>❌</td>
 </tr>
 <tr>
@@ -619,7 +643,7 @@ Commercial software like DSLRbooth is not taken into account.</p>
 <tr>
 <td>Share images online via QR code</td>
 <td>✅</td>
-<td>⏺️</td>
+<td>⏺️<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></td>
 <td>✅</td>
 </tr>
 <tr>
@@ -689,6 +713,18 @@ Commercial software like DSLRbooth is not taken into account.</p>
 <td>❌</td>
 </tr>
 <tr>
+<td>Admin Configuration Panel</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Admin Backend Protected</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
 <td>Plugin Architecture</td>
 <td>❌</td>
 <td>❌</td>
@@ -708,30 +744,62 @@ Commercial software like DSLRbooth is not taken into account.</p>
 </tr>
 <tr>
 <td>Automated testing including hardware</td>
-<td>✅ <br/> <a href="https://codecov.io/gh/mgrl/photobooth-app"><img alt="codecov" src="https://codecov.io/gh/mgrl/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V"/></a></td>
+<td><a href="https://codecov.io/gh/mgrl/photobooth-app"><img alt="codecov" src="https://codecov.io/gh/mgrl/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V"/></a></td>
 <td>❌</td>
-<td>❌ <br/> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg"><img alt="codecov" src="https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg"/></a></td>
+<td><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg"><img alt="codecov" src="https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg"/></a></td>
 </tr>
 <tr>
-<td><strong>Misc</strong></td>
+<td><strong>Supported OS</strong></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>Platforms</td>
-<td>Windows, Linux, Raspberry Pi</td>
-<td>Windows, Linux, Raspberry Pi</td>
-<td>Raspberry Pi, Linux (buster)</td>
+<td>Raspberry Pi Bookworm</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
-<td>Stack runtime</td>
-<td>python, vue-webapp</td>
-<td>apache+php, html-webapp</td>
-<td>python+pygame, desktop app</td>
+<td>Raspberry Pi Bullseye</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Debian/Ubuntu</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
 </tr>
 </tbody>
 </table>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Picamera1 only, modules &lt;= v2.1 only, no camera module 3 supported <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Integrated via command line interface and external programs <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>Less CPU utilization than opencv2 <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+<li id="fn:4">
+<p>Manual custom sync to implement or client need to access wifi accesspoint <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
+</li>
+<li id="fn:5">
+<p>local preview only <a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 </article>
 </div>
 </div>
