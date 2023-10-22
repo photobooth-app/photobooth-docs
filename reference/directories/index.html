@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../api/" rel="prev"/>
-<link href="../../support/" rel="next"/>
+<link href="../" rel="prev"/>
+<link href="../api/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.4.6" name="generator"/>
-<title>Integrate with Photobooth-Project - Photobooth App</title>
+<title>Directories - Photobooth App</title>
 <link href="../../assets/stylesheets/main.35e1ed30.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -35,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#integrate-with-photobooth-project">
+<a class="md-skip" href="#directories">
           Skip to content
         </a>
 </div>
@@ -59,7 +59,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Integrate with Photobooth-Project
+              Directories
             
           </span>
 </div>
@@ -351,12 +351,32 @@
             Reference
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../directories/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Directories
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Directories
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mediaitems">
+    Mediaitems
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../api/">
@@ -365,9 +385,8 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../photoboothprojectintegration/">
 <span class="md-ellipsis">
     Integrate with Photobooth-Project
   </span>
@@ -490,29 +509,111 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mediaitems">
+    Mediaitems
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="integrate-with-photobooth-project">Integrate with Photobooth-Project</h1>
+<h1 id="directories">Directories</h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>This photobooth-app nowadays has many <a href="../../features/">features</a> that you would need for a fully functional booth.</p>
-<p><a href="../../features/">Compare the feature list</a> and open an <a href="https://github.com/mgrl/photobooth-app/issues">issue</a> if you miss a feature.</p>
-<p>If you miss a feature consider to pair it with the <a href="https://photoboothproject.github.io/">photobooth project</a>.</p>
+<p>Photobooth uses the current working directory to store all data.</p>
+<p>All subfolders are below the current working directory.</p>
 </div>
-<p>Following commands have to be set in photobooth project to use this app as streamingserver.
-Works best if photobooth-app and photobooth-project installed on same device.
-If installed on different device, replace <a href="http://localhost">http://localhost</a> by the actual hostname.</p>
-<div class="highlight"><pre><span></span><code>take_picture_cmd: curl -o "%s" http://localhost:8000/aquisition/still | echo Done
-take_picture_msg: Done
-pre_photo_cmd: curl http://localhost:8000/aquisition/mode/capture
-post_photo_cmd: curl http://localhost:8000/aquisition/mode/preview
-preview_url: url("http://localhost:8000/aquisition/stream.mjpg")
-background_defaults: url("http://localhost:8000/aquisition/stream.mjpg")
-</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Subfolder</th>
+<th>Web access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>media (images, videos, ...)</td>
+<td>/media</td>
+<td><code>http://IP:PORT/media</code></td>
+</tr>
+<tr>
+<td>logfiles</td>
+<td>/log</td>
+<td>via REST-API</td>
+</tr>
+<tr>
+<td>user data (images, frames, fonts, ...)</td>
+<td>/userdata</td>
+<td>via adminpanel file explorer</td>
+</tr>
+<tr>
+<td>config</td>
+<td>/config</td>
+<td>via REST-API</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mediaitems">Mediaitems</h2>
+<p>The captured media (images, ...) are stored as well as cached versions of the postprocessed media to ensure short response times of the app.</p>
+<p>The original is directly from image source and no processing was applied.
+The unprocessed version (sizes small, medium large) represend the original without any filter or pipeline stages from postprocessing applied.
+The processed version (sizes small, medium large) have all configured filters applied.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Subfolder</th>
+<th>Web access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>original from camera</td>
+<td>/media/original</td>
+<td><code>/media/original</code></td>
+</tr>
+<tr>
+<td>unprocessed L version (full)</td>
+<td>/media/unprocessed/full</td>
+<td><code>/media/unprocessed/full</code></td>
+</tr>
+<tr>
+<td>unprocessed M version (preview)</td>
+<td>/media/unprocessed/preview</td>
+<td><code>/media/unprocessed/preview</code></td>
+</tr>
+<tr>
+<td>unprocessed S version (small)</td>
+<td>/media/unprocessed/small</td>
+<td><code>/media/unprocessed/small</code></td>
+</tr>
+<tr>
+<td>processed L version (full)</td>
+<td>/media/processed/full</td>
+<td><code>/media/processed/full</code></td>
+</tr>
+<tr>
+<td>processed M version (preview)</td>
+<td>/media/processed/preview</td>
+<td><code>/media/processed/preview</code></td>
+</tr>
+<tr>
+<td>processed S version (small)</td>
+<td>/media/processed/small</td>
+<td><code>/media/processed/small</code></td>
+</tr>
+</tbody>
+</table>
 </article>
 </div>
 </div>
