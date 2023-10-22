@@ -65,6 +65,7 @@ nav:
       - setup/printing.md
   - Reference:
       - reference/index.md
+      - reference/directories.md
       - reference/api.md
       - reference/photoboothprojectintegration.md
   - Support:
