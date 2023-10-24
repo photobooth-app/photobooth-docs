@@ -22,7 +22,8 @@ Following is an example how the collage is processed:
 Depending on the job type
 
 - single picture or
-- collage
+- collage or
+- printing
 
 there are different postprocess pipelines available. They can be configured in the admin dashboard.
 The pipeline consists of several stages, each can be enabled and configured separately.
@@ -39,7 +40,8 @@ The single image pipeline runs following stages in given sequence:
 2. apply pilgram2 filter (instagram like filters)
 3. fill background with a solid color
 4. add background image (useful only if no solid color was added)
-5. text overlay
+5. add a frame with transparent areas. Captured images shine through transparent area. Use PNGs with transparency!
+6. text overlay
 
 ### Collage-Pipeline
 
@@ -81,6 +83,10 @@ When using the chromakeying / background removal stages, the removed background 
 ### Background Image
 
 When using the chromakeying / background removal stages, the removed background is left empty and transparent. With this stage, the transparent area is filled with an image.
+
+### Frame Image
+
+Single images captured can be overlaid by a frame. For this stage you need a PNG with transparent area. The captured image will be inserted in the transparent area. The width and height of the transparent area is automatically calculated and the algorithm tries to fit most of the captured area. If aspect ratio of captured image and transparent area are very different, some parts of the captured image can be cropped.
 
 ### Texts
 
