@@ -401,6 +401,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#frame-image">
+    Frame Image
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#texts">
     Texts
   </a>
@@ -676,6 +681,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#frame-image">
+    Frame Image
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#texts">
     Texts
   </a>
@@ -705,7 +715,8 @@ Following is an example how the collage is processed:</p>
 <p>Depending on the job type</p>
 <ul>
 <li>single picture or</li>
-<li>collage</li>
+<li>collage or</li>
+<li>printing</li>
 </ul>
 <p>there are different postprocess pipelines available. They can be configured in the admin dashboard.
 The pipeline consists of several stages, each can be enabled and configured separately.</p>
@@ -720,6 +731,7 @@ The pipeline consists of several stages, each can be enabled and configured sepa
 <li>apply pilgram2 filter (instagram like filters)</li>
 <li>fill background with a solid color</li>
 <li>add background image (useful only if no solid color was added)</li>
+<li>add a frame with transparent areas. Captured images shine through transparent area. Use PNGs with transparency!</li>
 <li>text overlay</li>
 </ol>
 <h3 id="collage-pipeline">Collage-Pipeline</h3>
@@ -748,6 +760,8 @@ There is also the option for the user to change the filter in the gallery. See U
 <p>When using the chromakeying / background removal stages, the removed background is left empty and transparent. With this stage, the transparent area is filled with a solid color.</p>
 <h3 id="background-image">Background Image</h3>
 <p>When using the chromakeying / background removal stages, the removed background is left empty and transparent. With this stage, the transparent area is filled with an image.</p>
+<h3 id="frame-image">Frame Image</h3>
+<p>Single images captured can be overlaid by a frame. For this stage you need a PNG with transparent area. The captured image will be inserted in the transparent area. The width and height of the transparent area is automatically calculated and the algorithm tries to fit most of the captured area. If aspect ratio of captured image and transparent area are very different, some parts of the captured image can be cropped.</p>
 <h3 id="texts">Texts</h3>
 <p>Texts that are overlaid the finished image. Use it to easily individualize the images without having to create a new background images where a picture would get inserted to. Custom fonts are supported.</p>
 </article>
