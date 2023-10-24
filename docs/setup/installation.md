@@ -88,13 +88,13 @@ sudo usermod --append --groups tty,input {USERNAME}
 
 Several ways to install:
 
-1. Install using pipx (easiest, recommended)
-2. Install using venv
-3. Install globally
+1. Method A: Install using pipx (easiest, recommended)
+2. Method B: Install using venv
+3. Method C: Install globally
 
 It's preferred nowadays to install pypi packages in virtual environments. Latest Linux OS' start implementing [externally managed base environments](https://peps.python.org/pep-0668/) now. The easiest solution to install is using pipx.
 
-#### Install using pipx
+#### Method A: Install using pipx
 
 Use the following commands to install with pipx in an virtual environment:
 
@@ -106,7 +106,7 @@ pipx ensurepath
 pipx install --system-site-packages photobooth-app --pip-args='--prefer-binary'
 ```
 
-#### Install using venv
+#### Method B: Install using venv
 
 Use the following commands to install in a virtual environment:
 
@@ -126,7 +126,7 @@ python -m pip install --prefer-binary photobooth-app
 
 Note: `--prefer-binary` is added to avoid compiling opencv and instead prefer the wheel which installs within minutes instead hours.
 
-#### Install globally
+#### Method C: Install globally
 
 This method was default in the past.
 
