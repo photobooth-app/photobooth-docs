@@ -58,6 +58,7 @@ nav:
       - setup/index.md
       - setup/installation.md
       - setup/update.md
+      - setup/admincenter.md
       - setup/camera_setup.md
       - setup/mediaprocessing.md
       - setup/gpio.md

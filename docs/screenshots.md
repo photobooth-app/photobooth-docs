@@ -21,16 +21,11 @@
 </figure>
 
 <figure markdown>
-  ![admin_config_backends](./assets/screenshots/admin_config_backends.png){ width="400" }
-  <figcaption>Choose camera backend in admin panel</figcaption>
+  ![admin_config_backends](./assets/screenshots/admincenter-config.jpg){ width="400" }
+  <figcaption>Easy to configure your photobooth in config dashboard</figcaption>
 </figure>
 
 <figure markdown>
-  ![admin_config_ui](./assets/screenshots/admin_config_ui.png){ width="400" }
-  <figcaption>Personalize the user interface in admin panel</figcaption>
-</figure>
-
-<figure markdown>
-  ![admin_status](./assets/screenshots/admin_status.png){ width="400" }
+  ![admin_status](./assets/screenshots/admincenter-status.jpg){ width="400" }
   <figcaption>View latest logs and status information in the admin panel</figcaption>
 </figure>
