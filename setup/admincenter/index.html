@@ -5,11 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../gpio/" rel="prev"/>
-<link href="../printing/" rel="next"/>
+<link href="../update/" rel="prev"/>
+<link href="../camera_setup/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.4.6" name="generator"/>
-<title>Share images via QR Code - Photobooth App</title>
+<title>Admin Center - Photobooth App</title>
 <link href="../../assets/stylesheets/main.35e1ed30.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -35,7 +35,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#share-images-via-qr-code">
+<a class="md-skip" href="#admin-center">
           Skip to content
         </a>
 </div>
@@ -59,7 +59,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Share images via QR Code
+              Admin Center
             
           </span>
 </div>
@@ -295,12 +295,120 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../admincenter/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Admin Center
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Admin Center
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+    Overview
+  </a>
+<nav aria-label="Overview" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#server-control">
+    Server Control
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#maintain-gallery">
+    Maintain gallery
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#config">
+    Config
+  </a>
+<nav aria-label="Config" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common">
+    Common
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sharing">
+    Sharing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mediaprocessing">
+    Mediaprocessing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mediaprocessing-pipeline-singleimage">
+    Mediaprocessing Pipeline Singleimage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mediaprocessing-pipeline-collage">
+    Mediaprocessing Pipeline Collage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mediaprocessing-pipeline-printing">
+    Mediaprocessing Pipeline Printing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ui-settings">
+    UI Settings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backends">
+    Backends
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hardware-input-output">
+    Hardware Input / Output
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#misc">
+    Misc
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#files">
+    Files
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#status">
+    Status
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#help">
+    Help
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../camera_setup/">
@@ -323,66 +431,12 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Share images via QR Code
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../shareservice/">
 <span class="md-ellipsis">
     Share images via QR Code
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#options-to-share-via-qr-code">
-    Options to share via QR code
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#batteries-included-shareservice">
-    Batteries included shareservice
-  </a>
-<nav aria-label="Batteries included shareservice" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#benefits">
-    Benefits
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#working-principle">
-    Working Principle
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#setup">
-    Setup
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#troubleshooting">
-    Troubleshooting
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#use-your-own-sharing-solution">
-    Use your own sharing solution
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../printing/">
@@ -556,42 +610,96 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#options-to-share-via-qr-code">
-    Options to share via QR code
+<a class="md-nav__link" href="#overview">
+    Overview
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#batteries-included-shareservice">
-    Batteries included shareservice
-  </a>
-<nav aria-label="Batteries included shareservice" class="md-nav">
+<nav aria-label="Overview" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#benefits">
-    Benefits
+<a class="md-nav__link" href="#server-control">
+    Server Control
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#working-principle">
-    Working Principle
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#setup">
-    Setup
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#troubleshooting">
-    Troubleshooting
+<a class="md-nav__link" href="#maintain-gallery">
+    Maintain gallery
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-your-own-sharing-solution">
-    Use your own sharing solution
+<a class="md-nav__link" href="#config">
+    Config
+  </a>
+<nav aria-label="Config" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common">
+    Common
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sharing">
+    Sharing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mediaprocessing">
+    Mediaprocessing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mediaprocessing-pipeline-singleimage">
+    Mediaprocessing Pipeline Singleimage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mediaprocessing-pipeline-collage">
+    Mediaprocessing Pipeline Collage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mediaprocessing-pipeline-printing">
+    Mediaprocessing Pipeline Printing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ui-settings">
+    UI Settings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backends">
+    Backends
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hardware-input-output">
+    Hardware Input / Output
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#misc">
+    Misc
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#files">
+    Files
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#status">
+    Status
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#help">
+    Help
   </a>
 </li>
 </ul>
@@ -601,57 +709,93 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="share-images-via-qr-code">Share images via QR Code</h1>
-<p>The share service allows users to easily download images on the user's phone.
-The user simply scans the QR code to download.</p>
+<h1 id="admin-center">Admin Center</h1>
+<p>The admin center is the central place to configure the photobooth software. You can also use it to upload and download files to the device.</p>
+<p>On the photobooth device browse to the admin center to configure your photobooth app:
+<a href="http://localhost:8000/#/admin">http://localhost:8000/#/admin</a></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>From other devices you might need to replace <code>localhost</code> by the hostname of the booth. Port <code>8000</code> is default if you did not change it.</p>
+</div>
+<h2 id="overview">Overview</h2>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/screenshots/gallery_detail.jpg"><img alt="gallery_detail" src="../../assets/screenshots/gallery_detail.jpg" width="400"/></a>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/screenshots/admincenter-dashboard.jpg"><img alt="gallery_detail" src="../../assets/screenshots/admincenter-dashboard.jpg" width="500"/></a>
 </p>
-<figcaption>Scan the QR code to download image to smartphones.</figcaption>
+<figcaption>Enter the admin pages, dashboard is the start</figcaption>
 </figure>
-<h2 id="options-to-share-via-qr-code">Options to share via QR code</h2>
-<ol>
-<li>Use the batteries included shareservice.</li>
-<li>Sync images (on your own) and provide a custom URL users can download images</li>
-</ol>
-<h2 id="batteries-included-shareservice">Batteries included shareservice</h2>
-<h3 id="benefits">Benefits</h3>
+<h3 id="server-control">Server Control</h3>
 <ul>
-<li>secure: the photobooth does not need to expose a service to the internet</li>
-<li>saves data: only images that are requested via QR code are transferred via internet</li>
-<li>works also with cellular internet service that usually provide no public ip address</li>
-<li>simple: just one php file to setup</li>
+<li>Shutdown or rebooth the host computer.</li>
+<li>Restart the service: On linux if the photobooth is installed as <code>systemctl</code>-service a restart can be triggered.</li>
+<li>Reload service is to gracefully reload all resources and backends.</li>
+<li>Install service: On linux automatically install the systemctl service</li>
+<li>Uninstall service: If service shall not start on boot, uninstall the service. The webfrontend is not accessible until manually started again or the service is installed like described in the installation.</li>
 </ul>
-<h3 id="working-principle">Working Principle</h3>
-<p>It's developed with ease of use in mind and shall work on most systems even with firewalled internet connection on photobooth side like cellular services.
-Once setup, the prinicple is as following:</p>
+<h3 id="maintain-gallery">Maintain gallery</h3>
 <ul>
-<li>photobooth starts and creates a long-term connection via internet (wifi, ethernet or cellular) to a php script on your webhosting service.</li>
-<li>now if a QR code is scanned, the php script sends an upload request via the long-term connection to the photobooth</li>
-<li>the photobooth uploads the requested file</li>
-<li>once upload is finished, the image is displayed to the user</li>
+<li>Delete all media files. Take care to backup your data first!</li>
 </ul>
-<h3 id="setup">Setup</h3>
+<h2 id="config">Config</h2>
+<p>The configuration is divided in logical sections. After changing the config use the buttons to</p>
 <ul>
-<li><a href="https://github.com/mgrl/photobooth-app/blob/main/extras/shareservice/dl.php">download dl.php</a></li>
-<li>edit the config variables on top of dl.php. see the comments in dl.php for reference.</li>
-<li>place the edited dl.php on a public server, for example your shared hoster. The server must be available to the photobooth and the users downloading photos later.</li>
-<li>Pair the dl.php script with photobooth app by configuring the shareservice settings in photobooth admin config, tab common:<ul>
-<li>set shareservice_apikey to same value as in dl.php</li>
-<li>set shareservice_url to the public URL pointing to the dl.php script.</li>
-<li>choose whether to download the original file or the full processed version.</li>
+<li>Persist: Send configuration to server, persist it on disk. Some changes will take effect only after restarting the service.</li>
+<li>Restore: Load current config from disk and display.</li>
+<li>Reset: Revert to default settings and delete config files from disk.</li>
 </ul>
-</li>
-<li>Now restart the photobooth app and try to scan a QR code in the gallery.</li>
-</ul>
-<h3 id="troubleshooting">Troubleshooting</h3>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/screenshots/admincenter-config.jpg"><img alt="gallery_detail" src="../../assets/screenshots/admincenter-config.jpg" width="500"/></a>
+</p>
+<figcaption>Configure the photobooth</figcaption>
+</figure>
+<h3 id="common">Common</h3>
+<p>TODO</p>
+<h3 id="sharing">Sharing</h3>
+<p>TODO</p>
+<h3 id="mediaprocessing">Mediaprocessing</h3>
+<p>TODO</p>
+<h3 id="mediaprocessing-pipeline-singleimage">Mediaprocessing Pipeline Singleimage</h3>
+<p>TODO</p>
+<h3 id="mediaprocessing-pipeline-collage">Mediaprocessing Pipeline Collage</h3>
+<p>TODO</p>
+<h3 id="mediaprocessing-pipeline-printing">Mediaprocessing Pipeline Printing</h3>
+<p>TODO</p>
+<h3 id="ui-settings">UI Settings</h3>
+<p>TODO</p>
+<h3 id="backends">Backends</h3>
+<p>TODO</p>
+<h3 id="hardware-input-output">Hardware Input / Output</h3>
+<p>TODO</p>
+<h3 id="misc">Misc</h3>
+<p>TODO</p>
+<h2 id="files">Files</h2>
+<p>Manage your files in one place - the filebrowser. Useful to download captured images or upload custom files that can be used in pipeline stages like frames or background images.</p>
+<p>The filebrowser allows to</p>
 <ul>
-<li>check php error log in the folder where dl.php is located</li>
-<li>check photobooth error log</li>
+<li>create new folders</li>
+<li>upload files</li>
+<li>download zip files containing selected files and folders and</li>
+<li>delete selected files and folders.</li>
 </ul>
-<h2 id="use-your-own-sharing-solution">Use your own sharing solution</h2>
-<p>If the shareservice is not what you want, you can synchronize the data folder manually and share a link to the images.
-The QR code is pointing to an URL that needs to be accessible by the users smartphone. This is possible if the user connects to a local hotspot in the same network as the photobooth computer or the files can be uploaded to the internet to make them accessible.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/screenshots/admincenter-filebrowser.jpg"><img alt="gallery_detail" src="../../assets/screenshots/admincenter-filebrowser.jpg" width="500"/></a>
+</p>
+<figcaption>Manage files in the filebrowser.</figcaption>
+</figure>
+<h2 id="status">Status</h2>
+<p>Some statistics, platform and system information. Also all logfiles are displayed.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/screenshots/admincenter-status.jpg"><img alt="gallery_detail" src="../../assets/screenshots/admincenter-status.jpg" width="500"/></a>
+</p>
+<figcaption>See important information and logs in the status dashboard</figcaption>
+</figure>
+<h2 id="help">Help</h2>
+<p>Collection of information that might be helpful.
+Also the REST-API documentation is linked. It's interactive, so you can test the REST-API right in your browser.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/screenshots/admincenter-help.jpg"><img alt="gallery_detail" src="../../assets/screenshots/admincenter-help.jpg" width="500"/></a>
+</p>
+<figcaption>Some links on help page you might find useful.</figcaption>
+</figure>
 </article>
 </div>
 </div>
