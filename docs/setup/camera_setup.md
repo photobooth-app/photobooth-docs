@@ -22,12 +22,7 @@ The second backend is used as live backend to stream video preview only.
 
 Camera modules are supported using picamera2 based on the new libcamera stack. Autofocus camera modules are supported.
 
-The app is tested with following devices:
-
-### Camera Module 3
-
-The latest [Camera Module 3](https://www.raspberrypi.com/products/camera-module-3/) is probably the best camera module to use in the photobooth.
-It supports fast autofocus and comes with native driver in the Raspberry Pi OS.
+The app is tested with devices described in following chapters.
 
 Ensure the camera is working properly using the libcamera stack:
 
@@ -37,16 +32,65 @@ libcamera-hello
 
 If it does properly open the camera, the photobooth app can use it also.
 If some errors come up, try to fix the camera setup before start using it actually.
-Find [installation instructions](https://www.raspberrypi.com/documentation/accessories/camera.html#installing-a-raspberry-pi-camera) directly at the raspberry pi foundation.
+Find [installation instructions](https://www.raspberrypi.com/documentation/accessories/camera.html#installing-a-raspberry-pi-camera) directly at the raspberry pi foundation or the camera manufacturer.
+
+### List resolutions supported by camera module
+
+The photobooth switches between a high resolution camera mode (low fps, high cpu load) and a lower resolution camera mode (higher fps, lower cpu load). Time to find out which resolutions to use! Issue in the terminal following command:
+
+```bash
+libcamera-hello --list-cameras
+```
+
+The result will look like this:
+
+```hl_lines="6 8"
+Available cameras
+-----------------
+0 : imx519 [4656x3496] (/base/soc/i2c0mux/i2c@1/imx519@1a)
+    Modes: 'SRGGB10_CSI2P' : 1280x720 [120.00 fps - (1048, 1042)/2560x1440 crop]
+                            1920x1080 [60.05 fps - (408, 674)/3840x2160 crop]
+                            2328x1748 [30.00 fps - (0, 0)/4656x3496 crop]
+                            3840x2160 [18.00 fps - (408, 672)/3840x2160 crop]
+                            4656x3496 [9.00 fps - (0, 0)/4656x3496 crop]
+```
+
+The preferred settings derive as follows from the above output:
+
+- Picamera2 Capture Cam Resolution Width = 4656
+- Picamera2 Capture Cam Resolution Height = 3496
+- Picamera2 Preview Cam Resolution Width = 2328
+- Picamera2 Preview Cam Resolution Height = 1748
+
+Why? Capture shall be with highest resolution supported. The whole data is used from sensor, nothing cropped. The lower resolution is chosen to be 2328x1748 because the cropping is the same. The captured scene in both modes is exactly the same, nobody will notice that the camera changed it's mode - except better quality in final images :)
+
+### Camera Module 3
+
+The latest [Camera Module 3](https://www.raspberrypi.com/products/camera-module-3/) is probably the best camera module to use in the photobooth.
+It supports fast autofocus and comes with native driver in the Raspberry Pi OS.
 
 Now finish setup:
 
 - Set the index in the [admin center](http://localhost:8000/#/admin/config), config, tab backends.
-- set the main backend to Picamera2
+- Set the main backend to Picamera2
 - Choose Picamera2 focuser module, set Continuous for camera module 3
 - Enable livepreview if desired
-- Change the resolution requested from the camera on common tab to width=4608, height=2592
+- Change the resolution requested from the camera for stills and preview, see table below.
+    - Picamera2 Capture Cam Resolution Width = 4608
+    - Picamera2 Capture Cam Resolution Height = 2592
+    - Picamera2 Preview Cam Resolution Width = 2304
+    - Picamera2 Preview Cam Resolution Height = 1296
 - Restart the app
+
+For your reference the output of ``libcamera-hello --list-cameras``:
+
+```title="Raspberry Pi Camera Module 3 (imx708)" hl_lines="4 5"
+pi@photobooth:~ $ libcamera-hello --list-cameras
+0 : imx708 [4608x2592] (/base/soc/i2c0mux/i2c@1/imx708@1a)
+    Modes: 'SRGGB10_CSI2P' : 1536x864 [120.13 fps - (0, 0)/4608x2592 crop]
+                             2304x1296 [56.03 fps - (0, 0)/4608x2592 crop]
+                             4608x2592 [14.35 fps - (0, 0)/4608x2592 crop]
+```
 
 ### Camera Modules 1/2/HQ
 
@@ -55,7 +99,7 @@ They usually come with lower image quality and do not have autofocus.
 Due to this other camera modules are not recommended for use as main camera.
 You might consider to use them only for livestream preview.
 
-Setup is the same as for camera module 3 but with different resolution and no focuser module enabled.
+Setup is the same as for camera module 3 but with different resolution and no focuser module enabled. See also the chapter above to list resolutions.
 
 ### Arducam imx519
 
@@ -81,8 +125,26 @@ Now finish setup:
 - set the main backend to Picamera2
 - Choose Picamera2 focuser module, set Continuous if Arducams driver installed, otherwise choose Interval.
 - Enable livepreview if desired
-- Change the resolution requested from the camera on common tab to width=4656, height=3496
+- Change the resolution requested from the camera for stills and preview, see table below.
+    - Picamera2 Capture Cam Resolution Width = 4656
+    - Picamera2 Capture Cam Resolution Height = 3496
+    - Picamera2 Preview Cam Resolution Width = 2328
+    - Picamera2 Preview Cam Resolution Height = 1748
 - Restart the app
+
+For your reference the output of ``libcamera-hello --list-cameras``:
+
+```title="Arducam 16MP (imx519)" hl_lines="7 9"
+pi@photobooth:~ $ libcamera-hello --list-cameras
+Available cameras
+-----------------
+0 : imx519 [4656x3496] (/base/soc/i2c0mux/i2c@1/imx519@1a)
+    Modes: 'SRGGB10_CSI2P' : 1280x720 [120.00 fps - (1048, 1042)/2560x1440 crop]
+                            1920x1080 [60.05 fps - (408, 674)/3840x2160 crop]
+                            2328x1748 [30.00 fps - (0, 0)/4656x3496 crop]
+                            3840x2160 [18.00 fps - (408, 672)/3840x2160 crop]
+                            4656x3496 [9.00 fps - (0, 0)/4656x3496 crop]
+```
 
 ### Other third party camera modules
 
