@@ -3,28 +3,28 @@
 
 The app is available as [PyPI package](https://pypi.org/project/photobooth-app/).
 
+## Reference Systems
+
+These are systems used productive or in automated testing and most likely to work without issues.
+Gphoto2 and the webcam backends support many different camera models but manufacturers might implement communication protocols slightly different.
+If you run into issues, create an issue or open a discussion. Also check the camera manufacturers manuals for their camera installation guides.
+
+| Hardware-Platform  | Software-Platform              | Cameras  |
+|--------------------|--------------------------------|--------------------------------------------------------------|
+| Raspberry Pi 5 |  Raspberry Pi OS Bookworm  64bit | No hardware to test yet! |
+| Raspberry Pi 3/4 | Raspberry Pi OS Bookworm 64bit | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
+| Raspberry Pi 3/4 | Raspberry Pi OS Bullseye 64bit | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
+| Raspberry Pi 3/4 | Raspberry Pi OS Bullseye 64bit | [Canon 1100D](http://www.gphoto.org/proj/libgphoto2/support.php) |
+| Raspberry Pi 3/4 | Raspberry Pi OS Bullseye 64bit | [Arducam IMX519 PDAF](https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/16MP-IMX519/) |
+
 ## Supported Platforms and Cameras
 
-| Hardware-Platform  | Software-Platform              | Supported Cameras                                                                                                                                                                     |
-|--------------------|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Hardware-Platform  | Software-Platform              | Supported Cameras        |
+|--------------------|------------------|-----------------------------------|
 | Raspberry Pi 3 / 4 | Raspberry Pi OS 64bit Bookworm | [Camera Modules](https://www.raspberrypi.com/documentation/accessories/camera.html), [gphoto2 DSLR](http://www.gphoto.org/proj/libgphoto2/support.php) and webcams via opencv or v4l2 |
 | Raspberry Pi 5 > Tested after release | Raspberry Pi OS 64bit Bookworm | [Camera Modules](https://www.raspberrypi.com/documentation/accessories/camera.html), [gphoto2 DSLR](http://www.gphoto.org/proj/libgphoto2/support.php) and webcams via opencv or v4l2 |
 | Generic PC         | Debian/Ubuntu                  | [gphoto2 DSLR](http://www.gphoto.org/proj/libgphoto2/support.php) and webcams via opencv or v4l2                                                                                      |
 | Generic PC         | Windows                        | webcams via opencv                                                                      |
-
-## Reference Systems
-
-These are systems used productive or in automated testing and guaranteed to work without issues.
-Gphoto2 and the webcam backends support many different camera models but manufacturers might implement communication protocols slightly different.
-If you run into issues, create an issue or open a discussion.
-
-| Hardware-Platform  | Software-Platform              |Cameras  |
-|--------------------|--------------------------------|--------------------------------------------------------------|
-| Raspberry Pi 5 | Not yet released! |  |
-| Raspberry Pi 4 | Raspberry Pi OS 64bit Bookworm, Python 3.11 | [HQ camera](https://www.raspberrypi.com/documentation/accessories/camera.html) |
-| Raspberry Pi 4 | Raspberry Pi OS 64bit Bullseye, Python 3.9 | [Camera Module v3](https://www.raspberrypi.com/documentation/accessories/camera.html) |
-| Raspberry Pi 4 | Raspberry Pi OS 64bit Bullseye, Python 3.9 | [Canon 1100D](http://www.gphoto.org/proj/libgphoto2/support.php) |
-| Raspberry Pi 3 | Raspberry Pi OS 64bit Bullseye, Python 3.9 | [Camera Module v3](https://www.raspberrypi.com/documentation/accessories/camera.html) |
 
 ## Prerequisites
 
@@ -32,15 +32,11 @@ If you run into issues, create an issue or open a discussion.
 - If Raspberry Pi: **64bit** system, Bullseye and Bookworm are supported.
 - Camera, can be one or two (first camera for stills, second camera for live view)
     - DSLR: [gphoto2](https://github.com/gonzalo/gphoto2-updater) on Linux
-    - Picamera2: installed and working (test with `libcamera-hello`)
+    - RPI Camera Modules / Arducams: installed and working (test with `libcamera-hello`)
     - Webcamera: no additional prerequisites, ensure camera is working using native system apps
 - Raspberry Pi Bullseye/Bookworm for Picamera2 or any other linux/windows system
 - Turbojpeg (via apt on linux, manually install on windows)
 - [works probably best with 3d printed photobooth and parts listed in the BOM](https://github.com/mgrl/photobooth-3d)
-
-The photobooth app can be used standalone but is not feature complete yet.
-Anyway, it integrates well with the fully blown [photobooth project](https://photoboothproject.github.io/),
-see separate description.
 
 ## Install on Linux (Debian/Ubuntu)
 
