@@ -420,12 +420,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#photobooth-app-website-not-available">
-    Photobooth app website not available
-  </a>
-<nav aria-label="Photobooth app website not available" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#gather-information-to-troubleshoot">
     Gather information to troubleshoot
   </a>
@@ -433,24 +427,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#manually-start-the-app">
     Manually start the app
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#photobooth-command-not-found">
-    Photobooth command not found
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gphoto2-camera-found-but-no-access">
-    Gphoto2 camera found but no access
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#error-failed-building-wheel-for-component">
-    Error Failed building wheel for component
   </a>
 </li>
 </ul>
@@ -551,12 +527,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#photobooth-app-website-not-available">
-    Photobooth app website not available
-  </a>
-<nav aria-label="Photobooth app website not available" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#gather-information-to-troubleshoot">
     Gather information to troubleshoot
   </a>
@@ -568,41 +538,12 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#photobooth-command-not-found">
-    Photobooth command not found
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#gphoto2-camera-found-but-no-access">
-    Gphoto2 camera found but no access
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#error-failed-building-wheel-for-component">
-    Error Failed building wheel for component
-  </a>
-</li>
-</ul>
-</nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="troubleshooting">Troubleshooting</h1>
-<h2 id="photobooth-app-website-not-available">Photobooth app website not available</h2>
-<p>In default configuration the app listens to port 8000,
-so it can be reached from every computer in the same network on port 8000. On the same computer go to <a href="http://localhost:8000">http://localhost:8000</a>.</p>
-<p>If the website is not available, the reason could be</p>
-<ul>
-<li>network issues or</li>
-<li>bad configuration</li>
-</ul>
-<p>Check that the website is available on the device itself via <a href="http://localhost:8000">http://localhost:8000</a>.
-If that works, the issue is about the network.</p>
-<p>If not, the app might have crashed.</p>
 <h3 id="gather-information-to-troubleshoot">Gather information to troubleshoot</h3>
 <p>The following commands help tracking down issues and gather information:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># logfiles from service (last 200 lines)</span>
@@ -636,61 +577,6 @@ sudo<span class="w"> </span>pkill<span class="w"> </span>-9<span class="w"> </sp
 python<span class="w"> </span>-m<span class="w"> </span>photobooth
 </code></pre></div>
 <p>Watch the terminal for errors and try to debug. If you fail, start a <a href="https://github.com/mgrl/photobooth-app/discussions">discussion</a>.</p>
-<h2 id="photobooth-command-not-found">Photobooth command not found</h2>
-<p>If there is a warning as following during pip installation and photobooth can't start check the PATH variable</p>
-<p>The script <code>photobooth</code> is installed in '/home/pi/.local/bin' which is not on PATH.
-Consider adding this directory to PATH.</p>
-<p>See following is fine, might just need a restart after installation because the path .local/bin did not exist on newly installed systems.</p>
-<div class="highlight"><span class="filename">~/.profile</span><pre><span></span><code><span class="c1"># set PATH so it includes user's private bin if it exists</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/bin"</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
-<span class="k">fi</span>
-</code></pre></div>
-<h2 id="gphoto2-camera-found-but-no-access">Gphoto2 camera found but no access</h2>
-<p>On a fresh Linux installation, there might be services running to detect cameras and allow for easy file transfer.
-For the photobooth this needs to be disabled because the application needs access to the camera.</p>
-<p>If you find errors in the log as below, read further.</p>
-<div class="highlight"><pre><span></span><code>[    INFO] found camera - 0:  usb:001,009  Canon EOS 1100D (gphoto2.py:303)
-[    INFO] (gp_libusb1_open [libusb1.c:437]) 'libusb_claim_interface (port-&gt;pl-&gt;dh, port-&gt;settings.usb.interface)' failed: Resource busy (-6) (port_log.py:89)
-[    INFO] (gp_port_set_error [gphoto2-port.c:1190]) Could not claim interface 0 (Success). Make sure no other program (gvfs-gphoto2-volume-monitor) or kernel module (such as sdc2xx, stv680, spca50x) is using the device and you have read/write access to the device. (port_log.py:89)
-[CRITICAL] camera failed to initialize. no power? no connection? (gphoto2.py:100)
-[   ERROR] [-53] Could not claim the USB device (gphoto2.py:101)
-[    INFO] (gp_libusb1_open [libusb1.c:437]) 'libusb_claim_interface (port-&gt;pl-&gt;dh, port-&gt;settings.usb.interface)' failed: Resource busy (-6) (port_log.py:89)
-[    INFO] (gp_port_set_error [gphoto2-port.c:1190]) Could not claim interface 0 (Success). Make sure no other program (gvfs-gphoto2-volume-monitor) or kernel module (such as sdc2xx, stv680, spca50x) is using the device and you have read/write access to the device. (port_log.py:89)
-</code></pre></div>
-<p>Check for running processes:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps<span class="w"> </span>ax<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>gphoto2
-<span class="m">1074</span><span class="w"> </span>?<span class="w">        </span>Ssl<span class="w">    </span><span class="m">0</span>:00<span class="w"> </span>/usr/libexec/gvfs-gphoto2-volume-monitor
-<span class="m">2785</span><span class="w"> </span>?<span class="w">        </span>Sl<span class="w">     </span><span class="m">0</span>:00<span class="w"> </span>/usr/libexec/gvfsd-gphoto2<span class="w"> </span>--spawner<span class="w"> </span>:1.7<span class="w"> </span>/org/gtk/gvfs/exec_spaw/2
-</code></pre></div>
-<p>To disable the monitoring services, execute following commands:</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>stop<span class="w"> </span>gvfs-gphoto2-volume-monitor
-systemctl<span class="w"> </span>--user<span class="w"> </span>disable<span class="w"> </span>gvfs-gphoto2-volume-monitor<span class="w"> </span>
-
-<span class="c1"># after a reboot, the gvfs-gphoto2-volume-monitor will be enabled automatically again :(</span>
-<span class="c1"># permanently disable:</span>
-sudo<span class="w"> </span>chmod<span class="w"> </span>-x<span class="w"> </span>/usr/lib/gvfs/gvfs-gphoto2-volume-monitor
-
-reboot
-</code></pre></div>
-<p>After a restart there should be no process any more:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps<span class="w"> </span>ax<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>gphoto2
-<span class="c1"># nothing to see here...</span>
-</code></pre></div>
-<p>Additional references:</p>
-<ul>
-<li><a href="https://github.com/gphoto/gphoto2/issues/181">https://github.com/gphoto/gphoto2/issues/181</a></li>
-</ul>
-<h2 id="error-failed-building-wheel-for-component">Error Failed building wheel for component</h2>
-<div class="highlight"><pre><span></span><code>ERROR: Failed building wheel for cmake
-      Failed to build cmake
-      ERROR: Could not build wheels for cmake, which is required to install pyproject.toml-based projects
-</code></pre></div>
-<p>During pip installation cmake error can come up if not all prerequisites are complied with.</p>
-<ul>
-<li>Check to comply with prerequisites.</li>
-<li>OpenCV-python fails during installation on 32 bit Raspberry Pi OS. Use 64bit version.</li>
-</ul>
 </article>
 </div>
 </div>

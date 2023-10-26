@@ -328,6 +328,11 @@
 <nav aria-label="Raspberry CSI Camera Modules" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#list-resolutions-supported-by-camera-module">
+    List resolutions supported by camera module
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#camera-module-3">
     Camera Module 3
   </a>
@@ -572,6 +577,11 @@
 <nav aria-label="Raspberry CSI Camera Modules" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#list-resolutions-supported-by-camera-module">
+    List resolutions supported by camera module
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#camera-module-3">
     Camera Module 3
   </a>
@@ -640,31 +650,66 @@ The second backend is used as live backend to stream video preview only.</p>
 </div>
 <h2 id="raspberry-csi-camera-modules">Raspberry CSI Camera Modules</h2>
 <p>Camera modules are supported using picamera2 based on the new libcamera stack. Autofocus camera modules are supported.</p>
-<p>The app is tested with following devices:</p>
-<h3 id="camera-module-3">Camera Module 3</h3>
-<p>The latest <a href="https://www.raspberrypi.com/products/camera-module-3/">Camera Module 3</a> is probably the best camera module to use in the photobooth.
-It supports fast autofocus and comes with native driver in the Raspberry Pi OS.</p>
+<p>The app is tested with devices described in following chapters.</p>
 <p>Ensure the camera is working properly using the libcamera stack:</p>
 <div class="highlight"><pre><span></span><code>libcamera-hello
 </code></pre></div>
 <p>If it does properly open the camera, the photobooth app can use it also.
 If some errors come up, try to fix the camera setup before start using it actually.
-Find <a href="https://www.raspberrypi.com/documentation/accessories/camera.html#installing-a-raspberry-pi-camera">installation instructions</a> directly at the raspberry pi foundation.</p>
+Find <a href="https://www.raspberrypi.com/documentation/accessories/camera.html#installing-a-raspberry-pi-camera">installation instructions</a> directly at the raspberry pi foundation or the camera manufacturer.</p>
+<h3 id="list-resolutions-supported-by-camera-module">List resolutions supported by camera module</h3>
+<p>The photobooth switches between a high resolution camera mode (low fps, high cpu load) and a lower resolution camera mode (higher fps, lower cpu load). Time to find out which resolutions to use! Issue in the terminal following command:</p>
+<div class="highlight"><pre><span></span><code>libcamera-hello<span class="w"> </span>--list-cameras
+</code></pre></div>
+<p>The result will look like this:</p>
+<div class="highlight"><pre><span></span><code>Available cameras
+-----------------
+0 : imx519 [4656x3496] (/base/soc/i2c0mux/i2c@1/imx519@1a)
+    Modes: 'SRGGB10_CSI2P' : 1280x720 [120.00 fps - (1048, 1042)/2560x1440 crop]
+                            1920x1080 [60.05 fps - (408, 674)/3840x2160 crop]
+<span class="hll">                            2328x1748 [30.00 fps - (0, 0)/4656x3496 crop]
+</span>                            3840x2160 [18.00 fps - (408, 672)/3840x2160 crop]
+<span class="hll">                            4656x3496 [9.00 fps - (0, 0)/4656x3496 crop]
+</span></code></pre></div>
+<p>The preferred settings derive as follows from the above output:</p>
+<ul>
+<li>Picamera2 Capture Cam Resolution Width = 4656</li>
+<li>Picamera2 Capture Cam Resolution Height = 3496</li>
+<li>Picamera2 Preview Cam Resolution Width = 2328</li>
+<li>Picamera2 Preview Cam Resolution Height = 1748</li>
+</ul>
+<p>Why? Capture shall be with highest resolution supported. The whole data is used from sensor, nothing cropped. The lower resolution is chosen to be 2328x1748 because the cropping is the same. The captured scene in both modes is exactly the same, nobody will notice that the camera changed it's mode - except better quality in final images :)</p>
+<h3 id="camera-module-3">Camera Module 3</h3>
+<p>The latest <a href="https://www.raspberrypi.com/products/camera-module-3/">Camera Module 3</a> is probably the best camera module to use in the photobooth.
+It supports fast autofocus and comes with native driver in the Raspberry Pi OS.</p>
 <p>Now finish setup:</p>
 <ul>
 <li>Set the index in the <a href="http://localhost:8000/#/admin/config">admin center</a>, config, tab backends.</li>
-<li>set the main backend to Picamera2</li>
+<li>Set the main backend to Picamera2</li>
 <li>Choose Picamera2 focuser module, set Continuous for camera module 3</li>
 <li>Enable livepreview if desired</li>
-<li>Change the resolution requested from the camera on common tab to width=4608, height=2592</li>
+<li>Change the resolution requested from the camera for stills and preview, see table below.<ul>
+<li>Picamera2 Capture Cam Resolution Width = 4608</li>
+<li>Picamera2 Capture Cam Resolution Height = 2592</li>
+<li>Picamera2 Preview Cam Resolution Width = 2304</li>
+<li>Picamera2 Preview Cam Resolution Height = 1296</li>
+</ul>
+</li>
 <li>Restart the app</li>
 </ul>
+<p>For your reference the output of <code>libcamera-hello --list-cameras</code>:</p>
+<div class="highlight"><span class="filename">Raspberry Pi Camera Module 3 (imx708)</span><pre><span></span><code>pi@photobooth:~ $ libcamera-hello --list-cameras
+0 : imx708 [4608x2592] (/base/soc/i2c0mux/i2c@1/imx708@1a)
+    Modes: 'SRGGB10_CSI2P' : 1536x864 [120.13 fps - (0, 0)/4608x2592 crop]
+<span class="hll">                             2304x1296 [56.03 fps - (0, 0)/4608x2592 crop]
+</span><span class="hll">                             4608x2592 [14.35 fps - (0, 0)/4608x2592 crop]
+</span></code></pre></div>
 <h3 id="camera-modules-12hq">Camera Modules 1/2/HQ</h3>
 <p>All other camera modules from the Raspberry Pi ecosystem work the same way as the latest camera module 3.
 They usually come with lower image quality and do not have autofocus.
 Due to this other camera modules are not recommended for use as main camera.
 You might consider to use them only for livestream preview.</p>
-<p>Setup is the same as for camera module 3 but with different resolution and no focuser module enabled.</p>
+<p>Setup is the same as for camera module 3 but with different resolution and no focuser module enabled. See also the chapter above to list resolutions.</p>
 <h3 id="arducam-imx519">Arducam imx519</h3>
 <p>Sony's imx519 sensor used in <a href="https://www.arducam.com/product/imx519-autofocus-camera-module-for-raspberry-pi-arducam-b0371/">Arducam's imx519 camera module</a> is supported by the
 Raspberry Pi OS natively since about March 2023.</p>
@@ -691,9 +736,26 @@ Raspberry Pi OS natively since about March 2023.</p>
 <li>set the main backend to Picamera2</li>
 <li>Choose Picamera2 focuser module, set Continuous if Arducams driver installed, otherwise choose Interval.</li>
 <li>Enable livepreview if desired</li>
-<li>Change the resolution requested from the camera on common tab to width=4656, height=3496</li>
+<li>Change the resolution requested from the camera for stills and preview, see table below.<ul>
+<li>Picamera2 Capture Cam Resolution Width = 4656</li>
+<li>Picamera2 Capture Cam Resolution Height = 3496</li>
+<li>Picamera2 Preview Cam Resolution Width = 2328</li>
+<li>Picamera2 Preview Cam Resolution Height = 1748</li>
+</ul>
+</li>
 <li>Restart the app</li>
 </ul>
+<p>For your reference the output of <code>libcamera-hello --list-cameras</code>:</p>
+<div class="highlight"><span class="filename">Arducam 16MP (imx519)</span><pre><span></span><code>pi@photobooth:~ $ libcamera-hello --list-cameras
+Available cameras
+-----------------
+0 : imx519 [4656x3496] (/base/soc/i2c0mux/i2c@1/imx519@1a)
+    Modes: 'SRGGB10_CSI2P' : 1280x720 [120.00 fps - (1048, 1042)/2560x1440 crop]
+                            1920x1080 [60.05 fps - (408, 674)/3840x2160 crop]
+<span class="hll">                            2328x1748 [30.00 fps - (0, 0)/4656x3496 crop]
+</span>                            3840x2160 [18.00 fps - (408, 672)/3840x2160 crop]
+<span class="hll">                            4656x3496 [9.00 fps - (0, 0)/4656x3496 crop]
+</span></code></pre></div>
 <h3 id="other-third-party-camera-modules">Other third party camera modules</h3>
 <p>In principle every camera supported by libcamera / picamera2 would work.
 Since the cameras do not come with native support of the Raspberry Pi OS using them could be troublesome and it's untested.
