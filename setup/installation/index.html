@@ -301,13 +301,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#supported-platforms-and-cameras">
-    Supported Platforms and Cameras
+<a class="md-nav__link" href="#reference-systems">
+    Reference Systems
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#reference-systems">
-    Reference Systems
+<a class="md-nav__link" href="#supported-platforms-and-cameras">
+    Supported Platforms and Cameras
   </a>
 </li>
 <li class="md-nav__item">
@@ -643,13 +643,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#supported-platforms-and-cameras">
-    Supported Platforms and Cameras
+<a class="md-nav__link" href="#reference-systems">
+    Reference Systems
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#reference-systems">
-    Reference Systems
+<a class="md-nav__link" href="#supported-platforms-and-cameras">
+    Supported Platforms and Cameras
   </a>
 </li>
 <li class="md-nav__item">
@@ -777,6 +777,46 @@
 <article class="md-content__inner md-typeset">
 <h1 id="installation">Installation 🔧</h1>
 <p>The app is available as <a href="https://pypi.org/project/photobooth-app/">PyPI package</a>.</p>
+<h2 id="reference-systems">Reference Systems</h2>
+<p>These are systems used productive or in automated testing and most likely to work without issues.
+Gphoto2 and the webcam backends support many different camera models but manufacturers might implement communication protocols slightly different.
+If you run into issues, create an issue or open a discussion. Also check the camera manufacturers manuals for their camera installation guides.</p>
+<table>
+<thead>
+<tr>
+<th>Hardware-Platform</th>
+<th>Software-Platform</th>
+<th>Cameras</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raspberry Pi 5</td>
+<td>Raspberry Pi OS Bookworm  64bit</td>
+<td>No hardware to test yet!</td>
+</tr>
+<tr>
+<td>Raspberry Pi 3/4</td>
+<td>Raspberry Pi OS Bookworm 64bit</td>
+<td><a href="https://www.raspberrypi.com/documentation/accessories/camera.html">original camera module</a></td>
+</tr>
+<tr>
+<td>Raspberry Pi 3/4</td>
+<td>Raspberry Pi OS Bullseye 64bit</td>
+<td><a href="https://www.raspberrypi.com/documentation/accessories/camera.html">original camera module</a></td>
+</tr>
+<tr>
+<td>Raspberry Pi 3/4</td>
+<td>Raspberry Pi OS Bullseye 64bit</td>
+<td><a href="http://www.gphoto.org/proj/libgphoto2/support.php">Canon 1100D</a></td>
+</tr>
+<tr>
+<td>Raspberry Pi 3/4</td>
+<td>Raspberry Pi OS Bullseye 64bit</td>
+<td><a href="https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/16MP-IMX519/">Arducam IMX519 PDAF</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="supported-platforms-and-cameras">Supported Platforms and Cameras</h2>
 <table>
 <thead>
@@ -809,53 +849,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="reference-systems">Reference Systems</h2>
-<p>These are systems used productive or in automated testing and guaranteed to work without issues.
-Gphoto2 and the webcam backends support many different camera models but manufacturers might implement communication protocols slightly different.
-If you run into issues, create an issue or open a discussion.</p>
-<table>
-<thead>
-<tr>
-<th>Hardware-Platform</th>
-<th>Software-Platform</th>
-<th>Cameras</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Raspberry Pi 5</td>
-<td>Not yet released!</td>
-<td></td>
-</tr>
-<tr>
-<td>Raspberry Pi 4</td>
-<td>Raspberry Pi OS 64bit Bookworm, Python 3.11</td>
-<td><a href="https://www.raspberrypi.com/documentation/accessories/camera.html">HQ camera</a></td>
-</tr>
-<tr>
-<td>Raspberry Pi 4</td>
-<td>Raspberry Pi OS 64bit Bullseye, Python 3.9</td>
-<td><a href="https://www.raspberrypi.com/documentation/accessories/camera.html">Camera Module v3</a></td>
-</tr>
-<tr>
-<td>Raspberry Pi 4</td>
-<td>Raspberry Pi OS 64bit Bullseye, Python 3.9</td>
-<td><a href="http://www.gphoto.org/proj/libgphoto2/support.php">Canon 1100D</a></td>
-</tr>
-<tr>
-<td>Raspberry Pi 3</td>
-<td>Raspberry Pi OS 64bit Bullseye, Python 3.9</td>
-<td><a href="https://www.raspberrypi.com/documentation/accessories/camera.html">Camera Module v3</a></td>
-</tr>
-</tbody>
-</table>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>Python 3.9 or later. Python 3.12 is not yet supported.</li>
 <li>If Raspberry Pi: <strong>64bit</strong> system, Bullseye and Bookworm are supported.</li>
 <li>Camera, can be one or two (first camera for stills, second camera for live view)<ul>
 <li>DSLR: <a href="https://github.com/gonzalo/gphoto2-updater">gphoto2</a> on Linux</li>
-<li>Picamera2: installed and working (test with <code>libcamera-hello</code>)</li>
+<li>RPI Camera Modules / Arducams: installed and working (test with <code>libcamera-hello</code>)</li>
 <li>Webcamera: no additional prerequisites, ensure camera is working using native system apps</li>
 </ul>
 </li>
@@ -863,9 +863,6 @@ If you run into issues, create an issue or open a discussion.</p>
 <li>Turbojpeg (via apt on linux, manually install on windows)</li>
 <li><a href="https://github.com/mgrl/photobooth-3d">works probably best with 3d printed photobooth and parts listed in the BOM</a></li>
 </ul>
-<p>The photobooth app can be used standalone but is not feature complete yet.
-Anyway, it integrates well with the fully blown <a href="https://photoboothproject.github.io/">photobooth project</a>,
-see separate description.</p>
 <h2 id="install-on-linux-debianubuntu">Install on Linux (Debian/Ubuntu)</h2>
 <p>There are no dedicated installation instructions available by now.
 It should work similar to Raspberry Pi installation, please try these. Feel free to send a pull request to improve the instructions.</p>
