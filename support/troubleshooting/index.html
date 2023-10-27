@@ -544,7 +544,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="troubleshooting">Troubleshooting</h1>
-<h3 id="gather-information-to-troubleshoot">Gather information to troubleshoot</h3>
+<h2 id="gather-information-to-troubleshoot">Gather information to troubleshoot</h2>
 <p>The following commands help tracking down issues and gather information:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># logfiles from service (last 200 lines)</span>
 journalctl<span class="w"> </span>--user<span class="w"> </span>--unit<span class="o">=</span>photobooth-app<span class="w"> </span>-n<span class="w"> </span><span class="m">200</span><span class="w"> </span>--no-pager
@@ -556,7 +556,7 @@ cat<span class="w"> </span>~/photobooth-data/log/photobooth_2023xxxx.log
 <span class="c1"># check CmaFree especially for Arducams if low:</span>
 cat<span class="w"> </span>/proc/meminfo
 </code></pre></div>
-<h3 id="manually-start-the-app">Manually start the app</h3>
+<h2 id="manually-start-the-app">Manually start the app</h2>
 <p>If service crashed 💀, stop the service and maybe even kill the python process:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># stop the photobooth service (if installed)</span>
 systemctl<span class="w"> </span>--user<span class="w"> </span>stop<span class="w"> </span>photobooth-app
