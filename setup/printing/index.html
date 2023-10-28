@@ -600,21 +600,21 @@ If the paper is empty the photobooth app is not aware of that.</p>
 <ul>
 <li>Enable printservice in general</li>
 <li>Set a time to block new print jobs. The user needs to wait this time until a new print job can be triggered.</li>
-<li>The command to print is specific to your platform (Windows/Linux) and setup. Following are some recommendation help you to start.</li>
+<li>The command to print is specific to your platform (Windows/Linux) and setup.</li>
+<li>In the command <code>{filename}</code> is replaced by the path of the image to print.</li>
+<li>Test printing with a virtual PDF printer: <a href="https://wiki.ubuntuusers.de/CUPS-PDF/">https://wiki.ubuntuusers.de/CUPS-PDF/</a></li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Test printing with a virtual PDF printer:
-<a href="https://wiki.ubuntuusers.de/CUPS-PDF/">https://wiki.ubuntuusers.de/CUPS-PDF/</a></p>
-</div>
 <h3 id="setup-on-linux">Setup on Linux</h3>
 <p>On Linux printing is realized with CUPS software. The cups webinterface is available on <a href="http://localhost:631/printers/">http://localhost:631/printers/</a> usually.
 The link only works from the Linux system itself, it's not available in the local network.
 Installing a printer is very individual to the specific printer and the setup.
-Try to install on your own. In the end, make sure the following command prints a photo. Instead of {filename} point to some image on the computer for testing.</p>
-<p>Following is an example to print. Set the command in the app. {filename} is replaced by the .jpg image to print when the job is run.</p>
-<div class="highlight"><pre><span></span><code>lp<span class="w"> </span>-d<span class="w"> </span>PRINTER_NAME_HERE<span class="w"> </span>-o<span class="w"> </span>landscape<span class="w"> </span>-o<span class="w"> </span>fit-to-page<span class="w"> </span><span class="o">{</span>filename<span class="o">}</span>
+Try to install on your own. In the end, make sure that you have a command that prints a photo.</p>
+<p>Following is an example command to print.
+Instead of {filename} point to some image on the computer for testing.</p>
+<div class="highlight"><span class="filename">example command to print on linux</span><pre><span></span><code>lp<span class="w"> </span>-d<span class="w"> </span>PRINTER_NAME_HERE<span class="w"> </span>-o<span class="w"> </span>landscape<span class="w"> </span>-o<span class="w"> </span>fit-to-page<span class="w"> </span><span class="o">{</span>filename<span class="o">}</span>
 </code></pre></div>
+<p>Set the command verified to work in the app including the {filename} placeholder.
+Admin Center -&gt; Config -&gt; Tab: HardwareInputOutput.</p>
 <p>If you use other commands, that work better in your installation, let me know in <a href="https://github.com/mgrl/photobooth-app/discussions/">GitHub Discussions</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -624,8 +624,10 @@ Also you might need a ppd file. Here is one for <a href="https://github.com/reut
 </div>
 <h3 id="setup-on-windows">Setup on Windows</h3>
 <p>As first start use mspaint to test printing. Use following print command on windows.</p>
-<div class="highlight"><pre><span></span><code>mspaint<span class="w"> </span>/p<span class="w"> </span><span class="o">{</span>filename<span class="o">}</span>
+<div class="highlight"><span class="filename">example command to print on windows</span><pre><span></span><code>mspaint /p {filename}
 </code></pre></div>
+<p>Set the command verified to work in the app including the {filename} placeholder.
+Admin Center -&gt; Config -&gt; Tab: HardwareInputOutput.</p>
 <p>If you use other commands, that work better in your installation, let me know in <a href="https://github.com/mgrl/photobooth-app/discussions/">GitHub Discussions</a>.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <ul>
