@@ -348,10 +348,10 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#batteries-included-shareservice">
-    Batteries included shareservice
+<a class="md-nav__link" href="#method-a-batteries-included-shareservice">
+    Method A: Batteries included shareservice
   </a>
-<nav aria-label="Batteries included shareservice" class="md-nav">
+<nav aria-label="Method A: Batteries included shareservice" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#benefits">
@@ -377,8 +377,13 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-your-own-sharing-solution">
-    Use your own sharing solution
+<a class="md-nav__link" href="#method-b-share-via-local-wifi">
+    Method B: Share via local WiFi
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#method-c-create-your-own-sharing-solution">
+    Method C: Create your own sharing solution
   </a>
 </li>
 </ul>
@@ -561,10 +566,10 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#batteries-included-shareservice">
-    Batteries included shareservice
+<a class="md-nav__link" href="#method-a-batteries-included-shareservice">
+    Method A: Batteries included shareservice
   </a>
-<nav aria-label="Batteries included shareservice" class="md-nav">
+<nav aria-label="Method A: Batteries included shareservice" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#benefits">
@@ -590,8 +595,13 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-your-own-sharing-solution">
-    Use your own sharing solution
+<a class="md-nav__link" href="#method-b-share-via-local-wifi">
+    Method B: Share via local WiFi
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#method-c-create-your-own-sharing-solution">
+    Method C: Create your own sharing solution
   </a>
 </li>
 </ul>
@@ -610,11 +620,34 @@ The user simply scans the QR code to download.</p>
 <figcaption>Scan the QR code to download image to smartphones.</figcaption>
 </figure>
 <h2 id="options-to-share-via-qr-code">Options to share via QR code</h2>
-<ol>
-<li>Use the batteries included shareservice.</li>
-<li>Sync images (on your own) and provide a custom URL users can download images</li>
-</ol>
-<h2 id="batteries-included-shareservice">Batteries included shareservice</h2>
+<ul>
+<li>Method A: Use the batteries included shareservice.<ul>
+<li>➕ Easy setup</li>
+<li>➕ Convenient for user: Direct internet download</li>
+<li>➕ Data saver: On the fly upload when QR code is scanned</li>
+<li>➖ needs php online service (usually paid webhosting service)</li>
+<li>➖ Images shared via (private) internet service might conflict with GDPR</li>
+</ul>
+</li>
+<li>Method B: Share via local WiFi-Hotspot.<ul>
+<li>➖ Inconvenient for user: Smartphones need to log in local WiFi</li>
+<li>➕ No need to synchronize, no data usage</li>
+<li>➕ Local solution don't need any online service</li>
+<li>➕ Local solution less likely to conflict with GDPR</li>
+<li>➖ Custom setup</li>
+</ul>
+</li>
+<li>Method C: Sync images (on your own) and provide a custom URL users can download images<ul>
+<li>➕ Convenient for user: Direct internet download</li>
+<li>➕ Image backup on the fly</li>
+<li>➖ Custom setup</li>
+<li>➖ All images need to synchronize, uses more data</li>
+<li>➖ needs online service (usually paid webhosting service)</li>
+<li>➖ Images shared via (private) internet service might conflict with GDPR</li>
+</ul>
+</li>
+</ul>
+<h2 id="method-a-batteries-included-shareservice">Method A: Batteries included shareservice</h2>
 <h3 id="benefits">Benefits</h3>
 <ul>
 <li>secure: the photobooth does not need to expose a service to the internet</li>
@@ -646,10 +679,17 @@ Once setup, the prinicple is as following:</p>
 </ul>
 <h3 id="troubleshooting">Troubleshooting</h3>
 <ul>
-<li>check php error log in the folder where dl.php is located</li>
-<li>check photobooth error log</li>
+<li>check php error log in the folder where dl.php is located.</li>
+<li>ensure the dl.php directory has write-permission for the webserver.</li>
+<li>check photobooth error log.</li>
 </ul>
-<h2 id="use-your-own-sharing-solution">Use your own sharing solution</h2>
+<h2 id="method-b-share-via-local-wifi">Method B: Share via local WiFi</h2>
+<p>If the shareservice is not what you want, you could create a local WiFi. Users log in that WiFi and can download directly from the photobooth.
+Setup the URL for the QR code to point to the image you would like to let the user download. There are several versions of the images available, see the <a href="../../reference/directories/#mediaitems">list of mediaitem's directories</a>.</p>
+<p>Below an example URL to use in the QR code. {filename} gets replaced by the acutal filename. Replace the IP and port by the actual data.</p>
+<div class="highlight"><span class="filename">QR code URL example</span><pre><span></span><code><span class="err">http://192.168.0.1:8000/media/processed/full/{filename}</span>
+</code></pre></div>
+<h2 id="method-c-create-your-own-sharing-solution">Method C: Create your own sharing solution</h2>
 <p>If the shareservice is not what you want, you can synchronize the data folder manually and share a link to the images.
 The QR code is pointing to an URL that needs to be accessible by the users smartphone. This is possible if the user connects to a local hotspot in the same network as the photobooth computer or the files can be uploaded to the internet to make them accessible.</p>
 </article>
