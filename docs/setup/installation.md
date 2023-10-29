@@ -1,4 +1,3 @@
-
 # Installation 🔧
 
 The app is available as [PyPI package](https://pypi.org/project/photobooth-app/). Follow this guide to install.
@@ -52,14 +51,8 @@ Following dependencies to be installed for Raspberry Pi OS 64bit.
 Adjust for debian/ubuntu. Picamera2 is only available on Raspberry Pi.
 
 ```zsh
-# basic stuff (Bullseye/Bookworm)
+# basic stuff
 sudo apt-get -y install libturbojpeg0 python3-pip libgl1 libgphoto2-dev fonts-noto-color-emoji rclone inotify-tools
-# to use camera modules on rpi (Bullseye/Bookworm)
-sudo apt-get -y install python3-picamera2
-# fix numpy dependency in 1.2.6 (Bookworm only)
-sudo apt-get -y install libopenblas-dev
-# fix opencv dependency (Bookworm only)
-sudo apt-get -y install libatlas-base-dev
 ```
 
 #### Tweak system settings
@@ -68,8 +61,9 @@ To use hardware input from keyboard or presenter, the current user needs to be a
 
 ```zsh
 sudo usermod --append --groups tty,input $(whoami)
-#example: sudo usermod --append --groups tty,input pi
 ```
+
+You also might want to [check some display settings](../extras/display.md).
 
 ### Debian/Ubuntu
 
@@ -217,7 +211,38 @@ systemctl --user start photobooth-app.service
     journalctl --user --unit photobooth-app.service
     ```
 
-## Desktop shortcut to webfrontend
+## Desktop shortcut and autostart
+
+### Bookworm Platform
+
+#### Desktop Icon (Bookworm)
+
+Create the following file at the given location:
+
+```ini title="~/Desktop/photobooth-app.desktop" hl_lines="6"
+[Desktop Entry]
+Version=1.3
+Terminal=false
+Type=Application
+Name=Photobooth-App
+Exec=chromium-browser--kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+StartupNotify=false
+```
+
+#### Autostart on system startup (Bookworm)
+
+Modify the file below as stated. If there is a section ``[autostart]`` already, just add the line `chromium = ...` otherwise insert the complete section.
+
+```ini title="~/config/wayfire.ini" hl_lines="2"
+[autostart]
+chromium = chromium-browser http://localhost:8000/ --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar
+```
+
+After reboot chromium will start automatically.
+
+### Bullseye Platform
+
+#### Desktop Icon (Bullseye)
 
 Create the following file at the given location:
 
@@ -231,17 +256,8 @@ Exec=chromium-browser --kiosk http://localhost:8000/ --noerrdialogs --disable-in
 StartupNotify=false
 ```
 
-## Autostart webfrontend on system startup
+#### Autostart on system startup (Bullseye)
 
 Create the same file as for desktop shortcut above and place it in
 `/etc/xdg/autostart/photobooth-app.desktop`.
 After reboot chromium will start automatically.
-
-## Install development version
-
-Stable releases are published at [PyPI registry](https://pypi.org/project/photobooth-app/) usually.
-To test the latest development version install directly from git:
-
-```sh
-pip install git+https://github.com/mgrl/photobooth-app.git@dev
-```
