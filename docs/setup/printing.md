@@ -21,24 +21,26 @@ The configuration is made in the Admin Center -> Config -> Tab: HardwareInputOut
 
 - Enable printservice in general
 - Set a time to block new print jobs. The user needs to wait this time until a new print job can be triggered.
-- The command to print is specific to your platform (Windows/Linux) and setup. Following are some recommendation help you to start.
-
-!!! info
-    Test printing with a virtual PDF printer:
-    <https://wiki.ubuntuusers.de/CUPS-PDF/>
+- The command to print is specific to your platform (Windows/Linux) and setup.
+- In the command ``{filename}`` is replaced by the path of the image to print.
+- Test printing with a virtual PDF printer: <https://wiki.ubuntuusers.de/CUPS-PDF/>
 
 ### Setup on Linux
 
 On Linux printing is realized with CUPS software. The cups webinterface is available on <http://localhost:631/printers/> usually.
 The link only works from the Linux system itself, it's not available in the local network.
 Installing a printer is very individual to the specific printer and the setup.
-Try to install on your own. In the end, make sure the following command prints a photo. Instead of {filename} point to some image on the computer for testing.
+Try to install on your own. In the end, make sure that you have a command that prints a photo.
 
-Following is an example to print. Set the command in the app. {filename} is replaced by the .jpg image to print when the job is run.
+Following is an example command to print.
+Instead of {filename} point to some image on the computer for testing.
 
-``` sh
+```sh title="example command to print on linux"
 lp -d PRINTER_NAME_HERE -o landscape -o fit-to-page {filename}
 ```
+
+Set the command verified to work in the app including the {filename} placeholder.
+Admin Center -> Config -> Tab: HardwareInputOutput.
 
 If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/mgrl/photobooth-app/discussions/).
 
@@ -51,9 +53,12 @@ If you use other commands, that work better in your installation, let me know in
 
 As first start use mspaint to test printing. Use following print command on windows.
 
-``` sh
+```ps title="example command to print on windows"
 mspaint /p {filename}
 ```
+
+Set the command verified to work in the app including the {filename} placeholder.
+Admin Center -> Config -> Tab: HardwareInputOutput.
 
 If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/mgrl/photobooth-app/discussions/).
 

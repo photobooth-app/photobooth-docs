@@ -10,10 +10,27 @@ The user simply scans the QR code to download.
 
 ## Options to share via QR code
 
-1. Use the batteries included shareservice.
-2. Sync images (on your own) and provide a custom URL users can download images
+- Method A: Use the batteries included shareservice.
+    - ➕ Easy setup
+    - ➕ Convenient for user: Direct internet download
+    - ➕ Data saver: On the fly upload when QR code is scanned
+    - ➖ needs php online service (usually paid webhosting service)
+    - ➖ Images shared via (private) internet service might conflict with GDPR
+- Method B: Share via local WiFi-Hotspot.
+    - ➖ Inconvenient for user: Smartphones need to log in local WiFi
+    - ➕ No need to synchronize, no data usage
+    - ➕ Local solution don't need any online service
+    - ➕ Local solution less likely to conflict with GDPR
+    - ➖ Custom setup
+- Method C: Sync images (on your own) and provide a custom URL users can download images
+    - ➕ Convenient for user: Direct internet download
+    - ➕ Image backup on the fly
+    - ➖ Custom setup
+    - ➖ All images need to synchronize, uses more data
+    - ➖ needs online service (usually paid webhosting service)
+    - ➖ Images shared via (private) internet service might conflict with GDPR
 
-## Batteries included shareservice
+## Method A: Batteries included shareservice
 
 ### Benefits
 
@@ -45,10 +62,22 @@ Once setup, the prinicple is as following:
 
 ### Troubleshooting
 
-- check php error log in the folder where dl.php is located
-- check photobooth error log
+- check php error log in the folder where dl.php is located.
+- ensure the dl.php directory has write-permission for the webserver.
+- check photobooth error log.
 
-## Use your own sharing solution
+## Method B: Share via local WiFi
+
+If the shareservice is not what you want, you could create a local WiFi. Users log in that WiFi and can download directly from the photobooth.
+Setup the URL for the QR code to point to the image you would like to let the user download. There are several versions of the images available, see the [list of mediaitem's directories](../reference/directories.md#mediaitems).
+
+Below an example URL to use in the QR code. {filename} gets replaced by the acutal filename. Replace the IP and port by the actual data.
+
+```http title="QR code URL example"
+http://192.168.0.1:8000/media/processed/full/{filename}
+```
+
+## Method C: Create your own sharing solution
 
 If the shareservice is not what you want, you can synchronize the data folder manually and share a link to the images.
 The QR code is pointing to an URL that needs to be accessible by the users smartphone. This is possible if the user connects to a local hotspot in the same network as the photobooth computer or the files can be uploaded to the internet to make them accessible.
