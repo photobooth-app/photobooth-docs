@@ -58,11 +58,11 @@ The collage pipeline runs following stages in given sequence:
 
 ### GIF/Video-Pipeline
 
-Feature not yet implemented. You're invited to [contribute](../contribute.md) 👋
+Feature not yet implemented. You're invited to contribute. 👋
 
 ### Print-Pipeline
 
-Feature not yet implemented. You're invited to [contribute](../contribute.md) 👋
+Feature not yet implemented. You're invited to contribute. 👋
 
 ## Stages
 
