@@ -73,7 +73,7 @@ TODO: add more description about how to choose the green value.
 
 ### Instagram-Like Color-Filter
 
-Apply a default color filter. Choose from [pilgram2's available filters](https://github.com/mgrl/pilgram2).
+Apply a default color filter. Choose from [pilgram2's available filters](https://github.com/photobooth-app/pilgram2).
 There is also the option for the user to change the filter in the gallery. See UI configuration in admin dashboard.
 
 ### Background Fill Solid Color

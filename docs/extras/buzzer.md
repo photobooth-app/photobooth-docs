@@ -14,11 +14,11 @@ Loading works only if battery is connected, means the button must be switched on
 
 ### Hardware and Assembly
 
-see separate git repository <https://github.com/mgrl/photobooth-buzzer>
+see separate git repository <https://github.com/photobooth-app/photobooth-buzzer>
 
 ### ESP Microcontroller Software
 
-see separate git repository <https://github.com/mgrl/photobooth-buzzer>
+see separate git repository <https://github.com/photobooth-app/photobooth-buzzer>
 
 ### Setup in photobooth app
 

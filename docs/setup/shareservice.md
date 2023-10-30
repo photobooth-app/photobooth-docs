@@ -51,7 +51,7 @@ Once setup, the prinicple is as following:
 
 ### Setup
 
-- [download dl.php](https://github.com/mgrl/photobooth-app/blob/main/extras/shareservice/dl.php)
+- [download dl.php](https://github.com/photobooth-app/photobooth-app/blob/main/extras/shareservice/dl.php)
 - edit the config variables on top of dl.php. see the comments in dl.php for reference.
 - place the edited dl.php on a public server, for example your shared hoster. The server must be available to the photobooth and the users downloading photos later.
 - Pair the dl.php script with photobooth app by configuring the shareservice settings in photobooth admin config, tab common:

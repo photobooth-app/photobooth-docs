@@ -3,12 +3,12 @@
 In general the photobox can be custom made out of materials you prefer.
 To develop and as starting point a reference design to 3d print is provided.
 
-If you want to add your box to this page, send a message in the [discussions, category show and tell 📣](https://github.com/mgrl/photobooth-app/discussions/categories/show-and-tell).
+If you want to add your box to this page, send a message in the [discussions, category show and tell 📣](https://github.com/photobooth-app/photobooth-app/discussions/categories/show-and-tell).
 
 ## 3D printed reference
 
 The photobooth is made out of a 3d printed case.
-Find the CAD files in the github repo: <https://github.com/mgrl/photobooth-3d>
+Find the CAD files in the github repo: <https://github.com/photobooth-app/photobooth-3d>
 
 ### Features
 

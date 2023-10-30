@@ -1,6 +1,6 @@
 site_name: Photobooth App
-repo_name: mgrl/photobooth-app/
-repo_url: https://github.com/mgrl/photobooth-app
+repo_name: photobooth-app/photobooth-app/
+repo_url: https://github.com/photobooth-app/photobooth-app
 dev_addr: 127.0.0.1:8001
 
 theme:
@@ -73,7 +73,7 @@ extra:
             data: 0
             note: >- 
               Thanks for your feedback! Help us improve this page by
-              using our <a href="https://github.com/mgrl/photobooth-docs/issues/new" target="_blank" rel="noopener">issue tracker</a>.
+              using our <a href="https://github.com/photobooth-app/photobooth-docs/issues/new" target="_blank" rel="noopener">issue tracker</a>.
 
 nav:
   - Home:
@@ -110,7 +110,6 @@ nav:
       - extras/wifi.md
       - extras/sync.md
       - extras/display.md
-  - contribute.md
 
 not_in_nav: |
   /extras/shareservice-landing.md

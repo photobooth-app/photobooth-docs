@@ -4,7 +4,7 @@
 !!! info
     This photobooth-app nowadays has many [features](../features.md) that you would need for a fully functional booth.
 
-    [Compare the feature list](../features.md) and open an [issue](https://github.com/mgrl/photobooth-app/issues) if you miss a feature.
+    [Compare the feature list](../features.md) and open an [issue](https://github.com/photobooth-app/photobooth-app/issues) if you miss a feature.
 
     If you miss a feature consider to pair it with the [photobooth project](https://photoboothproject.github.io/).
 

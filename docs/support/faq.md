@@ -93,4 +93,4 @@ During pip installation cmake error can come up if not all prerequisites are com
 - Check to comply with prerequisites.
 - OpenCV-python fails during installation on 32 bit Raspberry Pi OS. Use 64bit version.
 
-[Check discussions for further help!](https://github.com/mgrl/photobooth-app/discussions)
+[Check discussions for further help!](https://github.com/photobooth-app/photobooth-app/discussions)

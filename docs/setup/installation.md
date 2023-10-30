@@ -2,7 +2,7 @@
 
 The app is available as [PyPI package](https://pypi.org/project/photobooth-app/). Follow this guide to install.
 
-You have seen the 3d printable photobooth box? [Check out the photobooth box!](https://github.com/mgrl/photobooth-3d)
+You have seen the 3d printable photobooth box? [Check out the photobooth box!](https://github.com/photobooth-app/photobooth-3d)
 
 ## Prerequisites
 

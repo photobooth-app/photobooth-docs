@@ -42,7 +42,7 @@ lp -d PRINTER_NAME_HERE -o landscape -o fit-to-page {filename}
 Set the command verified to work in the app including the {filename} placeholder.
 Admin Center -> Config -> Tab: HardwareInputOutput.
 
-If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/mgrl/photobooth-app/discussions/).
+If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/photobooth-app/photobooth-app/discussions/).
 
 !!! info
     You might want to update to more recent driver packages. See following guide:
@@ -60,7 +60,7 @@ mspaint /p {filename}
 Set the command verified to work in the app including the {filename} placeholder.
 Admin Center -> Config -> Tab: HardwareInputOutput.
 
-If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/mgrl/photobooth-app/discussions/).
+If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/photobooth-app/photobooth-app/discussions/).
 
 ## Troubleshooting
 

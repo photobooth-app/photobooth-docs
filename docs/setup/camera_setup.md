@@ -16,7 +16,7 @@ The second backend is used as live backend to stream video preview only.
 !!! note
     After changing config, the app needs to be restarted manually.
 
-    If you need help setup a specific camera, [start a new discussion on github](https://github.com/mgrl/photobooth-app/discussions).
+    If you need help setup a specific camera, [start a new discussion on github](https://github.com/photobooth-app/photobooth-app/discussions).
 
 ## Raspberry CSI Camera Modules
 
@@ -112,7 +112,7 @@ This means the module can be used with or without installing Arducams custom dri
     - ➖No PDAF support
     - ➖Only interval based autofocus e.g. every 10 seconds
     - ➕More stable upgrades because no customized libcamera needs to be installed.
-    - [install as described in discussions](https://github.com/mgrl/photobooth-app/discussions/23)
+    - [install as described in discussions](https://github.com/photobooth-app/photobooth-app/discussions/23)
 - with Arducams driver:
     - ➕PDAF support
     - ➕Continuous autofocus like camera module 3
@@ -150,7 +150,7 @@ Available cameras
 
 In principle every camera supported by libcamera / picamera2 would work.
 Since the cameras do not come with native support of the Raspberry Pi OS using them could be troublesome and it's untested.
-[Start a discussion](https://github.com/mgrl/photobooth-app/discussions/categories/howtos-and-camera-specific-topics) if there is a camera not working properly.
+[Start a discussion](https://github.com/photobooth-app/photobooth-app/discussions/categories/howtos-and-camera-specific-topics) if there is a camera not working properly.
 
 ## DSLR via gphoto2 (Linux)
 
@@ -166,7 +166,7 @@ Now finish setup:
 - set the main backend to Gphoto2
 
 DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
-Tinker with available settings until it works properly. If you run into trouble, [create a new issue in the tracker](https://github.com/mgrl/photobooth-app/issues).
+Tinker with available settings until it works properly. If you run into trouble, [create a new issue in the tracker](https://github.com/photobooth-app/photobooth-app/issues).
 
 ## DSLR via digicamcontrol (Windows)
 

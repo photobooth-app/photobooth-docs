@@ -40,16 +40,16 @@ To test the latest development version update directly from git:
 
 ```sh
 # example if installed via pipx
-pip upgrade git+https://github.com/mgrl/photobooth-app.git@main
+pip upgrade git+https://github.com/photobooth-app/photobooth-app.git@main
 
 # activate local venv before update if installed in venv
 source ~/photobooth-app/myenv/bin/activate
 
 # upgrade to main-branch
-pip install --upgrade --force-reinstall --no-deps git+https://github.com/mgrl/photobooth-app.git@main
+pip install --upgrade --force-reinstall --no-deps git+https://github.com/photobooth-app/photobooth-app.git@main
 
 # or upgrade to dev-branch
-pip install --upgrade --force-reinstall --no-deps git+https://github.com/mgrl/photobooth-app.git@dev
+pip install --upgrade --force-reinstall --no-deps git+https://github.com/photobooth-app/photobooth-app.git@dev
 ```
 
 !!! info

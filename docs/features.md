@@ -3,10 +3,10 @@
 This table is comparing the photobooth-app with other open source photobooth software.
 Commercial software like DSLRbooth is not taken into account.
 
-| Feature | [photobooth-app](https://github.com/mgrl/photobooth-app/) | [PhotoboothProject](https://github.com/PhotoboothProject/photobooth) | [PiBooth](https://github.com/pibooth/pibooth) |
+| Feature | [photobooth-app](https://github.com/photobooth-app/photobooth-app/) | [PhotoboothProject](https://github.com/PhotoboothProject/photobooth) | [PiBooth](https://github.com/pibooth/pibooth) |
 |---|---|---|---|
 | first version release | 2023 | 2016 | 2017 |
-| Stars |![GitHub Repo stars](https://img.shields.io/github/stars/mgrl/photobooth-app?style=social)| ![GitHub Repo stars](https://img.shields.io/github/stars/PhotoboothProject/photobooth?style=social) |![GitHub Repo stars](https://img.shields.io/github/stars/pibooth/pibooth?style=social) |
+| Stars |![GitHub Repo stars](https://img.shields.io/github/stars/photobooth-app/photobooth-app?style=social)| ![GitHub Repo stars](https://img.shields.io/github/stars/PhotoboothProject/photobooth?style=social) |![GitHub Repo stars](https://img.shields.io/github/stars/pibooth/pibooth?style=social) |
 | Community | ➕➕ | ➕➕➕ | ➕ |
 | Reference system incl Box design | ✅ | ❌ | ❌ |
 | **Supported Cameras and Image Features** |
@@ -20,7 +20,7 @@ Commercial software like DSLRbooth is not taken into account.
 | Capture single picture | ✅ | ✅ | ✅ |
 | Capture collages | ✅ | ✅ | ✅ |
 | Capture video/GIF | ❌ | ❌ | ❌ |
-| [Instagram-Like Image Filter](https://github.com/mgrl/pilgram2) | ✅ | ❌ | ❌ |
+| [Instagram-Like Image Filter](https://github.com/photobooth-app/pilgram2) | ✅ | ❌ | ❌ |
 | Background removal: Chromakeying | ✅ | ✅ | ❌ |
 | Add predefined background | ✅ | ✅ | ❌ |
 | Add frame with transparency to pictures | ✅ | ✅ | ❌ |
@@ -45,7 +45,7 @@ Commercial software like DSLRbooth is not taken into account.
 | Plugin Architecture | ❌ | ❌ | ✅ |
 | **Dev** |
 | Installable package | ✅ | ⏺️ install script | ✅ |
-| Automated testing including hardware |  [![codecov](https://codecov.io/gh/mgrl/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/mgrl/photobooth-app) | ❌ | ![codecov](https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg) |
+| Automated testing including hardware |  [![codecov](https://codecov.io/gh/photobooth-app/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/photobooth-app/photobooth-app) | ❌ | ![codecov](https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg) |
 | **Supported OS** |
 | Raspberry Pi Bookworm | ✅ | ✅ | ❌ |
 | Raspberry Pi Bullseye | ✅ | ✅ | ❌ |

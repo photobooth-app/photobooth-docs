@@ -42,4 +42,4 @@ photobooth
 python -m photobooth
 ```
 
-Watch the terminal for errors and try to debug. If you fail, start a [discussion](https://github.com/mgrl/photobooth-app/discussions).
+Watch the terminal for errors and try to debug. If you fail, start a [discussion](https://github.com/photobooth-app/photobooth-app/discussions).
