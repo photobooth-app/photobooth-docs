@@ -1041,8 +1041,8 @@ Following commands might be helpful:
 </code></pre></div>
 <h4 id="autostart-on-system-startup-bookworm">Autostart on system startup (Bookworm)</h4>
 <p>Modify the file below as stated. If there is a section <code>[autostart]</code> already, just add the line <code>chromium = ...</code> otherwise insert the complete section.</p>
-<div class="highlight"><span class="filename">~/config/wayfire.ini</span><pre><span></span><code><span class="k">[autostart]</span>
-<span class="hll"><span class="na">chromium</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">chromium-browser http://localhost:8000/ --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar</span>
+<div class="highlight"><span class="filename">~/.config/wayfire.ini</span><pre><span></span><code><span class="k">[autostart]</span>
+<span class="hll"><span class="na">chromium</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/</span><span class="w"> </span>
 </span></code></pre></div>
 <p>After reboot chromium will start automatically.</p>
 <h3 id="bullseye-platform">Bullseye Platform</h3>
