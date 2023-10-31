@@ -233,9 +233,9 @@ StartupNotify=false
 
 Modify the file below as stated. If there is a section ``[autostart]`` already, just add the line `chromium = ...` otherwise insert the complete section.
 
-```ini title="~/config/wayfire.ini" hl_lines="2"
+```ini title="~/.config/wayfire.ini" hl_lines="2"
 [autostart]
-chromium = chromium-browser http://localhost:8000/ --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar
+chromium = chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/ 
 ```
 
 After reboot chromium will start automatically.
