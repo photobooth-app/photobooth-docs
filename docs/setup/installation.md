@@ -41,8 +41,8 @@ On a fresh Raspberry Pi OS 64bit, run following commands:
 #### Update System
 
 ```zsh
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt update
+sudo apt upgrade
 ```
 
 #### Install system dependencies
@@ -225,7 +225,7 @@ Version=1.3
 Terminal=false
 Type=Application
 Name=Photobooth-App
-Exec=chromium-browser--kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+Exec=chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
 StartupNotify=false
 ```
 
