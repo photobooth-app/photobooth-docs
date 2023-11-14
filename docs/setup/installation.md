@@ -52,7 +52,7 @@ Adjust for debian/ubuntu. Picamera2 is only available on Raspberry Pi.
 
 ```zsh
 # basic stuff
-sudo apt-get -y install libturbojpeg0 python3-pip libgl1 libgphoto2-dev fonts-noto-color-emoji rclone inotify-tools
+sudo apt -y install libturbojpeg0 python3-pip libgl1 libgphoto2-dev fonts-noto-color-emoji rclone inotify-tools
 ```
 
 #### Tweak system settings
@@ -92,7 +92,7 @@ Use the following commands to install with pipx in an virtual environment:
 
 ```zsh
 # install pipx from repo - if not avail check pipx website
-sudo apt-get -y install pipx
+sudo apt -y install pipx
 # ensure path is registered and app globally available
 pipx ensurepath
 # initialize a pipx installation
