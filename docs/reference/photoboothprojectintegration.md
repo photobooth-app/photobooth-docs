@@ -8,9 +8,6 @@
 
     If you miss a feature consider to pair it with the [photobooth project](https://photoboothproject.github.io/).
 
-!!! warning
-    Change the port of the photobooth-app to a different port than 80, for example 8000. Port 80 is usually used by Apache/Nginx to serve the photoboothproject.
-
 Following commands have to be set in photobooth project to use this app as streamingserver.
 Works best if photobooth-app and photobooth-project installed on same device.
 If installed on different device, replace <http://localhost> by the actual hostname.

@@ -74,7 +74,7 @@ Setup the URL for the QR code to point to the image you would like to let the us
 Below an example URL to use in the QR code. {filename} gets replaced by the acutal filename. Replace the IP and port by the actual data.
 
 ```http title="QR code URL example"
-http://192.168.0.1/media/processed/full/{filename}
+http://192.168.0.1:8000/media/processed/full/{filename}
 ```
 
 ## Method C: Create your own sharing solution
