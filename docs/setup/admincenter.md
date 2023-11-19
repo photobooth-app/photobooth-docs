@@ -9,7 +9,7 @@ On the photobooth device browse to the admin center to configure your photobooth
 !!! info
     From other devices you might need to replace ``localhost`` by the hostname of the booth.
     Port ``80`` is default if you did not change it.
-    Until release 0.2 port ``8000`` was the default.
+    Until release 0.20.0 port ``8000`` was the default.
 
 ## Overview
 
