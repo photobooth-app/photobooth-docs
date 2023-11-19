@@ -71,7 +71,7 @@ It supports fast autofocus and comes with native driver in the Raspberry Pi OS.
 
 Now finish setup:
 
-- Set the index in the [admin center](http://localhost:8000/#/admin/config), config, tab backends.
+- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
 - Set the main backend to Picamera2
 - Choose Picamera2 focuser module, set Continuous for camera module 3
 - Enable livepreview if desired
@@ -121,7 +121,7 @@ This means the module can be used with or without installing Arducams custom dri
 
 Now finish setup:
 
-- Set the index in the [admin center](http://localhost:8000/#/admin/config), config, tab backends.
+- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
 - set the main backend to Picamera2
 - Choose Picamera2 focuser module, set Continuous if Arducams driver installed, otherwise choose Interval.
 - Enable livepreview if desired
@@ -162,7 +162,7 @@ As secondary backend most suitable is a webcamera or raspberry pi camera module.
 
 Now finish setup:
 
-- Set the index in the [admin center](http://localhost:8000/#/admin/config), config, tab backends.
+- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
 - set the main backend to Gphoto2
 
 DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
@@ -197,7 +197,7 @@ The command returns an array of indexes for which a webcam was detected.
 
 Now finish setup:
 
-- Set the index in the [admin center](http://localhost:8000/#/admin/config), config, tab backends.
+- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
 - set the backend (cv2 or v4l) as main backend
 - Consider changing the resolution requested from the camera on common tab.
 

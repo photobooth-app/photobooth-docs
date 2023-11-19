@@ -4,10 +4,12 @@
 The admin center is the central place to configure the photobooth software. You can also use it to upload and download files to the device.
 
 On the photobooth device browse to the admin center to configure your photobooth app:
-[http://localhost:8000/#/admin](http://localhost:8000/#/admin)
+[http://localhost/#/admin](http://localhost/#/admin)
 
 !!! info
-    From other devices you might need to replace ``localhost`` by the hostname of the booth. Port ``8000`` is default if you did not change it.
+    From other devices you might need to replace ``localhost`` by the hostname of the booth.
+    Port ``80`` is default if you did not change it.
+    Until release 0.2 port ``8000`` was the default.
 
 ## Overview
 

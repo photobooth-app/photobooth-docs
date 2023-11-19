@@ -1,4 +1,12 @@
-# Directories
+# Folders and URLs
+
+## Special URLs
+
+| Description   | Web access |
+|---|---|
+|  Gallery to be used on second display in standalone mode. | `http://IP:PORT/#/standalone/gallery` |
+
+## Folders on disk and their URL
 
 !!! info
     Photobooth uses the current working directory to store all data.

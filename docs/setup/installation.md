@@ -152,7 +152,7 @@ source ~/photobooth-app/myenv/bin/activate
 photobooth
 ```
 
-Browse to <http://localhost:8000> and see if the app is working properly.
+Browse to <http://localhost> and see if the app is working properly.
 Per default the app uses a generated image and displays a timer only. No camera is started at this point.
 You need to [continue setting up the cameras](../setup/camera_setup.md).
 
@@ -225,7 +225,7 @@ Version=1.3
 Terminal=false
 Type=Application
 Name=Photobooth-App
-Exec=chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+Exec=chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost/
 StartupNotify=false
 ```
 
@@ -235,7 +235,7 @@ Modify the file below as stated. If there is a section ``[autostart]`` already, 
 
 ```ini title="~/.config/wayfire.ini" hl_lines="2"
 [autostart]
-chromium = chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/ 
+chromium = chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost/ 
 ```
 
 After reboot chromium will start automatically.
@@ -252,7 +252,7 @@ Version=1.3
 Terminal=false
 Type=Application
 Name=Photobooth-App
-Exec=chromium-browser --kiosk http://localhost:8000/ --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic
+Exec=chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic http://localhost/ 
 StartupNotify=false
 ```
 
