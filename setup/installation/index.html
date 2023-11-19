@@ -534,9 +534,9 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../reference/directories/">
+<a class="md-nav__link" href="../../reference/foldersandurls/">
 <span class="md-ellipsis">
-    Directories
+    Folders and URLs
   </span>
 </a>
 </li>
@@ -983,7 +983,7 @@ All images, logs and config files will be stored in this folder.</p>
 <span class="c1"># start app. Current dir will be used as working-directory!</span>
 photobooth
 </code></pre></div>
-<p>Browse to <a href="http://localhost:8000">http://localhost:8000</a> and see if the app is working properly.
+<p>Browse to <a href="http://localhost">http://localhost</a> and see if the app is working properly.
 Per default the app uses a generated image and displays a timer only. No camera is started at this point.
 You need to <a href="../camera_setup/">continue setting up the cameras</a>.</p>
 <div class="admonition info">
@@ -1038,13 +1038,13 @@ Following commands might be helpful:
 <span class="na">Terminal</span><span class="o">=</span><span class="s">false</span>
 <span class="na">Type</span><span class="o">=</span><span class="s">Application</span>
 <span class="na">Name</span><span class="o">=</span><span class="s">Photobooth-App</span>
-<span class="hll"><span class="na">Exec</span><span class="o">=</span><span class="s">chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/</span>
+<span class="hll"><span class="na">Exec</span><span class="o">=</span><span class="s">chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost/</span>
 </span><span class="na">StartupNotify</span><span class="o">=</span><span class="s">false</span>
 </code></pre></div>
 <h4 id="autostart-on-system-startup-bookworm">Autostart on system startup (Bookworm)</h4>
 <p>Modify the file below as stated. If there is a section <code>[autostart]</code> already, just add the line <code>chromium = ...</code> otherwise insert the complete section.</p>
 <div class="highlight"><span class="filename">~/.config/wayfire.ini</span><pre><span></span><code><span class="k">[autostart]</span>
-<span class="hll"><span class="na">chromium</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/</span><span class="w"> </span>
+<span class="hll"><span class="na">chromium</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost/</span><span class="w"> </span>
 </span></code></pre></div>
 <p>After reboot chromium will start automatically.</p>
 <h3 id="bullseye-platform">Bullseye Platform</h3>
@@ -1055,7 +1055,7 @@ Following commands might be helpful:
 <span class="na">Terminal</span><span class="o">=</span><span class="s">false</span>
 <span class="na">Type</span><span class="o">=</span><span class="s">Application</span>
 <span class="na">Name</span><span class="o">=</span><span class="s">Photobooth-App</span>
-<span class="hll"><span class="na">Exec</span><span class="o">=</span><span class="s">chromium-browser --kiosk http://localhost:8000/ --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic</span>
+<span class="hll"><span class="na">Exec</span><span class="o">=</span><span class="s">chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic http://localhost/</span><span class="w"> </span>
 </span><span class="na">StartupNotify</span><span class="o">=</span><span class="s">false</span>
 </code></pre></div>
 <h4 id="autostart-on-system-startup-bullseye">Autostart on system startup (Bullseye)</h4>
