@@ -2,7 +2,7 @@
 
 ## Photobooth app website not available
 
-In default configuration the app listens to port 80 (until release 0.2 default port was 8000).
+In default configuration the app listens to port 80 (until release 0.20.0 default port was 8000).
 So the app can be reached from every computer in the same network on port 80 or 8000. On the same computer go to <http://localhost:80>.
 
 If the website is not available, the reason could be
