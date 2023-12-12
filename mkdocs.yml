@@ -11,6 +11,7 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.indexes
+    - content.code.copy
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"

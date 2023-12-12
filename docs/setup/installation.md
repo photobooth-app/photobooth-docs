@@ -24,7 +24,7 @@ If you run into issues, create an issue or open a discussion. Also check the cam
 
 | Hardware-Platform  | Software-Platform          | Distribution   | Cameras  |
 |--------------------|---------------------------|-----|--------------------------------------------------------------|
-| Raspberry Pi 5 | Raspberry Pi OS (64-bit) | Bookworm | No hardware to test yet! |
+| Raspberry Pi 5 | Raspberry Pi OS (64-bit) | Bookworm | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
 | Raspberry Pi 3/4 | Raspberry Pi OS (64-bit) | Bookworm | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
 | Raspberry Pi 3/4 | Raspberry Pi OS (Legacy, 64-bit) | Bullseye | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
 | Raspberry Pi 3/4 | Raspberry Pi OS (64-bit) | Bookworm | [Canon 1100D](http://www.gphoto.org/proj/libgphoto2/support.php) |
@@ -51,7 +51,6 @@ Following dependencies to be installed for Raspberry Pi OS 64bit.
 Adjust for debian/ubuntu. Picamera2 is only available on Raspberry Pi.
 
 ```zsh
-# basic stuff
 sudo apt -y install libturbojpeg0 python3-pip libgl1 libgphoto2-dev fonts-noto-color-emoji rclone inotify-tools
 ```
 
@@ -89,14 +88,21 @@ It's preferred nowadays to install pypi packages in virtual environments. Latest
 ### Method A: Install using pipx
 
 Use the following commands to install with pipx in an virtual environment:
+Install pipx from repo - if not avail check pipx website
 
 ```zsh
-# install pipx from repo - if not avail check pipx website
 sudo apt -y install pipx
-# ensure path is registered and app globally available
+```
+
+Following command to ensure path is registered and app globally available. Might need to restart console or logout/login gain also to reread environment paths variable.
+
+```zsh
 pipx ensurepath
-# initialize a pipx installation
-# allow import of system-site-packages as picamera2 is globally installed via apt in system-site
+```
+
+Start photobooth pipx installation. Allow import of system-site-packages as picamera2 is globally installed via apt in system-site.
+
+```zsh
 pipx install --system-site-packages photobooth-app --pip-args='--prefer-binary'
 ```
 
@@ -104,17 +110,27 @@ pipx install --system-site-packages photobooth-app --pip-args='--prefer-binary'
 
 Use the following commands to install in a virtual environment:
 
+Create empty directory & change to new dir:
+
 ```zsh
-# create empty directory
-mkdir ~/photobooth-app
-# change to new directory
-cd ~/photobooth-app
-# initialize a new venv called myenv
-# allow import of system-site-packages as picamera2 is globally installed via apt in system-site
+mkdir ~/photobooth-app && cd ~/photobooth-app
+```
+
+Initialize a new venv called myenv. Allow import of system-site-packages as picamera2 is globally installed via apt in system-site:
+
+```zsh
 python -m venv --system-site-packages myenv
-# activate the newly created env
+```
+
+Activate the newly created env
+
+```zsh
 source myenv/bin/activate
-# install photobooth-app
+```
+
+Install photobooth-app
+
+```zsh
 python -m pip install --prefer-binary photobooth-app
 ```
 
@@ -122,10 +138,9 @@ Note: `--prefer-binary` is added to avoid compiling opencv and instead prefer th
 
 ### Method C: Install globally
 
-This method was default in the past.
+This method was default in the past. Install photobooth-app
 
 ```zsh
-# install photobooth-app
 pip install --prefer-binary photobooth-app
 ```
 
@@ -140,15 +155,21 @@ All images, logs and config files will be stored in this folder.
 mkdir ~/photobooth-data
 ```
 
-### Start the app
+Start the app
 
 ```zsh
 cd ~/photobooth-data
+```
 
-# following only if installed via venv method
+Following only if installed via venv method
+
+```zsh
 source ~/photobooth-app/myenv/bin/activate
+```
 
-# start app. Current dir will be used as working-directory!
+Start app. Current dir will be used as working-directory!
+
+```zsh
 photobooth
 ```
 
@@ -225,7 +246,7 @@ Version=1.3
 Terminal=false
 Type=Application
 Name=Photobooth-App
-Exec=chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+Exec=chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
 StartupNotify=false
 ```
 
@@ -235,7 +256,7 @@ Modify the file below as stated. If there is a section ``[autostart]`` already, 
 
 ```ini title="~/.config/wayfire.ini" hl_lines="2"
 [autostart]
-chromium = chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/ 
+chromium = chromium-browser --kiosk--disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/ 
 ```
 
 After reboot chromium will start automatically.
@@ -252,7 +273,7 @@ Version=1.3
 Terminal=false
 Type=Application
 Name=Photobooth-App
-Exec=chromium-browser --kiosk --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic http://localhost:8000/ 
+Exec=chromium-browser --kiosk--disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic http://localhost:8000/ 
 StartupNotify=false
 ```
 
