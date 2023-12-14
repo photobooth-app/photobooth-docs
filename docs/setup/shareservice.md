@@ -65,6 +65,7 @@ Once setup, the prinicple is as following:
 - check php error log in the folder where dl.php is located.
 - ensure the dl.php directory has write-permission for the webserver.
 - check photobooth error log.
+- nginx needs to be [configured for longrunning http-requests](https://github.com/photobooth-app/photobooth-app/issues/140#issuecomment-1856841684)
 
 ## Method B: Share via local WiFi
 
