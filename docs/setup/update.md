@@ -14,10 +14,15 @@ pipx upgrade photobooth-app
 
 To upgrade to the latest release use pip:
 
-```zsh
-# activate local venv before update
-source ~/photobooth-app/myenv/bin/activate
+Activate local venv before update:
 
+```zsh
+source ~/photobooth-app/myenv/bin/activate
+```
+
+Start the upgrade:
+
+```zsh
 pip install --upgrade photobooth-app
 ```
 
@@ -38,17 +43,27 @@ Stable releases are published at [PyPI registry](https://pypi.org/project/photob
 
 To test the latest development version update directly from git:
 
+Example if installed via pipx
+
 ```sh
-# example if installed via pipx
 pip upgrade git+https://github.com/photobooth-app/photobooth-app.git@main
+```
 
-# activate local venv before update if installed in venv
+Or activate local venv before update if installed in venv
+
+```sh
 source ~/photobooth-app/myenv/bin/activate
+```
 
-# upgrade to main-branch
+Upgrade to main-branch
+
+```sh
 pip install --upgrade --force-reinstall --no-deps git+https://github.com/photobooth-app/photobooth-app.git@main
+```
 
-# or upgrade to dev-branch
+Or upgrade to dev-branch
+
+```sh
 pip install --upgrade --force-reinstall --no-deps git+https://github.com/photobooth-app/photobooth-app.git@dev
 ```
 

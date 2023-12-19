@@ -17,6 +17,10 @@ Additional information: [3d printed box](./photobox3dprint.md), [buzzer](https:/
 ![reference photobooth](./assets/projects/reference/reference_img1.jpg){ width="300" }
 ![reference photobooth](./assets/projects/reference/reference_img3.jpg){ width="300" }
 
+### Other photobooth-app projects
+
+- [Peda1996](https://github.com/photobooth-app/photobooth-app/discussions/145)
+
 ## Yours here? That would be awesome! 🕶️
 
 If you want to add your booth to this page, send a message in the [discussions, category show and tell 📣](https://github.com/photobooth-app/photobooth-app/discussions/categories/show-and-tell).
