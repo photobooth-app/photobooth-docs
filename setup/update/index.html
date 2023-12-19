@@ -576,10 +576,11 @@
 </code></pre></div>
 <h2 id="method-b-virtual-environment-pip-upgrade">Method B: Virtual environment pip upgrade</h2>
 <p>To upgrade to the latest release use pip:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># activate local venv before update</span>
-<span class="nb">source</span><span class="w"> </span>~/photobooth-app/myenv/bin/activate
-
-pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>photobooth-app
+<p>Activate local venv before update:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/photobooth-app/myenv/bin/activate
+</code></pre></div>
+<p>Start the upgrade:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>photobooth-app
 </code></pre></div>
 <h2 id="method-c-global-pip-upgrade">Method C: Global pip upgrade</h2>
 <p>To upgrade to the latest release use pip:</p>
@@ -590,17 +591,17 @@ If the app doesn't show up again, check the <a href="../../support/troubleshooti
 <h2 id="update-to-development-versions">Update to development versions</h2>
 <p>Stable releases are published at <a href="https://pypi.org/project/photobooth-app/">PyPI registry</a> usually. Update to development versions only if requested or you know what you do.</p>
 <p>To test the latest development version update directly from git:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># example if installed via pipx</span>
-pip<span class="w"> </span>upgrade<span class="w"> </span>git+https://github.com/photobooth-app/photobooth-app.git@main
-
-<span class="c1"># activate local venv before update if installed in venv</span>
-<span class="nb">source</span><span class="w"> </span>~/photobooth-app/myenv/bin/activate
-
-<span class="c1"># upgrade to main-branch</span>
-pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>--no-deps<span class="w"> </span>git+https://github.com/photobooth-app/photobooth-app.git@main
-
-<span class="c1"># or upgrade to dev-branch</span>
-pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>--no-deps<span class="w"> </span>git+https://github.com/photobooth-app/photobooth-app.git@dev
+<p>Example if installed via pipx</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>upgrade<span class="w"> </span>git+https://github.com/photobooth-app/photobooth-app.git@main
+</code></pre></div>
+<p>Or activate local venv before update if installed in venv</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/photobooth-app/myenv/bin/activate
+</code></pre></div>
+<p>Upgrade to main-branch</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>--no-deps<span class="w"> </span>git+https://github.com/photobooth-app/photobooth-app.git@main
+</code></pre></div>
+<p>Or upgrade to dev-branch</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>--no-deps<span class="w"> </span>git+https://github.com/photobooth-app/photobooth-app.git@dev
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
