@@ -790,8 +790,8 @@ Since the cameras do not come with native support of the Raspberry Pi OS using t
 <h2 id="dslr-via-gphoto2-linux">DSLR via gphoto2 (Linux)</h2>
 <p>The app is tested with a Canon 1100D. In general all <a href="http://www.gphoto.org/proj/libgphoto2/support.php">gphoto2 supported cameras</a> can be used.
 If the camera supports liveview a stream is created and being used as preview in the app.
-If the camera does not support liveview, you might want to consider setup the app in hybrid mode.
-Main camera would be the DSLR to take high quality images, the livestream is captured from a secondary backend.
+If the camera does not support liveview, you might want to consider to setup the app in <a href="#hybrid-dslr-and-second-backend-to-stream">hybrid mode</a>.
+The main camera would be the DSLR to take high quality images, the livestream is captured from a secondary backend.
 As secondary backend most suitable is a webcamera or raspberry pi camera module.</p>
 <p>Now finish setup:</p>
 <ul>
@@ -801,9 +801,18 @@ As secondary backend most suitable is a webcamera or raspberry pi camera module.
 <p>DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
 Tinker with available settings until it works properly. If you run into trouble, <a href="https://github.com/photobooth-app/photobooth-app/issues">create a new issue in the tracker</a>.</p>
 <h2 id="dslr-via-digicamcontrol-windows">DSLR via digicamcontrol (Windows)</h2>
-<blockquote>
-<p>Implementation not yet finished, feel free to contribute. 😊</p>
-</blockquote>
+<p>The app is tested with a webcamera in Digicamcontrol. In general all <a href="https://digicamcontrol.com/cameras">digicamcontrol supported cameras</a> can be used.
+If the camera supports liveview a stream is created and being used as preview in the app.
+If the camera does not support liveview, you might want to consider to setup the app in <a href="#hybrid-dslr-and-second-backend-to-stream">hybrid mode</a>.
+The main camera would be the DSLR to take high quality images, the livestream is captured from a secondary backend.
+As secondary backend most suitable is a webcamera or raspberry pi camera module.</p>
+<p>Now finish setup:</p>
+<ul>
+<li>Set the index in the <a href="http://localhost/#/admin/config">admin center</a>, config, tab backends.</li>
+<li>set the main backend to Digicamcontrol</li>
+</ul>
+<p>DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
+Tinker with available settings until it works properly. If you run into trouble, <a href="https://github.com/photobooth-app/photobooth-app/issues">create a new issue in the tracker</a>.</p>
 <h2 id="webcam">Webcam</h2>
 <p>USB-webcams are integrated via two backends:</p>
 <ul>
