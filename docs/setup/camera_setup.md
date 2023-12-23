@@ -156,8 +156,8 @@ Since the cameras do not come with native support of the Raspberry Pi OS using t
 
 The app is tested with a Canon 1100D. In general all [gphoto2 supported cameras](http://www.gphoto.org/proj/libgphoto2/support.php) can be used.
 If the camera supports liveview a stream is created and being used as preview in the app.
-If the camera does not support liveview, you might want to consider setup the app in hybrid mode.
-Main camera would be the DSLR to take high quality images, the livestream is captured from a secondary backend.
+If the camera does not support liveview, you might want to consider to setup the app in [hybrid mode](#hybrid-dslr-and-second-backend-to-stream).
+The main camera would be the DSLR to take high quality images, the livestream is captured from a secondary backend.
 As secondary backend most suitable is a webcamera or raspberry pi camera module.
 
 Now finish setup:
@@ -170,7 +170,45 @@ Tinker with available settings until it works properly. If you run into trouble,
 
 ## DSLR via digicamcontrol (Windows)
 
-> Implementation not yet finished, feel free to contribute. 😊
+The app is tested with a webcamera in Digicamcontrol. In general all [digicamcontrol supported cameras](https://digicamcontrol.com/cameras) can be used.
+If the camera supports liveview a stream is created and being used as preview in the app.
+If the camera does not support liveview, you might want to consider to setup the app in [hybrid mode](#hybrid-dslr-and-second-backend-to-stream).
+The main camera would be the DSLR to take high quality images, the livestream is captured from a secondary backend.
+As secondary backend most suitable is a webcamera or raspberry pi camera module.
+
+### Setup Photobooth-App
+
+- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
+- set the main backend to Digicamcontrol
+
+### Setup Digicamcontrol
+
+Following Configuration is mandatory. There may be additional settings needed for your specific setup/camera.
+
+- Settings
+    - General
+        - Main window: Default
+        - Minimize to tray icon: ✔️
+        - Start minimized: ✔️
+        - Start when Windows starts: ✔️
+        - Start new session on startup: ✔️
+    - Webserver
+        - Use web server: ✔️
+        - Allow interaction via webserver: ✔️
+        - Allow public access: ✔️
+    - Devices
+        - Set according to your setup
+    - Advanced
+        - Hide tray bar notifications: ✔️
+        - Webcamera support: ✔️ (if you want to test with a webcamera this is helpful)
+
+- Main Window
+    - Choose the camera to use
+
+Restart Digicamcontrol after configured.
+
+DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
+Tinker with available settings until it works properly. If you run into trouble, [create a new issue in the tracker](https://github.com/photobooth-app/photobooth-app/issues).
 
 ## Webcam
 

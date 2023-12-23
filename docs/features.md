@@ -27,7 +27,7 @@ Commercial software like DSLRbooth is not taken into account.
 | **Gallery** |
 | Gallery local display | ✅ | ✅ | ❌ |
 | Gallery external access via IP | ✅ | ✅ | ❌ |
-| Sync images to USB drive | ❌ | ✅ | ❌ |
+| Sync images to USB drive | ✅ | ✅ | ❌ |
 | Share images online via QR code | ✅ | ⏺️[^4] | ✅ |
 | Printing | ✅ | ✅ | ✅ |
 | **Personalization** |
