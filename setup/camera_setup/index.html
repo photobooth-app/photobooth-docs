@@ -374,6 +374,24 @@
       DSLR via digicamcontrol (Windows)
     </span>
 </a>
+<nav aria-label="DSLR via digicamcontrol (Windows)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-photobooth-app">
+<span class="md-ellipsis">
+      Setup Photobooth-App
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-digicamcontrol">
+<span class="md-ellipsis">
+      Setup Digicamcontrol
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#webcam">
@@ -636,6 +654,24 @@
       DSLR via digicamcontrol (Windows)
     </span>
 </a>
+<nav aria-label="DSLR via digicamcontrol (Windows)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-photobooth-app">
+<span class="md-ellipsis">
+      Setup Photobooth-App
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-digicamcontrol">
+<span class="md-ellipsis">
+      Setup Digicamcontrol
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#webcam">
@@ -806,11 +842,50 @@ If the camera supports liveview a stream is created and being used as preview in
 If the camera does not support liveview, you might want to consider to setup the app in <a href="#hybrid-dslr-and-second-backend-to-stream">hybrid mode</a>.
 The main camera would be the DSLR to take high quality images, the livestream is captured from a secondary backend.
 As secondary backend most suitable is a webcamera or raspberry pi camera module.</p>
-<p>Now finish setup:</p>
+<h3 id="setup-photobooth-app">Setup Photobooth-App</h3>
 <ul>
 <li>Set the index in the <a href="http://localhost/#/admin/config">admin center</a>, config, tab backends.</li>
 <li>set the main backend to Digicamcontrol</li>
 </ul>
+<h3 id="setup-digicamcontrol">Setup Digicamcontrol</h3>
+<p>Following Configuration is mandatory. There may be additional settings needed for your specific setup/camera.</p>
+<ul>
+<li>
+<p>Settings</p>
+<ul>
+<li>General<ul>
+<li>Main window: Default</li>
+<li>Minimize to tray icon: ✔️</li>
+<li>Start minimized: ✔️</li>
+<li>Start when Windows starts: ✔️</li>
+<li>Start new session on startup: ✔️</li>
+</ul>
+</li>
+<li>Webserver<ul>
+<li>Use web server: ✔️</li>
+<li>Allow interaction via webserver: ✔️</li>
+<li>Allow public access: ✔️</li>
+</ul>
+</li>
+<li>Devices<ul>
+<li>Set according to your setup</li>
+</ul>
+</li>
+<li>Advanced<ul>
+<li>Hide tray bar notifications: ✔️</li>
+<li>Webcamera support: ✔️ (if you want to test with a webcamera this is helpful)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Main Window</p>
+<ul>
+<li>Choose the camera to use</li>
+</ul>
+</li>
+</ul>
+<p>Restart Digicamcontrol after configured.</p>
 <p>DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
 Tinker with available settings until it works properly. If you run into trouble, <a href="https://github.com/photobooth-app/photobooth-app/issues">create a new issue in the tracker</a>.</p>
 <h2 id="webcam">Webcam</h2>
