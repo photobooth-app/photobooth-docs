@@ -19,7 +19,8 @@ Commercial software like DSLRbooth is not taken into account.
 | **Image Features and Postprocessing** |
 | Capture single picture | ✅ | ✅ | ✅ |
 | Capture collages | ✅ | ✅ | ✅ |
-| Capture video/GIF | ❌ | ❌ | ❌ |
+| Capture animated GIF | ✅ | ❌ | ❌ |
+| Capture video | ❌ | ❌ | ❌ |
 | [Instagram-Like Image Filter](https://github.com/photobooth-app/pilgram2) | ✅ | ❌ | ❌ |
 | Background removal: Chromakeying | ✅ | ✅ | ❌ |
 | Add predefined background | ✅ | ✅ | ❌ |
