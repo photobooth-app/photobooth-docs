@@ -80,7 +80,8 @@ Please ensure Windows is up to date.
 
 #### Tweak system settings (Win)
 
-Ensure the system has standby disabled and the monitor is not turned off.
+- Ensure the system has standby disabled and the monitor is not turned off.
+- Consider using [autologin to windows desktop](https://learn.microsoft.com/de-de/sysinternals/downloads/autologon).
 
 #### Install system dependencies (Win)
 
