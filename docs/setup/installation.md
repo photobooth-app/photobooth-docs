@@ -6,7 +6,7 @@ You have seen the 3d printable photobooth box? [Check out the photobooth box!](h
 
 ## Prerequisites
 
-- Python 3.9 or later. Python 3.12 is not yet supported.
+- Python 3.9 or later.
 - If Raspberry Pi: **64bit** system, Bullseye and Bookworm are supported.
 - Camera, can be one or two (first camera for stills, second camera for live view)
     - DSLR: [gphoto2](http://www.gphoto.org/proj/libgphoto2/support.php) on Linux
@@ -38,23 +38,14 @@ If you have tested additional software/hardware-platform, please let me know and
 
 On a fresh Raspberry Pi OS 64bit, run following commands:
 
-#### Update System
+#### Update System (RPi)
 
 ```zsh
 sudo apt update
 sudo apt upgrade
 ```
 
-#### Install system dependencies
-
-Following dependencies to be installed for Raspberry Pi OS 64bit.
-Adjust for debian/ubuntu. Picamera2 is only available on Raspberry Pi.
-
-```zsh
-sudo apt -y install libturbojpeg0 python3-pip libgl1 libgphoto2-dev fonts-noto-color-emoji rclone inotify-tools
-```
-
-#### Tweak system settings
+#### Tweak system settings (RPi)
 
 To use hardware input from keyboard or presenter, the current user needs to be added to tty and input group.
 
@@ -64,6 +55,15 @@ sudo usermod --append --groups tty,input $(whoami)
 
 You also might want to [check some display settings](../extras/display.md).
 
+#### Install system dependencies (RPi)
+
+Following dependencies to be installed for Raspberry Pi OS 64bit.
+Adjust for debian/ubuntu. Picamera2 is only available on Raspberry Pi.
+
+```zsh
+sudo apt -y install libturbojpeg0 python3-pip libgl1 libgphoto2-dev fonts-noto-color-emoji rclone inotify-tools
+```
+
 ### Debian/Ubuntu
 
 There are no dedicated installation instructions available by now.
@@ -71,9 +71,25 @@ It should work similar to Raspberry Pi installation, please try these. Feel free
 
 ### Windows
 
-While using the app on windows works, there is no documentation yet.
-Also use is limited by now, because the digicamcontrol software is not yet implemented.
-Only webcams can be used on windows right now.
+Windows is well supported, the software is developed on a Windows system.
+As of app version 1.0 Digicamcontrol is integrated to support DSLR on Windows platform.
+
+#### Update System (Win)
+
+Please ensure Windows is up to date.
+
+#### Tweak system settings (Win)
+
+Ensure the system has standby disabled and the monitor is not turned off.
+
+#### Install system dependencies (Win)
+
+To use the photobooth first install following system dependencies:
+
+- [Latest stable Python](https://www.python.org/downloads/) Please use the link, the Microsoft Store version is not recommended.
+- [Latest libjpeg-turbo-X.X.X-**vc64**](https://github.com/libjpeg-turbo/libjpeg-turbo/releases) (ensure to use the -vc64 variant!)
+
+Once the dependencies are installed, continue with the installation of the app. On the Windows platform [Method C is recommended](#method-c-install-globally) currently.
 
 ## Install photobooth app
 
@@ -81,7 +97,7 @@ Several ways to install:
 
 1. Method A: Install using pipx (easiest, recommended for Bookworm)
 2. Method B: Install using venv
-3. Method C: Install globally (recommended for Bullseye)
+3. Method C: Install globally (recommended for Bullseye and Windows)
 
 It's preferred nowadays to install pypi packages in virtual environments. Latest Linux OS' start implementing [externally managed base environments](https://peps.python.org/pep-0668/) now. The easiest solution to install is using pipx.
 
