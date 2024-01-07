@@ -5,8 +5,10 @@ Currently supported triggers are:
 
 - Shutdown host, default GPIO 17, hold 2 seconds
 - Reboot host, default GPIO 18, hold 2 seconds
-- Take picture, default GPIO 27, press
-- Print most recent image, default GPIO 22, press
+- Take a picture, default GPIO 27, press
+- Take a collage, default GPIO 22, press
+- Take an animation (GIF), default GPIO 24, press
+- Print most recent image, default GPIO 23, press
 
 Internally gpiozero python implementation is used.
 

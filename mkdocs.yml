@@ -38,6 +38,9 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - attr_list
   - md_in_html
   - admonition
@@ -52,7 +55,7 @@ plugins:
   - glightbox
 
 copyright: >
-  2023 – <a href="#__consent">Change cookie settings</a>
+  2024 – <a href="#__consent">Change cookie settings</a>
 
 extra:
   consent:
