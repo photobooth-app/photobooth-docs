@@ -10,7 +10,7 @@
 <link href="../gpio/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.5.2" name="generator"/>
-<title>Postprocess Images and Collages - Photobooth App</title>
+<title>Postprocess Captures - Photobooth App</title>
 <link href="../../assets/stylesheets/main.50c56a3b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -38,7 +38,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#postprocess-images-and-collages">
+<a class="md-skip" href="#postprocess-captures">
           Skip to content
         </a>
 </div>
@@ -62,7 +62,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Postprocess Images and Collages
+              Postprocess Captures
             
           </span>
 </div>
@@ -307,13 +307,13 @@
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
-    Postprocess Images and Collages
+    Postprocess Captures
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Postprocess Images and Collages
+    Postprocess Captures
   </span>
 </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
@@ -377,9 +377,16 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#gifvideo-pipeline">
+<a class="md-nav__link" href="#animated-gif-pipeline">
 <span class="md-ellipsis">
-      GIF/Video-Pipeline
+      Animated GIF-Pipeline
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#video-pipeline">
+<span class="md-ellipsis">
+      Video-Pipeline
     </span>
 </a>
 </li>
@@ -682,9 +689,16 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#gifvideo-pipeline">
+<a class="md-nav__link" href="#animated-gif-pipeline">
 <span class="md-ellipsis">
-      GIF/Video-Pipeline
+      Animated GIF-Pipeline
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#video-pipeline">
+<span class="md-ellipsis">
+      Video-Pipeline
     </span>
 </a>
 </li>
@@ -758,12 +772,14 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="postprocess-images-and-collages">Postprocess Images and Collages</h1>
-<p>The mediaitems (images, videos, gifs) are postprocessed in a configurable pipeline consisting of several stages.
-The pipeline starts with the original mediaitem. Next is the stage to remove a greenscreen, add texts and a new background. The final processed item is stored to the gallery.</p>
+<h1 id="postprocess-captures">Postprocess Captures</h1>
+<p>The mediaitems (images, collages, animated gifs) are postprocessed in a configurable pipeline consisting of several stages.
+The pipeline starts with the original mediaitem. The different media types can have differently configured pipelines that process the image one by one. The processed mediaitem is stored to the gallery finally.</p>
 <h2 id="examples">Examples</h2>
 <h3 id="single-images">Single Images</h3>
-<p>TODO: add example image</p>
+<p>Single images are captured in one shot.
+The image can be modified, eg. add a new frame on top of the image and some custom text like in the example below:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/mediaprocessing/image_demo.jpg"><img alt="image demo" src="../../assets/mediaprocessing/image_demo.jpg"/></a></p>
 <h3 id="collages">Collages</h3>
 <p>Collages are merged from several images. These can be captured images from camera and being mixed with predefined images.
 Each capture can be modified, eg. remove the greenscreen and add a new background before merging in the collage.
@@ -772,12 +788,13 @@ Following is an example how the collage is processed:</p>
 <h2 id="pipelines">Pipelines</h2>
 <p>Depending on the job type</p>
 <ul>
-<li>single picture or</li>
-<li>collage or</li>
+<li><a href="http://localhost:8000/#/admin/config/mediaprocessing_pipeline_singleimage">single picture</a> or</li>
+<li><a href="http://localhost:8000/#/admin/config/mediaprocessing_pipeline_collage">collage</a> or</li>
+<li><a href="http://localhost:8000/#/admin/config/mediaprocessing_pipeline_animation">animation</a> or</li>
 <li>printing</li>
 </ul>
-<p>there are different postprocess pipelines available. They can be configured in the admin dashboard.
-The pipeline consists of several stages, each can be enabled and configured separately.</p>
+<p>there are different postprocess pipelines available. They can be configured in the admin dashboard, so above links work only on your computer with the photobooth app running.
+The pipeline consists of several stages, each can be enabled and configured separately, see next chapter.</p>
 <h2 id="basics">Basics</h2>
 <ul>
 <li>Coordinate system: 0/0 is top/left.</li>
@@ -803,7 +820,14 @@ The pipeline consists of several stages, each can be enabled and configured sepa
 <li>text overlay</li>
 </ol>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../assets/mediaprocessing/collage_pipeline_example.png"><img alt="collage pipeline example" src="../../assets/mediaprocessing/collage_pipeline_example.png"/></a></p>
-<h3 id="gifvideo-pipeline">GIF/Video-Pipeline</h3>
+<h3 id="animated-gif-pipeline">Animated GIF-Pipeline</h3>
+<p>The gifs are made out of single captures, not a video.
+The animated gif pipeline runs following stages in given sequence:</p>
+<ol>
+<li>run single images stages (currently only texts)</li>
+<li>line up captured images as defined in one GIF</li>
+</ol>
+<h3 id="video-pipeline">Video-Pipeline</h3>
 <p>Feature not yet implemented. You're invited to contribute. 👋</p>
 <h3 id="print-pipeline">Print-Pipeline</h3>
 <p>Feature not yet implemented. You're invited to contribute. 👋</p>
