@@ -1,13 +1,16 @@
-# Postprocess Images and Collages
+# Postprocess Captures
 
-The mediaitems (images, videos, gifs) are postprocessed in a configurable pipeline consisting of several stages.
-The pipeline starts with the original mediaitem. Next is the stage to remove a greenscreen, add texts and a new background. The final processed item is stored to the gallery.
+The mediaitems (images, collages, animated gifs) are postprocessed in a configurable pipeline consisting of several stages.
+The pipeline starts with the original mediaitem. The different media types can have differently configured pipelines that process the image one by one. The processed mediaitem is stored to the gallery finally.
 
 ## Examples
 
 ### Single Images
 
-TODO: add example image
+Single images are captured in one shot.
+The image can be modified, eg. add a new frame on top of the image and some custom text like in the example below:
+
+![image demo](../assets/mediaprocessing/image_demo.jpg)
 
 ### Collages
 
@@ -21,12 +24,13 @@ Following is an example how the collage is processed:
 
 Depending on the job type
 
-- single picture or
-- collage or
+- [single picture](http://localhost:8000/#/admin/config/mediaprocessing_pipeline_singleimage) or
+- [collage](http://localhost:8000/#/admin/config/mediaprocessing_pipeline_collage) or
+- [animation](http://localhost:8000/#/admin/config/mediaprocessing_pipeline_animation) or
 - printing
 
-there are different postprocess pipelines available. They can be configured in the admin dashboard.
-The pipeline consists of several stages, each can be enabled and configured separately.
+there are different postprocess pipelines available. They can be configured in the admin dashboard, so above links work only on your computer with the photobooth app running.
+The pipeline consists of several stages, each can be enabled and configured separately, see next chapter.
 
 ## Basics
 
@@ -56,7 +60,15 @@ The collage pipeline runs following stages in given sequence:
 
 ![collage pipeline example](../assets/mediaprocessing/collage_pipeline_example.png)
 
-### GIF/Video-Pipeline
+### Animated GIF-Pipeline
+
+The gifs are made out of single captures, not a video.
+The animated gif pipeline runs following stages in given sequence:
+
+  1. run single images stages (currently only texts)
+  2. line up captured images as defined in one GIF
+
+### Video-Pipeline
 
 Feature not yet implemented. You're invited to contribute. 👋
 
