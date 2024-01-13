@@ -22,7 +22,7 @@ jobs:
       - name: 📂 upload files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-            server: testdocs.photobooth-app.org.w01b6f5a.kasserver.com
+            server: photobooth-app.org.w01b6f5a.kasserver.com
             username: ${{ secrets.FTP_USERNAME }}
             password: ${{ secrets.FTP_PASSWORD }}
             local-dir: "./public/"
