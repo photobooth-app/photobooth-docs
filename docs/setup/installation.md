@@ -7,7 +7,8 @@ You have seen the 3d printable photobooth box? [Check out the photobooth box!](h
 ## Prerequisites
 
 - Python 3.9 or later.
-- If Raspberry Pi: **64bit** system, Bullseye and Bookworm are supported.
+- System: Raspberry Pi 4 or 5 recommended. Hardware more performant is fine also using a generic Debian/Windows. Raspberry Pi 3 could work also but might be slow.
+- Screen: Touchscreen highly recommended. Minimum resolution is 1024x600.
 - Camera, can be one or two (first camera for stills, second camera for live view)
     - DSLR: [gphoto2](http://www.gphoto.org/proj/libgphoto2/support.php) on Linux
     - RPI [Camera Modules](https://www.raspberrypi.com/documentation/accessories/camera.html) / Arducams: installed and working (test with `libcamera-hello`)
