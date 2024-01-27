@@ -23,13 +23,14 @@ These are systems used productive or in automated testing and most likely to wor
 Gphoto2 and the webcam backends support many different camera models but manufacturers might implement communication protocols slightly different.
 If you run into issues, create an issue or open a discussion. Also check the camera manufacturers manuals for their camera installation guides.
 
-| Hardware-Platform  | Software-Platform          | Distribution   | Cameras  |
-|--------------------|---------------------------|-----|--------------------------------------------------------------|
-| Raspberry Pi 5 | Raspberry Pi OS (64-bit) | Bookworm | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
-| Raspberry Pi 3/4 | Raspberry Pi OS (64-bit) | Bookworm | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
-| Raspberry Pi 3/4 | Raspberry Pi OS (Legacy, 64-bit) | Bullseye | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
-| Raspberry Pi 3/4 | Raspberry Pi OS (64-bit) | Bookworm | [Canon 1100D](http://www.gphoto.org/proj/libgphoto2/support.php) |
-| Raspberry Pi 3/4 | Raspberry Pi OS (Legacy, 64-bit) | Bullseye | [Arducam IMX519 PDAF](https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/16MP-IMX519/) |
+| Hardware-Platform  | Software-Platform              | Cameras  |
+|--------------------|--------------------------------|--------------------------------------------------------------|
+| Raspberry Pi 5 | Raspberry Pi OS (64-bit, Bookworm) | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
+| Raspberry Pi 4 | Raspberry Pi OS (64-bit, Bookworm) | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
+| Raspberry Pi 4 | Raspberry Pi OS (64-bit, Bullseye legacy)  | [Arducam IMX519 PDAF](https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/16MP-IMX519/) |
+| Raspberry Pi 4 | Raspberry Pi OS (64-bit, Bookworm) | [Canon 1100D](http://www.gphoto.org/proj/libgphoto2/support.php) |
+| Raspberry Pi 4 | Raspberry Pi OS (64-bit, Bookworm) | [Canon 600D](http://www.gphoto.org/proj/libgphoto2/support.php), [try different modes](https://github.com/photobooth-app/photobooth-app/discussions/161) |
+| Raspberry Pi 3 | Raspberry Pi OS (64-bit, Bookworm) | Will work, can be slow, not preferred. |
 
 If you have tested additional software/hardware-platform, please let me know and I add it to the list.
 
