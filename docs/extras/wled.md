@@ -29,8 +29,8 @@ WLED integration for LED signaling, see yourself:
 - Connect the WLED device to your WiFi. The webinstaller asks for the credentials and configures the ESP accordingly.
 - Visit the WLED website on the ESP and configure.
 - If you use exact the same items listed in the BOM, you can start using following
-    - [config](../assets/wled/cfg.json)
-    - [presets](../assets/wled/presets.json)
+    - [config](../assets/wled/wled_cfg.json)
+    - [presets](../assets/wled/wled_presets.json)
 - In the photobooth-app enable the WLED integration and add the serial port to the ESP device in the admin config.
 
 For more detailed instructions on the WLED device itself see the [WLED](https://kno.wled.ge/basics/getting-started/) website see
@@ -41,10 +41,11 @@ Head over to <https://kno.wled.ge/basics/getting-started/> for more detailed ins
 
 # Required presets for photobooth to work
 
-In the WLED webfrontend define three presets:
+In the WLED webfrontend define four presets:
 
 - ID 1: standby (usually LEDs off)
 - ID 2: countdown (animates countdown)
 - ID 3: shoot (imitate a flash)
+- ID 4: recording (imitate a red light to visualize ongoing record)
 
 Please define presets on your own in WLED webfrontend. Once added, in the photobooth enable the WLED integration and provide the serial port to WLED esp device. Check logs on startup whether the module is detected correctly.
