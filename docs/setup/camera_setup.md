@@ -168,6 +168,10 @@ Now finish setup:
 DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
 Tinker with available settings until it works properly. If you run into trouble, [create a new issue in the tracker](https://github.com/photobooth-app/photobooth-app/issues).
 
+!!! note
+    Linux systems automatically mount the camera on connection. This interferes with the photobooth, since the app needs exclusive access.
+    Check this [guide on how to disable `gvfs-gphoto2-volume-monitor`](https://photobooth-app.org/support/faq/#gphoto2-camera-found-but-no-access)
+
 ## DSLR via digicamcontrol (Windows)
 
 The app is tested with a webcamera in Digicamcontrol. In general all [digicamcontrol supported cameras](https://digicamcontrol.com/cameras) can be used.
