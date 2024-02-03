@@ -63,7 +63,7 @@ Following dependencies to be installed for Raspberry Pi OS 64bit.
 Adjust for debian/ubuntu. Picamera2 is only available on Raspberry Pi.
 
 ```zsh
-sudo apt -y install libturbojpeg0 python3-pip libgl1 libgphoto2-dev fonts-noto-color-emoji rclone inotify-tools
+sudo apt -y install ffmpeg libturbojpeg0 python3-pip libgl1 libgphoto2-dev fonts-noto-color-emoji rclone inotify-tools
 ```
 
 ### Debian/Ubuntu
@@ -90,7 +90,8 @@ Please ensure Windows is up to date.
 To use the photobooth first install following system dependencies:
 
 - [Latest stable Python](https://www.python.org/downloads/) Please use the link, the Microsoft Store version is not recommended.
-- [Latest libjpeg-turbo-X.X.X-**vc64**](https://github.com/libjpeg-turbo/libjpeg-turbo/releases) (ensure to use the -vc64 variant!)
+- [Latest libjpeg-turbo-X.X.X-**vc64**](https://github.com/libjpeg-turbo/libjpeg-turbo/releases): Ensure to use the -vc64 variant and unpack it to C:\ so it will be automatically detected.
+- [Latest ffmpeg-release](https://ffmpeg.org/download.html): Choose the windows releases from gyan.dev. Look for the release builds, for example `ffmpeg-release-full.7z`. Download the folder, unpack it to C:\ and add the path to the executable ffmpeg.exe to system path's. Check that in a CLI you can start ffmpeg. If it starts, photobooth can use it also. If you don't need the video feature, you don't need to install ffmpeg.
 
 Once the dependencies are installed, continue with the installation of the app. On the Windows platform [Method C is recommended](#method-c-install-globally) currently.
 
