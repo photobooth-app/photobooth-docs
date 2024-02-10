@@ -25,14 +25,23 @@ If you run into issues, create an issue or open a discussion. Also check the cam
 
 | Hardware-Platform  | Software-Platform              | Cameras  |
 |--------------------|--------------------------------|--------------------------------------------------------------|
-| Raspberry Pi 5 | Raspberry Pi OS (64-bit, Bookworm) | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
-| Raspberry Pi 4 | Raspberry Pi OS (64-bit, Bookworm) | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
+| Raspberry Pi 4/5 | Raspberry Pi OS (64-bit, Bookworm) | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
+| Raspberry Pi 4/5 | Raspberry Pi OS (64-bit, Bookworm) | [gphoto2 dslr](http://www.gphoto.org/proj/libgphoto2/support.php) |
 | Raspberry Pi 4 | Raspberry Pi OS (64-bit, Bullseye legacy)  | [Arducam IMX519 PDAF](https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/16MP-IMX519/) |
-| Raspberry Pi 4 | Raspberry Pi OS (64-bit, Bookworm) | [Canon 1100D](http://www.gphoto.org/proj/libgphoto2/support.php) |
-| Raspberry Pi 4 | Raspberry Pi OS (64-bit, Bookworm) | [Canon 600D](http://www.gphoto.org/proj/libgphoto2/support.php), [try different modes](https://github.com/photobooth-app/photobooth-app/discussions/161) |
 | Raspberry Pi 3 | Raspberry Pi OS (64-bit, Bookworm) | Will work, can be slow, not preferred. |
+| Tinkerboard 2S | Tinker Board 2 /2S Debian 11 (kernel 5.10) V3.0.11 | [gphoto2 dslr](http://www.gphoto.org/proj/libgphoto2/support.php) |
 
-If you have tested additional software/hardware-platform, please let me know and I add it to the list.
+If you have tested additional software/hardware-platform, please let me know and it will be added to the list.
+
+#### DSLR known to work
+
+In general all cameras supported by gphoto2 / digicamcontrol would work. Following ones were reported by users to work with the photobooth:
+
+| Camera            | Capture        | Liveview  | Video | Remarks |
+|-------------------|----------------|-----------|-------|---------|
+| Canon 600D        |   ✅           |     ✅   |  ✅    | [try different modes](https://github.com/photobooth-app/photobooth-app/discussions/161)  |
+| Canon 1100D       |   ✅           |     ✅   |  ✅    |         |
+| Nikon D810        |   ✅           |     ✅   |  ✅    | [raw capture](https://github.com/photobooth-app/photobooth-app/discussions/9#discussioncomment-8373204)   |
 
 ## System Preparation
 

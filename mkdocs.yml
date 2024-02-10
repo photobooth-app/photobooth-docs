@@ -105,7 +105,6 @@ nav:
       - reference/index.md
       - reference/foldersandurls.md
       - reference/api.md
-      - reference/photoboothprojectintegration.md
   - Support:
       - support/index.md
       - support/troubleshooting.md

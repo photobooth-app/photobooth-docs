@@ -5,6 +5,7 @@
 | Description   | Web access |
 |---|---|
 |  Gallery to be used on second display in standalone mode. | `http://IP:PORT/#/standalone/gallery` |
+|  Custom CSS to override default CSS  | `http://IP:PORT/private.css` |
 
 ## Folders on disk and their URL
 
@@ -16,9 +17,10 @@
 | Data  | Subfolder | Web access |
 |---|---|---|
 |  media (images, videos, ...)  | /media | `http://IP:PORT/media` |
-|  logfiles | /log | via REST-API |
-|  user data (images, frames, fonts, ...) | /userdata | via adminpanel file explorer |
 |  config | /config | via REST-API |
+|  logfiles | /log | via REST-API |
+|  userdata (images, frames, fonts, ...) | /userdata | via adminpanel file explorer |
+|  custom CSS to override default CSS if file exists | /userdata/private.css | `http://IP:PORT/private.css` |
 
 ## Mediaitems
 

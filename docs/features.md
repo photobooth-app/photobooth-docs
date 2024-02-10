@@ -32,8 +32,8 @@ Commercial software like DSLRbooth is not taken into account.
 | Share images online via QR code | ✅ | ⏺️[^4] | ✅ |
 | Printing | ✅ | ✅ | ✅ |
 | **Personalization** |
-| Customizable Theme | ❌ | ✅ | ❌ |
-| Translateable | ❌ | ✅ | ✅ |
+| Customizable Theme | ✅ | ✅ | ❌ |
+| Translateable | ✅ | ✅ | ✅ |
 | **Peripheral Integration** |
 | Configurable GPIO trigger (RPI) | ✅ | ✅ | ✅ |
 | Configurable keyboard trigger | ✅ | ✅ | ❌ |
