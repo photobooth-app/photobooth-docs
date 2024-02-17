@@ -4,7 +4,8 @@
 
 | Description   | Web access |
 |---|---|
-|  Gallery to be used on second display in standalone mode. | `http://IP:PORT/#/standalone/gallery` |
+|  Gallery to be used on second display in standalone mode. It will not allow to escape the gallery, there is no button to return to frontpage. | `http://IP:PORT/#/standalone/gallery` |
+|  After a timeout a slideshow is automatically started. It will allow to escape the slideshow, there is a button to return to frontpage. | `http://IP:PORT/#/slideshow/random` |
 |  Custom CSS to override default CSS  | `http://IP:PORT/private.css` |
 
 ## Folders on disk and their URL
