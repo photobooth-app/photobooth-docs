@@ -1,4 +1,4 @@
-# Postprocess Captures
+# Process Mediaitems
 
 The mediaitems (images, collages, animated gifs) are postprocessed in a configurable pipeline consisting of several stages.
 The pipeline starts with the original mediaitem. The different media types can have differently configured pipelines that process the image one by one. The processed mediaitem is stored to the gallery finally.
@@ -35,6 +35,14 @@ The pipeline consists of several stages, each can be enabled and configured sepa
 ## Basics
 
 - Coordinate system: 0/0 is top/left.
+
+### Use custom files for postprocessing
+
+To use a custom frame, upload it in the folder "userdata" or a new folder within the userdata folder.
+The easiest way to manage files is using the admin center -> file browser.
+
+In the example a file `polaroid-6125402_1pic-transparency.png` is uploaded to `userdata/frames`. To use this file in postprocessing, copy the full path `userdata/frames/polaroid-6125402_1pic-transparency.png` in the configuration where the image shall be used. For an example see [description of stage: frame image](#frame-image).
+![file browser in photobooth-app admin center](./assets/filebrowser-frame.png)
 
 ### Picture-Pipeline
 
@@ -99,6 +107,7 @@ When using the chromakeying / background removal stages, the removed background 
 ### Frame Image
 
 Single images captured can be overlaid by a frame. For this stage you need a PNG with transparent area. The captured image will be inserted in the transparent area. The width and height of the transparent area is automatically calculated and the algorithm tries to fit most of the captured area. If aspect ratio of captured image and transparent area are very different, some parts of the captured image can be cropped.
+![uploaded file used in photobooth-app admin center media postprocessing](./assets/config-frame.png)
 
 ### Texts
 
