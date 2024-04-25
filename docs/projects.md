@@ -20,6 +20,7 @@ Additional information: [3d printed box](./photobox3dprint.md), [buzzer](https:/
 ### Other photobooth-app projects
 
 - [Peda1996](https://github.com/photobooth-app/photobooth-app/discussions/145)
+- [Striker62](https://github.com/photobooth-app/photobooth-app/discussions/244)
 
 ## Yours here? That would be awesome! 🕶️
 

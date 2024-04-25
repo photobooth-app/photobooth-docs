@@ -22,11 +22,6 @@ Find the CAD files in the github repo: <https://github.com/photobooth-app/photob
 ### Renderings and Photos
 
 <figure markdown>
-  ![booth take a picture](./assets/take-picture.gif){ width="400" }
-  <figcaption>Total including stand tripod</figcaption>
-</figure>
-
-<figure markdown>
   ![totale](./assets/photobox3dprint/booth-100-000-screenshot5.PNG){ width="400" }
   <figcaption>Total view including stand tripod</figcaption>
 </figure>
