@@ -104,6 +104,7 @@ nav:
   - Reference:
       - reference/index.md
       - reference/foldersandurls.md
+      - reference/customizetheme.md
       - reference/bulktransferfiles.md
       - reference/api.md
   - Support:
