@@ -94,3 +94,27 @@ During pip installation cmake error can come up if not all prerequisites are com
 - OpenCV-python fails during installation on 32 bit Raspberry Pi OS. Use 64bit version.
 
 [Check discussions for further help!](https://github.com/photobooth-app/photobooth-app/discussions)
+
+## Two webcameras at the same time fail
+
+It's possible to use two webcameras at the same time (one for stills, one for livestream). USB cameras can put a lot of load on the USB host and bandwith might not be sufficient. Use two different USB hosts (example 2.0 and 3.0) if errors like these appear.
+
+```text
+2024-04-29 20:48:21,634 [   ERROR] error setting prop=6 1196444237 (webcamcv2.py:214) proc28584
+2024-04-29 20:48:21,634 [   ERROR] error setting prop=5 30.0 (webcamcv2.py:214) proc28584
+2024-04-29 20:48:21,634 [   ERROR] error setting prop=3 640 (webcamcv2.py:214) proc28584
+2024-04-29 20:48:21,634 [   ERROR] error setting prop=4 480 (webcamcv2.py:214) proc28584
+Process WebcamCv2AquisitionProcess:
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Program Files\Python311\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\dev\photobooth\photobooth-app\photobooth\services\backends\webcamcv2.py", line 169, in cv2_img_aquisition
+    raise OSError(f"cannot open camera index {_config.device_index}")
+OSError: cannot open camera index 1
+
+[ WARN:2@22.575] global cap_msmf.cpp:475 `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): OnReadSample() is called with error status: -1072873822
+[ WARN:2@22.578] global cap_msmf.cpp:487 `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: -1072873822
+[ WARN:0@22.582] global cap_msmf.cpp:1768 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+```
