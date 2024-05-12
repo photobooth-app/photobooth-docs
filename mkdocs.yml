@@ -103,6 +103,7 @@ nav:
       - setup/printing.md
   - Reference:
       - reference/index.md
+      - reference/configuration.md
       - reference/foldersandurls.md
       - reference/customizetheme.md
       - reference/bulktransferfiles.md

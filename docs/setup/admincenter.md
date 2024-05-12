@@ -37,50 +37,7 @@ The configuration is divided in logical sections. After changing the config use 
 - Restore: Load current config from disk and display.
 - Reset: Revert to default settings and delete config files from disk.
 
-<figure markdown>
-  ![gallery_detail](../assets/screenshots/admincenter-config.jpg){ width="500" }
-  <figcaption>Configure the photobooth</figcaption>
-</figure>
-
-### Common
-
-TODO
-
-### Sharing
-
-TODO
-
-### Mediaprocessing
-
-TODO
-
-### Mediaprocessing Pipeline Singleimage
-
-TODO
-
-### Mediaprocessing Pipeline Collage
-
-TODO
-
-### Mediaprocessing Pipeline Printing
-
-TODO
-
-### UI Settings
-
-TODO
-
-### Backends
-
-TODO
-
-### Hardware Input / Output
-
-TODO
-
-### Misc
-
-TODO
+See [reference for more details](../reference/configuration.md).
 
 ## Files
 
