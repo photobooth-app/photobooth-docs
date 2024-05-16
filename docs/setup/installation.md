@@ -302,7 +302,7 @@ Version=1.3
 Terminal=false
 Type=Application
 Name=Photobooth-App
-Exec=chromium-browser --kiosk--disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic http://localhost:8000/ 
+Exec=chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic http://localhost:8000/ 
 StartupNotify=false
 ```
 
