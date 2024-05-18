@@ -43,10 +43,20 @@ Stable releases are published at [PyPI registry](https://pypi.org/project/photob
 
 To test the latest development version update directly from git:
 
-Example if installed via pipx
+Example if installed via pip or pipx
 
 ```sh
 pip upgrade git+https://github.com/photobooth-app/photobooth-app.git@main
+```
+
+```sh
+pip install --force git+https://github.com/photobooth-app/photobooth-app.git@main
+```
+
+Or to install a specific version using pipx:
+
+```sh
+pipx inject photobooth-app photobooth-app==2.0.7
 ```
 
 Or activate local venv before update if installed in venv
