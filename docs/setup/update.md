@@ -46,11 +46,11 @@ To test the latest development version update directly from git:
 Example if installed via pip or pipx
 
 ```sh
-pip upgrade git+https://github.com/photobooth-app/photobooth-app.git@main
+pip install --force git+https://github.com/photobooth-app/photobooth-app.git@main
 ```
 
 ```sh
-pip install --force git+https://github.com/photobooth-app/photobooth-app.git@main
+pipx upgrade git+https://github.com/photobooth-app/photobooth-app.git@main
 ```
 
 Or to install a specific version using pipx:
