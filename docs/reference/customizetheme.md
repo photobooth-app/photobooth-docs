@@ -15,7 +15,9 @@ Depending on your screen you might want to reduce the size of the buttons on the
 }
 ```
 
-## Adjust Livestream to cover the full screen
+## Adjust the Livestream
+
+You may want to change the preview video element to cover the full screen and zoom in a bit. Zooming in is useful in a two camera setup to adjust the image window of the livepreview (needs to capture a larger scene) to the camera capturing the still images.
 
 While the livestream looks nicer if it covers the full screen, some parts of the livestream can be cropped.
 Thus the resulting photo shows a different aspect ratio and might not match the endusers intention.
@@ -23,7 +25,8 @@ So the default is to `contain` the background. If you want to change to `cover`,
 
 ```css
 #preview-stream {
-  background-size: cover
+  background-size: cover; /* default: contain to avoid cropping */
+  transform: scale(1.5); /* default: 1.0 to apply no zoom. 1.5 zooms in, smaller values than 1.0 usually make no sense */
 }
 
 ```
