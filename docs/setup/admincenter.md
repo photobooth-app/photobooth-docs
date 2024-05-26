@@ -1,6 +1,9 @@
 
 # Admin Center
 
+!!! info
+    The default password to login the admin center is `0000`.
+
 The admin center is the central place to configure the photobooth software. You can also use it to upload and download files to the device.
 
 On the photobooth device browse to the admin center to configure your photobooth app:

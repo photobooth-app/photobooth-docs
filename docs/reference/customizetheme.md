@@ -15,6 +15,30 @@ Depending on your screen you might want to reduce the size of the buttons on the
 }
 ```
 
+## Example: Colorize the Buttons on the Frontpage
+
+Individual colors can be applied, first button is -0. `.action-button` selects all buttons.
+
+```css
+
+.action-buttons {
+    .action-button {
+            background-color: grey !important;
+    }
+    
+    .action-button-0 {
+            background-color: red !important;
+    }
+    .action-button-1 {
+            background-color: blue !important;
+    }
+    .action-button-2 {
+            background-color: green !important;
+    }
+}
+
+```
+
 ## Adjust the Livestream
 
 You may want to change the preview video element to cover the full screen and zoom in a bit. Zooming in is useful in a two camera setup to adjust the image window of the livepreview (needs to capture a larger scene) to the camera capturing the still images.
