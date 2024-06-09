@@ -285,7 +285,7 @@ Modify the file below as stated. If there is a section ``[autostart]`` already, 
 
 ```ini title="~/.config/wayfire.ini" hl_lines="2"
 [autostart]
-chromium = chromium-browser --kiosk--disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/ 
+chromium = chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/ 
 ```
 
 After reboot chromium will start automatically.
