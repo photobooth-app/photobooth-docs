@@ -1,4 +1,4 @@
-# Share images via QR Code
+# Share via QR Code
 
 The share service allows users to easily download images on the user's phone.
 The user simply scans the QR code to download.

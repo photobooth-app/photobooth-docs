@@ -3,4 +3,4 @@
 Probably you wanted to download an image from photobooth via QR code?
 It seems this is not correctly configured 😒
 
-➡️ ➡️ ➡️ [Setup the shareservice as described!](../setup/shareservice.md)
+➡️ ➡️ ➡️ [Setup the shareservice as described!](../setup/qrshareservice.md)

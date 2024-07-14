@@ -99,8 +99,8 @@ nav:
       - setup/camera_setup.md
       - setup/mediaprocessing.md
       - setup/gpio.md
-      - setup/shareservice.md
-      - setup/printing.md
+      - setup/share_print.md
+      - setup/qrshareservice.md
   - Reference:
       - reference/index.md
       - reference/configuration.md
