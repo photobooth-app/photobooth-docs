@@ -49,7 +49,6 @@ Commercial software like DSLRbooth is not taken into account.
 | Automated testing including hardware |  [![codecov](https://codecov.io/gh/photobooth-app/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/photobooth-app/photobooth-app) | ❌ | ![codecov](https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg) |
 | **Supported OS** |
 | Raspberry Pi Bookworm | ✅ | ✅ | ❌ |
-| Raspberry Pi Bullseye | ✅ | ✅ | ❌ |
 | Debian/Ubuntu | ✅ | ✅ | ✅ |
 | Windows | ✅ | ✅ | ❌ |
 

@@ -25,9 +25,7 @@ If you run into issues, create an issue or open a discussion. Also check the cam
 
 | Hardware-Platform  | Software-Platform              | Cameras  |
 |--------------------|--------------------------------|--------------------------------------------------------------|
-| Raspberry Pi 4/5 | Raspberry Pi OS (64-bit, Bookworm) | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html) |
-| Raspberry Pi 4/5 | Raspberry Pi OS (64-bit, Bookworm) | [gphoto2 dslr](http://www.gphoto.org/proj/libgphoto2/support.php) |
-| Raspberry Pi 4 | Raspberry Pi OS (64-bit, Bullseye legacy)  | [Arducam IMX519 PDAF](https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/16MP-IMX519/) |
+| Raspberry Pi 4/5 | Raspberry Pi OS (64-bit, Bookworm) | [original camera module](https://www.raspberrypi.com/documentation/accessories/camera.html), [gphoto2 dslr](http://www.gphoto.org/proj/libgphoto2/support.php), [Arducam IMX519 PDAF](https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/16MP-IMX519/)  |
 | Raspberry Pi 3 | Raspberry Pi OS (64-bit, Bookworm) | Will work, can be slow, not preferred. |
 | Tinkerboard 2S | Tinker Board 2 /2S Debian 11 (kernel 5.10) V3.0.11 | [gphoto2 dslr](http://www.gphoto.org/proj/libgphoto2/support.php) |
 
@@ -110,7 +108,7 @@ Several ways to install:
 
 1. Method A: Install using pipx (easiest, recommended for Bookworm)
 2. Method B: Install using venv
-3. Method C: Install globally (recommended for Bullseye and Windows)
+3. Method C: Install globally (recommended for Windows)
 
 It's preferred nowadays to install pypi packages in virtual environments. Latest Linux OS' start implementing [externally managed base environments](https://peps.python.org/pep-0668/) now. The easiest solution to install is using pipx.
 
@@ -263,9 +261,7 @@ systemctl --user start photobooth-app.service
 
 ## Desktop shortcut and autostart
 
-### Bookworm Platform
-
-#### Desktop Icon (Bookworm)
+### Desktop Icon (Bookworm)
 
 Create the following file at the given location:
 
@@ -279,7 +275,7 @@ Exec=chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disa
 StartupNotify=false
 ```
 
-#### Autostart on system startup (Bookworm)
+### Autostart on system startup (Bookworm)
 
 Modify the file below as stated. If there is a section ``[autostart]`` already, just add the line `chromium = ...` otherwise insert the complete section.
 
@@ -288,26 +284,4 @@ Modify the file below as stated. If there is a section ``[autostart]`` already, 
 chromium = chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/ 
 ```
 
-After reboot chromium will start automatically.
-
-### Bullseye Platform
-
-#### Desktop Icon (Bullseye)
-
-Create the following file at the given location:
-
-```ini title="~/Desktop/photobooth-app.desktop" hl_lines="6"
-[Desktop Entry]
-Version=1.3
-Terminal=false
-Type=Application
-Name=Photobooth-App
-Exec=chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --check-for-update-interval=31536000 --touch-events=enabled --password-store=basic http://localhost:8000/ 
-StartupNotify=false
-```
-
-#### Autostart on system startup (Bullseye)
-
-Create the same file as for desktop shortcut above and place it in
-`/etc/xdg/autostart/photobooth-app.desktop`.
 After reboot chromium will start automatically.
