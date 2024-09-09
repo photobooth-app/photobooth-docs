@@ -114,12 +114,13 @@ nav:
       - support/faq.md
   - Extras:
       - extras/index.md
-      - extras/onscreenkeyboard.md
-      - extras/wled.md
       - extras/buzzer.md
-      - extras/wifi.md
-      - extras/sync.md
       - extras/display.md
+      - extras/onscreenkeyboard.md
+      - extras/printerexample.md
+      - extras/sync.md
+      - extras/wifi.md
+      - extras/wled.md
 
 not_in_nav: |
   /extras/shareservice-landing.md

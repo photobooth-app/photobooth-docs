@@ -1,19 +1,19 @@
 # Share and Print
 
-Share media items and printing these is unified in the share configuration since v4.
+Sharing and printing media items are unified in the share configuration since v4.
 Similar to the actions for collages, images, ... the configuration allows multiple share settings. Every setting can be triggered by
 
 - Touchscreen buttons in the gallery
 - [GPIO (Raspberry Pi only)](./gpio.md)
-- keyboard input
+- Keyboard input
 - [API](../reference/api.md), endpoint /api/share/...
 
 ## Working Principle
 
-The user can choose an item in the gallery to share or print. In the background, the photobooth-app invokes a custom command, that needs to be set in the configuration beforehand.
+The user can choose an item in the gallery to share or print. In the background, the photobooth-app invokes a custom command that needs to be set in the configuration beforehand.
 This way, sharing/printing works on all platforms for which a command is available.
-There is no feedback to photobooth app about the status of the print job or the printer itself.
-If the paper is empty the photobooth app is not aware of that.
+There is no feedback to the photobooth app about the status of the print job or the printer itself.
+If the paper is empty, the photobooth app will not know.
 
 ## Example Setup to Print and Share
 
@@ -27,19 +27,19 @@ The configuration is made in the Admin Center -> Config -> Tab: Share.
 
 ### Example Setup Printing on Linux
 
-On Linux printing is realized with CUPS software. The cups webinterface is available on <http://localhost:631/printers/> usually.
-The link only works from the Linux system itself, it's not available in the local network.
-Installing a printer is very individual to the specific printer and the setup.
+On Linux printing is realized with CUPS software. The CUPS web interface is usually available at <http://localhost:631/printers/>.
+The link only works from the host Linux system itself as it's not available by default to the local network.
+Installing a printer is very specific to the individual printer and its required driver / configuration.
 Try to install on your own. In the end, make sure that you have a command that prints a photo.
 
-Following is an example command to print.
-Instead of {filename} point to some image on the computer for testing.
+The following is an example print command using [`lp`](https://www.man7.org/linux/man-pages/man1/lp.1.html) to print a file.
+You can replace `{filename}` with a path to some image on the computer for manual testing.
 
-```sh title="example command to print on linux"
+```sh title="Example command to print on linux"
 lp -d PRINTER_NAME_HERE -o landscape -o fit-to-page {filename}
 ```
 
-Set the command verified to work in the app including the {filename} placeholder.
+Set the command verified to work in the app including the `{filename}` placeholder.
 Admin Center -> Config -> Tab: HardwareInputOutput.
 
 If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/photobooth-app/photobooth-app/discussions/).
