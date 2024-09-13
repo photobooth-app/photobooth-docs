@@ -50,7 +50,7 @@ pip install --force git+https://github.com/photobooth-app/photobooth-app.git@mai
 ```
 
 ```sh
-pipx upgrade git+https://github.com/photobooth-app/photobooth-app.git@main
+pipx install --force --system-site-packages git+https://github.com/photobooth-app/photobooth-app.git@main
 ```
 
 Or to install a specific version using pipx:

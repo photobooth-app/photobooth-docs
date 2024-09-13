@@ -1,25 +1,24 @@
 # 3D Printed Photobooth
 
-In general the photobox can be custom made out of materials you prefer.
-To develop and as starting point a reference design to 3d print is provided.
+You can test the photobooth-app easily installing it on your normal computer and use the virtual camera or your computer's webcamera to explore the app.
 
-If you want to add your box to this page, send a message in the [discussions, category show and tell 📣](https://github.com/photobooth-app/photobooth-app/discussions/categories/show-and-tell).
+Later, you might want to build a dedicated photobooth.
+You can use the reference design as starting point.
 
-## 3D printed reference
+Find the [CAE design files and more information in the Github repository](https://github.com/photobooth-app/photobooth-3d).
 
-The photobooth is made out of a 3d printed case.
-Find the CAD files in the github repo: <https://github.com/photobooth-app/photobooth-3d>
+## Features
 
-### Features
-
-- solidworks files available
+- variants for DSLR / Pi Camera and 7" / 10" touchscreens
+- parametric solidworks CAE files available
 - compact design
-- camera module integrated
 - led ring signaling photo countdown and when the photo is actually taken
-- 7" touchscreen
-- remote buzzer
 
-### Renderings and Photos
+## Download and Build
+
+Find the [CAE design files and STEP files to slice in the Github repository](https://github.com/photobooth-app/photobooth-3d).
+
+## Renderings and Photos
 
 <figure markdown>
   ![totale](./assets/photobox3dprint/booth-100-000-screenshot5.PNG){ width="400" }
@@ -50,3 +49,7 @@ Find the CAD files in the github repo: <https://github.com/photobooth-app/photob
   ![](./assets/photobox3dprint/photo_rear.png){ width="400" }
   <figcaption>Rear photo</figcaption>
 </figure>
+
+## Explore other builds
+
+Check built photobooth boxes in the [projects and examples section 📣](./projects.md).
