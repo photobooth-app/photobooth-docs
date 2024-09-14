@@ -55,6 +55,31 @@ So the default is to `contain` the background. If you want to change to `cover`,
 
 ```
 
+## Add a frame to the frontpage
+
+If you want to add a custom frame with transparency above the livestream, apply the following CSS and place the frame in the userdata. In this example, the frame is place in `./userdata/frames/filename.png`.
+
+![add frame above live preview](../assets/reference/frame_livepreview.png)
+
+```css
+#preview-stream::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/userdata/frames/filename.png'); /* point to your filename */
+    background-size: cover; /* cover all area instead just contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none; /* frame is no target, allow interaction with other elements */
+    z-index: 1; /* ensure frame is above stream */
+    opacity: 1.0; /* optional transparency for frame */
+    transform: scaleX(-1); /* flip horizontal if mirror effect is enabled this is needed */
+}
+```
+
 ## Contribute, add your examples here
 
 Reach out in a [discussion](https://github.com/photobooth-app/photobooth-app/discussions) to add your rules here so others can benefit from your work 🙏.
