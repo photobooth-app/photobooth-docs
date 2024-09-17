@@ -22,4 +22,4 @@ see separate git repository <https://github.com/photobooth-app/photobooth-buzzer
 Go to admin dashboard -> configure -> tab: hardwareinputoutput.
 
 - Enable keyboard input
-- choose the character (default = c) to take a picture.
+- choose the character (default = i) to take a picture.
