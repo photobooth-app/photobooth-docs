@@ -1,16 +1,13 @@
 # Buzzer
 
-Use a buzzer to trigger photos in the photobooth
+Use this bluetooth buzzer to trigger actions in the photobooth.
 
 ## Big Red Hot Button
 
 ![buzzer loading](../assets/buzzer/buzzer-loading.jpg){ width="300" }
 
-This button is based on ESP powered by battery.
-It emulates a keyboard and thus can be used with the photobooth-app or other photobooth projects that use keyboard input to trigger captures.
-
-The power consumption measured is about 60mA - the battery has 1100mAh capacity. This gives a runtime if fully charged of 18h.
-Loading works only if battery is connected, means the button must be switched on to load.
+This action button is based on an ESP board powered by battery.
+It emulates a bluetooth keyboard and thus can be used with the photobooth-app or other photobooth projects that use keyboard input to trigger actions.
 
 ### Hardware and Assembly
 
