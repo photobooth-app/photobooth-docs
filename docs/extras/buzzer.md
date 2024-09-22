@@ -11,11 +11,12 @@ It emulates a bluetooth keyboard and thus can be used with the photobooth-app or
 
 ### Hardware and Assembly
 
-see separate git repository <https://github.com/photobooth-app/photobooth-buzzer>
+See separate git repository <https://github.com/photobooth-app/photobooth-buzzer>.
+The button might have a twist and turn unlock mechanism. It can be removed easily to convert it to a normal button.
 
 ### ESP Microcontroller Software
 
-see separate git repository <https://github.com/photobooth-app/photobooth-buzzer>
+See separate git repository <https://github.com/photobooth-app/photobooth-buzzer>.
 
 ### Setup in photobooth app
 

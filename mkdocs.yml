@@ -115,13 +115,13 @@ nav:
   - Extras:
       - extras/index.md
       - extras/buzzer.md
+      - extras/ups.md
       - extras/display.md
       - extras/onscreenkeyboard.md
       - extras/printerexample.md
       - extras/sync.md
       - extras/wifi.md
       - extras/wled.md
-      - extras/ups.md
 
 not_in_nav: |
   /extras/shareservice-landing.md
