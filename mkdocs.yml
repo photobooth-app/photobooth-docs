@@ -121,6 +121,7 @@ nav:
       - extras/sync.md
       - extras/wifi.md
       - extras/wled.md
+      - extras/ups.md
 
 not_in_nav: |
   /extras/shareservice-landing.md
