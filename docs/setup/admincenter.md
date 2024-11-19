@@ -16,7 +16,7 @@ On the photobooth device browse to the admin center to configure your photobooth
 ## Overview
 
 <figure markdown>
-  ![gallery_detail](../assets/screenshots/admincenter-dashboard.jpg){ width="500" }
+  ![gallery_detail](../assets/screenshots/admin_dashboard.png){ width="500" }
   <figcaption>Enter the admin pages, dashboard is the start</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ The filebrowser allows to
 - delete selected files and folders.
 
 <figure markdown>
-  ![gallery_detail](../assets/screenshots/admincenter-filebrowser.jpg){ width="500" }
+  ![gallery_detail](../assets/screenshots/admin_filebrowser.png){ width="500" }
   <figcaption>Manage files in the filebrowser.</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ The filebrowser allows to
 Some statistics, platform and system information. Also all logfiles are displayed.
 
 <figure markdown>
-  ![gallery_detail](../assets/screenshots/admincenter-status.jpg){ width="500" }
+  ![gallery_detail](../assets/screenshots/admin_status.png){ width="500" }
   <figcaption>See important information and logs in the status dashboard</figcaption>
 </figure>
 

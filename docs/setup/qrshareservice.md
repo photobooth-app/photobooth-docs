@@ -4,7 +4,7 @@ The share service allows users to easily download images on the user's phone.
 The user simply scans the QR code to download.
 
 <figure markdown>
-  ![gallery_detail](../assets/screenshots/gallery_detail.jpg){ width="400" }
+  ![gallery_detail](../assets/screenshots/gallery_detail.png){ width="400" }
   <figcaption>Scan the QR code to download image to smartphones.</figcaption>
 </figure>
 
