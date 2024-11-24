@@ -91,6 +91,10 @@ nav:
       - support/index.md
       - support/troubleshooting.md
       - support/faq.md
+  - Wigglegram Camera:
+      - wigglegramcamera/index.md
+      - wigglegramcamera/build.md
+      - wigglegramcamera/installation.md
   - Extras:
       - extras/index.md
       - extras/buzzer.md
