@@ -6,6 +6,8 @@ Written in Python 🐍, coming along with a modern Vue frontend.
 This site documents the photobooth-app project and offers guides how to install.
 Setup your own photobooth-app for your wedding, birthday and other occations.
 
+Excited? This is how the app looks like. It's a website and can be displayed on any device:
+
 <video controls autoplay loop playsinline muted src="./assets/photobooth-app-demo.mp4" type="video/mp4"></video>
 
 ## Features
