@@ -1,6 +1,8 @@
 site_name: Photobooth App
-repo_name: photobooth-app/photobooth-app/
 site_url: https://photobooth-app.org
+site_description: The app for your new DIY photobooth. Written in Python 🐍, coming along with a modern Vue frontend.
+site_author: Michael G
+repo_name: photobooth-app/photobooth-app/
 repo_url: https://github.com/photobooth-app/photobooth-app
 dev_addr: 127.0.0.1:8001
 
