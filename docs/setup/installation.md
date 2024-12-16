@@ -207,18 +207,21 @@ You need to [continue setting up the cameras](../setup/camera_setup.md).
 !!! info
     Have issues accessing the website or see error messages during installation and app startup? Check the [troubleshooting guide](../support/troubleshooting.md).
 
-## Setup system service
+## Setup the Raspberry Pi in Kiosk Mode
 
-To automatically start the photobooth-app it shall be installed as a service.
+To setup the kiosk mode, the photobooth-app needs to be installed as a service and the browser setup to autostart after boot.
+Following advice is considered as general guidance but since the OS changes from time to time the guide might be outdated.
 
-### Automatic service setup
+### Service Setup
+
+#### Automatic service setup
 
 Once the photobooth-app was started the service can be installed automatically on Linux systems.
 Choose in the Admin Center -> Dashboard -> Server Control -> Install Service.
 After confirmation the service is installed as described below for manual setup.
 If the setup fails, please install manually.
 
-### Manual service setup
+#### Manual service setup
 
 Now that you ensured, the photobooth app is working properly, it's time to setup the app as a service.
 If you installed the app according to above instructions, the template .service file works for you.
@@ -259,9 +262,9 @@ systemctl --user start photobooth-app.service
     journalctl --user --unit photobooth-app.service
     ```
 
-## Desktop shortcut and autostart
+### Desktop shortcut and autostart
 
-### Desktop Icon (Bookworm)
+#### Desktop Icon (Bookworm)
 
 Create the following file at the given location:
 
@@ -275,7 +278,7 @@ Exec=chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disa
 StartupNotify=false
 ```
 
-### Autostart on system startup (Bookworm)
+#### Autostart on system startup (Bookworm)
 
 Modify the file below as stated. If there is a section ``[autostart]`` already, just add the line `chromium = ...` otherwise insert the complete section.
 

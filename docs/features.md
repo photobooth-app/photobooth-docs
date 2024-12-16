@@ -42,7 +42,7 @@ Commercial software like DSLRbooth is not taken into account.
 | **Admin** |
 | Admin Backend | ✅ | ✅ | ❌ |
 | Admin Configuration Panel | ✅ | ✅ | ❌ |
-| Admin Backend Protected | ❌ | ✅ | ❌ |
+| Admin Backend Protected | ✅ | ✅ | ❌ |
 | Plugin Architecture | ❌ | ❌ | ✅ |
 | **Dev** |
 | Installable package | ✅ | ⏺️ install script | ✅ |
