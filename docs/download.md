@@ -1,11 +1,10 @@
 # Download
 
-This app comes as a pip package.
-To download and run this photobooth-app you need two items:
+The photobooth-app comes as a python pip package and needs python installed to run.
 
-- [python >=3.9](https://www.python.org/downloads/) including package installer pip
+Download the app from pypi directly:
+
 - [photobooth-app latest PyPi package](https://pypi.org/project/photobooth-app/)
-
-On Linux python is usually already available. On windows download python from the website above.
-
-The [installation process is described here](./setup/installation.md) in detail.
+The [installation process](./setup/installation.md) is described here in detail.
+- [python 3.10 or higher](https://www.python.org/downloads/)
+On Linux python is usually already available. On windows download python from the website.

@@ -69,38 +69,6 @@ To trigger an action via keypress define the keycode. If you're unsure what keyc
 !!! info
     Enable the keyboard processing in admin dashboard -> configuration -> hardwareinput/output!
 
-## Printer
-
-TODO
-
-## Sharing
-
-TODO
-
-## Filetransfer
-
-TODO
-
-## Mediaprocessing
-
-TODO
-
-## UI Settings
-
-TODO
-
-## Backends
-
-TODO
-
-## Hardware Input / Output
-
-TODO
-
-## Misc
-
-TODO
-
 ## Questions remain?
 
 Reach out in a [discussion](https://github.com/photobooth-app/photobooth-app/discussions).

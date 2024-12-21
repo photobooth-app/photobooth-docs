@@ -78,7 +78,12 @@ The animated gif pipeline runs following stages in given sequence:
 
 ### Video-Pipeline
 
-Feature not yet implemented. You're invited to contribute. 👋
+The videos are created from cameras livestream if available.
+There are basic options currently to set:
+
+  1. The maximum duration of a video. The caputure process is stoppable by the user before the maximum duration is reached.
+  2. Boomerang option enable to append the video in reverse.
+  3. Choose a framerate of the video.
 
 ### Print-Pipeline
 
@@ -89,7 +94,6 @@ Feature not yet implemented. You're invited to contribute. 👋
 ### Chromakeying
 
 Remove a color from the captured image. Removed parts will be transparent.
-TODO: add more description about how to choose the green value.
 
 ### Instagram-Like Color-Filter
 
