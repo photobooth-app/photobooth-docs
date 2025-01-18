@@ -59,7 +59,7 @@ plugins:
   - glightbox
 
 copyright: >
-  2024
+  2025
 extra:
   analytics:
     provider: custom
