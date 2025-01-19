@@ -2,7 +2,7 @@
 # Update
 
 !!! info
-    Depending on your installation method, choose the update method.
+    Depending on your installation method, select the update method.
 
 ## Method A: Update with pipx
 

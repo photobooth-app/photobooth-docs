@@ -1,12 +1,12 @@
 <h1 align="center"><img src="assets/logo-text-blue-transparent.png" alt="photobooth app logo" /></h1>
 
-Welcome to your brand-new photobooth-app.
-Written in Python 🐍, coming along with a modern Vue frontend.
+Welcome to your brand new photobooth app.
+Written in Python 🐍, it comes with a modern Vue frontend.
 
-This site documents the photobooth-app project and offers guides how to install.
-Setup your own photobooth-app for your wedding, birthday and other occations.
+This site documents the photobooth-app project and provides installation instructions.
+Create your own photobooth app for your wedding, birthday and other occasions.
 
-Excited? This is how the app looks like. It's a website and can be displayed on any device:
+Excited? This is what the app looks like. It's a website and can be viewed on any device:
 
 <video controls autoplay loop playsinline muted src="./assets/photobooth-app-demo.mp4" type="video/mp4"></video>
 
@@ -64,8 +64,8 @@ To [install the latest development](./setup/update.md#update-to-development-vers
 The main-branch is usually the same as the current release version.
 The dev-branch is the latest development code and may not work reliable.
 
-- [![python versions supported 3.9, 3.10, 3.11, 3.12](https://img.shields.io/pypi/pyversions/photobooth-app)](https://pypi.org/project/photobooth-app/) python versions are currently supported.
-- [![codecov](https://codecov.io/gh/photobooth-app/photobooth-app/branch/dev/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/photobooth-app/photobooth-app) amount of the python code is [tested automatically](https://github.com/photobooth-app/photobooth-app/actions/workflows/pytests.yml). Tests includes the use of real hardware! 🎉
+- [![python versions supported](https://img.shields.io/pypi/pyversions/photobooth-app)](https://pypi.org/project/photobooth-app/) python versions are currently supported.
+- [![codecov](https://codecov.io/gh/photobooth-app/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/photobooth-app/photobooth-app) amount of the python code is [tested automatically](https://github.com/photobooth-app/photobooth-app/actions/workflows/pytests.yml). Tests includes the use of real hardware! 🎉
 
 ## Links
 
