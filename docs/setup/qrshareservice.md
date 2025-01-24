@@ -72,10 +72,14 @@ Once setup, the prinicple is as following:
 If the shareservice is not what you want, you could create a local WiFi. Users log in that WiFi and can download directly from the photobooth.
 Setup the URL for the QR code to point to the image you would like to let the user download. There are several versions of the images available, see the [list of mediaitem's directories](../reference/foldersandurls.md#mediaitems).
 
-Below an example URL to use in the QR code. {filename} gets replaced by the acutal filename. Replace the IP and port by the actual data.
+Below an example URL to use in the QR code. {identifier} gets replaced by the acutal filename. Replace the IP and port by the actual data.
 
-```http title="QR code URL example"
-http://192.168.0.1:8000/media/processed/full/{filename}
+```http title="QR code URL example for v5 and later"
+http://localhost:8000/media/full/{identifier}
+```
+
+```http title="QR code URL example before v4"
+http://localhost:8000/media/processed/full/{filename}
 ```
 
 ## Method C: Create your own sharing solution

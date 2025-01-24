@@ -32,6 +32,17 @@ The original is directly from image source and no processing was applied.
 The unprocessed version (sizes small, medium large) represend the original without any filter or pipeline stages from postprocessing applied.
 The processed version (sizes small, medium large) have all configured filters applied.
 
+### v5 and later
+
+| Item |  Subfolder | Web access |
+|---|---|---|
+|  original from camera  | /media/unprocessed_original | - |
+|  processed L version (full)  | /media/processed_full | `/media/full/{mediaitem_id}` |
+|  processed M version (preview)  | - | `/media/preview/{mediaitem_id}` |
+|  processed S version (thumbnail)  | - | `/media/thumbnail/{mediaitem_id}` |
+
+### v4 and before
+
 | Item |  Subfolder | Web access |
 |---|---|---|
 |  original from camera  | /media/original | `/media/original` |
