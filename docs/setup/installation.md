@@ -61,10 +61,9 @@ To use the photobooth first install following system dependencies:
 - [Latest stable Python](https://www.python.org/downloads/) Please use the link, the Microsoft Store version is not recommended.
 - [Latest ffmpeg-release](https://ffmpeg.org/download.html): Choose the windows releases from gyan.dev. Look for the release builds, for example `ffmpeg-release-full.7z`. Download the folder, unpack it to C:\ and add the path to the executable ffmpeg.exe to system path's. Check that in a CLI you can start ffmpeg. If it starts, photobooth can use it also. If you don't need the video feature, you don't need to install ffmpeg.
 
-Once the dependencies are installed, continue with the installation of the app. On the Windows platform [Method C is recommended](#method-c-install-globally) currently.
-
 !!! note
-    Since v5 the [latest libjpeg-turbo-X.X.X-**vc64**](https://github.com/libjpeg-turbo/libjpeg-turbo/releases) is not needed any more. If you install v4 or older, install libjpeg-turbo. Ensure to use the -vc64 variant and unpack it to C:\ so it will be automatically detected.
+    Since v5 the [latest libjpeg-turbo-X.X.X-**vc64**](https://github.com/libjpeg-turbo/libjpeg-turbo/releases) is optional. Using libjpeg-turbo is better for the performance, but on modern computers the difference is neglible. On Raspberry Pi or other SBC using libjpeg-turbo is recommended.
+    If you install v4 or older, libjpeg-turbo is mandatory. Ensure to use the -vc64 variant and unpack it to C:\ so it will be automatically detected.
 
 ## Install photobooth app
 
