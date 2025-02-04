@@ -3,16 +3,18 @@
 The photobooth supports Raspberry Pi GPIO to trigger certain events.
 Currently supported triggers are:
 
-- Capture actions
+- Capture actions (input)
     - Picture, default GPIO 27, press
     - Collage, default GPIO 22, press
     - Animation, default GPIO 24, press
     - Video, default GPIO 25, press
-- Share actions
+- Share actions (input)
     - Print most recent image, default GPIO 23, press
-- System pins
+- System pins (input)
     - Shutdown host, default GPIO 17, hold 2 seconds
     - Reboot host, default GPIO 18, hold 2 seconds
+- Digital output
+    - Light, default GPIO 2
 - Reserved otherwise [when using a UPS, controlled by dtoverlays](../extras/ups.md).
     - Power loss detection, depending on setup, usually GPIO 6
     - Cut power of UPS, depending on setup, usually GPIO 26

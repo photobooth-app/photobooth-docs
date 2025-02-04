@@ -51,6 +51,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - footnotes
+  - toc:
+      permalink: true
 
 plugins:
   - mkdocstrings
