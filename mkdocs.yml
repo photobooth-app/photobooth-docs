@@ -91,6 +91,7 @@ nav:
       - reference/customizetheme.md
       - reference/bulktransferfiles.md
       - reference/api.md
+      - reference/plugins.md
   - Support:
       - support/index.md
       - support/troubleshooting.md

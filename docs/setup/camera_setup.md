@@ -3,22 +3,23 @@
 
 The photobooth app supports cameras utilizing multiple backends:
 
-- picamera2 backend supports Raspberry Pi Camera Modules
-- gphoto2 backend supports DSLR cameras on Linux platforms
-- digicamcontrol backend supports DSLR cameras on Windows platforms (not yet implemented!)
-- opencv2 backend supports USB webcameras on Linux and Windows platforms
-- v4l2 backend supports USB webcameras on Linux
+| Backend          | Cameras                     | Platforms      |
+|------------------|-----------------------------|----------------|
+| `picamera2`      | Raspberry Pi Camera Modules | Raspberry Pi   |
+| `gphoto2`        | DSLR                        | Linux          |
+| `digicamcontrol` | DSLR                        | Windows        |
+| `opencv2`        | USB Webcams                 | Windows, Linux |
+| `v4l2`           | USB Webcams                 | Linux          |
 
-Two backends can be used simultaneously in hybrid mode.
-The first backend is used as main backend to capture high quality still images.
-The second backend is used as live backend to stream video preview only.
+Multiple backends can be used simultaneously. For example, the first backend is used for high quality still images,
+the second backend is used to stream video preview only.
 
 !!! note
     After changing config, the app needs to be restarted manually.
 
     If you need help setup a specific camera, [start a new discussion on github](https://github.com/photobooth-app/photobooth-app/discussions).
 
-## Raspberry CSI Camera Modules
+## Picamera2 Backend
 
 Camera modules are supported using picamera2 based on the new libcamera stack. Autofocus camera modules are supported.
 
@@ -62,7 +63,7 @@ The preferred settings derive as follows from the above output:
 - Picamera2 Preview Cam Resolution Width = 2328
 - Picamera2 Preview Cam Resolution Height = 1748
 
-Why? Capture shall be with highest resolution supported. The whole data is used from sensor, nothing cropped. The lower resolution is chosen to be 2328x1748 because the cropping is the same. The captured scene in both modes is exactly the same, nobody will notice that the camera changed it's mode - except better quality in final images :)
+Why? Capture shall be with highest resolution supported. The whole data is used from sensor, nothing cropped. The lower resolution is chosen to be 2328x1748 because the cropping is the same. The captured scene in both modes is exactly the same, nobody will notice that the camera changed it's mode - except better quality in final images ✨
 
 ### Camera Module 3
 
@@ -102,6 +103,8 @@ You might consider to use them only for livestream preview.
 Setup is the same as for camera module 3 but with different resolution and no focuser module enabled. See also the chapter above to list resolutions.
 
 ### Arducam imx519
+
+Arducam is not active supported by the app. It could work, but fail any time if the underlying drivers break for example after an system update.
 
 Sony's imx519 sensor used in [Arducam's imx519 camera module](https://www.arducam.com/product/imx519-autofocus-camera-module-for-raspberry-pi-arducam-b0371/) is supported by the
 Raspberry Pi OS natively since about March 2023.
@@ -152,11 +155,11 @@ In principle every camera supported by libcamera / picamera2 would work.
 Since the cameras do not come with native support of the Raspberry Pi OS using them could be troublesome and it's untested.
 [Start a discussion](https://github.com/photobooth-app/photobooth-app/discussions/categories/howtos-and-camera-specific-topics) if there is a camera not working properly.
 
-## DSLR via gphoto2 (Linux)
+## Gphoto2 Backend
 
 The app is tested with a Canon 1100D. In general all [gphoto2 supported cameras](http://www.gphoto.org/proj/libgphoto2/support.php) can be used.
 If the camera supports liveview a stream is created and being used as preview in the app.
-If the camera does not support liveview, you might want to consider to setup the app in [hybrid mode](#hybrid-dslr-and-second-backend-to-stream).
+If the camera does not support liveview, you might want to consider to setup the app with two backends so one is for stills, the other one for preview/video.
 The main camera would be the DSLR to take high quality images, the livestream is captured from a secondary backend.
 As secondary backend most suitable is a webcamera or raspberry pi camera module.
 
@@ -172,11 +175,11 @@ Tinker with available settings until it works properly. If you run into trouble,
     Linux systems automatically mount the camera on connection. This interferes with the photobooth, since the app needs exclusive access.
     Check this [guide on how to disable `gvfs-gphoto2-volume-monitor`](https://photobooth-app.org/support/faq/#gphoto2-camera-found-but-no-access)
 
-## DSLR via digicamcontrol (Windows)
+## Digicamcontrol Backend
 
 The app is tested with a webcamera in Digicamcontrol. In general all [digicamcontrol supported cameras](https://digicamcontrol.com/cameras) can be used.
 If the camera supports liveview a stream is created and being used as preview in the app.
-If the camera does not support liveview, you might want to consider to setup the app in [hybrid mode](#hybrid-dslr-and-second-backend-to-stream).
+If the camera does not support liveview, you might want to consider to setup the app with two backends so one is for stills, the other one for preview/video.
 The main camera would be the DSLR to take high quality images, the livestream is captured from a secondary backend.
 As secondary backend most suitable is a webcamera or raspberry pi camera module.
 
@@ -214,21 +217,39 @@ Restart Digicamcontrol after configured.
 DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
 Tinker with available settings until it works properly. If you run into trouble, [create a new issue in the tracker](https://github.com/photobooth-app/photobooth-app/issues).
 
-## Webcam
-
-USB-webcams are integrated via two backends:
-
-- Opencv2 (Linux/Windows) and
-- v4l2 (Linux only).
+## V4l2 Backend
 
 On Linux prefer v4l2 backend because it is more efficient in directly streaming MJPG data instead image frames like the opencv2 implementation.
 
 To use the webcam choose opencv2 or v4l2 as backend.
 
 Both backends use a camera device index to open the camera. To find which indexes are available on your system issue the following commands.
+Ensure the camera is recognized on the USB hub:
+
+```bash
+lsusb
+```
 
 ```bash title="check v4l2 indexes:"
 python -c "from photobooth.services.backends.webcamv4l import *; print(available_camera_indexes())"
+```
+
+The command returns an array of indexes for which a webcam was detected.
+
+Now finish setup:
+
+- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
+- set the backend (v4l)
+- Consider changing the resolution requested from the camera on common tab.
+
+## OpenCv2 Backend
+
+On Linux prefer v4l2 backend because it is more efficient in directly streaming MJPG data instead image frames like the opencv2 implementation.
+
+Ensure the camera is recognized on the USB hub:
+
+```bash
+lsusb
 ```
 
 ```bash title="check opencv2 indexes:"
@@ -240,18 +261,5 @@ The command returns an array of indexes for which a webcam was detected.
 Now finish setup:
 
 - Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
-- set the backend (cv2 or v4l) as main backend
+- set the backend (cv2)
 - Consider changing the resolution requested from the camera on common tab.
-
-## Hybrid: DSLR and second backend to stream
-
-The app supports simultaneous use of two backends at the same time.
-This is useful to grab high quality pictures from a DSLR camera via gphoto2 and livestream from a webcamera or picamera module.
-Hybrid mode allows for live preview even if the DSLR camera is not capable to stream preview video.
-
-In hybrid mode, the main backend is used for still images, the live backend for video streaming.
-To enable hybrid mode:
-    - configure main backend as normal
-    - also configure live backend.
-
-If a live backend is set, it is requested for video preview instead of the main backend.

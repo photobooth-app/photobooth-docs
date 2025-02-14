@@ -6,7 +6,7 @@ To customize the visual apperiance of the photobooth app, add your rules to the 
 
 Depending on your screen you might want to reduce the size of the buttons on the frontpage. First rule changes the text, second the icon size.
 
-```css
+```css title="private.css"
 .action-button {
     font-size: 1.0rem;
 }
@@ -17,10 +17,12 @@ Depending on your screen you might want to reduce the size of the buttons on the
 
 ## Example: Colorize the Buttons on the Frontpage
 
+!!!note
+    This feature is natively included starting from v5. Below is only for reference and will be removed later.
+
 Individual colors can be applied, first button is -0. `.action-button` selects all buttons.
 
-```css
-
+```css title="private.css"
 .action-buttons {
     .action-button {
             background-color: grey !important;
@@ -47,8 +49,10 @@ While the livestream looks nicer if it covers the full screen, some parts of the
 Thus the resulting photo shows a different aspect ratio and might not match the endusers intention.
 So the default is to `contain` the background. If you want to change to `cover`, add the following rule to `private.css`.
 
-```css
-#preview-stream {
+```css title="private.css"
+#overlay-image {
+  width: 100vw;
+  height: 100vh;
   background-size: cover; /* default: contain to avoid cropping */
   transform: scale(1.5); /* default: 1.0 to apply no zoom. 1.5 zooms in, smaller values than 1.0 usually make no sense */
 }
@@ -56,6 +60,9 @@ So the default is to `contain` the background. If you want to change to `cover`,
 ```
 
 ## Add a frame to the frontpage
+
+!!!note
+    This feature is natively included starting from v5. Below is only for reference and will be removed later.
 
 If you want to add a custom frame with transparency above the livestream, apply the following CSS and place the frame in the userdata. In this example, the frame is place in `./userdata/frames/filename.png`.
 

@@ -15,7 +15,7 @@ Commercial software like DSLRbooth is not taken into account.
 | DSLR: Digicamcontrol | ✅ | ✅[^2] | ❌ |
 | Webcameras: opencv2 | ✅ | ✅[^2] | ✅ |
 | Webcameras: v4l2py[^3] | ✅ | ❌ | ❌ |
-| Camera live preview streaming | ✅ | ⏺️[^5] | ❌ |
+| Camera live preview streaming | ✅ | ⏺️ | ❌ |
 | **Image Features and Postprocessing** |
 | Capture single picture | ✅ | ✅ | ✅ |
 | Capture collages | ✅ | ✅ | ✅ |
@@ -43,7 +43,7 @@ Commercial software like DSLRbooth is not taken into account.
 | Admin Backend | ✅ | ✅ | ❌ |
 | Admin Configuration Panel | ✅ | ✅ | ❌ |
 | Admin Backend Protected | ✅ | ✅ | ❌ |
-| Plugin Architecture | ❌ | ❌ | ✅ |
+| Plugin Architecture | ✅ | ❌ | ✅ |
 | **Dev** |
 | Installable package | ✅ | ⏺️ install script | ✅ |
 | Automated testing including hardware |  [![codecov](https://codecov.io/gh/photobooth-app/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/photobooth-app/photobooth-app) | ❌ | ![codecov](https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg) |
@@ -54,6 +54,4 @@ Commercial software like DSLRbooth is not taken into account.
 
 [^1]: Picamera1 only, modules <= v2.1 only, no camera module 3 supported
 [^2]: Integrated via command line interface and external programs
-[^3]: Less CPU utilization than opencv2
 [^4]: Manual custom sync to implement or client need to access wifi accesspoint
-[^5]: local preview only

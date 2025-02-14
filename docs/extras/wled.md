@@ -41,7 +41,7 @@ In short, follow these steps
 - If you use exact the same items listed in the BOM, you can start using following
     - [config](../assets/wled/wled_cfg.json) (using GPIO4 labelled D2)
     - [presets](../assets/wled/wled_presets.json)
-- In the photobooth-app enable the WLED integration and add the serial port to the ESP device in the admin config.
+- In the photobooth-app [enable the WLED plugin](../reference/plugins.md) and add the serial port to the ESP device in the admin config.
 
 For more detailed instructions on the WLED device itself see the [WLED](https://kno.wled.ge/basics/getting-started/) website see
 

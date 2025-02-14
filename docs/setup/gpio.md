@@ -13,7 +13,7 @@ Currently supported triggers are:
 - System pins (input)
     - Shutdown host, default GPIO 17, hold 2 seconds
     - Reboot host, default GPIO 18, hold 2 seconds
-- Digital output
+- Digital output (via [plugin](../reference/plugins.md))
     - Light, default GPIO 2
 - Reserved otherwise [when using a UPS, controlled by dtoverlays](../extras/ups.md).
     - Power loss detection, depending on setup, usually GPIO 6
