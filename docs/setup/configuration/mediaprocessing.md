@@ -1,4 +1,4 @@
-# Process Mediaitems
+# Post-Processing Captures
 
 The mediaitems (images, collages, animated gifs) are postprocessed in a configurable pipeline consisting of several stages.
 The pipeline starts with the original mediaitem. The different media types can have differently configured pipelines that process the image one by one. The processed mediaitem is stored to the gallery finally.
@@ -10,7 +10,7 @@ The pipeline starts with the original mediaitem. The different media types can h
 Single images are captured in one shot.
 The image can be modified, eg. add a new frame on top of the image and some custom text like in the example below:
 
-![image demo](../assets/mediaprocessing/image_demo.jpg)
+![image demo](../../assets/mediaprocessing/image_demo.jpg)
 
 ### Collages
 
@@ -18,7 +18,7 @@ Collages are merged from several images. These can be captured images from camer
 Each capture can be modified, eg. remove the greenscreen and add a new background before merging in the collage.
 Following is an example how the collage is processed:
 
-![collage demo](../assets/mediaprocessing/collage_demo.jpg)
+![collage demo](../../assets/mediaprocessing/collage_demo.jpg)
 
 ## Pipelines
 
@@ -66,7 +66,7 @@ The collage pipeline runs following stages in given sequence:
   5. place image on top. Captured images shine through transparent area. Use PNGs with transparency!
   6. text overlay
 
-![collage pipeline example](../assets/mediaprocessing/collage_pipeline_example.png)
+![collage pipeline example](../../assets/mediaprocessing/collage_pipeline_example.png)
 
 ### Animated GIF-Pipeline
 

@@ -37,7 +37,7 @@ Excited? This is what the app looks like. It's a website and can be viewed on an
 
     Use your DSLR, webcamera or Raspberry Pi Camera with the photobooth-app. You can even use 2 cameras at the same time, one for liveview, one for stills.
 
-    [:octicons-arrow-right-24: Camera setup](./setup/camera_setup.md)
+    [:octicons-arrow-right-24: Camera setup](./setup/configuration/camera_setup.md)
 
 - :video_camera:{ .lg .middle } __Capture__
 
@@ -45,7 +45,7 @@ Excited? This is what the app looks like. It's a website and can be viewed on an
 
     Create photos, collages and animated GIFs and videos. Apply nice looking filter in postprocessing.
 
-    [:octicons-arrow-right-24: Postprocessing](./setup/mediaprocessing.md)
+    [:octicons-arrow-right-24: Postprocessing](./setup/configuration/mediaprocessing.md)
 
 - :stars:{ .lg .middle } __Many more features__
 

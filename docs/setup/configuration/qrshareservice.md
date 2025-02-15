@@ -1,10 +1,10 @@
-# Share via QR Code
+# QR Code Download Captures
 
 The share service allows users to easily download images on the user's phone.
 The user simply scans the QR code to download.
 
 <figure markdown>
-  ![gallery_detail](../assets/screenshots/gallery_detail.png){ width="400" }
+  ![gallery_detail](../../assets/screenshots/gallery_detail.png){ width="400" }
   <figcaption>Scan the QR code to download image to smartphones.</figcaption>
 </figure>
 
@@ -70,7 +70,7 @@ Once setup, the prinicple is as following:
 ## Method B: Share via local WiFi
 
 If the shareservice is not what you want, you could create a local WiFi. Users log in that WiFi and can download directly from the photobooth.
-Setup the URL for the QR code to point to the image you would like to let the user download. There are several versions of the images available, see the [list of mediaitem's directories](../reference/foldersandurls.md#mediaitems).
+Setup the URL for the QR code to point to the image you would like to let the user download. There are several versions of the images available, see the [list of mediaitem's directories](../../reference/foldersandurls.md#mediaitems).
 
 Below an example URL to use in the QR code. {identifier} gets replaced by the acutal filename. Replace the IP and port by the actual data.
 

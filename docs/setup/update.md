@@ -35,7 +35,7 @@ pip install --upgrade photobooth-app
 ```
 
 Afterwards restart the photobooth.
-If the app doesn't show up again, check the [troubleshooting](../support/troubleshooting.md) page.
+If the app doesn't show up again, check the [troubleshooting](../help/troubleshooting.md) page.
 
 ## Update to development versions
 

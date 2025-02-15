@@ -165,10 +165,10 @@ photobooth
 
 Browse to <http://localhost:8000> and see if the application works properly.
 By default, the application uses a generated image and streams a demonstration video. No camera is started at this time.
-You will need to [continue setting up the cameras](../setup/camera_setup.md).
+You will need to [continue setting up the cameras](./configuration//camera_setup.md).
 
 !!! info
-    Having trouble accessing the website or seeing error messages during installation and application launch? Check the [troubleshooting guide](../support/troubleshooting.md).
+    Having trouble accessing the website or seeing error messages during installation and application launch? Check the [troubleshooting guide](../help/troubleshooting.md).
 
 ## Setup the Raspberry Pi in Kiosk Mode
 
@@ -216,7 +216,7 @@ systemctl --user start photobooth-app.service
 ```
 
 !!! info
-    The service does not start? Check the [troubleshooting guide](../support/troubleshooting.md).
+    The service does not start? Check the [troubleshooting guide](../help/troubleshooting.md).
     The following commands may be helpful:
     ```
     systemctl --user status photobooth-app.service

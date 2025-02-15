@@ -4,16 +4,16 @@ The following is a detailed example of how to setup a Dai Nippon Printing (DNP) 
 
 ## Print Function Setup
 
-Please follow the initial steps in the [Share and Print](../setup/share_print.md) guide to enable Print functionality in the photobooth app. Once you have the Print button enabled, continue following this guide to setup the print command suitable for your OS and printing needs.
+Please follow the initial steps in the [Share and Print](../setup/configuration/share_print.md) guide to enable Print functionality in the photobooth app. Once you have the Print button enabled, continue following this guide to setup the print command suitable for your OS and printing needs.
 
 ## Image Output Setup
 
-In addition to setting up your printer, you'll need to make sure your output images from the photobooth app are properly dimensioned for your printer and print media. This includes scaling, cropping, and/or padding the final output image to the correct resolution and aspect ratio as well as leaving the necessary margins for any text, logos, or other printmarks given the print expansion applied by most borderless photo printers. See the [Process Mediaitems](../setup/mediaprocessing.md) page for more guidance.
+In addition to setting up your printer, you'll need to make sure your output images from the photobooth app are properly dimensioned for your printer and print media. This includes scaling, cropping, and/or padding the final output image to the correct resolution and aspect ratio as well as leaving the necessary margins for any text, logos, or other printmarks given the print expansion applied by most borderless photo printers. See the [Process Mediaitems](../setup/configuration/mediaprocessing.md) page for more guidance.
 
 ## Printer Setup
 
 With the Print button enabled and image processing configured to your liking, the next part of setup is to generate the proper command to send processed files from the photobooth gallery to your printer. In this example, we'll cover the following steps:
-    
+
 1. Downloading and installing the appropriate printer driver (in this case, for the DS-RX1HS)
 2. Configuring and testing printing outside of photobooth-app
 3. Writing and debugging the print command
@@ -26,7 +26,7 @@ The following example may also apply to other Debian or non-Debian based Linux s
 #### 1. Driver Installation
 
 DNP printers are supported on Linux via the [Gutenprint](https://gimp-print.sourceforge.io/p_Supported_Printers.php) driver package. Begin by installing the `printer-driver-gutenprint` package.
-    
+
     sudo apt install printer-driver-gutenprint
 
 Restart CUPS to make sure the new drivers are ready for use.

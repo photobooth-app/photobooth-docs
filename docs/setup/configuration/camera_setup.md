@@ -1,5 +1,5 @@
 
-# Camera Setup
+# Backends (Camera Setup)
 
 The photobooth app supports cameras utilizing multiple backends:
 

@@ -6,7 +6,7 @@ Similar to the actions for collages, images, ... the configuration allows multip
 - Touchscreen buttons in the gallery
 - [GPIO (Raspberry Pi only)](./gpio.md)
 - Keyboard input
-- [API](../reference/api.md), endpoint /api/share/...
+- [API](../../reference/api.md), endpoint /api/share/...
 
 ## Working Principle
 

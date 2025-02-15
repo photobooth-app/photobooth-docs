@@ -78,24 +78,25 @@ nav:
       - setup/index.md
       - setup/installation.md
       - setup/update.md
-      - setup/admincenter.md
-      - setup/camera_setup.md
-      - setup/mediaprocessing.md
-      - setup/gpio.md
-      - setup/share_print.md
-      - setup/qrshareservice.md
+      - Configuration: 
+        - setup/configuration/admincenter.md
+        - setup/configuration/camera_setup.md
+        - setup/configuration/actions.md
+        - setup/configuration/mediaprocessing.md
+        - setup/configuration/share_print.md
+        - setup/configuration/qrshareservice.md
+        - setup/configuration/gpio.md
   - Reference:
       - reference/index.md
-      - reference/configuration.md
       - reference/foldersandurls.md
       - reference/customizetheme.md
       - reference/bulktransferfiles.md
       - reference/api.md
       - reference/plugins.md
-  - Support:
-      - support/index.md
-      - support/troubleshooting.md
-      - support/faq.md
+  - Help:
+      - help/index.md
+      - help/troubleshooting.md
+      - help/faq.md
   - Wigglegram Camera:
       - wigglegramcamera/index.md
       - wigglegramcamera/build.md
