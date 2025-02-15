@@ -5,8 +5,11 @@ Commercial software like DSLRbooth is not taken into account.
 
 | Feature | [photobooth-app](https://github.com/photobooth-app/photobooth-app/) | [PhotoboothProject](https://github.com/PhotoboothProject/photobooth) | [PiBooth](https://github.com/pibooth/pibooth) |
 |---|---|---|---|
+|  | ![last commit to the photobooth-app](https://img.shields.io/github/last-commit/photobooth-app/photobooth-app/main) | ![project last commit](https://img.shields.io/github/last-commit/PhotoboothProject/photobooth/dev) | ![pibooth last commit](https://img.shields.io/github/last-commit/pibooth/pibooth/master) |
+|  | ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/photobooth-app/photobooth-app) | ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/PhotoboothProject/photobooth) | ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/pibooth/pibooth) |
+| Stars ✨ | ![GitHub Repo stars](https://img.shields.io/github/stars/photobooth-app/photobooth-app?style=social) | ![GitHub Repo stars](https://img.shields.io/github/stars/PhotoboothProject/photobooth?style=social) |![GitHub Repo stars](https://img.shields.io/github/stars/pibooth/pibooth?style=social) |
+| Automated testing including hardware |  [![codecov](https://codecov.io/gh/photobooth-app/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/photobooth-app/photobooth-app) | ❌ | ![codecov](https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg) |
 | first version release | 2023 | 2016 | 2017 |
-| Stars |![GitHub Repo stars](https://img.shields.io/github/stars/photobooth-app/photobooth-app?style=social)| ![GitHub Repo stars](https://img.shields.io/github/stars/PhotoboothProject/photobooth?style=social) |![GitHub Repo stars](https://img.shields.io/github/stars/pibooth/pibooth?style=social) |
 | Community | ➕➕ | ➕➕➕ | ➕ |
 | Reference system incl Box design | ✅ | ❌ | ❌ |
 | **Supported Cameras and Image Features** |
@@ -14,7 +17,7 @@ Commercial software like DSLRbooth is not taken into account.
 | DSLR: Gphoto2 | ✅ | ✅[^2] | ✅ |
 | DSLR: Digicamcontrol | ✅ | ✅[^2] | ❌ |
 | Webcameras: opencv2 | ✅ | ✅[^2] | ✅ |
-| Webcameras: v4l2py[^3] | ✅ | ❌ | ❌ |
+| Webcameras: v4l2py | ✅ | ❌ | ❌ |
 | Camera live preview streaming | ✅ | ⏺️ | ❌ |
 | **Image Features and Postprocessing** |
 | Capture single picture | ✅ | ✅ | ✅ |
@@ -44,9 +47,6 @@ Commercial software like DSLRbooth is not taken into account.
 | Admin Configuration Panel | ✅ | ✅ | ❌ |
 | Admin Backend Protected | ✅ | ✅ | ❌ |
 | Plugin Architecture | ✅ | ❌ | ✅ |
-| **Dev** |
-| Installable package | ✅ | ⏺️ install script | ✅ |
-| Automated testing including hardware |  [![codecov](https://codecov.io/gh/photobooth-app/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/photobooth-app/photobooth-app) | ❌ | ![codecov](https://codecov.io/gh/pibooth/pibooth/branch/master/graph/badge.svg) |
 | **Supported OS** |
 | Raspberry Pi Bookworm | ✅ | ✅ | ❌ |
 | Debian/Ubuntu | ✅ | ✅ | ✅ |
