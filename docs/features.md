@@ -37,6 +37,7 @@ Commercial software like DSLRbooth is not taken into account.
 | **Personalization** |
 | Customizable Theme | ✅ | ✅ | ❌ |
 | Translateable | ✅ | ✅ | ✅ |
+| Plugins | ✅ | ❌ | ✅ |
 | **Peripheral Integration** |
 | Configurable GPIO trigger (RPI) | ✅ | ✅ | ✅ |
 | Configurable keyboard trigger | ✅ | ✅ | ❌ |

@@ -9,6 +9,7 @@ There are some plugins built in and can be used as reference to build your own p
 - [GPIO](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/gpio_lights) to control light
 - [WLED](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/wled) signaling countdown, capture and recording
 - [pilgram2 filter](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/filter_pilgram2) apply color filter in post processing
+- [commander](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/commander) hook http requests and commands to events
 
 ## Plugin Architecture
 
