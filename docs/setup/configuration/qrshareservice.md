@@ -30,7 +30,7 @@ The user simply scans the QR code to download.
     - ➖ needs online service (usually paid webhosting service)
     - ➖ Images shared via (private) internet service might conflict with GDPR
 
-## Method A: Batteries included shareservice
+## Method A: Batteries included qr shareservice
 
 ### Benefits
 
@@ -49,12 +49,13 @@ Once setup, the prinicple is as following:
 - the photobooth uploads the requested file
 - once upload is finished, the image is displayed to the user
 
-### Setup
+### Setup (Method A)
 
 - [download dl.php](https://github.com/photobooth-app/photobooth-app/blob/main/extras/shareservice/dl.php)
 - edit the config variables on top of dl.php. see the comments in dl.php for reference.
 - place the edited dl.php on a public server, for example your shared hoster. The server must be available to the photobooth and the users downloading photos later.
-- Pair the dl.php script with photobooth app by configuring the shareservice settings in photobooth admin config, tab common:
+- Enable the qr share service in the admin config
+- Pair the dl.php script with photobooth app by configuring the qr shareservice settings in photobooth admin config, tab common:
     - set shareservice_apikey to same value as in dl.php
     - set shareservice_url to the public URL pointing to the dl.php script.
     - choose whether to download the original file or the full processed version.
@@ -74,15 +75,15 @@ Setup the URL for the QR code to point to the image you would like to let the us
 
 Below an example URL to use in the QR code. {identifier} gets replaced by the acutal filename. Replace the IP and port by the actual data.
 
-```http title="QR code URL example for v5 and later"
+### Setup (Method B/C)
+
+- DISABLE the qr share service in the admin config
+- Set the http URL for the QR code as below:
+
+```http title="Share Custom Qr Url example for v5 and later"
 http://localhost:8000/media/full/{identifier}
 ```
 
-```http title="QR code URL example before v4"
+```http title="Share Custom Qr Url example before v4"
 http://localhost:8000/media/processed/full/{filename}
 ```
-
-## Method C: Create your own sharing solution
-
-If the shareservice is not what you want, you can synchronize the data folder manually and share a link to the images.
-The QR code is pointing to an URL that needs to be accessible by the users smartphone. This is possible if the user connects to a local hotspot in the same network as the photobooth computer or the files can be uploaded to the internet to make them accessible.
