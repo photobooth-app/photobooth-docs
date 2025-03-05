@@ -13,7 +13,7 @@ There are some plugins built in and can be used as reference to build your own p
 
 ## Plugin Architecture
 
-Plugins listen to [event-hooks](https://github.com/photobooth-app/photobooth-app/blob/main/src/photobooth/plugins/hookspecs.py) triggered by the [pluggy](https://pluggy.readthedocs.io/en/latest/) package.
+Plugins listen to [event-hooks](https://github.com/photobooth-app/photobooth-app/blob/main/src/photobooth/plugins/__init__.py) triggered by the [pluggy](https://pluggy.readthedocs.io/en/latest/) package.
 
 ```text title="Basic folder structure for a plugin" hl_lines="4-6"
 - photobooth-data (working directory)
@@ -26,7 +26,7 @@ Plugins listen to [event-hooks](https://github.com/photobooth-app/photobooth-app
 
 ### Available hooks
 
-Plugins can register to hooks, so called [hookspecs](https://github.com/photobooth-app/photobooth-app/blob/main/src/photobooth/plugins/hookspecs.py). The hookspecs are categorized currently as follows:
+Plugins can register to hooks, so called [hookspecs](https://github.com/photobooth-app/photobooth-app/blob/main/src/photobooth/plugins/__init__.py). The hookspecs are categorized currently as follows:
 
 - ``PluginManagementSpec``: Start and Stop the Plugin during app startup/shutdown
 - ``PluginStatemachineSpec``: Hooks triggered during actions like countdown start, capture, finished, ...
