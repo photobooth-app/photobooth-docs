@@ -74,9 +74,7 @@ Now finish setup:
 
 - Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
 - Set the main backend to Picamera2
-- Choose Picamera2 focuser module, set Continuous for camera module 3
-- Enable livepreview if desired
-- Change the resolution requested from the camera for stills and preview, see table below.
+- The default resolution is optimized for the camera module 3. In case you changed it, following is ideal:
     - Picamera2 Capture Cam Resolution Width = 4608
     - Picamera2 Capture Cam Resolution Height = 2592
     - Picamera2 Preview Cam Resolution Width = 2304
@@ -96,11 +94,11 @@ pi@photobooth:~ $ libcamera-hello --list-cameras
 ### Camera Modules 1/2/HQ
 
 All other camera modules from the Raspberry Pi ecosystem work the same way as the latest camera module 3.
-They usually come with lower image quality and do not have autofocus.
+They usually have a lower image quality and do not have autofocus.
 Due to this other camera modules are not recommended for use as main camera.
 You might consider to use them only for livestream preview.
 
-Setup is the same as for camera module 3 but with different resolution and no focuser module enabled. See also the chapter above to list resolutions.
+Setup is the same as for camera module 3 but with different resolution. See also the chapter above to list resolutions.
 
 ### Arducam imx519
 
@@ -126,7 +124,6 @@ Now finish setup:
 
 - Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
 - set the main backend to Picamera2
-- Choose Picamera2 focuser module, set Continuous if Arducams driver installed, otherwise choose Interval.
 - Enable livepreview if desired
 - Change the resolution requested from the camera for stills and preview, see table below.
     - Picamera2 Capture Cam Resolution Width = 4656

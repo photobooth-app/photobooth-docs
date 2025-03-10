@@ -39,8 +39,7 @@ You can replace `{filename}` with a path to some image on the computer for manua
 lp -d PRINTER_NAME_HERE -o landscape -o fit-to-page {filename}
 ```
 
-Set the command verified to work in the app including the `{filename}` placeholder.
-Admin Center -> Config -> Tab: HardwareInputOutput.
+Set the command verified in the terminal to work well now in the app including the `{filename}` placeholder.
 
 If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/photobooth-app/photobooth-app/discussions/).
 
@@ -57,8 +56,7 @@ As first start use mspaint to test printing. Use following print command on wind
 mspaint /p {filename}
 ```
 
-Set the command verified to work in the app including the {filename} placeholder.
-Admin Center -> Config -> Tab: HardwareInputOutput.
+Set the command verified in the terminal to work well now in the app including the `{filename}` placeholder.
 
 If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/photobooth-app/photobooth-app/discussions/).
 
