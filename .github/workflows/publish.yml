@@ -20,7 +20,7 @@ jobs:
       - run: mkdocs build --site-dir public
 
       - name: 📂 upload files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
             server: photobooth-app.org.w01b6f5a.kasserver.com
             username: ${{ secrets.FTP_USERNAME }}
