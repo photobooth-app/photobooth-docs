@@ -7,8 +7,9 @@ The photobooth app supports cameras utilizing multiple backends:
 |------------------|-----------------------------|----------------|
 | `picamera2`      | Raspberry Pi Camera Modules | Raspberry Pi   |
 | `gphoto2`        | DSLR                        | Linux          |
-| `digicamcontrol` | DSLR                        | Windows        |
-| `opencv2`        | USB Webcams                 | Windows, Linux |
+| `digicamcontrol` (deprecated) | DSLR           | Windows        |
+| `pyav`           | USB Webcams                 | Windows, Linux |
+| `opencv2` (deprecated)  | USB Webcams          | Windows, Linux |
 | `v4l2`           | USB Webcams                 | Linux          |
 
 Multiple backends can be used simultaneously. For example, the first backend is used for high quality still images,
@@ -102,7 +103,7 @@ Setup is the same as for camera module 3 but with different resolution. See also
 
 ### Arducam imx519
 
-Arducam is not active supported by the app. It could work, but fail any time if the underlying drivers break for example after an system update.
+Arducam is not actively supported by the app. It could work, but fail any time if the underlying drivers break for example after an system update.
 
 Sony's imx519 sensor used in [Arducam's imx519 camera module](https://www.arducam.com/product/imx519-autofocus-camera-module-for-raspberry-pi-arducam-b0371/) is supported by the
 Raspberry Pi OS natively since about March 2023.
@@ -174,6 +175,9 @@ Tinker with available settings until it works properly. If you run into trouble,
 
 ## Digicamcontrol Backend
 
+!!! info
+    This backend is deprecated. Digicamcontrol is not actively maintained since long time. The backend might be removed in the future.
+
 The app is tested with a webcamera in Digicamcontrol. In general all [digicamcontrol supported cameras](https://digicamcontrol.com/cameras) can be used.
 If the camera supports liveview a stream is created and being used as preview in the app.
 If the camera does not support liveview, you might want to consider to setup the app with two backends so one is for stills, the other one for preview/video.
@@ -214,13 +218,44 @@ Restart Digicamcontrol after configured.
 DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
 Tinker with available settings until it works properly. If you run into trouble, [create a new issue in the tracker](https://github.com/photobooth-app/photobooth-app/issues).
 
-## V4l2 Backend
+## Webcam PyAV Backend
+
+In v8 the PyAV backend was added to efficiently stream from webcameras on Windows and Linux.
+It requests the MJPG stream from the camera and allows to continuously run the camera with the highest resolution while creating a lores livestream for the preview.
+
+To find which devices are available on your system check the following commands output.
+Ensure the camera is recognized on the USB hub:
+
+```bash
+lsusb
+```
+
+Check the devices and get more information about the device, here `/dev/video0` is the device endpoint:
+To setup the backend you need device path on Linux and the device name on Windows platform.
+
+```bash
+v4l2-ctl --list-devices
+v4l2-ctl -D -d /dev/video0 --list-formats
+```
+
+Now check the formats, the camera supports. You need ffmpeg installed for this command
+
+```bash
+ffmpeg -hide_banner -f v4l2 -list_formats all -i /dev/video0
+```
+
+Now finish setup:
+
+- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
+- Set the backend (pyav)
+- Insert the camera name (windows) or /dev/videoX endpoint (windows)
+- Change the resolution to a supported resolution, see above..
+
+## Webcam V4l2 Backend
 
 On Linux prefer v4l2 backend because it is more efficient in directly streaming MJPG data instead image frames like the opencv2 implementation.
 
-To use the webcam choose opencv2 or v4l2 as backend.
-
-Both backends use a camera device index to open the camera. To find which indexes are available on your system issue the following commands.
+To find which indexes are available on your system issue the following commands.
 Ensure the camera is recognized on the USB hub:
 
 ```bash
@@ -239,7 +274,10 @@ Now finish setup:
 - set the backend (v4l)
 - Consider changing the resolution requested from the camera on common tab.
 
-## OpenCv2 Backend
+## Webcam OpenCv2 Backend
+
+!!! info
+    This backend is deprecated, the pyav backend is superiour and more resource effective while offering more features. The backend might be removed in the future.
 
 On Linux prefer v4l2 backend because it is more efficient in directly streaming MJPG data instead image frames like the opencv2 implementation.
 
