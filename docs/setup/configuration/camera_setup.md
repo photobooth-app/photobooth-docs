@@ -1,5 +1,5 @@
 
-# Backends (Camera Setup)
+# Camera Setup (Backends)
 
 The photobooth app supports cameras utilizing multiple backends:
 
@@ -224,24 +224,22 @@ In v8 the PyAV backend was added to efficiently stream from webcameras on Window
 It requests the MJPG stream from the camera and allows to continuously run the camera with the highest resolution while creating a lores livestream for the preview.
 
 To find which devices are available on your system check the following commands output.
-Ensure the camera is recognized on the USB hub:
-
-```bash
-lsusb
-```
-
+Ensure the camera is recognized on the USB hub using `lsusb`.
 Check the devices and get more information about the device, here `/dev/video0` is the device endpoint:
 To setup the backend you need device path on Linux and the device name on Windows platform.
 
-```bash
+```bash title="Linux"
+lsusb
 v4l2-ctl --list-devices
 v4l2-ctl -D -d /dev/video0 --list-formats
+ffmpeg -hide_banner -f v4l2 -list_formats all -i /dev/video0
 ```
 
-Now check the formats, the camera supports. You need ffmpeg installed for this command
+```bash title="Windows"
 
-```bash
-ffmpeg -hide_banner -f v4l2 -list_formats all -i /dev/video0
+ffmpeg -hide_banner -f dshow -list_devices true -i dummy
+ffmpeg -hide_banner -f dshow -list_formats all -i "video=Insta360 Link 2C"
+
 ```
 
 Now finish setup:
