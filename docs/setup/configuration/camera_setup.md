@@ -6,10 +6,10 @@ The photobooth app supports cameras utilizing multiple backends:
 | Backend          | Cameras                     | Platforms      |
 |------------------|-----------------------------|----------------|
 | `picamera2`      | Raspberry Pi Camera Modules | Raspberry Pi   |
-| `gphoto2`        | DSLR                        | Linux          |
+| `gphoto2`        | DSLR                        | Linux, Mac          |
 | `digicamcontrol` (deprecated) | DSLR           | Windows        |
-| `pyav`           | USB Webcams                 | Windows, Linux |
-| `opencv2` (deprecated)  | USB Webcams          | Windows, Linux |
+| `pyav`           | USB Webcams                 | Windows, Linux, Mac |
+| `opencv2` (deprecated)  | USB Webcams          | Windows, Linux, Mac |
 | `v4l2`           | USB Webcams                 | Linux          |
 
 Multiple backends can be used simultaneously. For example, the first backend is used for high quality still images,
@@ -238,7 +238,7 @@ ffmpeg -hide_banner -f v4l2 -list_formats all -i /dev/video0
 ```bash title="Windows"
 
 ffmpeg -hide_banner -f dshow -list_devices true -i dummy
-ffmpeg -hide_banner -f dshow -list_formats all -i "video=Insta360 Link 2C"
+ffmpeg -hide_banner -f dshow -list_options true -i "video=Insta360 Link 2C"
 
 ```
 
