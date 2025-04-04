@@ -21,6 +21,17 @@ Additional information:
 ![reference photobooth](./assets/projects/reference/reference_img1.jpg){ width="300" }
 ![reference photobooth](./assets/projects/reference/reference_img3.jpg){ width="300" }
 
+### Modular photobox build
+
+- Created by [dtimes](https://github.com/dtimes)
+- modular design, box should operate with a webcam if no better image quality is needed (aka "basic setup")
+- if needed "DSLR module" can be attached to the top of the "basic setup" box, this second box houses the mounted DSLR
+- [Questions? Have a look in the show and tell section in GitHub discussions](https://github.com/photobooth-app/photobooth-app/discussions/454)
+
+It's meant for personal / non commercial use but should survice being used by friends and family.
+
+![2025-04-04 10_42_32-Photo](https://github.com/user-attachments/assets/e6d42a6b-8be7-4ac4-9288-9d8f0a4ab48e)
+
 ### Projet de Boîtier pour Photobooth en Impression 3D made in Switzerland
 
 Projet de Boîtier pour Photobooth en Impression 3D - Raspberry Pi 4 ou 5
