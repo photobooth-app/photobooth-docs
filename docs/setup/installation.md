@@ -250,15 +250,15 @@ The latest Raspberry Pi OS has several window manager - the most recent is labwc
 
 Create the file below as indicated. The folder labwc and the file autostart may not exist yet, so you need to create these.
 
-```ini title="~/.config/labwc/autostart" hl_lines="1"
-chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+```bash title="~/.config/labwc/autostart" hl_lines="1"
+until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
 ```
 
 ##### Wayland
 
 Modify the file below as indicated. If there is already a section ``[autostart]``, just add the line `chromium = ...` otherwise add the whole section.
 
-```ini title="~/.config/wayfire.ini" hl_lines="2"
+```bash title="~/.config/wayfire.ini" hl_lines="2"
 [autostart]
-chromium = chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+chromium = until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium-browser --kiosk --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
 ```
