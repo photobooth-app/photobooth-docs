@@ -9,7 +9,7 @@ The photobooth app supports cameras utilizing multiple backends:
 | `gphoto2`        | DSLR                        | Linux, Mac          |
 | `digicamcontrol` (deprecated) | DSLR           | Windows        |
 | `pyav`           | USB Webcams                 | Windows, Linux, Mac |
-| `opencv2` (deprecated)  | USB Webcams          | Windows, Linux, Mac |
+| `opencv2` (removed in v7)  | USB Webcams          | Windows, Linux, Mac |
 | `v4l2`           | USB Webcams                 | Linux          |
 
 Multiple backends can be used simultaneously. For example, the first backend is used for high quality still images,
@@ -239,14 +239,19 @@ ffmpeg -hide_banner -f v4l2 -list_formats all -i /dev/video0
 
 ffmpeg -hide_banner -f dshow -list_devices true -i dummy
 ffmpeg -hide_banner -f dshow -list_options true -i "video=Insta360 Link 2C"
+```
+
+```bash title="Mac"
+
+ffmpeg -hide_banner -f avfoundation -list_devices true -i ""
 
 ```
 
 Now finish setup:
 
-- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
-- Set the backend (pyav)
-- Insert the camera name (windows) or /dev/videoX endpoint (windows)
+- Set the device identifier in the [admin center](http://localhost/#/admin/config), config, tab backends.
+- Set the backend to WebcamPyav
+- Insert the camera name (windows) or /dev/videoX endpoint (Windows, Mac)
 - Change the resolution to a supported resolution, see above..
 
 ## Webcam V4l2 Backend
@@ -260,39 +265,14 @@ Ensure the camera is recognized on the USB hub:
 lsusb
 ```
 
-```bash title="check v4l2 indexes:"
-python -c "from photobooth.services.backends.webcamv4l import *; print(available_camera_indexes())"
-```
-
 The command returns an array of indexes for which a webcam was detected.
 
 Now finish setup:
 
-- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
-- set the backend (v4l)
+- set the backend to WebcamV4l
+- Set the camera identifier in the [admin center](http://localhost/#/admin/config), config, tab backends.
 - Consider changing the resolution requested from the camera on common tab.
 
 ## Webcam OpenCv2 Backend
 
-!!! info
-    This backend is deprecated, the pyav backend is superiour and more resource effective while offering more features. The backend might be removed in the future.
-
-On Linux prefer v4l2 backend because it is more efficient in directly streaming MJPG data instead image frames like the opencv2 implementation.
-
-Ensure the camera is recognized on the USB hub:
-
-```bash
-lsusb
-```
-
-```bash title="check opencv2 indexes:"
-python -c "from photobooth.services.backends.webcamcv2 import *; print(available_camera_indexes())"
-```
-
-The command returns an array of indexes for which a webcam was detected.
-
-Now finish setup:
-
-- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
-- set the backend (cv2)
-- Consider changing the resolution requested from the camera on common tab.
+This backend is removed in v7. The PyAV backend is superiour and more resource effective while offering more features.
