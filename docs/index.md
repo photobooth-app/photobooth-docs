@@ -8,7 +8,9 @@ Create your own photobooth app for your wedding, birthday and other occasions.
 
 Excited? This is what the app looks like. It's a website and can be viewed on any device:
 
-<video controls loop muted src="./assets/photobooth-app-demo.mp4" type="video/mp4" poster="./assets/photobooth-app-demo-poster.webp"></video>
+<video controls loop muted preload="none" poster="./assets/photobooth-app-demo-poster.webp">
+  <source src="./assets/photobooth-app-demo.mp4" type="video/mp4" />
+</video>
 
 ## Features
 
