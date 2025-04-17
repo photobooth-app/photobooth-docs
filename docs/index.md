@@ -6,12 +6,6 @@ Written in Python 🐍, it comes with a modern Vue frontend.
 This site documents the photobooth-app project and provides installation instructions.
 Create your own photobooth app for your wedding, birthday and other occasions.
 
-Excited? This is what the app looks like. It's a website and can be viewed on any device:
-
-<video controls loop muted preload="none" poster="./assets/photobooth-app-demo-poster.webp">
-  <source src="./assets/photobooth-app-demo.mp4" type="video/mp4" />
-</video>
-
 ## Features
 
 <div class="grid cards" markdown>
@@ -58,6 +52,12 @@ Excited? This is what the app looks like. It's a website and can be viewed on an
     [:octicons-arrow-right-24: More features](./features.md)
 
 </div>
+
+Excited? This is what the app looks like. It's a website and can be viewed on any device:
+
+<video controls loop muted preload="none" poster="./assets/photobooth-app-demo-poster.webp">
+  <source src="./assets/photobooth-app-demo.mp4" type="video/mp4" />
+</video>
 
 ## Current Version [![current release](https://img.shields.io/pypi/v/photobooth-app)](https://pypi.org/project/photobooth-app/)
 
