@@ -1,3 +1,6 @@
+---
+glightbox: false
+---
 <h1 align="center"><img src="assets/logo-text-blue-transparent.png" alt="photobooth app logo" /></h1>
 
 Welcome to your brand new photobooth app.
