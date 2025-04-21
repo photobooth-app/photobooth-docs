@@ -36,6 +36,7 @@ Customize for debian/ubuntu. Picamera2 is only available for Raspberry Pi.
 
 ```zsh
 sudo apt -y install ffmpeg libturbojpeg0 libgl1 libgphoto2-dev fonts-noto-color-emoji
+sudo apt -y install libexif12 libgphoto2-6 libgphoto2-port12 libltdl7
 ```
 
 ### Debian/Ubuntu
