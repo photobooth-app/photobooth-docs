@@ -57,7 +57,7 @@ markdown_extensions:
       permalink: true
 
 plugins:
-  - mkdocstrings
+  # - mkdocstrings
   - search
   - swagger-ui-tag
   - glightbox
