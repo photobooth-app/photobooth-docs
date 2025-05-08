@@ -8,6 +8,7 @@ dev_addr: 127.0.0.1:8001
 
 theme:
   name: "material"
+  font: false
   custom_dir: overrides
   logo: assets/logo-notext-white-transparent.png
   favicon: assets/favicon-notext-blue-transparent.png
