@@ -4,7 +4,7 @@ hide:
   #- navigation
   - toc
 ---
-<h1 align="center"><img src="assets/logo-text-blue-transparent.png" alt="photobooth app logo" /></h1>
+<h1 align="center"><img src="assets/logo-text-blue-transparent.png" alt="photobooth app logo" width="240" height="220"/></h1>
 
 Welcome to your brand new photobooth app.
 Written in Python 🐍, it comes with a modern Vue frontend.
