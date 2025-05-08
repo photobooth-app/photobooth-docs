@@ -15,6 +15,16 @@ Depending on your screen you might want to reduce the size of the buttons on the
 }
 ```
 
+## Adjust the font-size of the countdown
+
+
+```css title="private.css"
+#countdown-circular-progress {
+	font-size: 50vh !important;
+	font-weight: normal !important;
+}
+```
+
 ## Example: Colorize the Buttons on the Frontpage
 
 !!!note
