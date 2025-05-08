@@ -1,6 +1,6 @@
 # Prevent caching of HTML files
 <IfModule mod_headers.c>
-    <FilesMatch "\.(html|htm)$">
+    <FilesMatch "\.(html|htm|json)$">
 		Header set Cache-Control: "max-age=3600"
     </FilesMatch>
 
