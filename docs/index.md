@@ -65,18 +65,12 @@ Excited? This is what the app looks like. It's a website and can be viewed on an
   <source src="./assets/photobooth-app-demo.mp4" type="video/mp4" />
 </video>
 
-## Current Version [![current release](https://img.shields.io/pypi/v/photobooth-app)](https://pypi.org/project/photobooth-app/)
 
-Unreleased versions can be installed directly from the Github repository. Usually this is not recommended.
-To [install the latest development](./setup/update.md#update-to-development-versions) code follow the linked guide.
-The main-branch is usually the same as the current release version.
-The dev-branch is the latest development code and may not work reliable.
 
-- [![python versions supported](https://img.shields.io/pypi/pyversions/photobooth-app)](https://pypi.org/project/photobooth-app/) python versions are currently supported.
-- [![codecov](https://codecov.io/gh/photobooth-app/photobooth-app/branch/main/graph/badge.svg?token=SBB5DGX17V)](https://codecov.io/gh/photobooth-app/photobooth-app) amount of the python code is [tested automatically](https://github.com/photobooth-app/photobooth-app/actions/workflows/pytests.yml). Tests includes the use of real hardware! 🎉
+## Find more information
 
-## Links
-
+- [Download the latest version](./download.md)
+- [Installation instructions](./setup/installation.md)
 - [Github source](https://github.com/photobooth-app/photobooth-app/)
 - [PyPI package](https://pypi.org/project/photobooth-app/)
 - [3d printable case](https://github.com/photobooth-app/photobooth-3d/)
