@@ -12,7 +12,7 @@ Let's go...
 - System: Raspberry Pi 4 or 5 recommended. Also, more performant hardware is fine using a generic Debian/Windows. Raspberry Pi 3 could work but might be slow.
 - Screen: A touchscreen is highly recommended. Recommended minimum resolution is 1024x600.
 - Camera. You can use one or two cameras. Using two cameras allows to dedicate one camera to stills and one to livepreview/videos. Supported cameras:
-    - DSLR via [gphoto2](http://www.gphoto.org/proj/libgphoto2/support.php) on Linux or [digicamcontrol](https://digicamcontrol.com/) on Windows
+    - DSLR via [gphoto2](http://www.gphoto.org/proj/libgphoto2/support.php) on Linux
     - Raspberry Pi [camera modules](https://www.raspberrypi.com/documentation/accessories/camera.html) via [picamera2](https://github.com/raspberrypi/picamera2).
     - USB-webcameras via [linuxpy](https://github.com/tiagocoutinho/linuxpy) or [opencv2](https://opencv.org/).
 

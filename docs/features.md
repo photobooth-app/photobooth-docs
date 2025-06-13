@@ -15,9 +15,7 @@ Commercial software like DSLRbooth is not taken into account.
 | **Supported Cameras and Image Features** |
 | Raspberry Pi Cameras: Picamera2 | ✅ | ⏺️[^2] | ⏺️[^1] |
 | DSLR: Gphoto2 | ✅ | ✅[^2] | ✅ |
-| DSLR: Digicamcontrol | ✅ | ✅[^2] | ❌ |
-| Webcameras: opencv2 | ✅ | ✅[^2] | ✅ |
-| Webcameras: v4l2py | ✅ | ❌ | ❌ |
+| 4k-Webcameras: PyAv/v4l2py integrated | ✅ | ✅[^2] | ✅ |
 | Camera live preview streaming | ✅ | ⏺️ | ❌ |
 | **Image Features and Postprocessing** |
 | Capture single picture | ✅ | ✅ | ✅ |
