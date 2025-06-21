@@ -1,7 +1,8 @@
-# QR Code Download Captures
+# Share Photos via QR Code
 
-The share service allows users to easily download images on the user's phone.
-The user simply scans the QR code to download.
+After setup, the users of the photobooth-app can download their images, gifs and videos simply by scanning a QR code.
+The QR code points to the file directly or a portal that allows to reshare the media.
+Using the portal, the user can share the media file using the apps on his or her smartphone.
 
 <figure markdown>
   ![gallery_detail](../../assets/screenshots/gallery_detail.png){ width="400" }
@@ -10,27 +11,94 @@ The user simply scans the QR code to download.
 
 ## Options to share via QR code
 
-- Method A: Use the batteries included shareservice.
-    - ➕ Easy setup
-    - ➕ Convenient for user: Direct internet download
-    - ➕ Data saver: On the fly upload when QR code is scanned
-    - ➖ needs php online service (usually paid webhosting service)
-    - ➖ Images shared via (private) internet service might conflict with GDPR
-- Method B: Share via local WiFi-Hotspot.
-    - ➖ Inconvenient for user: Smartphones need to log in local WiFi
-    - ➕ No need to synchronize, no data usage
-    - ➕ Local solution don't need any online service
-    - ➕ Local solution less likely to conflict with GDPR
-    - ➖ Custom setup
-- Method C: Sync images (on your own) and provide a custom URL users can download images
-    - ➕ Convenient for user: Direct internet download
-    - ➕ Image backup on the fly
-    - ➖ Custom setup
-    - ➖ All images need to synchronize, uses more data
-    - ➖ needs online service (usually paid webhosting service)
-    - ➖ Images shared via (private) internet service might conflict with GDPR
+There are several ways to share media files to users. Method A is recommended for new setups.
 
-## Method A: Batteries included qr shareservice
+
+
+### Method A: Use the synchronizer plugin (new in v8, recommended).
+
+❕ Prerequisite: Public FTP-Server or NextCloud  
+➕ Automatic immediate synchronization to FTP-Server, NextCloud and/or local filesystem  
+➕ Easy setup   
+➕ Convenient for user: Direct internet download  
+➖ Images shared via (private) internet service might conflict with GDPR  
+
+### Method B: Share via local WiFi-Hotspot.
+❕ Prerequisite: Setup WiFi Accesspoint  
+➖ Inconvenient for user: Smartphones need to log in local WiFi  
+➖ Custom setup  
+➕ No need to synchronize, no data usage  
+➕ Local solution don't need any online service  
+➕ Local solution less likely to conflict with GDPR  
+
+
+### Method C: Sync images (on your own) and provide a custom URL users can download images
+➕ Convenient for user: Direct internet download  
+➕ Image backup on the fly  
+➖ Custom setup  
+➖ All images need to synchronize, uses more data  
+➖ needs online service (usually paid webhosting service)  
+➖ Images shared via (private) internet service might conflict with GDPR  
+
+
+### Method D: dl.php shareservice (DEPRECATED since v8).
+❕ Prerequisite: Needs php online service (usually paid webhosting service)  
+➕ Easy setup  
+➕ Convenient for user: Direct internet download  
+➕ Data saver: On the fly upload when QR code is scanned  
+➖ Images shared via (private) internet service might conflict with GDPR  
+➖ Deprecated method, will be removed.  
+
+
+## Method A: Share via Synchronizer Plugin
+
+### Benefits
+
+- secure: the photobooth does not need to expose a service to the internet
+- immediate upload of media files: could serve as backup also
+- works also with cellular internet service that usually provide no public ip address
+- simple: just needs an FTP Server or a NextCloud instance in the public internet
+
+### Setup
+
+- In the Admin Center go to Configuration -> Synchronizer.
+- Configure a FTP or NextCloud-Backend to sync to.
+- Save the configuration.
+- Take a picture and check the logs for issues during uploading.
+- If there are no errors, scan the QR code and check if the photo is downloaded correctly to the smartphone.
+
+
+## Method B: Share via local WiFi
+
+If the shareservice is not what you want, you could create a local WiFi. Users log in that WiFi and can download directly from the photobooth.
+Setup the URL for the QR code to point to the image you would like to let the user download. There are several versions of the images available, see the [list of mediaitem's directories](../../reference/foldersandurls.md#mediaitems).
+
+Below an example URL to use in the QR code. {identifier} gets replaced by the acutal filename. Replace the IP and port by the actual data.
+
+### Setup (Method B)
+
+- DISABLE the qr share service in the admin config
+- Set the http URL for the QR code as below:
+
+```http title="Share Custom Qr Url example for v5 and later"
+http://localhost:8000/media/full/{identifier}
+```
+
+```http title="Share Custom Qr Url example before v4"
+http://localhost:8000/media/processed/full/{filename}
+```
+
+## Method C: Custom Solution
+
+Custom solutions are out of scope of the documentation. You need to figure out a way to make the media files accessible.
+Then configure the QR code custom URL to point to the corresponding URL.
+
+```http title="Share Custom Qr Url example"
+http://localhost:8000/media/full/{filename}
+```
+
+
+## Method D: dl.php qr shareservice
 
 ### Benefits
 
@@ -49,7 +117,7 @@ Once setup, the prinicple is as following:
 - the photobooth uploads the requested file
 - once upload is finished, the image is displayed to the user
 
-### Setup (Method A)
+### Setup
 
 - [download dl.php](https://github.com/photobooth-app/photobooth-app/blob/main/extras/shareservice/dl.php)
 - edit the config variables on top of dl.php. see the comments in dl.php for reference.
@@ -67,23 +135,3 @@ Once setup, the prinicple is as following:
 - ensure the dl.php directory has write-permission for the webserver.
 - check photobooth error log.
 - nginx needs to be [configured for longrunning http-requests](https://github.com/photobooth-app/photobooth-app/issues/140#issuecomment-1856841684)
-
-## Method B: Share via local WiFi
-
-If the shareservice is not what you want, you could create a local WiFi. Users log in that WiFi and can download directly from the photobooth.
-Setup the URL for the QR code to point to the image you would like to let the user download. There are several versions of the images available, see the [list of mediaitem's directories](../../reference/foldersandurls.md#mediaitems).
-
-Below an example URL to use in the QR code. {identifier} gets replaced by the acutal filename. Replace the IP and port by the actual data.
-
-### Setup (Method B/C)
-
-- DISABLE the qr share service in the admin config
-- Set the http URL for the QR code as below:
-
-```http title="Share Custom Qr Url example for v5 and later"
-http://localhost:8000/media/full/{identifier}
-```
-
-```http title="Share Custom Qr Url example before v4"
-http://localhost:8000/media/processed/full/{filename}
-```
