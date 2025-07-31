@@ -11,10 +11,11 @@ The photobooth-app backend can be extended by plugins since version 6.
 
 There are some plugins built in and can be used as reference to build your own plugins:
 
-- [GPIO](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/gpio_lights) to control light
+- [GPIO](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/gpio_lights) to control lights or other devices via GPIO
 - [WLED](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/wled) signaling countdown, capture and recording
 - [pilgram2 filter](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/filter_pilgram2) apply color filter in post processing
 - [commander](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/commander) hook http requests and commands to events
+- [synchronizer](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/synchronizer) copy media files to local filesystem or remote FTP/Nextcloud servers to backup and share
 
 ## Plugin Architecture
 

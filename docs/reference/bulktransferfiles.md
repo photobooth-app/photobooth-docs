@@ -1,4 +1,4 @@
-# Bulk Transfer Files from/to Photobooth
+# Transfer Files from the Photobooth
 
 This page is about methods to download all files after an event from the photobooth.
 Using the admin center is preferred method in general.
@@ -17,15 +17,7 @@ Enable SSH access on the photobooth device.
 On windows computers use WinSCP to connect to the device.
 Protocol is SFTP, Port usually 22. Username/Password same as login for SSH.
 
-## Filetransfer-Service
+## Synchronizer Plugin
 
-This service can be used copy mediaitems to USB-drive.
-
-!!! info
-    Starting with Debian Bookworm mounting the usb drive automatically can fail because old unmaintained packages were removed from the distribution and replacement packages could behave different so the photobooth-app cannot detect the usb drive.
-
-    The other methods are preferred for bulk transfer of data.
-
-To use this type of datatransfer enable the filetransferservice in the admin center.
-Once enabled, and a usb stick is inserted in the device, the mediaitems are copied once.
-If new images are added later to the gallery, these images are not copied until the drive is unplugged and plugged in again.
+Starting from v8 there is a syncrhonizer plugin that can be used to backup files to a usb storage or remote hosts (FTP and Nextcloud)
+You can use the synchronizer to backup files and also to upload them to online services so the files can be used in QR codes.

@@ -101,51 +101,6 @@ You might consider to use them only for livestream preview.
 
 Setup is the same as for camera module 3 but with different resolution. See also the chapter above to list resolutions.
 
-### Arducam imx519
-
-Arducam is not actively supported by the app. It could work, but fail any time if the underlying drivers break for example after an system update.
-
-Sony's imx519 sensor used in [Arducam's imx519 camera module](https://www.arducam.com/product/imx519-autofocus-camera-module-for-raspberry-pi-arducam-b0371/) is supported by the
-Raspberry Pi OS natively since about March 2023.
-
-This means the module can be used with or without installing Arducams custom driver packages:
-
-- without Arducams driver:
-    - ➖No PDAF support
-    - ➖Only interval based autofocus e.g. every 10 seconds
-    - ➕More stable upgrades because no customized libcamera needs to be installed.
-    - [install as described in discussions](https://github.com/photobooth-app/photobooth-app/discussions/23)
-- with Arducams driver:
-    - ➕PDAF support
-    - ➕Continuous autofocus like camera module 3
-    - ➖apt upgrade may break driver/libcamera from time to time
-    - [install as described by Arducam](https://docs.arducam.com/Raspberry-Pi-Camera/Pivariety-Camera/Quick-Start-Guide/)
-
-Now finish setup:
-
-- Set the index in the [admin center](http://localhost/#/admin/config), config, tab backends.
-- set the main backend to Picamera2
-- Enable livepreview if desired
-- Change the resolution requested from the camera for stills and preview, see table below.
-    - Picamera2 Capture Cam Resolution Width = 4656
-    - Picamera2 Capture Cam Resolution Height = 3496
-    - Picamera2 Preview Cam Resolution Width = 2328
-    - Picamera2 Preview Cam Resolution Height = 1748
-- Restart the app
-
-For your reference the output of ``libcamera-hello --list-cameras``:
-
-```title="Arducam 16MP (imx519)" hl_lines="7 9"
-pi@photobooth:~ $ libcamera-hello --list-cameras
-Available cameras
------------------
-0 : imx519 [4656x3496] (/base/soc/i2c0mux/i2c@1/imx519@1a)
-    Modes: 'SRGGB10_CSI2P' : 1280x720 [120.00 fps - (1048, 1042)/2560x1440 crop]
-                            1920x1080 [60.05 fps - (408, 674)/3840x2160 crop]
-                            2328x1748 [30.00 fps - (0, 0)/4656x3496 crop]
-                            3840x2160 [18.00 fps - (408, 672)/3840x2160 crop]
-                            4656x3496 [9.00 fps - (0, 0)/4656x3496 crop]
-```
 
 ### Other third party camera modules
 
@@ -220,7 +175,7 @@ Tinker with available settings until it works properly. If you run into trouble,
 
 ## Webcam PyAV Backend
 
-In v8 the PyAV backend was added to efficiently stream from webcameras on Windows and Linux.
+In v7 the PyAV backend was added to efficiently stream from webcameras on Windows and Linux.
 It requests the MJPG stream from the camera and allows to continuously run the camera with the highest resolution while creating a lores livestream for the preview.
 
 To find which devices are available on your system check the following commands output.
