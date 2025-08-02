@@ -118,3 +118,18 @@ OSError: cannot open camera index 1
 [ WARN:2@22.578] global cap_msmf.cpp:487 `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: -1072873822
 [ WARN:0@22.582] global cap_msmf.cpp:1768 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
 ```
+
+## WiFi connection issues (Raspberry Pi)
+
+If you have issues with the WiFi connection on a Raspberry Pi, it might be due to the power management settings of the WiFi adapter.
+You can disable power management by creating a configuration file:
+
+```bash title="/etc/rc.local"
+# Disable WiFi power management might resolve connection issues
+iw dev wlan0 set power_save off
+```
+
+Check if power management is off by checking the output of the following command:
+```bash
+iwconfig wlan0
+```
