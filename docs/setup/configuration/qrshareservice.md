@@ -1,65 +1,27 @@
-# Share Photos via QR Code
+# Synchronize and Share via QR Code
 
 After setup, the users of the photobooth-app can download their images, gifs and videos simply by scanning a QR code.
 The QR code points to the file directly or a portal that allows to reshare the media.
 Using the portal, the user can share the media file using the apps on his or her smartphone.
 
 <figure markdown>
-  ![gallery_detail](../../assets/screenshots/gallery_detail.png){ width="400" }
-  <figcaption>Scan the QR code to download image to smartphones.</figcaption>
+  ![gallery_detail](../../assets/screenshots/gallery_detail.png){ width="500" }
+  <figcaption>Users scan the QR code to download the displayed image on their mobile.</figcaption>
 </figure>
 
 ## Options to share via QR code
 
-There are several ways to share media files to users. Method A is recommended for new setups.
+| Option                         | Synchronizer Plugin                                                                                                 | Your Custom Implementation                                                                                   |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Description                    | Sync via FTP and share via HTTP(S)                                                                                  | Share via local WiFi-Hotspot                                                                                 |
+| Prerequisites                  | FTP supporting MLSD command (recommended) or NextCloud server                                                                               | WiFi Hotspot                                                                                                 |
+| Online / Offline               | Online, Internet required                                                                                           | Offline, no Internet required                                                                                |
+| Enduser Usage Complexity Level | Easy                                                                                                                | Complex                                                                                                      |
+| Setup Complexity Level         | Easy (FTP), Medium (NextCloud)                                                                                      | Advanced                                                                                                     |
+| Pros                           | ➕ Automatic immediate and time-interval synchronization<br>➕ Easy setup<br>➕ Convenient for user<br>➕ Could be used as immediate backup     | ➕ No need to synchronize<br>➕ No issues if internet service is bad<br>➕ Less likely to conflict with GDPR |
+| Cons                           | ➖ Internet service might fail any time<br>➖ Images shared via (private) internet service might conflict with GDPR | ➖ Inconvenient for user: Smartphones need to log in local WiFi<br>➖ Custom setup                           |
 
-
-
-### Method A: Use the synchronizer plugin (new in v8, recommended).
-
-❕ Prerequisite: Public FTP-Server or NextCloud  
-➕ Automatic immediate synchronization to FTP-Server, NextCloud and/or local filesystem  
-➕ Easy setup   
-➕ Convenient for user: Direct internet download  
-➖ Images shared via (private) internet service might conflict with GDPR  
-
-### Method B: Share via local WiFi-Hotspot.
-❕ Prerequisite: Setup WiFi Accesspoint  
-➖ Inconvenient for user: Smartphones need to log in local WiFi  
-➖ Custom setup  
-➕ No need to synchronize, no data usage  
-➕ Local solution don't need any online service  
-➕ Local solution less likely to conflict with GDPR  
-
-
-### Method C: Sync images (on your own) and provide a custom URL users can download images
-➕ Convenient for user: Direct internet download  
-➕ Image backup on the fly  
-➖ Custom setup  
-➖ All images need to synchronize, uses more data  
-➖ needs online service (usually paid webhosting service)  
-➖ Images shared via (private) internet service might conflict with GDPR  
-
-
-### Method D: dl.php shareservice (DEPRECATED since v8).
-❕ Prerequisite: Needs php online service (usually paid webhosting service)  
-➕ Easy setup  
-➕ Convenient for user: Direct internet download  
-➕ Data saver: On the fly upload when QR code is scanned  
-➖ Images shared via (private) internet service might conflict with GDPR  
-➖ Deprecated method, will be removed.  
-
-
-## Method A: Share via Synchronizer Plugin
-
-### Benefits
-
-- secure: the photobooth does not need to expose a service to the internet
-- immediate upload of media files: could serve as backup also
-- works also with cellular internet service that usually provide no public ip address
-- simple: just needs an FTP Server or a NextCloud instance in the public internet
-
-### Setup
+## Setup the Synchronizer Plugin
 
 - In the Admin Center go to Configuration -> Synchronizer.
 - Configure a FTP or NextCloud-Backend to sync to.
@@ -67,18 +29,67 @@ There are several ways to share media files to users. Method A is recommended fo
 - Take a picture and check the logs for issues during uploading.
 - If there are no errors, scan the QR code and check if the photo is downloaded correctly to the smartphone.
 
+### Download Portal
 
-## Method B: Share via local WiFi
+The synchronizer plugin comes with a download portal that allows the user to download the media files and
+share them with other apps on the smartphone.
+This is especially useful for users that want to share the media files on social media or via messaging apps.
 
-If the shareservice is not what you want, you could create a local WiFi. Users log in that WiFi and can download directly from the photobooth.
-Setup the URL for the QR code to point to the image you would like to let the user download. There are several versions of the images available, see the [list of mediaitem's directories](../../reference/foldersandurls.md#mediaitems).
+The download portal is just one single [HTML page](https://github.com/photobooth-app/photobooth-app/tree/main/src/web/download) and basically a loader for the media files.
+To use it, the HTML page needs to be hosted on a webserver that is accessible from the internet.
 
-Below an example URL to use in the QR code. {identifier} gets replaced by the acutal filename. Replace the IP and port by the actual data.
 
-### Setup (Method B)
+<p style="display: flex;  justify-content: center; gap: 10px;">
+  <img src="../assets/downloadportal-screenshot-loaded.jpg" alt="Media loaded screenshot" width="200">
+  <img src="../assets/downloadportal-screenshot-share.jpg" alt="Share options screenshot" width="200">
+</p>
+<figcaption style="text-align: center;">Media file is displayed in the downloadportal and the user can reshare it using the smartphone's native menu.</figcaption>
 
-- DISABLE the qr share service in the admin config
-- Set the http URL for the QR code as below:
+
+### Setup the Download Portal
+
+Depending on the backend you use, the download portal is set up automatically or you need to do it manually.
+Please check the following sections for details based on your backend in use.
+
+
+#### FTP Backend
+
+The synchronizer plugin automatically sets up the download portal for you. If there is an updated version,
+the synchronizer plugin will update the download portal automatically.
+Turn on the `autoupload`, after restarting the app,
+the download portal is available at the URL you configured in the `media_url`.
+
+If you choose to manually upload the HTML file, you need to provide the URL to the HTML file in the `downloadportal_url` instead.
+To avoid abuse by third parties, you need to set up the download portal on the same hostname as the NextCloud instance.
+
+If you disable `use_downloadportal`, the download portal will not be used and the QR code will point
+to the media file directly.
+
+![setup the download portal with ftp backend](../assets/downloadportal-configuration-ftp.png)
+
+
+#### NextCloud Backend
+
+The plugin cannot automatically setup the download portal.
+If you want to use the download portal, you are required to upload the portal manually.
+Upload the [HTML file](https://github.com/photobooth-app/photobooth-app/tree/main/src/web/download) to the same host as your NextCloud server.
+To avoid abuse by third parties, you need to set up the download portal on the same hostname as the NextCloud instance.
+
+![setup the download portal with nextcloud backend](../assets/downloadportal-configuration-nextcloud.png)
+
+
+## Setup a Custom Solution
+
+If the synchronizer plugin is not what you want, you could deploy your own solution.
+For example create a local WiFi that allows user access to the photobooth.
+Users log in that WiFi and can download directly from the photobooth without internet services.
+Setup the URL for the QR code to point to the image you would like to let the user download.
+There are several versions of the images available, see the [list of mediaitem's directories](../../reference/foldersandurls.md#mediaitems).
+
+Below an example URL to use in the QR code. {identifier} gets replaced by the actual filename. Replace the IP and port by the actual data.
+
+Custom solutions are out of scope of the documentation. You need to figure out a way to make the media files accessible.
+Then configure the QR code custom URL to point to the corresponding URL.
 
 ```http title="Share Custom Qr Url example for v5 and later"
 http://localhost:8000/media/full/{identifier}
@@ -88,24 +99,7 @@ http://localhost:8000/media/full/{identifier}
 http://localhost:8000/media/processed/full/{filename}
 ```
 
-## Method C: Custom Solution
-
-Custom solutions are out of scope of the documentation. You need to figure out a way to make the media files accessible.
-Then configure the QR code custom URL to point to the corresponding URL.
-
-```http title="Share Custom Qr Url example"
-http://localhost:8000/media/full/{filename}
-```
-
-
-## Method D: dl.php qr shareservice
-
-### Benefits
-
-- secure: the photobooth does not need to expose a service to the internet
-- saves data: only images that are requested via QR code are transferred via internet
-- works also with cellular internet service that usually provide no public ip address
-- simple: just one php file to setup
+## Setup the QR-Shareservice (dl.php, deprecated since v8)
 
 ### Working Principle
 
@@ -124,9 +118,9 @@ Once setup, the prinicple is as following:
 - place the edited dl.php on a public server, for example your shared hoster. The server must be available to the photobooth and the users downloading photos later.
 - Enable the qr share service in the admin config
 - Pair the dl.php script with photobooth app by configuring the qr shareservice settings in photobooth admin config, tab common:
-    - set shareservice_apikey to same value as in dl.php
-    - set shareservice_url to the public URL pointing to the dl.php script.
-    - choose whether to download the original file or the full processed version.
+  - set shareservice_apikey to same value as in dl.php
+  - set shareservice_url to the public URL pointing to the dl.php script.
+  - choose whether to download the original file or the full processed version.
 - Now restart the photobooth app and try to scan a QR code in the gallery.
 
 ### Troubleshooting
