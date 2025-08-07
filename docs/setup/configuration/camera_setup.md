@@ -1,16 +1,15 @@
-
 # Camera Setup (Backends)
 
 The photobooth app supports cameras utilizing multiple backends:
 
-| Backend          | Cameras                     | Platforms      |
-|------------------|-----------------------------|----------------|
-| `picamera2`      | Raspberry Pi Camera Modules | Raspberry Pi   |
-| `gphoto2`        | DSLR                        | Linux, Mac          |
-| `digicamcontrol` (deprecated) | DSLR           | Windows        |
-| `pyav`           | USB Webcams                 | Windows, Linux, Mac |
-| `opencv2` (removed in v7)  | USB Webcams          | Windows, Linux, Mac |
-| `v4l2`           | USB Webcams                 | Linux          |
+| Backend                       | Cameras                     | Platforms           |
+| ----------------------------- | --------------------------- | ------------------- |
+| `picamera2`                   | Raspberry Pi Camera Modules | Raspberry Pi        |
+| `gphoto2`                     | DSLR                        | Linux, Mac          |
+| `digicamcontrol` (deprecated) | DSLR                        | Windows             |
+| `pyav`                        | USB Webcams                 | Windows, Linux, Mac |
+| `opencv2` (removed in v7)     | USB Webcams                 | Windows, Linux, Mac |
+| `v4l2`                        | USB Webcams                 | Linux               |
 
 Multiple backends can be used simultaneously. For example, the first backend is used for high quality still images,
 the second backend is used to stream video preview only.
@@ -82,7 +81,7 @@ Now finish setup:
     - Picamera2 Preview Cam Resolution Height = 1296
 - Restart the app
 
-For your reference the output of ``libcamera-hello --list-cameras``:
+For your reference the output of `libcamera-hello --list-cameras`:
 
 ```title="Raspberry Pi Camera Module 3 (imx708)" hl_lines="4 5"
 pi@photobooth:~ $ libcamera-hello --list-cameras
@@ -100,7 +99,6 @@ Due to this other camera modules are not recommended for use as main camera.
 You might consider to use them only for livestream preview.
 
 Setup is the same as for camera module 3 but with different resolution. See also the chapter above to list resolutions.
-
 
 ### Other third party camera modules
 
@@ -131,7 +129,7 @@ Tinker with available settings until it works properly. If you run into trouble,
 ## Digicamcontrol Backend
 
 !!! info
-    This backend is deprecated. Digicamcontrol is not actively maintained since long time. The backend might be removed in the future.
+    This backend is deprecated. Digicamcontrol is not actively maintained since long time. We keep the backend in the app for now, but remove it, when the Digicamcontrol-software breaks at one point in the future.
 
 The app is tested with a webcamera in Digicamcontrol. In general all [digicamcontrol supported cameras](https://digicamcontrol.com/cameras) can be used.
 If the camera supports liveview a stream is created and being used as preview in the app.

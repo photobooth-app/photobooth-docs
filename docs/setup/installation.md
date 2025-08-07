@@ -48,8 +48,8 @@ Feel free to submit a pull request to improve the instructions.
 
 ### Windows
 
-Windows is well supported, the software is developed on a Windows system.
-Digicamcontrol is integrated to support DSLR cameras on Windows platform.
+Windows is supported. Digicamcontrol is integrated to support DSLR cameras on Windows platform. The Digicamcontrol is not maintained any more,
+so if the software fails to work in the future, the backend is removed from the app. Until then you can use it to use it, but it will not receive new features.
 
 #### Tweak system settings (Win)
 
@@ -258,7 +258,7 @@ until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium-brows
 
 ##### Wayland
 
-Modify the file below as indicated. If there is already a section ``[autostart]``, just add the line `chromium = ...` otherwise add the whole section.
+Modify the file below as indicated. If there is already a section `[autostart]`, just add the line `chromium = ...` otherwise add the whole section.
 
 ```bash title="~/.config/wayfire.ini" hl_lines="2"
 [autostart]
