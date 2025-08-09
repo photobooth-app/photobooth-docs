@@ -65,7 +65,7 @@ To avoid abuse by third parties, you need to set up the download portal on the s
 If you disable `use_downloadportal`, the download portal will not be used and the QR code will point
 to the media file directly.
 
-![setup the download portal with ftp backend](../assets/downloadportal-configuration-ftp.png)
+![setup the download portal with ftp backend](./assets/downloadportal-configuration-ftp.png)
 
 
 #### NextCloud Backend
@@ -75,7 +75,7 @@ If you want to use the download portal, you are required to upload the portal ma
 Upload the [HTML file](https://github.com/photobooth-app/photobooth-app/tree/main/src/web/download) to the same host as your NextCloud server.
 To avoid abuse by third parties, you need to set up the download portal on the same hostname as the NextCloud instance.
 
-![setup the download portal with nextcloud backend](../assets/downloadportal-configuration-nextcloud.png)
+![setup the download portal with nextcloud backend](./assets/downloadportal-configuration-nextcloud.png)
 
 
 ## Setup a Custom Solution

@@ -9,7 +9,7 @@ Let's go...
 ## Prerequisites
 
 - [Python](https://www.python.org/) 3.10 or later.
-- System: Raspberry Pi 4 or 5 recommended. Also, more performant hardware is fine using a generic Debian/Windows. Raspberry Pi 3 could work but might be slow.
+- System: Raspberry Pi 4 or 5 recommended with latest 64bit OS. Also, more performant hardware is fine using a generic Debian/Windows. Raspberry Pi 3 could work but might be slow.
 - Screen: A touchscreen is highly recommended. Recommended minimum resolution is 1024x600.
 - Camera. You can use one or two cameras. Using two cameras allows to dedicate one camera to stills and one to livepreview/videos. Supported cameras:
     - DSLR via [gphoto2](http://www.gphoto.org/proj/libgphoto2/support.php) on Linux
@@ -39,6 +39,26 @@ sudo apt -y install ffmpeg libturbojpeg0 libgl1 libgphoto2-dev fonts-noto-color-
 sudo apt -y install libexif12 libgphoto2-6 libgphoto2-port12 libltdl7
 sudo apt -y install libvips
 ```
+
+#### Tweak system settings (RPi)
+
+##### Touchscreen input issues
+
+Depending on which display server (X, Wayland) and input (labwc) is used, you might run into touch screen issues.
+If scrolling doesn't work, consider to [switch back to multitouch instead mouse emulation](https://github.com/photobooth-app/photobooth-app/issues/559).
+
+##### WiFi issues
+
+By default, the Pi OS has a power-save mode enabled for the WiFi adapter. This causes the WiFi do disconnect after some time and leads to unreliable connectivity.
+It's recommended to disable the power-save mode. Add the following line to `/etc/rc.local` right before the `exit` line:
+
+
+```sh title="/etc/rc.local"
+iw dev wlan0 set power_save off
+```
+
+Afterwards confirm the power management is `off` by checking the output of `iwconfig` in the terminal for the wifi adapter.
+
 
 ### Debian/Ubuntu
 
