@@ -1,18 +1,17 @@
-# Buzzer
+# Phtobooth-App Buzzer
 
-Use this bluetooth buzzer to trigger actions in the photobooth.
+Use this bluetooth buzzer to trigger actions in the photobooth-app.
 
-## Big Red Hot Button
-
-![buzzer loading](../assets/buzzer/buzzer-loading.jpg){ width="300" }
-
-This action button is based on an ESP board powered by battery.
+This gadget is based on an ESP board powered by battery.
 It emulates a bluetooth keyboard and thus can be used with the photobooth-app or other photobooth projects that use keyboard input to trigger actions.
+
+
+![buzzer overview for the photobooth-app](../assets/buzzer/buzzer_overview.jpg){ width="300" }
+
 
 ### Hardware and Assembly
 
 See separate git repository <https://github.com/photobooth-app/photobooth-buzzer>.
-The button might have a twist and turn unlock mechanism. It can be removed easily to convert it to a normal button.
 
 ### ESP Microcontroller Software
 
