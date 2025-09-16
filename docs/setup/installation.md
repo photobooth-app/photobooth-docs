@@ -229,23 +229,32 @@ ExecStart=python -O -m photobooth
 WantedBy=default.target
 ```
 
-Now enable the service and start it:
+Now reload systemctl and enable the service:
 
 ```zsh
 systemctl --user daemon-reload
 systemctl --user enable photobooth-app.service
+```
+
+#### Start/Stop the Service
+
+Independent if automatic or manual installation of the service, the app can be started using the service as follows.
+
+```zsh
 systemctl --user start photobooth-app.service
 ```
 
+If you want to check the service started properly, invoke systemctl with the `status` parameter:
+
+```zsh
+systemctl --user status photobooth-app.service
+```
+
 !!! info
-    The service does not start? Check the [troubleshooting guide](../help/troubleshooting.md).
-    The following commands may be helpful:
-    ```
-    systemctl --user status photobooth-app.service
-    ```
-    ```
-    journalctl --user --unit photobooth-app.service
-    ```
+    The app does not start?
+    It could be helpful to stop the service and start the app manually.
+    Check the [troubleshooting guide](../help/troubleshooting.md#manually-start-the-app).
+
 
 ### Desktop shortcut and autostart
 

@@ -43,3 +43,15 @@ python -m photobooth
 ```
 
 Watch the terminal for errors and try to debug. If you fail, start a [discussion](https://github.com/photobooth-app/photobooth-app/discussions).
+
+## Bind error during app startup
+
+The app can be started only once, because it will access devices like usb cameras that only allow one connection anyways.
+
+If a second instance is started, the app stops with a bind error message similar as follows:
+```txt
+[Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): die adresse wird bereits verwendet
+```
+
+Usually, the reason is there is an instance running as a service in the background, while starting a second instance on the terminal.
+[Stop the service](#manually-start-the-app) and start the app manually again in the terminal.
