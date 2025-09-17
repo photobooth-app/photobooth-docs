@@ -89,6 +89,7 @@ nav:
         - setup/configuration/share_print.md
         - setup/configuration/qrshareservice.md
         - setup/configuration/gpio.md
+        - setup/configuration/commander.md
   - Reference:
       - reference/index.md
       - reference/foldersandurls.md

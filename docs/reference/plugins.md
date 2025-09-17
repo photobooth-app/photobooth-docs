@@ -3,7 +3,7 @@
 The photobooth-app backend can be extended by plugins since version 6.
 
 !!! note
-    This page is a guide and documentation on how to develop a plugin. The use of the included plugins is not decribed here but in the setup section.
+    This page is a guide and documentation on how to develop a plugin. The use of the included plugins is not decribed here but  [in the setup section](/setup/).
 
     If you want to develop plugins you need python skills. The support to develop plugins is quite limited but feel free to ask questions in the Github discussions.
 
