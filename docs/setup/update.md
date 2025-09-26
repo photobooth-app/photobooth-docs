@@ -3,6 +3,28 @@
 
 !!! info
     Depending on your installation method, select the update method.
+    Prior to an update, it is good practice to backup your data.
+
+
+
+## Backup
+
+Backing up your data is as easy as copying the working directory of the app.
+All data the app creates/uses is stored within the working directory - if you backup this directory, everything is covered.
+If you installed according to the installation guide, the working directory is `~/photobooth-data/`.
+
+
+On Linux you can create a backup for example with the following command:
+```zsh
+cp -r ~/photobooth-data photobooth-data_backup_$(date +%Y-%m-%d_%H-%M-%S)
+```
+
+Or zip the photobooth-data directory:
+```zsh
+zip -r photobooth-data_backup_$(date +%Y-%m-%d_%H-%M-%S).zip ~/photobooth-data
+```
+
+
 
 ## Method A: Update with pipx
 
