@@ -12,15 +12,15 @@ Let's go...
 - System: Raspberry Pi 4 or 5 recommended with latest 64bit OS. Also, more performant hardware is fine using a generic Debian/Windows. Raspberry Pi 3 could work but might be slow.
 - Screen: A touchscreen is highly recommended. Recommended minimum resolution is 1024x600.
 - Camera. You can use one or two cameras. Using two cameras allows to dedicate one camera to stills and one to livepreview/videos. Supported cameras:
-    - DSLR via [gphoto2](http://www.gphoto.org/proj/libgphoto2/support.php) on Linux
-    - Raspberry Pi [camera modules](https://www.raspberrypi.com/documentation/accessories/camera.html) via [picamera2](https://github.com/raspberrypi/picamera2).
-    - USB-webcameras via [linuxpy](https://github.com/tiagocoutinho/linuxpy) or [opencv2](https://opencv.org/).
+  - DSLR via [gphoto2](http://www.gphoto.org/proj/libgphoto2/support.php) on Linux
+  - Raspberry Pi [camera modules](https://www.raspberrypi.com/documentation/accessories/camera.html) via [picamera2](https://github.com/raspberrypi/picamera2).
+  - USB-webcameras via [linuxpy](https://github.com/tiagocoutinho/linuxpy) or [opencv2](https://opencv.org/).
 
 ## System Preparation
 
 ### RaspberryPi OS
 
-On a fresh Raspberry Pi OS Bookworm 64bit, run following commands:
+On a fresh Raspberry Pi OS Bookworm/Trixie 64bit system, run following commands:
 
 #### Update System (RPi)
 
@@ -52,13 +52,11 @@ If scrolling doesn't work, consider to [switch back to multitouch instead mouse 
 By default, the Pi OS has a power-save mode enabled for the WiFi adapter. This causes the WiFi do disconnect after some time and leads to unreliable connectivity.
 It's recommended to disable the power-save mode. Add the following line to `/etc/rc.local` right before the `exit` line:
 
-
 ```sh title="/etc/rc.local"
 iw dev wlan0 set power_save off
 ```
 
 Afterwards confirm the power management is `off` by checking the output of `iwconfig` in the terminal for the wifi adapter.
-
 
 ### Debian/Ubuntu
 
@@ -84,14 +82,14 @@ To use the photobooth first install following system dependencies:
 - [Latest ffmpeg-release](https://ffmpeg.org/download.html): Choose the windows releases from gyan.dev. Look for the release builds, for example `ffmpeg-release-full.7z`. Download the folder, unpack it to C:\ and add the path to the executable ffmpeg.exe to system path's. Check that in a CLI you can start ffmpeg. If it starts, photobooth can use it also. If you don't need the video feature, you don't need to install ffmpeg.
 
 !!! note
-    Since v5 the [latest libjpeg-turbo-X.X.X-**vc64**](https://github.com/libjpeg-turbo/libjpeg-turbo/releases) is optional. Using libjpeg-turbo is better for the performance, but on modern computers the difference is neglible. On Raspberry Pi or other SBC using libjpeg-turbo is recommended.
-    If you install v4 or older, libjpeg-turbo is mandatory. Ensure to use the -vc64 variant and unpack it to C:\ so it will be automatically detected.
+Since v5 the [latest libjpeg-turbo-X.X.X-**vc64**](https://github.com/libjpeg-turbo/libjpeg-turbo/releases) is optional. Using libjpeg-turbo is better for the performance, but on modern computers the difference is neglible. On Raspberry Pi or other SBC using libjpeg-turbo is recommended.
+If you install v4 or older, libjpeg-turbo is mandatory. Ensure to use the -vc64 variant and unpack it to C:\ so it will be automatically detected.
 
 ## Install photobooth app
 
 There are several ways to install:
 
-1. Method A: Install using pipx (easiest, recommended for Bookworm)
+1. Method A: Install using pipx (easiest, recommended for Bookworm/Trixie)
 2. Method B: Install using venv
 3. Method C: Install globally (recommended for Windows)
 
@@ -190,7 +188,7 @@ By default, the application uses a generated image and streams a demonstration v
 You will need to [continue setting up the cameras](./configuration//camera_setup.md).
 
 !!! info
-    Having trouble accessing the website or seeing error messages during installation and application launch? Check the [troubleshooting guide](../help/troubleshooting.md).
+Having trouble accessing the website or seeing error messages during installation and application launch? Check the [troubleshooting guide](../help/troubleshooting.md).
 
 ## Setup the Raspberry Pi in Kiosk Mode
 
@@ -251,12 +249,38 @@ systemctl --user status photobooth-app.service
 ```
 
 !!! info
-    The app does not start?
-    It could be helpful to stop the service and start the app manually.
-    Check the [troubleshooting guide](../help/troubleshooting.md#manually-start-the-app).
+The app does not start?
+It could be helpful to stop the service and start the app manually.
+Check the [troubleshooting guide](../help/troubleshooting.md#manually-start-the-app).
 
+### Desktop shortcut and autostart (Debian Trixie)
 
-### Desktop shortcut and autostart
+#### Desktop Icon (Trixie)
+
+Create the following file in the specified location:
+
+```ini title="~/Desktop/photobooth-app.desktop" hl_lines="6"
+[Desktop Entry]
+Terminal=false
+Type=Application
+Name=Photobooth-App
+# for older Debian systems, the browser is "chromium-browser", since Trixie it's "chromium"
+Exec=chromium --kiosk --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+StartupNotify=false
+```
+
+#### Autostart on system startup (Trixie)
+
+To autostart the app, chromium needs to start automatically after boot.
+The latest Raspberry Pi OS has several window manager - the most recent is labwc. Prior wayland was used, both are described below.
+
+Create the file below as indicated. The file autostart may not exist yet, so you need to create it.
+
+```bash title="~/.config/labwc/autostart" hl_lines="1"
+until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium --kiosk --password-store=basic --disable-pinch --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+```
+
+### Desktop shortcut and autostart (Debian Bookworm)
 
 #### Desktop Icon (Bookworm)
 
@@ -264,7 +288,6 @@ Create the following file in the specified location:
 
 ```ini title="~/Desktop/photobooth-app.desktop" hl_lines="6"
 [Desktop Entry]
-Version=1.3
 Terminal=false
 Type=Application
 Name=Photobooth-App
