@@ -12,9 +12,9 @@ Let's go...
 - System: Raspberry Pi 4 or 5 recommended with latest 64bit OS. Also, more performant hardware is fine using a generic Debian/Windows. Raspberry Pi 3 could work but might be slow.
 - Screen: A touchscreen is highly recommended. Recommended minimum resolution is 1024x600.
 - Camera. You can use one or two cameras. Using two cameras allows to dedicate one camera to stills and one to livepreview/videos. Supported cameras:
-  - DSLR via [gphoto2](http://www.gphoto.org/proj/libgphoto2/support.php) on Linux
-  - Raspberry Pi [camera modules](https://www.raspberrypi.com/documentation/accessories/camera.html) via [picamera2](https://github.com/raspberrypi/picamera2).
-  - USB-webcameras via [linuxpy](https://github.com/tiagocoutinho/linuxpy) or [opencv2](https://opencv.org/).
+    - DSLR via [gphoto2](http://www.gphoto.org/proj/libgphoto2/support.php) on Linux
+    - Raspberry Pi [camera modules](https://www.raspberrypi.com/documentation/accessories/camera.html) via [picamera2](https://github.com/raspberrypi/picamera2).
+    - USB-webcameras via [linuxpy](https://github.com/tiagocoutinho/linuxpy) or [opencv2](https://opencv.org/).
 
 ## System Preparation
 
@@ -37,7 +37,7 @@ Customize for debian/ubuntu. Picamera2 is only available for Raspberry Pi.
 ```zsh
 sudo apt -y install ffmpeg libturbojpeg0 libgl1 libgphoto2-dev fonts-noto-color-emoji
 sudo apt -y install libexif12 libgphoto2-6 libgphoto2-port12 libltdl7
-sudo apt -y install libvips
+sudo apt -y install python3-dev
 ```
 
 #### Tweak system settings (RPi)
@@ -66,7 +66,8 @@ Feel free to submit a pull request to improve the instructions.
 
 ### Windows
 
-Windows is supported. Digicamcontrol is integrated to support DSLR cameras on Windows platform. The Digicamcontrol is not maintained any more,
+Windows is supported. Install Pathon including the development headers (tick the box during the installation).
+Digicamcontrol is integrated to support DSLR cameras on Windows platform. The Digicamcontrol is not maintained any more,
 so if the software fails to work in the future, the backend is removed from the app. Until then you can use it to use it, but it will not receive new features.
 
 #### Tweak system settings (Win)
