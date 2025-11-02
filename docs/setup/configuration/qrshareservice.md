@@ -11,25 +11,17 @@ Using the portal, the user can share the media file using the apps on his or her
 
 ## Options to share via QR code
 
-| Option                         | Synchronizer Plugin                                                                                                 | Your Custom Implementation                                                                                   |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Description                    | Sync via FTP and share via HTTP(S)                                                                                  | Share via local WiFi-Hotspot                                                                                 |
-| Prerequisites                  | FTP supporting MLSD command (recommended) or NextCloud server                                                                               | WiFi Hotspot                                                                                                 |
-| Online / Offline               | Online, Internet required                                                                                           | Offline, no Internet required                                                                                |
-| Enduser Usage Complexity Level | Easy                                                                                                                | Complex                                                                                                      |
-| Setup Complexity Level         | Easy (FTP), Medium (NextCloud)                                                                                      | Advanced                                                                                                     |
-| Pros                           | ➕ Automatic immediate and time-interval synchronization<br>➕ Easy setup<br>➕ Convenient for user<br>➕ Could be used as immediate backup     | ➕ No need to synchronize<br>➕ No issues if internet service is bad<br>➕ Less likely to conflict with GDPR |
-| Cons                           | ➖ Internet service might fail any time<br>➖ Images shared via (private) internet service might conflict with GDPR | ➖ Inconvenient for user: Smartphones need to log in local WiFi<br>➖ Custom setup                           |
+| Option                         | Synchronizer Plugin                                                                                                                         | Your Custom Implementation                                                                                   |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Description                    | Sync via FTP and share via HTTP(S)                                                                                                          | Share via local WiFi-Hotspot                                                                                 |
+| Prerequisites                  | HTTPS-Webspace with FTP-Server (recommended) or NextCloud server                                                                            | WiFi Hotspot                                                                                                 |
+| Online / Offline               | Online, Internet required                                                                                                                   | Offline, no Internet required                                                                                |
+| Enduser Usage Complexity Level | Easy                                                                                                                                        | Complex                                                                                                      |
+| Setup Complexity Level         | Easy (FTP), Medium (NextCloud)                                                                                                              | Advanced                                                                                                     |
+| Pros                           | ➕ Automatic immediate and time-interval synchronization<br>➕ Easy setup<br>➕ Convenient for user<br>➕ Could be used as immediate backup | ➕ No need to synchronize<br>➕ No issues if internet service is bad<br>➕ Less likely to conflict with GDPR |
+| Cons                           | ➖ Internet service might fail any time<br>➖ Images shared via (private) internet service might conflict with GDPR                         | ➖ Inconvenient for user: Smartphones need to log in local WiFi<br>➖ Custom setup                           |
 
-## Setup the Synchronizer Plugin
-
-- In the Admin Center go to Configuration -> Synchronizer.
-- Configure a FTP or NextCloud-Backend to sync to.
-- Save the configuration.
-- Take a picture and check the logs for issues during uploading.
-- If there are no errors, scan the QR code and check if the photo is downloaded correctly to the smartphone.
-
-### Download Portal
+## Download Portal
 
 The synchronizer plugin comes with a download portal that allows the user to download the media files and
 share them with other apps on the smartphone.
@@ -38,19 +30,50 @@ This is especially useful for users that want to share the media files on social
 The download portal is just one single [HTML page](https://github.com/photobooth-app/photobooth-app/tree/main/src/web/download) and basically a loader for the media files.
 To use it, the HTML page needs to be hosted on a webserver that is accessible from the internet.
 
-
 <p style="display: flex;  justify-content: center; gap: 10px;">
   <img src="../assets/downloadportal-screenshot-loaded.jpg" alt="Media loaded screenshot" width="200">
   <img src="../assets/downloadportal-screenshot-share.jpg" alt="Share options screenshot" width="200">
 </p>
 <figcaption style="text-align: center;">Media file is displayed in the downloadportal and the user can reshare it using the smartphone's native menu.</figcaption>
 
+## Setup the Synchronizer Plugin
+
+- In the Admin Center go to Configuration → Synchronizer → Set Enabled to on.
+- In the backends tab, configure a Server to synchronize to, see details in the next chapter.
+- Save the configuration.
+- Take a picture and check the logs for issues during uploading.
+- If there are no errors, scan the QR code and check if the photo is downloaded correctly to the smartphone.
+
+### Setup the Synchronizer Backends
+
+Currently local filesystem, FTP-Servers and NextCloud instances are supported as target to synchronize the media to.
+
+Add a new backend to the list and `Enable` it.
+
+#### Sync to FTP-Servers
+
+Please ensure to read all the descriptions given next to the configuration elements.
+
+Set the credentials given by your service provider. The `host` and user-login needs to point to a directory on the FTP-Server.
+
+Important: If you want to use the backend to share QR codes, you also need to fill the `media url` setting. The media URL needs to point to a HTTP host that points to the same directory on the host set before.
+
+Example: `ftp.example.com` stores files to the ftp.example.com-host and is accessible via `www.example.com`. The `media url` is set to `https://www.example.com`. HTTP is also possible, but HTTPS usually preferred.
+
+#### Sync to NextCloud
+
+Please ensure to read all the descriptions given next to the configuration elements.
+
+Note: This backend doesn't support serving the downloadportal. If you want to use the download portal, you need to set it up manually and place it on a webserver.
+
+#### Sync to the local Filesystem
+
+This backend simply copies files to different directories on the device running the photobooth app. Could be useful for any custom solution, we could not think of until today ;)
 
 ### Setup the Download Portal
 
 Depending on the backend you use, the download portal is set up automatically or you need to do it manually.
 Please check the following sections for details based on your backend in use.
-
 
 #### FTP Backend
 
@@ -67,7 +90,6 @@ to the media file directly.
 
 ![setup the download portal with ftp backend](./assets/downloadportal-configuration-ftp.png)
 
-
 #### NextCloud Backend
 
 The plugin cannot automatically setup the download portal.
@@ -76,7 +98,6 @@ Upload the [HTML file](https://github.com/photobooth-app/photobooth-app/tree/mai
 To avoid abuse by third parties, you need to set up the download portal on the same hostname as the NextCloud instance.
 
 ![setup the download portal with nextcloud backend](./assets/downloadportal-configuration-nextcloud.png)
-
 
 ## Setup a Custom Solution
 
@@ -91,13 +112,10 @@ Below an example URL to use in the QR code. {identifier} gets replaced by the ac
 Custom solutions are out of scope of the documentation. You need to figure out a way to make the media files accessible.
 Then configure the QR code custom URL to point to the corresponding URL.
 
-```http title="Share Custom Qr Url example for v5 and later"
-http://localhost:8000/media/full/{identifier}
-```
+### Setup
 
-```http title="Share Custom Qr Url example before v4"
-http://localhost:8000/media/processed/full/{filename}
-```
+- Admin Dashboard → Configuration → QrShare → Enable
+- On the same page → Textfield `Share Custom Qr Url` set it to your custom URL serving the media e.g.: `http://localhost:8000/media/full/{identifier}`
 
 ## Setup the QR-Shareservice (dl.php, deprecated since v8)
 
