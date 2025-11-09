@@ -1,40 +1,27 @@
-# Wigglegram Camera
+# Wigglegram Camera [![current release](https://img.shields.io/pypi/v/wigglecam)](https://pypi.org/project/wigglecam/)
 
-There is more to your photobooth! Starting from v5 the photobooth-app integrates with our new multicamera backend.
-It allows to capture photos from several cameras at the same time to create 3d effect GIFs.
+Wiggle, wiggle, wiggle! 😜 There's so much more to your photobooth-app than you can imagine!
+Starting from version 9, the photobooth-app has an incredible new feature: integration with [multicamera nodes to form a camera array](https://github.com/photobooth-app/wigglecam)!
 
-In this subsection, the build and setup of the wigglecam is described.
+The technique allows you to capture stunning photos using multiple cameras arranged in a camera array. The best part is that the captures are taken at the same time since the cameras are synchronized.
 
-!!! info
-    This is all experimental! 🧪
-
-Excited? This is how the the camera looks like:
+The result is an awesome short animated image that gives a stunning 3D effect! Just picture it! See yourself:
 
 <figure markdown>
   ![frontpage](./assets/wigglegram-demo1.gif){ width="400" }
   <figcaption>Wigglegram taken with 2 cameras and interpolated using the RIFE model</figcaption>
 </figure>
 
-<figure markdown>
-  ![frontpage](./assets/cam1.jpg){ width="400" }
-  <figcaption>First version of the camera, front.</figcaption>
-</figure>
+In this subsection, the build and setup of the wigglecam is described.
 
-<figure markdown>
-  ![frontpage](./assets/cam2.jpg){ width="400" }
-  <figcaption>First version of the camera, back.</figcaption>
-</figure>
+!!! info
+    This is all experimental! 🧪
 
 ## 😍 What it is
 
 🧪 Python software to capture wigglegrams using multiple cameras  
 🧪 Software synchronized Raspberry Pi camera modules, using picamera2  
 🧪 3d printed camera housing  
-🧪 Creating smooth videos from just two images using frame interpolation AI algorithms  
-
-## Current Version [![current release](https://img.shields.io/pypi/v/wigglecam)](https://pypi.org/project/wigglecam/)
-
-The wigglecam is not yet released. Use the links below to find out more before tackling to build your camera.
 
 ## Links
 

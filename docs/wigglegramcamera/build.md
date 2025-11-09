@@ -1,26 +1,28 @@
 
-# Build Your Wigglegram Camera
+# Build the Hardware
 
 !!! info
     This is all experimental! 🧪
 
 <figure markdown>
   ![frontpage](./assets/cae-front.png){ width="400" }
-  <figcaption>Front of the wigglegram camera with 4 individual cameras.</figcaption>
+  <figcaption>TODO</figcaption>
 </figure>
 
 <figure markdown>
   ![frontpage](./assets/cae-rear.png){ width="400" }
-  <figcaption>Rear of the wigglegram camera with touchscreen and on/off switch.</figcaption>
+  <figcaption>TODO</figcaption>
 </figure>
 
 ## Prepare Components
 
-The camera is 3d printed, find the latest reference design in the [wigglecam-3d repository](https://github.com/photobooth-app/wigglecam-3d).
+To capture wigglegrams you need a camera array. There is a 3d printed reference design that would give you a starting point.
+Find the latest design files in the [photobooth-app/photobooth-3d repository](https://github.com/photobooth-app/photobooth-3d).
 
-TODO
+### Bill of Materials (BOM)
 
 - List materials used.
+- TODO
 
 ## Wiring Diagram
 

@@ -3,7 +3,7 @@
 The photobooth-app backend can be extended by plugins since version 6.
 
 !!! note
-    This page is a guide and documentation on how to develop a plugin. The use of the included plugins is not decribed here but  [in the setup section](/setup/index.md).
+This page is a guide and documentation on how to develop a plugin. The use of the included plugins is not decribed here but [in the setup section](../setup/index.md).
 
     If you want to develop plugins you need python skills. The support to develop plugins is quite limited but feel free to ask questions in the Github discussions.
 
@@ -34,10 +34,10 @@ Plugins listen to [event-hooks](https://github.com/photobooth-app/photobooth-app
 
 Plugins can register to hooks, so called [hookspecs](https://github.com/photobooth-app/photobooth-app/blob/main/src/photobooth/plugins/__init__.py). The hookspecs are categorized currently as follows:
 
-- ``PluginManagementSpec``: Start and Stop the Plugin during app startup/shutdown
-- ``PluginStatemachineSpec``: Hooks triggered during actions like countdown start, capture, finished, ...
-- ``PluginAcquisitionSpec``: Hooks directly triggered by the backends when a capture is triggered and capture is done.
-- ``PluginMediaprocessingSpec``: Hooks triggered for post processing images to apply filter.
+- `PluginManagementSpec`: Start and Stop the Plugin during app startup/shutdown
+- `PluginStatemachineSpec`: Hooks triggered during actions like countdown start, capture, finished, ...
+- `PluginAcquisitionSpec`: Hooks directly triggered by the backends when a capture is triggered and capture is done.
+- `PluginMediaprocessingSpec`: Hooks triggered for post processing images to apply filter.
 
 ## Plugin Skeleton
 
@@ -45,7 +45,7 @@ In this very basic example the plugin only prints to the console during app star
 
 ```python title="plugin_name.py"
 import logging
-from photobooth.plugins import hookimpl 
+from photobooth.plugins import hookimpl
 from photobooth.plugins.base_plugin import BasePlugin
 from .config import PluginNameConfig    # if the plugin shall have a config, create the config.py file and import here
 

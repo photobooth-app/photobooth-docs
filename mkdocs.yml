@@ -103,13 +103,14 @@ nav:
       - help/faq.md
   - Wigglegram Camera:
       - wigglegramcamera/index.md
+      - wigglegramcamera/howtostart.md
       - wigglegramcamera/build.md
       - wigglegramcamera/installation.md
+      - wigglegramcamera/troubleshooting.md
   - Extras:
       - extras/index.md
       - extras/buzzer.md
       - extras/ups.md
-      - extras/onscreenkeyboard.md
       - extras/printerexample.md
       - extras/sync.md
       - extras/wifi.md
