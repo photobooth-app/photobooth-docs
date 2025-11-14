@@ -18,8 +18,6 @@ Create your own photobooth app for your wedding, birthday and other occasions.
 
 - :stopwatch:{ .lg .middle } __Set up in 5 minutes__
 
-    ---
-
     Install the [`photobooth-app`](https://pypi.org/project/photobooth-app/) using pip to get up
     and running in minutes!
 
@@ -27,15 +25,11 @@ Create your own photobooth app for your wedding, birthday and other occasions.
 
 - :star:{ .lg .middle } __Modern Webinterface__
 
-    ---
-
     The webinterface is reactive and simple to use for everybody.
 
     [:octicons-arrow-right-24: See screenshots](./screenshots.md)
 
 - :camera_with_flash:{ .lg .middle } __All camera types supported__
-
-    ---
 
     Use your DSLR, webcamera or Raspberry Pi Camera with the photobooth-app. You can even use 2 cameras at the same time, one for liveview, one for stills.
 
@@ -43,15 +37,11 @@ Create your own photobooth app for your wedding, birthday and other occasions.
 
 - :video_camera:{ .lg .middle } __Capture__
 
-    ---
-
     Create photos, collages and animated GIFs and videos. Apply nice looking filter in postprocessing.
 
     [:octicons-arrow-right-24: Postprocessing](./setup/configuration/mediaprocessing.md)
 
 - :stars:{ .lg .middle } __Many more features__
-
-    ---
 
     Explore a detailed list of features and compare with other open source projects.
 
@@ -64,8 +54,6 @@ Excited? This is what the app looks like. It's a website and can be viewed on an
 <video controls loop muted preload="none" poster="./assets/photobooth-app-demo-poster.webp">
   <source src="./assets/photobooth-app-demo.mp4" type="video/mp4" />
 </video>
-
-
 
 ## Find more information
 
