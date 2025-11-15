@@ -16,6 +16,12 @@ Create your own photobooth app for your wedding, birthday and other occasions.
 
 <div class="grid cards" markdown>
 
+- :new:{ .lg .middle } __Create 3d Wigglegrams__
+
+    Create stunning 3d wigglegrams using a multicamera array! Available since v8.5.
+
+    [:octicons-arrow-right-24: Check out Wigglegram Camera](./wigglegramcamera/index.md)
+
 - :stopwatch:{ .lg .middle } __Set up in 5 minutes__
 
     Install the [`photobooth-app`](https://pypi.org/project/photobooth-app/) using pip to get up
@@ -37,7 +43,7 @@ Create your own photobooth app for your wedding, birthday and other occasions.
 
 - :video_camera:{ .lg .middle } __Capture__
 
-    Create photos, collages and animated GIFs and videos. Apply nice looking filter in postprocessing.
+    Create photos, collages, animations and videos. Apply nice looking filter in postprocessing.
 
     [:octicons-arrow-right-24: Postprocessing](./setup/configuration/mediaprocessing.md)
 
