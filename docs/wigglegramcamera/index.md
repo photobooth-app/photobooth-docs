@@ -48,9 +48,17 @@ Browse through the other documents to get the full idea, how to build and setup 
 
 - 🪝 __Hook up with your photobooth-app__
 
-    After installing the WiggleCam software on each camera node, users can create awesome Wigglegrams using the photobooth-app.
+    After installing the wigglecam software on each camera node, users can create awesome wigglegrams using the photobooth-app.
+
+    [:octicons-arrow-right-24: Setup in the photobooth-app](./setup.md)
 
 </div>
+
+## More on wigglegrams
+
+- [Have a look at our examples](wigglegrams.md)
+- [See what redditors come up with in r/wigglegrams](https://www.reddit.com/r/wigglegrams/)
+- [Stereoscopy Blog](https://stereoscopy.blog/2020/06/21/making-wigglegrams-using-photoshop-tutorial/)
 
 ## Find more information
 

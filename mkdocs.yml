@@ -103,9 +103,11 @@ nav:
       - help/faq.md
   - Wigglegram Camera:
       - wigglegramcamera/index.md
+      - wigglegramcamera/wigglegrams.md
       - wigglegramcamera/howtostart.md
       - wigglegramcamera/build.md
       - wigglegramcamera/installation.md
+      - wigglegramcamera/setup.md
       - wigglegramcamera/troubleshooting.md
   - Extras:
       - extras/index.md

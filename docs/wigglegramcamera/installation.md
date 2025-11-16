@@ -2,44 +2,66 @@
 
 ## Prerequisites
 
-- TODO
+- Ansible installed on your computer to steer the installations and later updates.
+- Nodes are a Raspberry Pi
+- Latest Trixie 64bit lite installed on every node. Use the RPi Imager to write the SD-cards. Ensure to allow login ssh-key based and the hostname is wiggle0, wiggle1, ...
+- The nodes are accessible from your computer and the computer running the photobooth-app by hostname/IP.
 
 ## Software Setup
 
-### Automated Installation using Ansible
+### Assumptions
+
+To keep the installation guid lean, following assumptions are made. If you have a different setup, you need to adjust the installation procedure on your own.
+
+- Our computer runs on linux. Windows is also OK, but we do not describe the installation here.
+- Nodes use `pi` as username.
+- 4 camera nodes, hostnames start 0 based indexing like wiggle0, wiggle1, ...
+- Every node is configured the same, a Raspberry Camera Module 3 is used for each node.
+
+### Prepare the Automated Installation using Ansible
+
+Ensure you have ansible installed:
 
 ```sh
-sudo apt update
-sudo apt full-upgrade
-
-sudo apt install -y python3-picamera2 python3-opencv python3-pip pipx git vim
+ansible --version
 ```
 
-### Configure the Nodes
-
-The nodes are configured using .env files
-
-#### Primary Node
-
-The primary node has a display attached and is responsible to generate the clock signal the secondary nodes synchronize to. To save hardware, a primary node can be used as secondary node simultaneously.
-
-#### Secondary Nodes
-
-## First Start
-
-xxx
-
-## Local dev installation
+Now create a working directory that will hold your configuration. You use it later again when you need to update the nodes.
 
 ```sh
 cd ~
-git clone https://github.com/photobooth-app/wigglecam.git
-cd wigglecam
-
-# to allow system site packages be used in venv (picamera2)
-pdm venv create --force 3.11 --system-site-packages
-
-pdm install
-
-pdm run wigglecam_minimal # or wigglecam_api, maybe add QT_QPA_PLATFORM=linuxfb if display is used.
+mkdir ansible-wigglenodes
+cd ansible-wigglenodes
 ```
+
+Now create `hosts.ini` in the newly created directory.
+
+```sh title="hosts.ini"
+[wigglenodes] # group
+wiggle0 ansible_user=pi software_sync_role=server device_id=0 camera=picam
+wiggle1 ansible_user=pi software_sync_role=client device_id=1 camera=picam
+wiggle2 ansible_user=pi software_sync_role=client device_id=2 camera=picam
+wiggle3 ansible_user=pi software_sync_role=client device_id=3 camera=picam
+```
+
+Now test that the nodes can be accessed using ansible by sending a simple ping. It will send a ping-pong request to the group `wigglenodes` defined in the `hosts.ini` inventory file.
+
+```sh
+ansible wigglenodes -i hosts.ini -m ping
+```
+
+### Run the Automated Installation using Ansible
+
+Download the latest playbook:
+
+```sh
+wget -O playbook.yaml https://raw.githubusercontent.com/photobooth-app/ansible/refs/heads/main/playbook.yaml
+```
+
+```sh
+ansible-playbook -i hosts.ini playbook.yaml
+```
+
+### Advanced Configuration
+
+The nodes are configured using .env files

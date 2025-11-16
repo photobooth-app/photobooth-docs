@@ -1,4 +1,3 @@
-
 # Build the Hardware
 
 <figure markdown>
@@ -18,30 +17,34 @@ Find the latest design files in the [photobooth-app/photobooth-3d repository](ht
 
 ### Bill of Materials (BOM)
 
-#### Per Node
+Following items should cover most of the parts needed. You might need additional screws or other minor parts not mentioned here. We do not describe how to power the hardware as it is very specific to the custom setup usually.
 
-- Raspberry Pi Zero 2W
-- Raspberry Pi Camera Module 3 (other cameras should work also, but use original modules)
-- CSI cable ~15cm
-- Micro-USB Ethernet Adapter
-- Ethernet cable
+!!!note
+    The wigglecam is a new feature and subject to change. You can help to improve by providing feedback, suggest updates to the documentation or propose better network setups.
 
 #### Per System
 
-- Network Switch with at least 5 ports
-- Ethernet cable
-- Rasbperry Pi 4/5 running the photobooth-app
-- 3d printed parts
+- 1x Network Switch with at least 5 ports
+- 1x Ethernet cable
+- 1x Rasbperry Pi 4/5 running the photobooth-app
 
-You might need additional screws or other minor parts not mentioned here. We do not describe how to power the hardware as it is very specific to the custom setup usually.
+#### Per Node
 
-## Wiring Diagram
+Depending on the number of cameras in your array, multiply the amount. The standard design uses 4 nodes.
 
-![wigglecam nodes wiring diagram](./assets/wiringdiagram.png){ width="400" }
+- 1x Raspberry Pi Zero 2W
+- 1x Raspberry Pi Camera Module 3 (other cameras should work also, but use original modules)
+- 1x CSI cable ~15cm
+- 1x Micro-USB Ethernet Adapter
+- 1x Ethernet cable
+
+#### Camera Array
+
+- 1x 3d printed parts
 
 ## Assembly
 
-TODO
+![wigglecam nodes wiring diagram](./assets/camera-array-wiring.webp)
 
 ## Network Setup
 
@@ -49,6 +52,8 @@ The nodes and the system with the photobooth-app need to be able to talk reliabl
 
 Please note, the nodes should be able to access the internet later so they can receive updated software. It is recommended to use a router in the photobooth during events. If the router also provides internet access you can use it to update the software when needed.
 If not, for update purposes, the router in the photobooth could be disconnected and instead the photobooth-network is connected to the home router with internet.
+
+![wigglecam nodes network diagram](./assets/camera-array-network.webp)
 
 ### Setup with DHCP (using router as DHCP server, recommended)
 
