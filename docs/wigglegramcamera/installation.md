@@ -55,11 +55,11 @@ ansible wigglenodes -i hosts.ini -m ping
 Download the latest playbook:
 
 ```sh
-wget -O playbook.yaml https://raw.githubusercontent.com/photobooth-app/ansible/refs/heads/main/playbook.yaml
+git clone https://github.com/photobooth-app/ansible.git
 ```
 
 ```sh
-ansible-playbook -i hosts.ini playbook.yaml
+ansible-playbook playbooks/install_nodes.yaml -i inventories/hosts.ini 
 ```
 
 ### Advanced Configuration
