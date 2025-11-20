@@ -106,8 +106,8 @@ nav:
       - wigglegramcamera/wigglegrams.md
       - wigglegramcamera/howtostart.md
       - wigglegramcamera/build.md
-      - wigglegramcamera/installation.md
-      - wigglegramcamera/setup.md
+      - wigglegramcamera/install-nodes.md
+      - wigglegramcamera/setup-photobooth.md
       - wigglegramcamera/troubleshooting.md
   - Extras:
       - extras/index.md

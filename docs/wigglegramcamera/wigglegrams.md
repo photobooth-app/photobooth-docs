@@ -1,4 +1,4 @@
-# Wigglegrams
+# Wigglegrams made with the App
 
 <figure markdown>
   ![wigglegram made with the photobooth-app and calibration applied](./assets/wigglegram-example-charuco-calibrated.webp){ width="400" }
@@ -14,6 +14,3 @@
   ![frontpage](./assets/wigglegram-demo1.gif){ width="400" }
   <figcaption>Early prototype wigglegram taken with 2 cameras and interpolated using RIFE AI model in manual postprocessing.</figcaption>
 </figure>
-
-!!!info
-    working on more examples

@@ -1,4 +1,4 @@
-# Build the Hardware
+# Build the Camera Array
 
 <figure markdown>
   ![frontpage](./assets/camera-array-pi-zeros-network-overview.webp){ width="400" }
