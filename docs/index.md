@@ -6,11 +6,11 @@ hide:
 ---
 <h1 align="center"><img src="assets/logo-text-blue-transparent.png" alt="photobooth app logo" width="240" height="220" fetchpriority="high"/></h1>
 
-Welcome to your brand new photobooth app.
-Written in Python 🐍, it comes with a modern Vue frontend.
+Built your photobooth using our open-source Photobooth-App.
+Make your own photobooth for your wedding, birthday, and other events.
 
-This site documents the photobooth-app project and provides installation instructions.
-Create your own photobooth app for your wedding, birthday and other occasions.
+It's written in Python 🐍 and comes with a modern Vue frontend.
+This site has info about the photobooth-app project and how to install it.
 
 ## Features
 
@@ -24,8 +24,8 @@ Create your own photobooth app for your wedding, birthday and other occasions.
 
 - :stopwatch:{ .lg .middle } __Set up in 5 minutes__
 
-    Install the [`photobooth-app`](https://pypi.org/project/photobooth-app/) using pip to get up
-    and running in minutes!
+    Install the [`photobooth-app`](https://pypi.org/project/photobooth-app/) to get up
+    and running in minutes! If you have never used Python before, no worries, there is a complete installation guide available!
 
     [:octicons-arrow-right-24: Installation](./setup/installation.md)
 
@@ -43,19 +43,21 @@ Create your own photobooth app for your wedding, birthday and other occasions.
 
 - :video_camera:{ .lg .middle } __Capture__
 
-    Create photos, collages, animations and videos. Apply nice looking filter in postprocessing.
+    Create photos, collages, animations, videos and wigglegrams. Apply nice looking filter and texts in the postprocessing.
 
     [:octicons-arrow-right-24: Postprocessing](./setup/configuration/mediaprocessing.md)
 
 - :stars:{ .lg .middle } __Many more features__
 
-    Explore a detailed list of features and compare with other open source projects.
+    Explore a detailed list of features and compare the photobooth-app with other open source projects.
 
-    [:octicons-arrow-right-24: More features](./features.md)
+    [:octicons-arrow-right-24: See all features](./features.md)
 
 </div>
 
-Excited? This is what the app looks like. It's a website and can be viewed on any device:
+## Excited?
+
+This is what the app looks like. It's a website and can be viewed on any device:
 
 <video controls loop muted preload="none" poster="./assets/photobooth-app-demo-poster.webp">
   <source src="./assets/photobooth-app-demo.mp4" type="video/mp4" />
