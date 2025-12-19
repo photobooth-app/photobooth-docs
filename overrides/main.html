@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+<style>
+:root {
+  --md-primary-fg-color:        #196cb0;
+  --md-primary-fg-color--light: #4f8bbd;
+  --md-primary-fg-color--dark:  #095594;
+
+  --md-accent-fg-color:        #16a890;
+  --md-accent-fg-color--light: #3bc5ae;
+  --md-accent-fg-color--dark:  #0b7e6b;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  font-optical-sizing: auto;
+  src: url("{{ './assets/fonts/Inter-4.0/web/InterVariable.woff2'|url }}") format('woff2-variations');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  font-optical-sizing: auto;
+  src: url('./assets/fonts/Inter-4.0/web/InterVariable-Italic.woff2') format('woff2-variations');
+}
+
+:root {
+  --md-text-font: "Inter"; 
+}
+</style>
+
+{% endblock %}
