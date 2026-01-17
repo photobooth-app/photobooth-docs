@@ -1,5 +1,0 @@
-mkdocs
-mkdocs-material
-mkdocstrings[python]
-mkdocs-swagger-ui-tag
-mkdocs-glightbox

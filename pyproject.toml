@@ -1,0 +1,13 @@
+[project]
+name = "photobooth-docs"
+version = "1.0.0"
+description = "placeholder so it can be installed using uv"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "mkdocs-swagger-ui-tag",
+    "mkdocs-glightbox",
+]
