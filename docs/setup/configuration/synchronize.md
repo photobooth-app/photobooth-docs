@@ -1,8 +1,8 @@
 # Synchronize Mediaitems
 
-## Setup the Synchronizer (since v9)
+## Setup the Synchronizer
 
-Since v9 Rclone was added as unified tool to synchronize to several storage types.
+Since v9 Rclone is added as unified tool to synchronize to several storage types. The [former sync options are described in the legacy section](./synchronizelegacy.md).
 
 | Storage Type                                                      | Description                                                                                                                                                                                                                                           |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -12,12 +12,12 @@ Since v9 Rclone was added as unified tool to synchronize to several storage type
 | local filesystem                                                  | This type is used for data duplication only, not intended to be used to share QR codes.                                                                                                                                                               |
 | [other, see rclone overview](https://rclone.org/overview/) custom |                                                                                                                                                                                                                                                       |
 
-The general procedure to setup synchronization is as follows:
+The general procedure to setup synchronization is as follows. A full example using a FTP/HTTPs server is described in the next chapter.
 
 - In the Admin Center go to Configuration → Synchronizer → Set Enabled to on, save config and apply.
-- Rclone is started in the background during the app's runtime, you can access the Rclone web-UI on the same device browsing to (<http://localhost:5572>)
-- Configure a remote in Rclone. There are many storage types supported, please see the Rclone+Service provider documentation how to setup.
-- After having the remote configured, in the remotes tab, add a new remote and select the newly created remote name.
+- Rclone is started in the background during the app's runtime, you can access the Rclone web-ui on the same device browsing to <http://localhost:5572>.
+- Configure a remote in Rclone. There are many storage types supported, please see the Rclone+Service provider documentation how to setup. The remotes can be configured easily in Rclone's web-ui.
+- After having the remote configured, in the app's synchronization configuration, add a the newly created remote name.
 - Save the configuration.
 - Take a picture and check the logs for issues during uploading.
 - If there are no errors, double check at the service provider webpage, that all media files have been uploaded as expected.
@@ -59,8 +59,14 @@ pass = GP**************BqKY5
 ```
 
 After the configuration is finished, please ensure in the Rclone WebUI → Explorer that the remote loads properly.
+If you encounter issues, please research the internet to properly setup Rclone remotes.
 
 #### App Configuration
+
+!!! danger
+
+    The app will delete unknown files from the target without further confirmation. Double check to choose the correct subdir as target!
+    The app needs exclusive access to the folder! It is recommended to lock the ftp-server login credentials to a specific folder only to avoid any data loss and data leakage because the credentials are only obfuscated by Rclone in it's configuration file.
 
 Next step is to tell the photobooth-app to use the remote configured. In the admin center go to the synchronization configuration and add a new remote to the list:
 
@@ -87,4 +93,10 @@ For a local target, there is no setup in rclone required.
 
 #### Synchronizer Setup (Local)
 
-TODO: Add implementation to separate local/remotes
+To tell the app to copy to a local folder, set the remote to "/". In the admin center go to the synchronization configuration and add a local folder to the to the list. The subdir is interpreted absolute, this is `/tmp/localsync` in the example.
+
+!!! danger
+
+    The app will delete unknown files from the target without further confirmation. Double check to choose the correct subdir as target!
+
+![example to configure local copy in the app](./assets/synchronizer-app-config-local.png)

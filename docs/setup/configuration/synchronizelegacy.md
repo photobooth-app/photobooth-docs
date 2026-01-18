@@ -1,6 +1,10 @@
 # Synchronize Mediaitems (Legacy)
 
-## Setup the Synchronizer (v8)
+!!! info
+
+    For new setups, please [use the Rclone synchronization](./synchronize.md).
+
+## Setup the Synchronizer (deprecated in v9)
 
 - In the Admin Center go to Configuration → Synchronizer → Set Enabled to on.
 - In the backends tab, configure a Server to synchronize to, see details in the next chapter.
@@ -100,9 +104,9 @@ Once setup, the prinicple is as following:
 - place the edited dl.php on a public server, for example your shared hoster. The server must be available to the photobooth and the users downloading photos later.
 - Enable the qr share service in the admin config
 - Pair the dl.php script with photobooth app by configuring the qr shareservice settings in photobooth admin config, tab common:
-  - set shareservice_apikey to same value as in dl.php
-  - set shareservice_url to the public URL pointing to the dl.php script.
-  - choose whether to download the original file or the full processed version.
+    - set shareservice_apikey to same value as in dl.php
+    - set shareservice_url to the public URL pointing to the dl.php script.
+    - choose whether to download the original file or the full processed version.
 - Now restart the photobooth app and try to scan a QR code in the gallery.
 
 ### Troubleshooting
