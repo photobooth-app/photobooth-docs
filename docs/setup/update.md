@@ -1,7 +1,7 @@
-
 # Update
 
 !!! info
+
     Depending on your installation method, select the update method.
     Prior to an update, it is good practice to backup your data.
 
@@ -30,6 +30,7 @@ pipx upgrade photobooth-app
 ```
 
 Dependencies may need to be reinstalled in some versions. If you encounter any module errors, you should use the following command to update instead.
+
 ```zsh
 pipx reinstall photobooth-app
 ```
@@ -102,5 +103,5 @@ pip install --upgrade --force-reinstall --no-deps git+https://github.com/photobo
 ```
 
 !!! info
-    If dependencies changed remove `--no-deps` from above commands to also update pip packages the app relies on.
 
+    If dependencies changed remove `--no-deps` from above commands to also update pip packages the app relies on.

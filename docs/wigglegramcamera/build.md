@@ -20,6 +20,7 @@ Find the latest design files in the [photobooth-app/photobooth-3d repository](ht
 Following items should cover most of the parts needed. You might need additional screws or other minor parts not mentioned here. We do not describe how to power the hardware as it is very specific to the custom setup usually.
 
 !!!note
+
     The wigglecam is a new feature and subject to change. You can help to improve by providing feedback, suggest updates to the documentation or propose better network setups.
 
 #### Per System

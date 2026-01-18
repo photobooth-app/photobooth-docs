@@ -1,5 +1,4 @@
-
-# LED ringlight to signal countdown
+# LED ringlight
 
 Add animated lights to your photobooth powered by [WLED](https://kno.wled.ge/). WLED is a fast and feature-rich implementation of an ESP8266/ESP32 webserver to control NeoPixel (WS2812B, WS2811, SK6812) LEDs.
 
@@ -23,6 +22,7 @@ WLED integration for LED signaling, see yourself:
 The ring light needs 5V, GND and a signal line to control the colors.
 
 !!! info "Use IO not connected internally"
+
     On the [D1 mini board](https://www.wemos.cc/en/latest/d1/d1_mini_lite.html#pin), the GPIO2 labelled D4 is closest to 5V/GND so it would be convenient to use. But it is connected to a builtin led. Since the LED is not needed, and might shine through the 3d printed case, it is recommended to use a different IO.
 
 ![wiring overview](../assets/wled/overview.jpg)
@@ -30,6 +30,7 @@ The ring light needs 5V, GND and a signal line to control the colors.
 ## Setup WLED
 
 !!! info "WLED documentation"
+
     Head over to the [WLED project documentation](https://kno.wled.ge/basics/getting-started/) for more detailed installation instructions and hardware setup.
 
 In short, follow these steps

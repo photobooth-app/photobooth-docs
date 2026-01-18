@@ -1,105 +1,84 @@
-# Synchronize and Share via QR Code
+# Share using QR Codes
 
-After setup, the users of the photobooth-app can download their images, gifs and videos simply by scanning a QR code.
-The QR code points to the file directly or a portal that allows to reshare the media.
-Using the portal, the user can share the media file using the apps on his or her smartphone.
+After [setting up the synchronization of media files](./synchronize.md), the photobooth-app's users can download their images, gifs and videos simply by scanning a QR code.
 
 <figure markdown>
   ![gallery_detail](../../assets/screenshots/gallery_detail.png){ width="500" }
   <figcaption>Users scan the QR code to download the displayed image on their mobile.</figcaption>
 </figure>
 
-## Options to share via QR code
-
-| Option                         | Synchronizer Plugin                                                                                                                         | Your Custom Implementation                                                                                   |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Description                    | Sync via FTP and share via HTTP(S)                                                                                                          | Share via local WiFi-Hotspot                                                                                 |
-| Prerequisites                  | HTTPS-Webspace with FTP-Server (recommended) or NextCloud server                                                                            | WiFi Hotspot                                                                                                 |
-| Online / Offline               | Online, Internet required                                                                                                                   | Offline, no Internet required                                                                                |
-| Enduser Usage Complexity Level | Easy                                                                                                                                        | Complex                                                                                                      |
-| Setup Complexity Level         | Easy (FTP), Medium (NextCloud)                                                                                                              | Advanced                                                                                                     |
-| Pros                           | ➕ Automatic immediate and time-interval synchronization<br>➕ Easy setup<br>➕ Convenient for user<br>➕ Could be used as immediate backup | ➕ No need to synchronize<br>➕ No issues if internet service is bad<br>➕ Less likely to conflict with GDPR |
-| Cons                           | ➖ Internet service might fail any time<br>➖ Images shared via (private) internet service might conflict with GDPR                         | ➖ Inconvenient for user: Smartphones need to log in local WiFi<br>➖ Custom setup                           |
-
-## Download Portal
-
-The synchronizer plugin comes with a download portal that allows the user to download the media files and
-share them with other apps on the smartphone.
-This is especially useful for users that want to share the media files on social media or via messaging apps.
-
-The download portal is just one single [HTML page](https://github.com/photobooth-app/photobooth-app/tree/main/src/web/download) and basically a loader for the media files.
-To use it, the HTML page needs to be hosted on a webserver that is accessible from the internet.
+The QR code could point directly to the image URL or to a sharepage embedding the image.
+When using the sharepage, a bold share button is displayed next to the image.
+Using the sharepage might be more convenient for endusers because sharing to social media and messaging apps is very easy.
 
 <p style="display: flex;  justify-content: center; gap: 10px;">
   <img src="../assets/downloadportal-screenshot-loaded.jpg" alt="Media loaded screenshot" width="200">
   <img src="../assets/downloadportal-screenshot-share.jpg" alt="Share options screenshot" width="200">
 </p>
-<figcaption style="text-align: center;">Media file is displayed in the downloadportal and the user can reshare it using the smartphone's native menu.</figcaption>
+<figcaption style="text-align: center;">The sharepage with a media file being displayed on the endusers phone (left) and the phones native share menu (right).</figcaption>
 
-## Setup the Synchronizer Plugin
+The sharepage is just one single [HTML page](https://github.com/photobooth-app/photobooth-app/tree/main/src/web/sharepage) and basically a loader for the media files.
+To use it, the HTML page needs to be hosted on a webserver that is accessible from the internet.
+Due to security reasons, the HTML page needs to be located on the same host as the media files.
 
-- In the Admin Center go to Configuration → Synchronizer → Set Enabled to on.
-- In the backends tab, configure a Server to synchronize to, see details in the next chapter.
-- Save the configuration.
-- Take a picture and check the logs for issues during uploading.
-- If there are no errors, scan the QR code and check if the photo is downloaded correctly to the smartphone.
+## Options generate QR codes
 
-### Setup the Synchronizer Backends
+For QR code sharing, a prerequisite is to make the media files available online. The files need to be accessible from the public internet so they can be downloaded on the smartphones of the endusers.
 
-Currently local filesystem, FTP-Servers and NextCloud instances are supported as target to synchronize the media to.
+| Option                  | A) Synchronizer (recommended)                                                                                                                      | B) Your custom solution                                                                                      |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Description             | Generate QR codes pointing the media files hosted online.                                                                                          | Share via local WiFi-Hotspot                                                                                 |
+| Prerequisites           | Online hosting service, [synchronization is setup using rclone, see separate setup](./synchronize.md)                                              | WiFi Hotspot                                                                                                 |
+| Connectivity            | Online, Internet required                                                                                                                          | Offline, no Internet required                                                                                |
+| Complexity for endusers | Easy                                                                                                                                               | Complex, users need to access the local WiFi                                                                 |
+| Complexity to setup     | Medium, need to setup Rclone                                                                                                                       | Advanced                                                                                                     |
+| Pros                    | ➕ Automatic immediate and time-interval synchronization<br>➕ Quite easy setup<br>➕ Convenient for users<br>➕ Could be used as immediate backup | ➕ No need to synchronize<br>➕ No issues if internet service is bad<br>➕ Less likely to conflict with GDPR |
+| Cons                    | ➖ Internet service might fail any time<br>➖ Images shared via (private) internet service might conflict with GDPR                                | ➖ Inconvenient for user: Smartphones need to log in local WiFi<br>➖ Custom setup                           |
 
-Add a new backend to the list and `Enable` it.
+## Generate QR codes for Rclone remotes (Option A)
 
-#### Sync to FTP-Servers
+!!! info
 
-Please ensure to read all the descriptions given next to the configuration elements.
+    Description is valid for v9 and later. For older versions, please see the former, deprecated [synchronization tool description](./synchronizelegacy.md).
 
-Set the credentials given by your service provider. The `host` and user-login needs to point to a directory on the FTP-Server.
+To make the media files downloadable using a QR code, the [files need to be synchronized prior download](./synchronize.md). Please ensure the synchronization is setup properly beforehand and turn on `enable immediate sync` to upload the media files right after the capture.
 
-Important: If you want to use the backend to share QR codes, you also need to fill the `media url` setting. The media URL needs to point to a HTTP host that points to the same directory on the host set before.
+Depending on the storage type you use, the sharepage is a good addition or not. If the storage type has it's own frontend, like NextCloud, Google Photos and similar you probably do not want to setup the sharepage but point the QR code directly to the image URL.
+If there is no frontend, like for FTP or S3 buckets, the sharepage is a good addition.
 
-Example: `ftp.example.com` stores files to the ftp.example.com-host and is accessible via `www.example.com`. The `media url` is set to `https://www.example.com`. HTTP is also possible, but HTTPS usually preferred.
+Please follow one of the next chapters for a reference with/without sharepage.
 
-#### Sync to NextCloud
+### Setup using the Sharepage (Example using FTP)
 
-Please ensure to read all the descriptions given next to the configuration elements.
+Please configure the rclone remote as follows:
 
-Note: This backend doesn't support serving the downloadportal. If you want to use the download portal, you need to set it up manually and place it on a webserver.
+- `enable immediate sync` true, to upload the media files right after the capture.
+- `enable sharepage sync` true, so the sharepage is created and updated as needed on every app startup on the remote.
+- In the ShareConfig section:
+    - `enabled` true, so this remote is generating a QR code when requested.
+    - `manual public link` set to the URL which points to the mediafile on the server. `{filename}` is replaced by the filename when generating the link.
+      Example: If the FTP server synchronized to is `ftp.example.com` and a webserver serves the same folder uploaded on `https://photos.example.com`, you set the public link to `https://photos.example.com/media/processed_full/{filename}`. The media folder is created during synchronization automatically.
+    - `use sharepage` true, so the QR code points to the sharepage configured in next step instead displaying only the image.
+    - `sharepage url` set to the URL which points to the sharepage on the server. The sharepage needs to be on the same host, which is automatically true if the sharepage is synchronized automatically (`enable sharepage sync`). Usually the URL is the base of the host, so in this example `https://photos.example.com`.
 
-#### Sync to the local Filesystem
+![setup the shareconfig via http for an ftp server](./assets/synchronizer-shareconfig-http.png)
 
-This backend simply copies files to different directories on the device running the photobooth app. Could be useful for any custom solution, we could not think of until today ;)
+### Setup without Sharepage (Example using NextCloud)
 
-### Setup the Download Portal
+Please configure the rclone remote as follows:
 
-Depending on the backend you use, the download portal is set up automatically or you need to do it manually.
-Please check the following sections for details based on your backend in use.
+- `enable immediate sync` true, to upload the media files right after the capture.
+- `enable sharepage sync` false, since there is no way to serve the HTML file using NextCloud.
+- In the ShareConfig section:
+    - `enabled` true, so this remote is generating a QR code when requested.
+    - `manual public link`: Rclone does not support automatic link creation for NextCloud (WebDAV). You need to create a share link in the NextCloud filemanager and concatenate the link manually for further use.
+      Example: The NextCloud share-link is `https://nextcloud.example.com/index.php/s/B7Ti5mp4JtYpktP` and allows for public display of the folders content. This translates to a public link as follows: `https://nextcloud.example.com/public.php/dav/files/B7Ti5mp4JtYpktP/media/processed_full/{filename}`. Please note to replace the share-id in the example link!. `{filename}` is replaced by the filename when generating the link. The media folder is created during synchronization automatically.
+    - `use sharepage` false, so the QR code points directly to the manual public link.
+    - `sharepage url` is not used.
 
-#### FTP Backend
+![setup the shareconfig for a nextcloud remote](./assets/synchronizer-shareconfig-nextcloud.png)
 
-The synchronizer plugin automatically sets up the download portal for you. If there is an updated version,
-the synchronizer plugin will update the download portal automatically.
-Turn on the `autoupload`, after restarting the app,
-the download portal is available at the URL you configured in the `media_url`.
-
-If you choose to manually upload the HTML file, you need to provide the URL to the HTML file in the `downloadportal_url` instead.
-To avoid abuse by third parties, you need to set up the download portal on the same hostname as the NextCloud instance.
-
-If you disable `use_downloadportal`, the download portal will not be used and the QR code will point
-to the media file directly.
-
-![setup the download portal with ftp backend](./assets/downloadportal-configuration-ftp.png)
-
-#### NextCloud Backend
-
-The plugin cannot automatically setup the download portal.
-If you want to use the download portal, you are required to upload the portal manually.
-Upload the [HTML file](https://github.com/photobooth-app/photobooth-app/tree/main/src/web/download) to the same host as your NextCloud server.
-To avoid abuse by third parties, you need to set up the download portal on the same hostname as the NextCloud instance.
-
-![setup the download portal with nextcloud backend](./assets/downloadportal-configuration-nextcloud.png)
-
-## Setup a Custom Solution
+## Generate QR codes for your custom solution (Option B)
 
 If the synchronizer plugin is not what you want, you could deploy your own solution.
 For example create a local WiFi that allows user access to the photobooth.
@@ -112,38 +91,7 @@ Below an example URL to use in the QR code. {identifier} gets replaced by the ac
 Custom solutions are out of scope of the documentation. You need to figure out a way to make the media files accessible.
 Then configure the QR code custom URL to point to the corresponding URL.
 
-### Setup
+Setup:
 
 - Admin Dashboard → Configuration → QrShare → Enable
 - On the same page → Textfield `Share Custom Qr Url` set it to your custom URL serving the media e.g.: `http://localhost:8000/media/full/{identifier}`
-
-## Setup the QR-Shareservice (dl.php, deprecated since v8)
-
-### Working Principle
-
-It's developed with ease of use in mind and shall work on most systems even with firewalled internet connection on photobooth side like cellular services.
-Once setup, the prinicple is as following:
-
-- photobooth starts and creates a long-term connection via internet (wifi, ethernet or cellular) to a php script on your webhosting service.
-- now if a QR code is scanned, the php script sends an upload request via the long-term connection to the photobooth
-- the photobooth uploads the requested file
-- once upload is finished, the image is displayed to the user
-
-### Setup
-
-- [download dl.php](https://github.com/photobooth-app/photobooth-app/blob/main/extras/shareservice/dl.php)
-- edit the config variables on top of dl.php. see the comments in dl.php for reference.
-- place the edited dl.php on a public server, for example your shared hoster. The server must be available to the photobooth and the users downloading photos later.
-- Enable the qr share service in the admin config
-- Pair the dl.php script with photobooth app by configuring the qr shareservice settings in photobooth admin config, tab common:
-  - set shareservice_apikey to same value as in dl.php
-  - set shareservice_url to the public URL pointing to the dl.php script.
-  - choose whether to download the original file or the full processed version.
-- Now restart the photobooth app and try to scan a QR code in the gallery.
-
-### Troubleshooting
-
-- check php error log in the folder where dl.php is located.
-- ensure the dl.php directory has write-permission for the webserver.
-- check photobooth error log.
-- nginx needs to be [configured for longrunning http-requests](https://github.com/photobooth-app/photobooth-app/issues/140#issuecomment-1856841684)

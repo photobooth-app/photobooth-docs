@@ -1,16 +1,17 @@
-
 # Admin Center
-
-!!! info
-    The default password to login the admin center is `0000`.
 
 The admin center is the central place to configure the photobooth software. You can also use it to upload and download files to the device.
 
+!!! info
+
+    The default password to login the admin center is `0000`.
+
 On the photobooth device browse to the admin center to configure your photobooth app:
-[http://localhost:8000/#/admin](http://localhost/#/admin)
+<http://localhost/#/admin>.
 
 !!! info
-    From other devices you might need to replace ``localhost`` by the hostname of the booth.
+
+    From other devices you need to replace ``localhost`` by the hostname of the booth.
     Port ``8000`` is default if you did not change it.
 
 ## Dashboard
@@ -24,7 +25,7 @@ On the photobooth device browse to the admin center to configure your photobooth
 
 - Shutdown or reboot the host computer.
 - Service Controls (only on linux platform):
-    - Restart the service: On linux if the photobooth is installed as ``systemctl``-service a restart can be triggered.
+    - Restart the service: On linux if the photobooth is installed as `systemctl`-service a restart can be triggered.
     - Reload service is to gracefully reload all resources and backends.
     - Install service: On linux automatically install the systemctl service
     - Uninstall service: If service shall not start on boot, uninstall the service. The webfrontend is not accessible until manually started again or the service is installed like described in the installation.

@@ -1,122 +1,123 @@
-site_name: Photobooth App
+site_name: The Photobooth-App
 site_url: https://photobooth-app.org
-site_description: The app for your new DIY photobooth. Written in Python 🐍, coming along with a modern Vue frontend.
+site_description: Open-source photobooth-app for your new DIY photobooth. Written in Python 🐍, coming along with a modern Vue frontend.
 site_author: Michael G
 repo_name: photobooth-app/photobooth-app/
 repo_url: https://github.com/photobooth-app/photobooth-app
 dev_addr: 127.0.0.1:8001
 
 theme:
-  name: "material"
-  font: false
-  custom_dir: overrides
-  logo: assets/logo-notext-white-transparent.png
-  favicon: assets/favicon-notext-blue-transparent.png
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.indexes
-    - content.code.copy
-  palette:
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      primary: custom
-      accent: custom
-      scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+    name: "material"
+    font: false
+    custom_dir: overrides
+    logo: assets/logo-notext-blue-transparent.png
+    favicon: assets/logo-notext-blue-transparent.png
+    features:
+        - navigation.tabs
+        - navigation.sections
+        - navigation.indexes
+        - content.code.copy
+    palette:
+        # Palette toggle for automatic mode
+        - media: "(prefers-color-scheme)"
+          toggle:
+              icon: lucide/sun-moon
+              name: Switch to light mode
 
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      primary: custom
-      accent: custom
-      scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
+        # Palette toggle for light mode
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          primary: custom
+          accent: custom
+          toggle:
+              icon: lucide/sun
+              name: Switch to dark mode
+
+        # Palette toggle for dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          primary: custom
+          accent: custom
+          toggle:
+              icon: lucide/moon
+              name: Switch to system preference
 
 # extra_css:
 #   - stylesheets/extra.css
 
 markdown_extensions:
-  - meta
-  - pymdownx.caret
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - attr_list
-  - md_in_html
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - footnotes
-  - toc:
-      permalink: true
+    - meta
+    - pymdownx.caret
+    - pymdownx.mark
+    - pymdownx.tilde
+    - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - attr_list
+    - md_in_html
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+    - footnotes
+    - toc:
+          permalink: true
 
 plugins:
-  # - mkdocstrings
-  - search
-  - swagger-ui-tag
-  - glightbox
+    - search
+    # - glightbox # https://github.com/blueswen/mkdocs-glightbox/issues/67
 
 copyright: >
-  2025 - Crafted with care in 🇪🇺
+    2026 - Crafted with care in the 🇪🇺
 extra:
-  analytics:
-    provider: custom
-  generator: false
+    analytics:
+        provider: custom
+    generator: false
 
 nav:
-  - Home:
-      - Home: index.md
-      - download.md
-      - features.md
-      - screenshots.md
-      - photobox3dprint.md
-      - projects.md
-  - Setup:
-      - setup/index.md
-      - setup/installation.md
-      - setup/update.md
-      - Configuration: 
-        - setup/configuration/admincenter.md
-        - setup/configuration/camera_setup.md
-        - setup/configuration/actions.md
-        - setup/configuration/mediaprocessing.md
-        - setup/configuration/share_print.md
-        - setup/configuration/qrshareservice.md
-        - setup/configuration/gpio.md
-        - setup/configuration/commander.md
-  - Reference:
-      - reference/index.md
-      - reference/foldersandurls.md
-      - reference/customizetheme.md
-      - reference/bulktransferfiles.md
-      - reference/api.md
-      - reference/plugins.md
-  - Help:
-      - help/index.md
-      - help/troubleshooting.md
-      - help/faq.md
-  - Wigglegram Camera:
-      - wigglegramcamera/index.md
-      - wigglegramcamera/wigglegrams.md
-      - wigglegramcamera/howtostart.md
-      - wigglegramcamera/build.md
-      - wigglegramcamera/install-nodes.md
-      - wigglegramcamera/setup-photobooth.md
-      - wigglegramcamera/troubleshooting.md
-  - Extras:
-      - extras/index.md
-      - extras/buzzer.md
-      - extras/ups.md
-      - extras/printerexample.md
-      - extras/sync.md
-      - extras/wifi.md
-      - extras/wled.md
-
-not_in_nav: |
-  /extras/shareservice-landing.md
+    - Home:
+          - Home: index.md
+          - download.md
+          - features.md
+          - screenshots.md
+          - photobox3dprint.md
+          - projects.md
+    - Setup:
+          - setup/index.md
+          - setup/installation.md
+          - setup/update.md
+          - Configuration:
+                - setup/configuration/admincenter.md
+                - setup/configuration/camera_setup.md
+                - setup/configuration/actions.md
+                - setup/configuration/mediaprocessing.md
+                - setup/configuration/synchronize.md
+                - setup/configuration/qrshareservice.md
+                - setup/configuration/share_print.md
+                - setup/configuration/synchronizelegacy.md
+                - setup/configuration/gpio.md
+                - setup/configuration/commander.md
+    - Reference:
+          - reference/index.md
+          - reference/foldersandurls.md
+          - reference/customizetheme.md
+          - reference/bulktransferfiles.md
+          - reference/api.md
+          - reference/plugins.md
+    - Extras:
+          - extras/index.md
+          - extras/buzzer.md
+          - extras/ups.md
+          - extras/printerexample.md
+          - extras/wled.md
+    - Wigglegram Camera:
+          - wigglegramcamera/index.md
+          - wigglegramcamera/wigglegrams.md
+          - wigglegramcamera/howtostart.md
+          - wigglegramcamera/build.md
+          - wigglegramcamera/install-nodes.md
+          - wigglegramcamera/setup-photobooth.md
+          - wigglegramcamera/troubleshooting.md
+    - Help:
+          - help/index.md
+          - help/troubleshooting.md
+          - help/faq.md

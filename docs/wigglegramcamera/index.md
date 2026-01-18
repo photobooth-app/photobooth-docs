@@ -23,33 +23,34 @@ The result? An awesome short animated image with a breathtaking 3D effect. Just 
 Browse through the other documents to get the full idea, how to build and setup the camera array to create wigglegrams.
 
 !!!info
-    This is in early development. It works but things are likely to change until all stabilizes.
+
+    This is in development. It works but things are likely to change until all stabilizes.
 
 ## 😍 Features
 
 <div class="grid cards" markdown>
 
-- 💨 __Reference Setup to start__
+- 💨 **Reference Setup to start**
 
     Use the reference setup to get started quickly. You can always add more cameras later.
 
     [:octicons-arrow-right-24: Build the hardware](./build.md)
 
-- 🤖 __Orchestrate using Ansible__
+- 🤖 **Orchestrate using Ansible**
 
     Although each camera in the array uses a dedicated Pi Zero, Ansible simplifies maintenance by keeping all nodes up to date.
 
     [:octicons-arrow-right-24: Installation](./install-nodes.md)
 
-- 📸 __Raspberry Pi Camera supported__
+- 📸 **Raspberry Pi Camera supported**
 
     For now, the nodes support Raspberry Pi cameras. It's designed to be extendable, so a DSLR could be added in the future.
 
-- 🎇 __Virtual Mode__
+- 🎇 **Virtual Mode**
 
     You don't need the full hardware available to tinker around and set up. As with the photobooth-app, there is an image generator to test the setup.
 
-- 🪝 __Hook up with your photobooth-app__
+- 🪝 **Hook up with your photobooth-app**
 
     After installing the wigglecam software on each camera node, users can create awesome wigglegrams using the photobooth-app.
 

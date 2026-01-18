@@ -22,7 +22,7 @@ The configuration is made in the Admin Center -> Config -> Tab: Share.
 - Enable shareservice in general
 - Set a time to block new jobs. The user needs to wait this time until a new job can be triggered.
 - The command to share or print is specific to your platform (Windows/Linux) and your setup.
-- In the command ``{filename}`` is replaced by the path of the image to print.
+- In the command `{filename}` is replaced by the path of the image to print.
 - Test printing with a virtual PDF printer: <https://wiki.ubuntuusers.de/CUPS-PDF/>
 
 ### Example Setup Printing on Linux
@@ -44,6 +44,7 @@ Set the command verified in the terminal to work well now in the app including t
 If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/photobooth-app/photobooth-app/discussions/).
 
 !!! info
+
     You might want to update to more recent driver packages. See following guide:
     <https://www.peachyphotos.com/blog/stories/building-modern-gutenprint/>
     Also you might need a ppd file. Here is one for [Canon Selphy CP1300](https://github.com/reuterbal/photobooth/blob/master/supplementals/Canon_SELPHY_CP1300.ppd) that works.
@@ -92,7 +93,7 @@ send_photo() {
 ##############################################################
 # send the photo
 ##############################################################
-send_photo "$1" "$2" > /dev/null 
+send_photo "$1" "$2" > /dev/null
 
 ```
 

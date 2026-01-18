@@ -7,6 +7,10 @@ You can use the reference design as starting point.
 
 Find the [CAE design files and more information in the Github repository](https://github.com/photobooth-app/photobooth-3d).
 
+!!! note
+
+    The files are provided as is and might have bugs.
+
 ## Features
 
 - variants for DSLR / Pi Camera and 7" / 10" touchscreens

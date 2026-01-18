@@ -1,4 +1,4 @@
-# Printer Setup Example
+# Printer Setup
 
 The following is a detailed example of how to setup a Dai Nippon Printing (DNP) DS-RX1HS printer for use with photobooth-app. The DS-RX1HS is a very popular dye sublimation photo printer commonly used for on-site event printing. This guide may also assist you in setting up any other type of printer that works with standard print spooling services on your operating system.
 
@@ -64,15 +64,15 @@ Options can be added to this command using the pattern `-o OPTION_NAME=OPTION_VA
 
     lpoptions -p PRINTER_NAME -l
 
-You should see a long list of option names and values with * next to the default options you set previously. Based on the list of important options to consider from the previous step, these are the command flags we'll use:
+You should see a long list of option names and values with \* next to the default options you set previously. Based on the list of important options to consider from the previous step, these are the command flags we'll use:
 
 1. `-o PageSize=w288h432` (to print on 4x6 media)
 2. `-o orientation-requested=4` (`3` to print portrait, `4` to print landscape)
-2. `-o StpColorPrecision=Best`
-3. `-o Resolution=300dpi` (`300x600dpi` to print at 600dpi)
-4. `-o StpiShrinkOutput=Expand`
-5. `-o StpImageType=Photo`
-6. `-o StpLaminate=Glossy` (`Matte` to add a matte texture at the cost of longer print time)
+3. `-o StpColorPrecision=Best`
+4. `-o Resolution=300dpi` (`300x600dpi` to print at 600dpi)
+5. `-o StpiShrinkOutput=Expand`
+6. `-o StpImageType=Photo`
+7. `-o StpLaminate=Glossy` (`Matte` to add a matte texture at the cost of longer print time)
 
 Now, we can put this together into a single command to test printing from the commandline:
 
@@ -80,7 +80,7 @@ Now, we can put this together into a single command to test printing from the co
 
 Test this print command by passing a file in place of the `{filename}` boilerplate. If it works as expected, then you're ready to set your Print Actions in the photobooth app to use this command.
 
-Note: you can also create and use named *printer instances* that map to a predefined set of configuration options like a preset. For more information see Creating Saved Options in the [CUPS Command-Line Printing and Options](https://www.cups.org/doc/options.html) page.
+Note: you can also create and use named _printer instances_ that map to a predefined set of configuration options like a preset. For more information see Creating Saved Options in the [CUPS Command-Line Printing and Options](https://www.cups.org/doc/options.html) page.
 
 #### 4. Finish Print Setup in Photobooth
 

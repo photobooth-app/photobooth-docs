@@ -34,6 +34,7 @@ sudo pkill -9 python3
 Manually start the photobooth-app and watch the terminal
 
 !!! info
+
     The app uses current directory as data directory! Ensure to `cd` to the correct directory before starting.
 
 ```bash
@@ -49,6 +50,7 @@ Watch the terminal for errors and try to debug. If you fail, start a [discussion
 The app can be started only once, because it will access devices like usb cameras that only allow one connection anyways.
 
 If a second instance is started, the app stops with a bind error message similar as follows:
+
 ```txt
 [Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): die adresse wird bereits verwendet
 ```
