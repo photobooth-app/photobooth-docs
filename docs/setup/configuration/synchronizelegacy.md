@@ -62,7 +62,7 @@ to the media file directly.
 
 The plugin cannot automatically setup the download portal.
 If you want to use the download portal, you are required to upload the portal manually.
-Upload the [HTML file](https://github.com/photobooth-app/photobooth-app/tree/main/src/web/download) to the same host as your NextCloud server.
+Upload the [HTML file](https://github.com/photobooth-app/photobooth-app/tree/main/src/web/sharepage) to the same host as your NextCloud server.
 To avoid abuse by third parties, you need to set up the download portal on the same hostname as the NextCloud instance.
 
 ![setup the download portal with nextcloud backend](./assets/downloadportal-configuration-nextcloud.png)
@@ -99,7 +99,7 @@ Once setup, the prinicple is as following:
 
 ### Setup
 
-- [download dl.php](https://github.com/photobooth-app/photobooth-app/blob/main/extras/shareservice/dl.php)
+- [download dl.php](https://github.com/photobooth-app/photobooth-app/blob/v7-oldstable/extras/shareservice/dl.php)
 - edit the config variables on top of dl.php. see the comments in dl.php for reference.
 - place the edited dl.php on a public server, for example your shared hoster. The server must be available to the photobooth and the users downloading photos later.
 - Enable the qr share service in the admin config

@@ -97,7 +97,7 @@ Tinker with available settings until it works properly. If you run into trouble,
 !!! note
 
     Linux systems automatically mount the camera on connection. This interferes with the photobooth, since the app needs exclusive access.
-    Check this [guide on how to disable `gvfs-gphoto2-volume-monitor`](https://photobooth-app.org/support/faq/#gphoto2-camera-found-but-no-access)
+    Check this [guide on how to disable `gvfs-gphoto2-volume-monitor`](https://photobooth-app.org/help/faq/#gphoto2-camera-found-but-no-access)
 
 ## Webcam PyAV
 

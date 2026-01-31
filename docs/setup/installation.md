@@ -187,7 +187,7 @@ photobooth
 
 Browse to <http://localhost:8000> and see if the application works properly.
 By default, the application uses a generated image and streams a demonstration video. No camera is started at this time.
-You will need to [continue setting up the cameras](./configuration//camera_setup.md).
+You will need to [continue setting up the cameras](./configuration/camera_setup.md).
 
 !!! info
 

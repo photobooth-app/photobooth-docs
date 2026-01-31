@@ -51,7 +51,7 @@ It should display the Rclone WebUI Dashboard. You can use it to administer all R
 
 The result is an entry in the rclone config similar as follows, given for your reference here:
 
-```ini title="~/.config/rclone.rclone.conf"
+```ini title="~/.config/rclone.conf"
 [ftp-server]
 type = ftp
 host = ftpserver.example.com
