@@ -4,11 +4,15 @@ The photobooth-app integrates perfectly with [WLED](https://kno.wled.ge/).
 Use the integration to add a nice LED countdown animation, still and video capture indication lights while the users interact with the booth.
 WLED is installed on inexpensive ESP8266/ESP32 modules to control NeoPixels like WS2812B, WS2811, SK6812 LEDs.
 
-See an example using a small circle-formed LED strip:
+See an example using the 4x4 led matrix module:
 
-<video controls>
-<source src="../../assets/wled/takepicture.mp4" type="video/mp4">
-</video>
+<figure markdown>
+  <video controls>
+    <source src="../../assets/wled/wled-4x4-matrix-demo.mp4" type="video/mp4">
+    <source src="../../assets/wled/wled-4x4-matrix-demo.webm" type="video/webm">
+    </video>
+  <figcaption>This is a dummy frontplate. First a still is captured using the left "camera". Second is a multicamera capture to create a wigglegra. Last a video is taken.</figcaption>
+</figure>
 
 ## Hardware
 
