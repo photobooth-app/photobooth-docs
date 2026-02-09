@@ -35,8 +35,13 @@ The ring light needs 5V, GND and a signal line to control the colors.
     On the [D1 mini board](https://www.wemos.cc/en/latest/d1/d1_mini_lite.html#pin), the GPIO2 labelled D4 is closest to 5V/GND so it would be convenient to use. But it is connected to a builtin led. Since the LED is not needed, and might shine through the 3d printed case, it is recommended to use a different IO.
 
 <figure markdown>
-  ![wiring overview](../assets/wled/overview.jpg)
-  <figcaption>Wiring overview: ESP connected via USB to power the device and communicate with the app. The ringlight is mounted around the camera lens in the 3d printed box.</figcaption>
+  ![wiring photo for the ringlight](../assets/wled/photo-wled-ringlight.jpg)
+  <figcaption>Photo of the setup using a WS2812 ringlight: The ESP is connected via USB to power the device and communicate with the app. The ringlight is mounted around the camera lens in the 3d printed box.</figcaption>
+</figure>
+
+<figure markdown>
+  ![wiring photo for 4x4 matrix light](../assets/wled/photo-wled-4x4-matrix.jpg)
+  <figcaption>Example setup using a WS2812 4x4 matrix: The LED/ESP (here a ESP32) works same as the ringlight, just has a different shape and allows for other animations, like illuminate half of the matrix to display an arrow.</figcaption>
 </figure>
 
 ## Setup WLED
@@ -78,3 +83,4 @@ When the photobooth-app starts a countdown, takes a picture or captures a video,
 - ID 22: Countdown when multicamera pictures are captured (new in v9)
 
 Define the presets on your own in the WLED webfrontend or use the presets/config from above. Once added, in the photobooth-app enable the WLED integration and file the serial port of the WLED module in the photobooth-app's config. Check the logs on startup whether the module is detected correctly.
+
