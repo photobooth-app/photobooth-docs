@@ -23,7 +23,7 @@ Internally gpiozero python implementation is used.
 
 ## Raspberry Pi GPIO wiring
 
-To use the hardware triggers wire a normally open button from GND to the designated GPIO (ative low). The photobooth-app enables the Raspberry Pi's internal pull-up resistors if not otherwise noted.
+To use the hardware triggers wire a normally open button from GND to the designated GPIO (active low). The photobooth-app enables the Raspberry Pi's internal pull-up resistors if not otherwise noted.
 Example: To shutdown the host connect a button switch to GND and GPIO 17.
 
 ![gpio overview](../../assets/GPIO-Pinout-Diagram-2.png)
