@@ -1,4 +1,4 @@
-# Projects and Examples
+# Users' Photobooth Projects
 
 This is a collection of user made photobooth projects. Inspire and start making yours! 🛫
 
@@ -13,7 +13,7 @@ Lighting with permanent light sources.
 
 Additional information:
 
-- [3d printed box](./photobox3dprint.md)
+- [3d printed box](./3dprintedphotobooth/)
 - [buzzer](https://github.com/photobooth-app/photobooth-buzzer)
 - [image share one via QR code](./setup/configuration/qrshareservice.md)
 

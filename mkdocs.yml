@@ -55,19 +55,24 @@ markdown_extensions:
           emoji_generator: !!python/name:material.extensions.emoji.to_svg
     - attr_list
     - md_in_html
+    - pymdownx.blocks.caption
     - admonition
     - pymdownx.details
     - pymdownx.superfences
     - footnotes
+    - zensical.extensions.glightbox:
+          auto: true
     - toc:
           permalink: true
 
 plugins:
     - search
-    # - glightbox # https://github.com/blueswen/mkdocs-glightbox/issues/67
+
 
 copyright: >
-    2026 - Crafted with care in the 🇪🇺
+    <p>2026 - Crafted with care in the EU.</p>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=8255Y566TBNEC"><img src="https://img.shields.io/badge/Donate-PayPal-green.svg"></a>
+
 extra:
     analytics:
         provider: custom
@@ -79,7 +84,6 @@ nav:
           - download.md
           - features.md
           - screenshots.md
-          - photobox3dprint.md
           - projects.md
     - Setup:
           - setup/index.md
@@ -117,6 +121,10 @@ nav:
           - wigglegramcamera/install-nodes.md
           - wigglegramcamera/setup-photobooth.md
           - wigglegramcamera/troubleshooting.md
+    - 3d Printed Photobooth:
+          - 3dprintedphotobooth/index.md
+          - 3dprintedphotobooth/designs/2024_7-10inch_picamera-dslr/index.md
+          - 3dprintedphotobooth/designs/2026_10inch_wigglecam/index.md
     - Help:
           - help/index.md
           - help/troubleshooting.md

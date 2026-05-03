@@ -5,11 +5,6 @@ description = "placeholder so it can be installed using uv"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    # "mkdocs",
-    # "mkdocs-material",
-    # "mkdocstrings[python]",
-    # "mkdocs-glightbox",#https://github.com/blueswen/mkdocs-glightbox/issues/67
-    # "click==8.2.1", #https://github.com/squidfunk/mkdocs-material/issues/8478, remove after next click release
     "zensical",
-    # glightbox not yet working for zensical
+    "mkdocs-glightbox",# included now https://github.com/zensical/zensical/releases/tag/v0.0.35
 ]
