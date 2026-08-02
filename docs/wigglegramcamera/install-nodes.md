@@ -62,6 +62,13 @@ git clone https://github.com/photobooth-app/ansible.git
 ansible-playbook playbooks/install_nodes.yaml -i inventories/hosts.ini 
 ```
 
+If, for any reason you just want to run the playbook on one host instead all the ones listed in hosts.ini, just add the --limit parameter:
+
+```sh
+ansible-playbook playbooks/install_nodes.yaml -i inventories/hosts.ini --limit wiggle0
+```
+
+
 ### Advanced Configuration
 
 The nodes are configured using .env files
