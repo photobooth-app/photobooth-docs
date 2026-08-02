@@ -61,6 +61,7 @@ To disable the monitoring services, execute following commands:
 ```sh
 systemctl --user stop gvfs-gphoto2-volume-monitor
 systemctl --user disable gvfs-gphoto2-volume-monitor 
+systemctl --user mask gvfs-gphoto2-volume-monitor.service
 
 # after a reboot, the gvfs-gphoto2-volume-monitor will be enabled automatically again :(
 # permanently disable:
