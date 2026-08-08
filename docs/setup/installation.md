@@ -1,5 +1,7 @@
 # Installation 🔧
 
+[![current release](https://img.shields.io/pypi/v/photobooth-app)](https://pypi.org/project/photobooth-app/)
+
 The application is available as a [PyPI package](https://pypi.org/project/photobooth-app/). Follow this guide to install.
 
 Still need a box? [Check out the 3d printed photobooth box!](https://github.com/photobooth-app/photobooth-3d)

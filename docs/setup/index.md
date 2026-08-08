@@ -1,5 +1,7 @@
 # Setup the Photobooth-App
 
+[![current release](https://img.shields.io/pypi/v/photobooth-app)](https://pypi.org/project/photobooth-app/)
+
 This chapter describes the setup of the python photobooth app on linux or windows platform.
 Start by
 

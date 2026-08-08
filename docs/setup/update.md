@@ -1,5 +1,7 @@
 # Update
 
+[![current release](https://img.shields.io/pypi/v/photobooth-app)](https://pypi.org/project/photobooth-app/)
+
 !!! info
 
     Depending on your installation method, select the update method.
