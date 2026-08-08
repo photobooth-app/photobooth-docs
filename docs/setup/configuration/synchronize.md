@@ -1,4 +1,4 @@
-# Synchronize Mediaitems
+# Synchronize Media Files (since v9)
 
 ## Setup the Synchronizer
 
@@ -15,7 +15,7 @@ Since v9 Rclone is added as unified tool to synchronize to several storage types
 The general procedure to setup synchronization is as follows. A full example using a FTP/HTTPs server is described in the next chapter.
 
 - In the Admin Center go to Configuration → Synchronizer → Set Enabled to on, save config and apply.
-- Rclone is started in the background during the app's runtime, you can access the Rclone web-ui on the same device browsing to <http://localhost:5572>.
+- Rclone is started in the background during the app's runtime, you can access the Rclone web-ui on the same device browsing to <http://localhost:5573>.
 - Configure a remote in Rclone. There are many storage types supported, please see the Rclone+Service provider documentation how to setup. The remotes can be configured easily in Rclone's web-ui.
 - After having the remote configured, in the app's synchronization configuration, add a the newly created remote name.
 - Save the configuration.
@@ -44,7 +44,7 @@ Exemplarily, a setup using a FTP-Server is described in the following sections. 
 
 #### Rclone Configuration
 
-With the photobooth-app started, open a browser on the same device running the photobooth-app and browse to <http://localhost:5572>.
+With the photobooth-app started, open a browser on the same device running the photobooth-app and browse to <http://localhost:5573>.
 It should display the Rclone WebUI Dashboard. You can use it to administer all Rclone related aspects of the synchronization, thus as create/modify remotes and monitor Rclone's status.
 
 ![example to configure ftp server in the rclone webui](./assets/synchronizer-rclone-config-ftp.png)

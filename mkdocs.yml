@@ -95,9 +95,9 @@ nav:
                 - setup/configuration/actions.md
                 - setup/configuration/mediaprocessing.md
                 - setup/configuration/synchronize.md
+                - setup/configuration/synchronizelegacy.md
                 - setup/configuration/qrshareservice.md
                 - setup/configuration/share_print.md
-                - setup/configuration/synchronizelegacy.md
                 - setup/configuration/gpio.md
                 - setup/configuration/commander.md
     - Reference:

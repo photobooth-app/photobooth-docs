@@ -15,7 +15,7 @@ This way, sharing/printing works on all platforms for which a command is availab
 There is no feedback to the photobooth app about the status of the print job or the printer itself.
 If the paper is empty, the photobooth app will not know.
 
-## Example Setup to Print and Share
+## Example Setup to Print
 
 The configuration is made in the Admin Center -> Config -> Tab: Share.
 

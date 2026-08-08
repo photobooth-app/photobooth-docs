@@ -1,10 +1,10 @@
-# Synchronize Mediaitems (Legacy)
+# Synchronize Media Files (before v9)
 
 !!! info
 
-    For new setups, please [use the Rclone synchronization](./synchronize.md).
+    For new setups, please [use the Rclone synchronization](./synchronize.md). This documentation is relevant for v8 and before only.
 
-## Setup the Synchronizer (deprecated in v9)
+## Setup the Synchronizer
 
 - In the Admin Center go to Configuration → Synchronizer → Set Enabled to on.
 - In the backends tab, configure a Server to synchronize to, see details in the next chapter.

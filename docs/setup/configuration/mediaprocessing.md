@@ -1,87 +1,86 @@
 # Post-Processing Captures
 
-The mediaitems (images, collages, animated gifs, videos and 3d wigglegrams) are postprocessed using a configurable pipeline consisting of several stages.
-The pipeline starts with the original mediaitem and creates a unprocessed full version as basis for the pipeline to apply to. The different media types can have differently configured pipelines that process the image one by one. The processed mediaitem is stored to the gallery finally.
+When all captures of the action (like normal capture, collage, animations, etc) have been completed, the media is post-processed. Every action offers additional settings to adjust the post-processing to your needs. During finalization, the app applies all steps consecutively to a copy of the captures and finally the item is presented to the user. This way, the original capture always remains intact so it can be downloaded from the photobooth after the event.
+
 
 ## Pipelines
 
-There are different postprocess pipelines available. They can be configured in the admin center.
-The pipeline consists of several stages, each can be enabled and configured separately, see next chapter.
+Each action has a predefined post-processing pipeline consisting of several predefined steps. The steps can be enabled or disabled and offer additional settings like colors, texts, fonts, etc.
+The post-processing is configured per action in the admin center. Since each action has it's own settings, you can have multiple collages each themed with a different frame.
 
 When a pixel coordinate needs to be given, the coordinate origin is top/left, so (0/0) refers to the top-left edge of an image.
 
-### Single Images-Pipeline
+### Single Image
 
-The single image pipeline runs following stages in given sequence:
+The single image pipeline runs steps in the following sequence:
 
-1. remove chromakey (greenscreen removal), replace by transparency
-2. apply pilgram2 filter (instagram like filters)
-3. fill background with a solid color
-4. add background image (useful only if no solid color was added)
-5. add a frame with transparent areas. Captured images shine through transparent area. Use PNGs with transparency!
-6. text overlay
+1. Background removal using AI (can remove all backgrounds and greenscreen), replace by transparency
+2. Apply [pilgram2 filter (instagram like filters)](https://github.com/mgineer85/pilgram2)
+3. Fill the background with a solid color
+4. Add a background image. This is useful only if no solid color was added prior.
+5. Overlay a frame with transparent areas. The captured image is mounted to cover the transparent area while keeping the aspect ratio. If required the capture will be cropped to match the transparent area. Use PNGs with transparency.
+6. Place optional text overlays.
 
-### Collage-Pipeline
+### Collage
 
-The collage pipeline runs following stages in given sequence:
+The collage pipeline runs steps in the following sequence:
 
-1. run single images stages (chromakey, pilgram2, background only)
-2. merge captured images and predefined images on one canvas
-3. fill background with a solid color
-4. add background image (useful only if no solid color was added)
-5. place image on top. Captured images shine through transparent area. Use PNGs with transparency!
-6. text overlay
+1. Run single image steps (background removal, pilgram2, etc).
+2. Merge captured images and predefined images on one canvas. In this step an additional mediaitem is generated.
+3. Fill the canvas background with a solid color
+4. Add a background image to the canvas. This is useful only if no solid color was added prior.
+5. Place a PNG image on top. Captured images are visible in the transparent areas of the PNG.
+6. Place optional text overlays.
 
 ![collage pipeline example](../../assets/mediaprocessing/collage_pipeline_example.png)
 
-### Animated GIF-Pipeline
+### Animations
 
-The gifs are made out of single captures, not a video.
-The animated gif pipeline runs following stages in given sequence:
+The animation pipeline runs steps in the following sequence:
 
-1. run single images stages (currently only texts)
-2. line up captured images as defined in one GIF
+1. Run single image steps (background removal, pilgram2, etc).
+2. Build a sequence of the captures and predefined images to create an animation. The animations can be exported in several fileformats like MP4, GIF, WebP, AVIF. In this step an additional mediaitem is generated.
 
-### Video-Pipeline
+### Videos
 
-The videos are created from cameras livestream if available.
-There are basic options currently to set:
+The videos are created from the camera's livestream. Sound is currently not supported, the default video pipeline is to create a boomerang which works well without audio.
+There are basic options currently available:
 
-1. The maximum duration of a video. The caputure process is stoppable by the user before the maximum duration is reached.
+1. The maximum duration of a video. The caputure process is stoppable by the user before the maximum duration is reached but will be stopped latest when the maximum duration elapsed.
 2. Boomerang option enable to append the video in reverse.
 3. Choose a framerate of the video.
 
-### Multicamera 3D Wigglegram-Pipeline
+### 3D Wigglegram-Pipeline in Multicamera Setups
 
-No description, yet. You're invited to contribute. 👋
+The wigglegram pipeline runs steps in the following sequence:
 
-### Print-Pipeline
+1. Run single image steps (Pilgram2 filter currently only).
+2. Build a sequence of the captures to create the wigglegram an animation. The sequence for a 4 camera array is 1-2-3-4-3-2 and then repeat. The wigglegram can be exported in several fileformats like MP4, GIF, WebP, AVIF. In this step an additional mediaitem is generated.
 
-Feature not yet implemented. You're invited to contribute. 👋
 
-## Stages
+## Steps
 
-### Chromakeying
+### Background Removal
 
-Greenscreen chromakeying was actually removed in v8 and replaced by a more generic AI background removal tool.
-It is to remove background parts from captured images (no video support) and makes removed parts transparent so they can be filled with colors or images in subsequent stages.
+In v8 the previous chromakeying/greenscreen removal was replaced by a more universal AI background removal tool.
+It is to remove background parts from captured images so the removed parts of the image are transparent. The now transparent areas can be filled with solid colors or other background images in subsequent steps.
 
-### Instagram-Like Color-Filter
+### Color-Filter
 
 Apply a default color filter. Choose from [pilgram2's available filters](https://github.com/mgineer85/pilgram2).
-There is also the option for the user to change the filter in the gallery. See UI configuration in admin dashboard.
+There is also the option for the user to change the filter in the gallery.
 
-### Background Fill Solid Color
+### Fill Background using a Solid Color
 
-When using the chromakeying / background removal stages, the removed background is left empty and transparent. With this stage, the transparent area is filled with a solid color.
+When using the background removal step, the removed background is empty and transparent. Applying this step, the transparent area is filled with a solid color.
 
-### Background Image
+### Fill Background using an Image
 
-When using the chromakeying / background removal stages, the removed background is left empty and transparent. With this stage, the transparent area is filled with an image.
+When using the background removal step, the removed background is empty and transparent. Applying this step, the transparent area is filled with an image.
 
-### Frame Image
+### Frame Image Overlay
 
-Single images captured can be overlaid by a frame. For this stage you need a PNG with transparent area. The captured image will be inserted in the transparent area. The width and height of the transparent area is automatically calculated and the algorithm tries to fit most of the captured area. If aspect ratio of captured image and transparent area are very different, some parts of the captured image can be cropped.
+Images captured can be overlaid by a frame. For this step you provide a PNG with transparent area. The captured image will be mounted to the frame covering the transparent area while keeping the aspect ratio. The transparent area is automatically detected by the app. If the aspect ratio of the captured image and the transparent area are very different, large parts of the captured image are cropped.
 
 ### Texts
 

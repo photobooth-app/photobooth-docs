@@ -10,10 +10,10 @@ The photobooth-app offers different modes to capture:
 
 Each action can be triggered by one or more of the following triggers:
 
-- touch buttons on the main screen of the webapp (frontpage),
+- Touch buttons on the main screen of the app (frontpage),
 - GPIO pins on a Raspberry Pi,
-- keyboard input or
-- via your custom solution that calls the [Rest-API](../../reference/api.md).
+- Keyboard input or
+- via your custom solution that calls the actions on the [Rest-API endpoints](../../reference/api.md).
 
 ## Actions
 
@@ -29,14 +29,14 @@ Also, the background can be removed using an AI algorithm and replace it by an i
 ### Collages
 
 Collages are compiled from several images. These can mix of captured images from the camera and predefined images.
-Each capture can be modified, eg. remove the background and add fill it with a solid color before merging it in the collage.
-Following is an example how the collage is processed.
+Each capture can be modified, eg. remove the background and fill it with a solid color before merging it in the collage.
+Following is an example for a collage with two captures (left/right) and a predefined image in the center.
 
 ![collage demo](../../assets/mediaprocessing/collage_demo.jpg)
 
-### Animations (GIF)
+### Animations
 
-Similar as collages but the images are not stitched into one image but being played as a sequence of images with a certain duration per image. It's also possible to use predefined images that are embedded in every animation instead a capture. You can apply a frame and add texts to the final image as well as a color-filter similar like Instagram.
+The animations are burst captures of several images and replayed like a GIF. It's also possible to use predefined images that are embedded in every animation instead a capture. You can apply a frame and add texts to the final image as well as a color-filters.
 
 ### Videos
 

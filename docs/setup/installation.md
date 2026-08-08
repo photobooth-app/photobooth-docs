@@ -42,12 +42,12 @@ sudo apt -y install python3-dev
 
 #### Tweak system settings (RPi)
 
-##### Touchscreen input issues
+##### Touchscreen
 
 Depending on which display server (X, Wayland) and input (labwc) is used, you might run into touch screen issues.
 If scrolling doesn't work, consider to [switch back to multitouch instead mouse emulation](https://github.com/photobooth-app/photobooth-app/issues/559).
 
-##### WiFi issues
+##### WiFi
 
 By default, the Pi OS has a power-save mode enabled for the WiFi adapter. This causes the WiFi do disconnect after some time and leads to unreliable connectivity.
 It's recommended to disable the power-save mode. Add the following line to `/etc/rc.local` right before the `exit` line:
@@ -80,14 +80,10 @@ so if the software fails to work in the future, the backend is removed from the 
 To use the photobooth first install following system dependencies:
 
 - [Latest stable Python](https://www.python.org/downloads/) Please use the link, the Microsoft Store version is not recommended.
-- [Latest ffmpeg-release](https://ffmpeg.org/download.html): Choose the windows releases from gyan.dev. Look for the release builds, for example `ffmpeg-release-full.7z`. Download the folder, unpack it to C:\ and add the path to the executable ffmpeg.exe to system path's. Check that in a CLI you can start ffmpeg. If it starts, photobooth can use it also. If you don't need the video feature, you don't need to install ffmpeg.
+- That's it ✔️
 
-!!! info
 
-    Since v5 the [latest libjpeg-turbo-X.X.X-**vc64**](https://github.com/libjpeg-turbo/libjpeg-turbo/releases) is optional. Using libjpeg-turbo is better for the performance, but on modern computers the difference is neglible. On Raspberry Pi or other SBC using libjpeg-turbo is recommended.
-    If you install v4 or older, libjpeg-turbo is mandatory. Ensure to use the -vc64 variant and unpack it to C:\ so it will be automatically detected.
-
-## Install photobooth app
+## Install the Photobooth-App
 
 There are several ways to install:
 
@@ -95,7 +91,7 @@ There are several ways to install:
 2. Method B: Install using venv
 3. Method C: Install globally (recommended for Windows)
 
-It's now preferred to install pypi packages in virtual environments. The latest Linux operating systems are starting to implement [externally managed base environments](https://peps.python.org/pep-0668/). The easiest way to install it is to use pipx.
+It's preferred to install pypi packages in virtual environments. The latest Linux operating systems are starting to implement [externally managed base environments](https://peps.python.org/pep-0668/). The easiest way to install it is to use pipx.
 
 ### Method A: Install using pipx
 
@@ -128,16 +124,16 @@ Create an empty directory and change to the new directory:
 mkdir ~/photobooth-app && cd ~/photobooth-app
 ```
 
-Initialize a new venv named myenv. Allow the import of system-site-packages, since picamera2 is installed globally via apt in system-site:
+Initialize a new venv. Allow the import of system-site-packages, since picamera2 is installed globally via apt in system-site:
 
 ```zsh
-python -m venv --system-site-packages myenv
+python -m venv --system-site-packages
 ```
 
 Activate the newly created environment:
 
 ```zsh
-source myenv/bin/activate
+source .venv/bin/activate
 ```
 
 Install the photobooth-app
@@ -146,7 +142,7 @@ Install the photobooth-app
 python -m pip install --prefer-binary photobooth-app
 ```
 
-Note: `--prefer-binary` is added to avoid compiling opencv and instead prefer the wheel, which installs in minutes instead of hours.
+Note: `--prefer-binary` is added to avoid compiling opencv/gphoto2 and instead prefer the wheel, which installs in minutes instead of hours.
 
 ### Method C: Install globally
 
@@ -176,7 +172,7 @@ cd ~/photobooth-data
 Do the following only if you installed using the venv method
 
 ```zsh
-source ~/photobooth-app/myenv/bin/activate
+source ~/photobooth-app/.venv/bin/activate
 ```
 
 Launch the application. The current directory will be used as the working directory. If you start the application again later, make sure you start it from the same directory.
@@ -259,7 +255,7 @@ systemctl --user status photobooth-app.service
 
 ### Desktop shortcut and autostart (Debian Trixie)
 
-#### Desktop Icon (Trixie)
+#### Desktop Icon
 
 Create the following file in the specified location:
 
@@ -269,11 +265,11 @@ Terminal=false
 Type=Application
 Name=Photobooth-App
 # for older Debian systems, the browser is "chromium-browser", since Trixie it's "chromium"
-Exec=chromium --kiosk --disable-features=Translate,OverscrollHistoryNavigation --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+Exec=chromium --kiosk --password-store=basic --disable-pinch --disable-features=Translate,OverscrollHistoryNavigation --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
 StartupNotify=false
 ```
 
-#### Autostart on system startup (Trixie)
+#### Autostart on system startup
 
 To autostart the app, chromium needs to start automatically after boot.
 The latest Raspberry Pi OS has several window manager - the most recent is labwc. Prior wayland was used, both are described below.
@@ -282,41 +278,4 @@ Create the file below as indicated. The file autostart may not exist yet, so you
 
 ```bash title="~/.config/labwc/autostart" hl_lines="1"
 until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium --kiosk --password-store=basic --disable-pinch --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
-```
-
-### Desktop shortcut and autostart (Debian Bookworm)
-
-#### Desktop Icon (Bookworm)
-
-Create the following file in the specified location:
-
-```ini title="~/Desktop/photobooth-app.desktop" hl_lines="6"
-[Desktop Entry]
-Terminal=false
-Type=Application
-Name=Photobooth-App
-Exec=chromium-browser --kiosk --disable-features=Translate,OverscrollHistoryNavigation --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
-StartupNotify=false
-```
-
-#### Autostart on system startup (Bookworm)
-
-To autostart the app, chromium needs to start automatically after boot.
-The latest Raspberry Pi OS has several window manager - the most recent is labwc. Prior wayland was used, both are described below.
-
-##### Labwc
-
-Create the file below as indicated. The folder labwc and the file autostart may not exist yet, so you need to create these.
-
-```bash title="~/.config/labwc/autostart" hl_lines="1"
-until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium-browser --kiosk --disable-pinch --disable-features=Translate,OverscrollHistoryNavigation --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
-```
-
-##### Wayland
-
-Modify the file below as indicated. If there is already a section `[autostart]`, just add the line `chromium = ...` otherwise add the whole section.
-
-```bash title="~/.config/wayfire.ini" hl_lines="2"
-[autostart]
-chromium = until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium-browser --kiosk --disable-pinch --disable-features=Translate,OverscrollHistoryNavigation --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
 ```

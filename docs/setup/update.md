@@ -3,7 +3,10 @@
 !!! info
 
     Depending on your installation method, select the update method.
-    Prior to an update, it is good practice to backup your data.
+
+    Updates are tested only from the last major version to current major (v8->v9). 
+
+    Prior to an update, backup your data is highly recommended.
 
 ## Backup
 
@@ -42,7 +45,7 @@ To upgrade to the latest release use pip:
 Activate local venv before update:
 
 ```zsh
-source ~/photobooth-app/myenv/bin/activate
+source ~/photobooth-app/.venv/bin/activate
 ```
 
 Start the upgrade:
@@ -87,7 +90,7 @@ pipx inject photobooth-app photobooth-app==2.0.7
 Or activate local venv before update if installed in venv
 
 ```sh
-source ~/photobooth-app/myenv/bin/activate
+source ~/photobooth-app/.venv/bin/activate
 ```
 
 Upgrade to main-branch

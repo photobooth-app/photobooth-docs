@@ -1,19 +1,19 @@
-# Camera Setup (Backends)
+# Camera Setup
 
-The photobooth app supports cameras utilizing multiple backends:
+The photobooth-app supports many cameras types utilizing different backends:
 
-| Backend                                                    | Cameras                     | Platforms           |
-| ---------------------------------------------------------- | --------------------------- | ------------------- |
-| `picamera2`                                                | Raspberry Pi Camera Modules | Raspberry Pi        |
-| `gphoto2`                                                  | DSLR                        | Linux, Mac          |
-| `digicamcontrol` (deprecated, digicamcontrol unmaintained) | DSLR                        | Windows             |
-| `pyav`                                                     | USB Webcams                 | Windows, Linux, Mac |
-| `v4l2`                                                     | USB Webcams                 | Linux               |
+| Camera                      | Backend                                                    | Platforms           |
+| --------------------------- | ---------------------------------------------------------- | ------------------- |
+| Raspberry Pi Camera Modules | `picamera2`                                                | Raspberry Pi        |
+| DSLR                        | `gphoto2`                                                  | Linux, Mac          |
+| DSLR                        | `digicamcontrol` (deprecated, digicamcontrol unmaintained) | Windows             |
+| USB Webcams                 | `pyav`                                                     | Windows, Linux, Mac |
+| USB Webcams                 | `v4l2`                                                     | Linux               |
 
 Multiple backends can be used simultaneously. For example, the first backend is used for high quality still images,
 the second backend is used to stream video preview only.
 
-If you need help setup a specific camera, [start a new discussion on github](https://github.com/photobooth-app/photobooth-app/discussions).
+If you need help to setup a specific camera, first research the web, then [start a new discussion on github](https://github.com/photobooth-app/photobooth-app/discussions).
 
 ## Picamera2
 
@@ -71,7 +71,7 @@ Now finish the setup:
 ### Other OEM- / third party-modules
 
 In principle every camera supported by libcamera / picamera2 would work.
-Setup is the same as for camera module 3 but with different resolution. See also the chapter above to list resolutions.
+The setup is the same as for the camera module 3 but with different resolution. See also the chapter above to list resolutions.
 
 All other camera modules from the Raspberry Pi ecosystem work the same way as the latest camera module 3.
 They usually have a lower image quality and do not have autofocus. Due to this other camera modules are not recommended for use as main camera. You might consider to use them only for livestream preview.
