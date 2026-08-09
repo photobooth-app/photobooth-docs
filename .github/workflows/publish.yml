@@ -39,4 +39,4 @@ jobs:
                   username: ${{ secrets.FTP_USERNAME }}
                   password: ${{ secrets.FTP_PASSWORD }}
                   local-dir: ".vitepress/dist/"
-                  dry-run: true
+                  # dry-run: true
