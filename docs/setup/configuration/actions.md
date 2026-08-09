@@ -44,7 +44,7 @@ Videos (no sound unfortunately, yet) can be captured from the livestream. After 
 
 ### Multicamera 3D Wigglegrams
 
-![wigglegram taken with the photobooth-app, example](../../wigglegramcamera/assets/wigglegram-demo1.gif)
+![wigglegram taken with the photobooth-app, example](../../wigglegramcamera/assets/wigglegram-demo1.webp)
 
 This very unique feature allows to capture a scene from multiple cameras at the same time. The result is a wigglegram, see the [separate section for more details](../../wigglegramcamera/index.md).
 

@@ -11,6 +11,6 @@
 </figure>
 
 <figure markdown>
-  ![frontpage](./assets/wigglegram-demo1.gif){ width="400" }
+  ![frontpage](./assets/wigglegram-demo1.webp){ width="400" }
   <figcaption>Early prototype wigglegram taken with 2 cameras and interpolated using RIFE AI model in manual postprocessing.</figcaption>
 </figure>

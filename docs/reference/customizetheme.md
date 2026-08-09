@@ -1,6 +1,9 @@
 # Customize the Theme
 
 To customize the visual apperiance of the photobooth app, add your rules to the `./userdata/private.css` file.
+The css file is served from `http://IP:8000/private.css` and the user interface will automatically load it when it exists.
+
+To customize, you can use the browsers web development tool and inspect the page.
 
 ## Example: Adjust the Buttons' Size on the Frontpage
 

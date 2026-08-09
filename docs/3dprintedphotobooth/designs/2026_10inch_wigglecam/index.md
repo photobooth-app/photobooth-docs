@@ -3,7 +3,7 @@
 The wigglecam box design was first released in 2026.
 It is based on the prior design but only supports the larger 10" screen.
 
-![photobooth-app 3d printed box with wigglecam](./images/photobooth-3d-printed-with-wigglecam.png){ width="400" }
+![photobooth-app 3d printed box with wigglecam](./images/photobooth-3d-printed-with-wigglecam.webp){ width="400" }
 
 /// caption
 3d printed photobooth box to build a wigglecam
