@@ -19,7 +19,7 @@ jobs:
                   node-version: 24
                   cache: npm # or pnpm / yarn
             - name: Cache VitePress
-              uses: actions/cache@v4
+              uses: actions/cache@v6
               with:
                   path: .vitepress/cache
                   key: ${{ runner.os }}-vitepress-${{ hashFiles('docs/**', 'package-lock.json', 'pnpm-lock.yaml', 'yarn.lock', 'bun.lockb') }}
@@ -38,5 +38,5 @@ jobs:
                   server: photobooth-app.org.w01b6f5a.kasserver.com
                   username: ${{ secrets.FTP_USERNAME }}
                   password: ${{ secrets.FTP_PASSWORD }}
-                  local-dir: ".vitepress/dist"
+                  local-dir: ".vitepress/dist/"
                   dry-run: true
