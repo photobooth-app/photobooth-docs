@@ -2,13 +2,14 @@
 
 [![current release](https://img.shields.io/pypi/v/photobooth-app)](https://pypi.org/project/photobooth-app/)
 
-!!! info
+::: info
 
-    Depending on your installation method, select the update method.
+Depending on your installation method, select the update method.
 
-    Updates are tested only from the last major version to current major (v8->v9). 
+Updates are tested only from the last major version to current major (v8->v9).
 
-    Prior to an update, backup your data is highly recommended.
+Prior to an update, backup your data is highly recommended.
+:::
 
 ## Backup
 
@@ -107,6 +108,7 @@ Or upgrade to dev-branch
 pip install --upgrade --force-reinstall --no-deps git+https://github.com/photobooth-app/photobooth-app.git@dev
 ```
 
-!!! info
+::: info
 
-    If dependencies changed remove `--no-deps` from above commands to also update pip packages the app relies on.
+If dependencies changed remove `--no-deps` from above commands to also update pip packages the app relies on.
+:::

@@ -2,11 +2,12 @@
 
 The photobooth-app backend can be extended by plugins since version 6.
 
-!!! note
+::: info
 
-    This page is a guide and documentation on how to develop a plugin. The use of the included plugins is not decribed here but [in the setup section](../setup/index.md).
+This page is a guide and documentation on how to develop a plugin. The use of the included plugins is not decribed here but [in the setup section](../setup/index.md).
 
-    If you want to develop plugins you need python skills. The support to develop plugins is quite limited but feel free to ask questions in the Github discussions.
+If you want to develop plugins you need python skills. The support to develop plugins is quite limited but feel free to ask questions in the Github discussions.
+:::
 
 ## Plugins Built-In
 
@@ -16,7 +17,7 @@ There are some plugins built in and can be used as reference to build your own p
 - [WLED](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/wled) signaling countdown, capture and recording
 - [pilgram2 filter](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/filter_pilgram2) apply color filter in post processing
 - [commander](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/commander) hook http requests and commands to events
-- [synchronizer](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/synchronizer_legacy) copy media files to local filesystem or remote FTP/Nextcloud servers to backup and share
+- [synchronizer](https://github.com/photobooth-app/photobooth-app/tree/main/src/photobooth/plugins/synchronizer) copy media files to local filesystem or remote cloud providers to backup and share using Rclone
 
 ## Plugin Architecture
 

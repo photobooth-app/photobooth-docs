@@ -59,13 +59,13 @@ The icon can be any material design icon.
 
 To trigger an action via GPIO define the pin and choose when to trigger the action (on press, on release or after hold).
 
-!!! info
+::: info
+Enable the GPIO service in admin dashboard -> configuration -> hardwareinput/output!
+:::
 
-    Enable the GPIO service in admin dashboard -> configuration -> hardwareinput/output!
-
-!!! warning
-
-    Each pin can be used only one time! Check the log for errors if it does not work as expected.
+::: warning
+Each pin can be used only one time! Check the log for errors if it does not work as expected.
+:::
 
 [See the GPIO section how to wire the buttons](./gpio.md).
 
@@ -73,9 +73,9 @@ To trigger an action via GPIO define the pin and choose when to trigger the acti
 
 To trigger an action via keypress define the keycode. If you're unsure what keycode to use, open the browser console and press the key to check for the keycode. The keycodes are captured by the browser.
 
-!!! info
-
-    Enable the keyboard processing in admin dashboard -> configuration -> hardwareinput/output!
+::: info
+Enable the keyboard processing in admin dashboard -> configuration -> hardwareinput/output!
+:::
 
 ## Questions remain?
 

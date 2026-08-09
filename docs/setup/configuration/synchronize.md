@@ -24,9 +24,10 @@ The general procedure to setup synchronization is as follows. A full example usi
 
 ## Reference Setups
 
-!!! note
+::: info
 
-    Following description is to setup the file synchronization using Rclone. It is a prerequisite to allow for [QR code sharing to be setup separately](./qrshareservice.md).
+Following description is to setup the file synchronization using Rclone. It is a prerequisite to allow for [QR code sharing to be setup separately](./qrshareservice.md).
+:::
 
 All targes, Rclone supports, can be used. Some might work better than others, and not all setups are described here.
 The most straight forward way to allow for QR code shares is probably FTP on a shared webspace that supports HTTPS (shared webhosting).
@@ -35,12 +36,14 @@ Exemplarily, a setup using a FTP-Server is described in the following sections. 
 
 ### Rclone Remote Setup
 
-!!! info "Assumptions for the FTP-Server setup example"
+::: info Assumptions for the FTP-Server setup example
 
-    - FTP-Server: `ftpserver.example.com`
-    - FTP-Subdir: `/photos/`
-    - HTTP-URL: `https://photos.example.com/`,
-    - Verified: Files uploaded to the folder `photos` on the FTP-Server are available at `https://photos.example.com/`
+- FTP-Server: `ftpserver.example.com`
+- FTP-Subdir: `/photos/`
+- HTTP-URL: `https://photos.example.com/`,
+- Verified: Files uploaded to the folder `photos` on the FTP-Server are available at `https://photos.example.com/`
+
+:::
 
 #### Rclone Configuration
 
@@ -63,10 +66,10 @@ If you encounter issues, please research the internet to properly setup Rclone r
 
 #### App Configuration
 
-!!! danger
-
-    The app will delete unknown files from the target without further confirmation. Double check to choose the correct subdir as target!
-    The app needs exclusive access to the folder! It is recommended to lock the ftp-server login credentials to a specific folder only to avoid any data loss and data leakage because the credentials are only obfuscated by Rclone in it's configuration file.
+::: danger
+The app will delete unknown files from the target without further confirmation. Double check to choose the correct subdir as target!
+The app needs exclusive access to the folder! It is recommended to lock the ftp-server login credentials to a specific folder only to avoid any data loss and data leakage because the credentials are only obfuscated by Rclone in it's configuration file.
+:::
 
 Next step is to tell the photobooth-app to use the remote configured. In the admin center go to the synchronization configuration and add a new remote to the list:
 
@@ -95,8 +98,9 @@ For a local target, there is no setup in rclone required.
 
 To tell the app to copy to a local folder, set the remote to "/". In the admin center go to the synchronization configuration and add a local folder to the to the list. The subdir is interpreted absolute, this is `/tmp/localsync` in the example.
 
-!!! danger
+::: danger
 
-    The app will delete unknown files from the target without further confirmation. Double check to choose the correct subdir as target!
+The app will delete unknown files from the target without further confirmation. Double check to choose the correct subdir as target!
+:::
 
 ![example to configure local copy in the app](./assets/synchronizer-app-config-local.png)

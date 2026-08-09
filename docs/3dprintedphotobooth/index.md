@@ -5,27 +5,24 @@ You can use the designs provided here as starting point.
 
 ## Designs
 
-<div class="grid cards" markdown>
-- :material-variable-box:{ .lg .middle } **Parametric Box**
+::: warning
+The files are provided as is and might have bugs.
+:::
 
-    The design from 2024 offers variants for 7" and 10" screens as well as for Picamera modules and DSLR.
+### Parametric Box
 
-    [:octicons-arrow-right-24: Check out the Parametric Design](./designs/2024_7-10inch_picamera-dslr/index.md)
+The design from 2024 offers variants for 7" and 10" screens as well as for Picamera modules and DSLR.
 
-- :material-video-3d:{ .lg .middle } **Wigglecam Box**
+[Check out the Parametric Design](./designs/2024_7-10inch_picamera-dslr/index.md)
 
-    Revised 10" screen only design including an assembly group for 4 Pi Cameras to build a [WiggleCam](/wigglegramcamera/).
+### Wigglecam Box
 
-    [:octicons-arrow-right-24: Check out the WiggleCam Box](./designs/2026_10inch_wigglecam/index.md)
+Revised 10" screen only design including an assembly group for 4 Pi Cameras to build a [WiggleCam](/wigglegramcamera/).
 
-- :man_artist:{ .lg .middle } **Explore other projects**
+[Check out the WiggleCam Box](./designs/2026_10inch_wigglecam/index.md)
 
-    User's of the app built awesome boxes!
+### Explore other projects
 
-    [:octicons-arrow-right-24: Check out the projects and examples section 📣](../projects.md)
+User's of the app built awesome boxes!
 
-</div>
-
-!!! note
-
-    The files are provided as is and might have bugs.
+[Check out the projects and examples section 📣](/introduction/projects.md)

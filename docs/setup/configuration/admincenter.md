@@ -2,23 +2,18 @@
 
 The admin center is the central place to configure the photobooth software. You can also use it to upload and download files to the device.
 
-!!! info
-
-    The default password to login the admin center is `0000`.
-
 On the photobooth device browse to the admin center to configure your photobooth app:
-<http://localhost:8000/#/admin>.
+<http://localhost:8000/#/admin>. From other devices you need to replace `localhost` by the hostname of the device running the photobooth-app. Port `8000` is a default and usually not changed.
 
-!!! info
-
-    From other devices you need to replace ``localhost`` by the hostname of the booth.
-    Port ``8000`` is default if you did not change it.
+::: info
+The default password to login the admin center is `0000`.
+:::
 
 ## Dashboard
 
-<figure markdown>
-  ![gallery_detail](../../assets/screenshots/admin_dashboard.png){ width="500" }
-  <figcaption>Enter the admin pages, dashboard is the start</figcaption>
+<figure>
+  <img src="/assets/screenshots/admin_dashboard.png" width="500">
+  <figcaption>The photobooth-app's admin dashboard</figcaption>
 </figure>
 
 ### Server Control
@@ -69,8 +64,8 @@ The filebrowser allows to
 - download zip files containing selected files and folders and
 - delete selected files and folders.
 
-<figure markdown>
-  ![gallery_detail](../../assets/screenshots/admin_filebrowser.png){ width="500" }
+<figure>
+  <img src="/assets/screenshots/admin_filebrowser.png" width="500">
   <figcaption>Manage files in the filebrowser.</figcaption>
 </figure>
 
@@ -79,7 +74,7 @@ The filebrowser allows to
 Collection of information that might be helpful.
 Also the REST-API documentation is linked. It's interactive, so you can test the REST-API right in your browser.
 
-<figure markdown>
-  ![gallery_detail](../../assets/screenshots/admincenter-help.jpg){ width="500" }
+<figure>
+  <img src="/assets/screenshots/admincenter-help.jpg" width="500">
   <figcaption>Some links on help page you might find useful.</figcaption>
 </figure>

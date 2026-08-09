@@ -20,9 +20,9 @@ It is based on the prior design but only supports the larger 10" screen.
 
 Current release files available:
 
-- [Solidworks CAD model](./releases/rc3/solidworks/booth-000-rc3.zip)
-- [STEP file](./releases/rc3/step/booth-000-rc3.STEP) to import in any CAD tool or the slicer
-- [3mf file](./releases/rc3/print/booth-000-rc3.3mf) to start printing right away.
+- [Solidworks CAD model](/cad/2026_10inch_wigglecam/rc3/solidworks/booth-000-rc3.zip)
+- [STEP file](/cad/2026_10inch_wigglecam/rc3/step/booth-000-rc3.zip) to import in any CAD tool or the slicer
+- [3mf file](/cad/2026_10inch_wigglecam/rc3/print/booth-000-rc3.zip) to start printing right away.
 
 Earlier revisions are available in the archive down below.
 

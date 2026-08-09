@@ -41,12 +41,13 @@ Time to find out which resolutions to use! Issue in the terminal following comma
 rpicam-hello --list-cameras
 ```
 
-```title="Raspberry Pi Camera Module 3 (imx708)" hl_lines="4 5"
+```bash {4-5}
 pi@photobooth:~ $ rpicam-hello --list-cameras
 0 : imx708 [4608x2592] (/base/soc/i2c0mux/i2c@1/imx708@1a)
     Modes: 'SRGGB10_CSI2P' : 1536x864 [120.13 fps - (0, 0)/4608x2592 crop]
                              2304x1296 [56.03 fps - (0, 0)/4608x2592 crop]
                              4608x2592 [14.35 fps - (0, 0)/4608x2592 crop]
+
 ```
 
 In this case, the last two modes will have feasible resolutions:
@@ -94,10 +95,10 @@ Now finish setup:
 DSLR cameras of different manufacturer may behave differently. There are some settings that might need to be adjusted if autofocus is slow or preview cannot be generated.
 Tinker with available settings until it works properly. If you run into trouble, [create a new issue in the tracker](https://github.com/photobooth-app/photobooth-app/issues).
 
-!!! note
-
-    Linux systems automatically mount the camera on connection. This interferes with the photobooth, since the app needs exclusive access.
-    Check this [guide on how to disable `gvfs-gphoto2-volume-monitor`](https://photobooth-app.org/help/faq/#gphoto2-camera-found-but-no-access)
+::: info
+Linux systems automatically mount the camera on connection. This interferes with the photobooth, since the app needs exclusive access.
+Check this [guide on how to disable `gvfs-gphoto2-volume-monitor`](https://photobooth-app.org/help/faq/#gphoto2-camera-found-but-no-access)
+:::
 
 ## Webcam PyAV
 
@@ -150,9 +151,9 @@ Now finish setup:
 
 ## Digicamcontrol
 
-!!! info
-
-    This backend is deprecated. Digicamcontrol is not actively maintained since long time. We keep the backend in the app for now, but remove it, when the Digicamcontrol-software breaks at one point in the future.
+::: info
+This backend is deprecated. Digicamcontrol is not actively maintained since long time. We keep the backend in the app for now, but remove it, when the Digicamcontrol-software breaks at one point in the future.
+:::
 
 The app is tested with a webcamera in Digicamcontrol. In general all [digicamcontrol supported cameras](https://digicamcontrol.com/cameras) can be used.
 If the camera supports liveview a stream is created and being used as preview in the app.

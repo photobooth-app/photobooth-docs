@@ -38,14 +38,14 @@ There are two different width variants:
 The recommended variants are provided as STEP file for direct 3d printing.
 STEP files can be imported in the Slicer and split into single objects before printing.
 
-| Camera    | Width  | Depth | Screen                                                             | STEP file                                                                        |
-| --------- | ------ | ----- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
-| Pi Camera | narrow | short | [7inch DSI LCD (C)](https://www.waveshare.com/7inch-DSI-LCD-C.htm) | [booth-100-000_picam-7inch](./releases/v2/step/booth-100-000_picam-7inch.STEP)   |
-|           | wide   | short | [10.1DP-CAPLCD](https://www.waveshare.com/10.1dp-caplcd.htm)       | [booth-100-000_picam-10inch](./releases/v2/step/booth-100-000_picam-10inch.STEP) |
-| DSLR      | narrow | deep  | [7inch DSI LCD (C)](https://www.waveshare.com/7inch-DSI-LCD-C.htm) | [booth-100-000_dslr-7inch](./releases/v2/step/booth-100-000_dslr-7inch.STEP)     |
-|           | wide   | deep  | [10.1DP-CAPLCD](https://www.waveshare.com/10.1dp-caplcd.htm)       | [booth-100-000_dslr-10inch](./releases/v2/step/booth-100-000_dslr-10inch.STEP)   |
+| Camera    | Width  | Depth | Screen                                                             | STEP file                                                                                             |
+| --------- | ------ | ----- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| Pi Camera | narrow | short | [7inch DSI LCD (C)](https://www.waveshare.com/7inch-DSI-LCD-C.htm) | [booth-100-000_picam-7inch](/cad/2024_7-10inch_picamera-dslr/v2/step/booth-100-000_picam-7inch.zip)   |
+|           | wide   | short | [10.1DP-CAPLCD](https://www.waveshare.com/10.1dp-caplcd.htm)       | [booth-100-000_picam-10inch](/cad/2024_7-10inch_picamera-dslr/v2/step/booth-100-000_picam-10inch.zip) |
+| DSLR      | narrow | deep  | [7inch DSI LCD (C)](https://www.waveshare.com/7inch-DSI-LCD-C.htm) | [booth-100-000_dslr-7inch](/cad/2024_7-10inch_picamera-dslr/v2/step/booth-100-000_dslr-7inch.zip)     |
+|           | wide   | deep  | [10.1DP-CAPLCD](https://www.waveshare.com/10.1dp-caplcd.htm)       | [booth-100-000_dslr-10inch](/cad/2024_7-10inch_picamera-dslr/v2/step/booth-100-000_dslr-10inch.zip)   |
 
-If you want to modify the model, download the [Solidworks files](./releases/v2/solidworks/booth-100-000.zip).
+If you want to modify the model, download the [Solidworks files](/cad/2024_7-10inch_picamera-dslr/v2/solidworks/booth-100-000.zip).
 
 ## :wrench: Material (BOM)
 

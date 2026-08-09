@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.19",
+    "vitepress-plugin-lightbox": "^1.0.3"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  }
+}

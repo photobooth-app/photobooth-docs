@@ -1,8 +1,9 @@
 # Synchronize Media Files (before v9)
 
-!!! info
+::: info
 
-    For new setups, please [use the Rclone synchronization](./synchronize.md). This documentation is relevant for v8 and before only.
+For new setups, please [use the Rclone synchronization](./synchronize.md). This documentation is relevant for v8 and before only.
+:::
 
 ## Setup the Synchronizer
 
@@ -73,7 +74,7 @@ If the synchronizer plugin is not what you want, you could deploy your own solut
 For example create a local WiFi that allows user access to the photobooth.
 Users log in that WiFi and can download directly from the photobooth without internet services.
 Setup the URL for the QR code to point to the image you would like to let the user download.
-There are several versions of the images available, see the [list of mediaitem's directories](../../reference/foldersandurls.md#mediaitems).
+There are several versions of the images available, see the [list of mediaitem's directories](../../reference/datastorage.md).
 
 Below an example URL to use in the QR code. {identifier} gets replaced by the actual filename. Replace the IP and port by the actual data.
 

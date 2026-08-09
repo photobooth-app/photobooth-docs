@@ -1,3 +1,7 @@
+---
+outline: [2, 3]
+---
+
 # Installation 🔧
 
 [![current release](https://img.shields.io/pypi/v/photobooth-app)](https://pypi.org/project/photobooth-app/)
@@ -83,7 +87,6 @@ To use the photobooth first install following system dependencies:
 
 - [Latest stable Python](https://www.python.org/downloads/) Please use the link, the Microsoft Store version is not recommended.
 - That's it ✔️
-
 
 ## Install the Photobooth-App
 
@@ -187,9 +190,9 @@ Browse to <http://localhost:8000> and see if the application works properly.
 By default, the application uses a generated image and streams a demonstration video. No camera is started at this time.
 You will need to [continue setting up the cameras](./configuration/camera_setup.md).
 
-!!! info
-
-    Having trouble accessing the website or seeing error messages during installation and application launch? Check the [troubleshooting guide](../help/troubleshooting.md).
+::: info
+Having trouble accessing the website or seeing error messages during installation and application launch? Check the [troubleshooting guide](../help/troubleshooting.md).
+:::
 
 ## Setup the Raspberry Pi in Kiosk Mode
 
@@ -249,11 +252,12 @@ If you want to check the service started properly, invoke systemctl with the `st
 systemctl --user status photobooth-app.service
 ```
 
-!!! info
+::: info
 
-    The app does not start?
-    It could be helpful to stop the service and start the app manually.
-    Check the [troubleshooting guide](../help/troubleshooting.md#manually-start-the-app).
+The app does not start?
+It could be helpful to stop the service and start the app manually.
+Check the [troubleshooting guide](/help/troubleshooting.md#manually-start-the-app).
+:::
 
 ### Desktop shortcut and autostart (Debian Trixie)
 

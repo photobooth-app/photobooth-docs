@@ -1,4 +1,8 @@
-# Features
+---
+aside: false
+---
+
+# Comparison with other Software
 
 This table is comparing the photobooth-app with other open source photobooth software.
 Commercial software like DSLRbooth is not taken into account.
@@ -23,9 +27,9 @@ Commercial software like DSLRbooth is not taken into account.
 | Capture collages                                                          | ✅                                                                                                                                                                  | ✅                                                                                                      | ✅                                                                                         |
 | Capture animations                                                        | ✅                                                                                                                                                                  | ❌                                                                                                      | ❌                                                                                         |
 | Capture videos (no sound, yet)                                            | ✅                                                                                                                                                                  | ❌                                                                                                      | ❌                                                                                         |
-| Capture wigglegrams (multicamera array support)                                                             | ✅                                                                                                                                                                  | ❌                                                                                                      | ❌                                                                                         |
+| Capture wigglegrams (multicamera array support)                           | ✅                                                                                                                                                                  | ❌                                                                                                      | ❌                                                                                         |
 | [Instagram-Like Image Filter](https://github.com/photobooth-app/pilgram2) | ✅                                                                                                                                                                  | ❌                                                                                                      | ❌                                                                                         |
-| Background removal: AI filter / Chromakeying                              | ✅                                                                                                                                                          | ✅                                                                                                      | ❌                                                                                         |
+| Background removal: AI filter / Chromakeying                              | ✅                                                                                                                                                                  | ✅                                                                                                      | ❌                                                                                         |
 | Add predefined background                                                 | ✅                                                                                                                                                                  | ✅                                                                                                      | ❌                                                                                         |
 | Add frame with transparency to pictures                                   | ✅                                                                                                                                                                  | ✅                                                                                                      | ❌                                                                                         |
 | **Gallery**                                                               |
@@ -55,5 +59,7 @@ Commercial software like DSLRbooth is not taken into account.
 | Windows                                                                   | ✅                                                                                                                                                                  | ✅                                                                                                      | ❌                                                                                         |
 
 [^1]: Picamera1 only, modules <= v2.1 only, no camera module 3 supported
+
 [^2]: Integrated via command line interface and external programs
+
 [^4]: Manual custom sync to implement or client need to access wifi accesspoint

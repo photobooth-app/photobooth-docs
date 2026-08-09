@@ -3,13 +3,12 @@
 QR codes are a convenient way for users to download their photos to their personal devices.
 The QR code points to a HTTP server either online or provided by the photobooth-app itself in the local network.
 
-!!! info
+::: info
+The description is valid for v9 and later. For older versions, please see the former, deprecated [synchronization tool description](./synchronizelegacy.md).
+:::
 
-    The description is valid for v9 and later. For older versions, please see the former, deprecated [synchronization tool description](./synchronizelegacy.md).
-
-
-<figure markdown>
-  ![gallery_detail](../../assets/screenshots/gallery_detail.png){ width="500" }
+<figure>
+  <img src="/assets/screenshots/gallery_detail.png" width="500">
   <figcaption>Users scan the QR code to download the displayed image on their mobile.</figcaption>
 </figure>
 
@@ -34,30 +33,28 @@ The Synchronizer with Rclone under the hood is used to upload files to many stor
 
 Following overview might help you to decide, which way to go. In doubt? [Start a discussion](https://github.com/photobooth-app/photobooth-app/discussions).
 
-| Option                  | A) Share On Demand using Synchronizer                                                                                                                                                                                                            | B) Full Sync Share using the Synchronizer                                                                                                      | C) Your custom solution                                                                                   |
-|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| Description             | QR codes point to a online hosted PHP script on a shared webspace. When a QR code is scanned, only the requested file is uploaded on the fly.<br>Since only requested files are uploaded the data usage is lower than with the full sync method. | Generate QR codes pointing to the media files hosted online. All media files are uploaded immediately.                                         | Share via local WiFi-Hotspot                                                                              |
-| Pros                    | ➕ Automatic immediate sync<br>➕ Quite simple setup<br>➕ Convenient for users<br>➕ Lowest data usage                                                                                                                                              | ➕ Automatic immediate and time-interval synchronization<br>➕ Quite easy setup<br>➕ Convenient for users<br>➕ Could be used as immediate backup | ➕ No need to synchronize<br>➕ No issues if internet service is bad<br>➕ Less likely to conflict with GDPR |
-| Cons                    | ➖ The QR codes are only valid as long as the photobooth is operating<br>➖ Internet service might fail any time<br>➖ Images shared via (private) internet service might conflict with GDPR                                                                                                                                | ➖ Internet service might fail any time<br>➖ Images shared via (private) internet service might conflict with GDPR                              | ➖ Inconvenient for user: Smartphones need to log in local WiFi<br>➖ Custom setup                          |
-| Prerequisites           | Online hosting service with PHP and FTP access to deploy the PHP script, [synchronization is setup using Rclone](./synchronize.md)                                                                                                               | Online hosting service that is supported by Rclone, [synchronization is setup using rclone, see separate setup](./synchronize.md)              | WiFi Hotspot                                                                                              |
-| Connectivity            | Online, Internet required.                                                                                                                                                                                                                       | Online, Internet required                                                                                                                      | Offline, no Internet required                                                                             |
-| Complexity for endusers | Simple                                                                                                                                                                                                                                           | Simple                                                                                                                                         | Complex, users need to access the local WiFi                                                              |
-| Complexity to setup     | Simple-Medium                                                                                                                                                                                                                                    | Medium, need to setup Rclone                                                                                                                   | Advanced                                                                                                  |
-
+| Option                  | A) Share On Demand using Synchronizer                                                                                                                                                                                                            | B) Full Sync Share using the Synchronizer                                                                                                          | C) Your custom solution                                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Description             | QR codes point to a online hosted PHP script on a shared webspace. When a QR code is scanned, only the requested file is uploaded on the fly.<br>Since only requested files are uploaded the data usage is lower than with the full sync method. | Generate QR codes pointing to the media files hosted online. All media files are uploaded immediately.                                             | Share via local WiFi-Hotspot                                                                                 |
+| Pros                    | ➕ Automatic immediate sync<br>➕ Quite simple setup<br>➕ Convenient for users<br>➕ Lowest data usage                                                                                                                                          | ➕ Automatic immediate and time-interval synchronization<br>➕ Quite easy setup<br>➕ Convenient for users<br>➕ Could be used as immediate backup | ➕ No need to synchronize<br>➕ No issues if internet service is bad<br>➕ Less likely to conflict with GDPR |
+| Cons                    | ➖ The QR codes are only valid as long as the photobooth is operating<br>➖ Internet service might fail any time<br>➖ Images shared via (private) internet service might conflict with GDPR                                                     | ➖ Internet service might fail any time<br>➖ Images shared via (private) internet service might conflict with GDPR                                | ➖ Inconvenient for user: Smartphones need to log in local WiFi<br>➖ Custom setup                           |
+| Prerequisites           | Online hosting service with PHP and FTP access to deploy the PHP script, [synchronization is setup using Rclone](./synchronize.md)                                                                                                               | Online hosting service that is supported by Rclone, [synchronization is setup using rclone, see separate setup](./synchronize.md)                  | WiFi Hotspot                                                                                                 |
+| Connectivity            | Online, Internet required.                                                                                                                                                                                                                       | Online, Internet required                                                                                                                          | Offline, no Internet required                                                                                |
+| Complexity for endusers | Simple                                                                                                                                                                                                                                           | Simple                                                                                                                                             | Complex, users need to access the local WiFi                                                                 |
+| Complexity to setup     | Simple-Medium                                                                                                                                                                                                                                    | Medium, need to setup Rclone                                                                                                                       | Advanced                                                                                                     |
 
 ## Option A: Share on Demand QR codes
 
 In the following tutorial, we setup the on-demand service using [bplaced.net freestyle hosting](https://www.bplaced.net/freestyle). Feel free to choose a different provider that has FTP and PHP available.
 
-
 ### Hosting Services
 
 The hosting service needs to offer following services to work properly:
 
-  - PHP 8
-  - FTP Server to upload the PHP files automatically
-  - NO Bot detection (usually only free services, infinityfree doesnt work for this reason)
-  - Optional: TLS/SSL (needed to display the "Share" button, this is a browser restriction)
+- PHP 8
+- FTP Server to upload the PHP files automatically
+- NO Bot detection (usually only free services, infinityfree doesnt work for this reason)
+- Optional: TLS/SSL (needed to display the "Share" button, this is a browser restriction)
 
 Usually, all paid shared webhosts should fulfill these basic requirements. Free services can be unreliable. In the examples below, we use bplaced.net as it is fast to setup and has all features, except SSL unfortunately. If you know a better simple to setup hosting service, please let me know.
 
@@ -82,7 +79,7 @@ Once the remote is created, in the tab `Explorer`, you can choose the remote and
 
 When the Rclone connection is confirmed to work properly, go to the photobooth Admin Dashboard - Configuration - Synchronizer.
 
-Configure the newly created remote to be used for the On-Demand Share as depicted in below screenshot. 
+Configure the newly created remote to be used for the On-Demand Share as depicted in below screenshot.
 For bplaced, the subdir `./www/` needs to be chosen, as that directory is served publicly.
 
 ![app config for the ondemand share service](./assets/synchronizer-ondemand-settings.png)
@@ -101,6 +98,7 @@ Normally the log should look like this during startup:
 ```
 
 And whenever a QR code is scanned, the request is logged:
+
 ```
 
 2026-08-08 12:29:40,368 [   DEBUG] generating shareondemand qr links for f2cc8a97-7539-424d-bffe-3a2c471b6a5b (shareondemand.py:103)
@@ -112,9 +110,7 @@ And whenever a QR code is scanned, the request is logged:
 
 If there are issues, please go to Github discussions to research or post an issue.
 
-
 ## Option B: Full Sync QR codes
-
 
 To make the media files downloadable using a QR code, the [files need to be synchronized prior download](./synchronize.md). Please ensure the synchronization is setup properly beforehand and turn on `enable immediate sync` to upload the media files right after the capture.
 
@@ -159,7 +155,7 @@ If the synchronizer plugin is not what you want, you could deploy your own solut
 For example create a local WiFi that allows user access to the photobooth.
 Users log in that WiFi and can download directly from the photobooth without internet services.
 Setup the URL for the QR code to point to the image you would like to let the user download.
-There are several versions of the images available, see the [list of mediaitem's directories](../../reference/foldersandurls.md#mediaitems).
+There are several versions of the images available, see the [list of mediaitem's directories](../../reference/datastorage.md).
 
 Below an example URL to use in the QR code. {identifier} gets replaced by the actual filename. Replace the IP and port by the actual data.
 
@@ -169,6 +165,6 @@ Then configure the QR code custom URL to point to the corresponding URL.
 Setup:
 
 - Admin Dashboard → Synchronizer → Common
-  - → Enabled Share Links `true`
-  - → Enabled Custom Qr Url `true`
-  - → Custom Qr Url set to your custom URL serving the media e.g.: `http://michael-MINIPC:8000/sharepage/#?url=http://michael-MINIPC:8000/media/full/{identifier}`. The default value should work on your network already as it is generated for you automatically based on the computers hostname.
+    - → Enabled Share Links `true`
+    - → Enabled Custom Qr Url `true`
+    - → Custom Qr Url set to your custom URL serving the media e.g.: `http://michael-MINIPC:8000/sharepage/#?url=http://michael-MINIPC:8000/media/full/{identifier}`. The default value should work on your network already as it is generated for you automatically based on the computers hostname.

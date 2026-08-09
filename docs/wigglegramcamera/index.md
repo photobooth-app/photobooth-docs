@@ -10,21 +10,23 @@ This technique lets you shoot stunning photos using multiple cameras arranged in
 
 The result? An awesome short animated image with a breathtaking 3D effect. Just picture it... see yourself!
 
-<figure markdown>
-  ![frontpage](./assets/wigglegram-demo1.webp){ width="400" }
+<figure>
+  <img src="./assets/wigglegram-demo1.webp" width="400" >
   <figcaption>Wigglegram taken with 2 cameras and interpolated using AI</figcaption>
 </figure>
 
-<figure markdown>
-  ![frontpage](./assets/photobooth-3dprint-camera-array.webp){ width="400" }
+<figure>
+  <img src="./assets/photobooth-3dprint-camera-array.webp" width="400">
   <figcaption>Camera array with 4 Raspberry Pi Camera module 3 to capture wigglegrams and a Insta Link 2C Pro to capture high quality photos.</figcaption>
 </figure>
 
 Browse through the other documents to get the full idea, how to build and setup the camera array to create wigglegrams.
 
-!!!info
+:::info
 
-    This is in development. It works but things are likely to change until all stabilizes.
+This is in development. It works but things are likely to change until all stabilizes.
+
+:::
 
 ## 😍 Features
 

@@ -1,12 +1,12 @@
 # Build the Camera Array
 
-<figure markdown>
-  ![frontpage](./assets/camera-array-pi-zeros-network-overview.webp){ width="400" }
+<figure>
+  <img src="./assets/camera-array-pi-zeros-network-overview.webp" width="400">
   <figcaption>Interior of the photobooth. 4 cameras are used in the reference design, but the number of cameras is not limited.</figcaption>
 </figure>
 
-<figure markdown>
-  ![frontpage](./assets/camera-array-pi-zeros-network-detail.webp){ width="400" }
+<figure>
+  <img src="./assets/camera-array-pi-zeros-network-detail.webp" width="400">
   <figcaption>Camera array with 4 Raspberry Pi Camera module 3 hooked each to a Pi Zero 2W. The Pi Zeros are connected to the ethernet using an USB-Ethernet adapter.</figcaption>
 </figure>
 
@@ -19,9 +19,10 @@ Find the latest design files in the [photobooth-app/photobooth-3d repository](ht
 
 Following items should cover most of the parts needed. You might need additional screws or other minor parts not mentioned here. We do not describe how to power the hardware as it is very specific to the custom setup usually.
 
-!!!note
+::: info
 
-    The wigglecam is a new feature and subject to change. You can help to improve by providing feedback, suggest updates to the documentation or propose better network setups.
+The wigglecam is a new feature and subject to change. You can help to improve by providing feedback, suggest updates to the documentation or propose better network setups.
+:::
 
 #### Per System
 

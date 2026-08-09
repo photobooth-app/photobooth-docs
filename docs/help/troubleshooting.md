@@ -33,9 +33,9 @@ sudo pkill -9 python3
 
 Manually start the photobooth-app and watch the terminal
 
-!!! info
-
-    The app uses current directory as data directory! Ensure to `cd` to the correct directory before starting.
+::: info
+The app uses current directory as data directory! Ensure to `cd` to the correct directory before starting.
+:::
 
 ```bash
 photobooth

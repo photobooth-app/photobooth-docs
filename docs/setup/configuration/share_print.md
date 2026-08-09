@@ -43,11 +43,11 @@ Set the command verified in the terminal to work well now in the app including t
 
 If you use other commands, that work better in your installation, let me know in [GitHub Discussions](https://github.com/photobooth-app/photobooth-app/discussions/).
 
-!!! info
-
-    You might want to update to more recent driver packages. See following guide:
-    <https://www.peachyphotos.com/blog/stories/building-modern-gutenprint/>
-    Also you might need a ppd file. Here is one for [Canon Selphy CP1300](https://github.com/reuterbal/photobooth/blob/master/supplementals/Canon_SELPHY_CP1300.ppd) that works.
+::: info
+You might want to update to more recent driver packages. See following guide:
+<https://www.peachyphotos.com/blog/stories/building-modern-gutenprint/>
+Also you might need a ppd file. Here is one for [Canon Selphy CP1300](https://github.com/reuterbal/photobooth/blob/master/supplementals/Canon_SELPHY_CP1300.ppd) that works.
+:::
 
 ### Example Setup Printing on Windows
 
