@@ -47,14 +47,26 @@ export default defineConfig({
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: "/assets/logo-notext-blue-transparent.png",
+        search: { provider: "local" },
         nav: [
-            { text: "Home", link: "/" },
+            { text: "Introduction", link: "/introduction" },
+
             { text: "Setup", link: "/setup/" },
-            { text: "Reference", link: "/reference/" },
-            { text: "Extras", link: "/extras/" },
-            { text: "Wigglegram Camera", link: "/wigglegramcamera/" },
-            { text: "3D Printed Photobooth", link: "/3dprintedphotobooth/" },
-            { text: "Help", link: "/help/" },
+
+            { text: "Wigglecam", link: "/wigglegramcamera/" },
+
+            {
+                text: "More",
+                items: [
+                    { text: "Reference", link: "/reference/" },
+                    { text: "Extras", link: "/extras/" },
+                    {
+                        text: "3D Printed Photobooth",
+                        link: "/3dprintedphotobooth/",
+                    },
+                    { text: "Help", link: "/help/" },
+                ],
+            },
         ],
 
         sidebar: {
