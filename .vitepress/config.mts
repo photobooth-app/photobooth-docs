@@ -43,6 +43,9 @@ export default defineConfig({
         // ignore all localhost links
         /^https?:\/\/localhost/,
     ],
+     sitemap: {
+        hostname: 'https://photobooth-app.org'
+    },
     // ignoreDeadLinks: true,
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
