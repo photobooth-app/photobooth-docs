@@ -19,49 +19,49 @@ If you installed according to the installation guide, the working directory is `
 
 On Linux you can create a backup for example with the following command:
 
-```zsh
+```sh
 cp -r ~/photobooth-data photobooth-data_backup_$(date +%Y-%m-%d_%H-%M-%S)
 ```
 
 Or zip the photobooth-data directory:
 
-```zsh
+```sh
 zip -r photobooth-data_backup_$(date +%Y-%m-%d_%H-%M-%S).zip ~/photobooth-data
 ```
 
-## Method A: Update with pipx
+## Update with pipx
 
-```zsh
+```sh
 pipx upgrade photobooth-app
 ```
 
 Dependencies may need to be reinstalled in some versions. If you encounter any module errors, you should use the following command to update instead.
 
-```zsh
+```sh
 pipx reinstall photobooth-app
 ```
 
-## Method B: Virtual environment pip upgrade
+## Upgrade in virtual environment
 
 To upgrade to the latest release use pip:
 
 Activate local venv before update:
 
-```zsh
+```sh
 source ~/photobooth-app/.venv/bin/activate
 ```
 
 Start the upgrade:
 
-```zsh
+```sh
 pip install --upgrade photobooth-app
 ```
 
-## Method C: Global pip upgrade
+## Upgrade global
 
 To upgrade to the latest release use pip:
 
-```zsh
+```sh
 pip install --upgrade photobooth-app
 ```
 

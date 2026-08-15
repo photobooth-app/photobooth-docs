@@ -22,31 +22,31 @@ Let's go...
     - Raspberry Pi [camera modules](https://www.raspberrypi.com/documentation/accessories/camera.html) via [picamera2](https://github.com/raspberrypi/picamera2).
     - USB-webcameras via [linuxpy](https://github.com/tiagocoutinho/linuxpy) or PyAV/ffmpeg.
 
-## System Preparation
+## Raspberry Pi OS
 
-### RaspberryPi OS
+### System Preparation
 
 On a fresh Raspberry Pi OS Bookworm/Trixie 64bit system, run following commands:
 
-#### Update System (RPi)
+#### Update System
 
-```zsh
+```sh
 sudo apt update
 sudo apt upgrade
 ```
 
-#### Install system dependencies (RPi)
+#### Install system dependencies
 
 The following dependencies need to be installed for Raspberry Pi OS 64bit.
 Customize for debian/ubuntu. Picamera2 is only available for Raspberry Pi.
 
-```zsh
+```sh
 sudo apt -y install ffmpeg libturbojpeg0 libgl1 libgphoto2-dev fonts-noto-color-emoji
 sudo apt -y install libexif12 libgphoto2-6 libgphoto2-port12 libltdl7
 sudo apt -y install python3-dev
 ```
 
-#### Tweak system settings (RPi)
+#### Tweak system settings
 
 ##### Touchscreen
 
@@ -64,125 +64,45 @@ iw dev wlan0 set power_save off
 
 Afterwards confirm the power management is `off` by checking the output of `iwconfig` in the terminal for the wifi adapter.
 
-### Debian/Ubuntu
-
-There is no dedicated installation guide yet.
-It should work similar to a Raspberry Pi installation, so please try this one.
-Feel free to submit a pull request to improve the instructions.
-
-### Windows
-
-Windows is supported. Install Pathon including the development headers (tick the box during the installation).
-Digicamcontrol is integrated to support DSLR cameras on Windows platform. The Digicamcontrol is not maintained any more,
-so if the software fails to work in the future, the backend is removed from the app. Until then you can use it to use it, but it will not receive new features.
-
-#### Tweak system settings (Win)
-
-- Ensure the system has standby disabled and the monitor is not turned off.
-- Consider using [autologin to windows desktop](https://learn.microsoft.com/de-de/sysinternals/downloads/autologon).
-
-#### Install system dependencies (Win)
-
-To use the photobooth first install following system dependencies:
-
-- [Latest stable Python](https://www.python.org/downloads/) Please use the link, the Microsoft Store version is not recommended.
-- That's it ✔️
-
-## Install the Photobooth-App
-
-There are several ways to install:
-
-1. Method A: Install using pipx (easiest, recommended for Bookworm/Trixie)
-2. Method B: Install using venv
-3. Method C: Install globally (recommended for Windows)
+### Install using pipx
 
 It's preferred to install pypi packages in virtual environments. The latest Linux operating systems are starting to implement [externally managed base environments](https://peps.python.org/pep-0668/). The easiest way to install it is to use pipx.
 
-### Method A: Install using pipx
+Use the following commands to install pipx in a virtual environment.
 
-Use the following commands to install pipx in a virtual environment:
-Install pipx from repo - if not available, check the pipx website
-
-```zsh
+```sh
 sudo apt -y install pipx
+pipx ensurepath
 ```
 
-Use the following command to ensure that the path is registered and the application is available globally. You may also need to restart the console or logout/login to re-read the environment paths variable.
+Now check if you can run pipx. If not, you may need to logout/login or reboot.
 
-```zsh
-pipx ensurepath
+```sh
+pipx
 ```
 
 Run the photobooth installation. Allow the import of system-site packages, as picamera2 is installed globally via apt in system-site.
 
-```zsh
+```sh
 pipx install --system-site-packages photobooth-app --pip-args='--prefer-binary'
 ```
 
-### Method B: Install using venv
+### First start
 
-To install in a virtual environment, use the following commands:
-
-Create an empty directory and change to the new directory:
-
-```zsh
-mkdir ~/photobooth-app && cd ~/photobooth-app
-```
-
-Initialize a new venv. Allow the import of system-site-packages, since picamera2 is installed globally via apt in system-site:
-
-```zsh
-python -m venv --system-site-packages
-```
-
-Activate the newly created environment:
-
-```zsh
-source .venv/bin/activate
-```
-
-Install the photobooth-app
-
-```zsh
-python -m pip install --prefer-binary photobooth-app
-```
-
-Note: `--prefer-binary` is added to avoid compiling opencv/gphoto2 and instead prefer the wheel, which installs in minutes instead of hours.
-
-### Method C: Install globally
-
-This was the default method in the past. Install the photobooth application:
-
-```zsh
-pip install --prefer-binary photobooth-app
-```
-
-## First start
-
-### Create data folder
+#### Create data folder
 
 The photobooth application automatically uses the current folder as the data folder.
 All images, logs, and configuration files are stored in this folder.
 
-```zsh
-mkdir ~/photobooth-data
+```sh
+mkdir ~/photobooth-data && cd ~/photobooth-data
 ```
 
-Start the app
-
-```zsh
-cd ~/photobooth-data
-```
-
-Do the following only if you installed using the venv method
-
-```zsh
-source ~/photobooth-app/.venv/bin/activate
-```
+#### Start the app
 
 Launch the application. The current directory will be used as the working directory. If you start the application again later, make sure you start it from the same directory.
 
-```zsh
+```sh
 photobooth
 ```
 
@@ -194,21 +114,21 @@ You will need to [continue setting up the cameras](./configuration/camera_setup.
 Having trouble accessing the website or seeing error messages during installation and application launch? Check the [troubleshooting guide](../help/troubleshooting.md).
 :::
 
-## Setup the Raspberry Pi in Kiosk Mode
+### Setup Kiosk Mode
 
 To set up the kiosk mode, you will need to install the Photobooth application as a service and set up the browser to start automatically at boot time.
 The following advice is intended as a general guide, but since the OS changes from time to time, the guide may be outdated.
 
-### Service Setup
+#### Service Setup
 
-#### Automatic Service Setup
+##### Automatic Service Setup
 
 Once the Photobooth application has been launched, the service can be installed automatically on Linux systems.
 Select Admin Center -> Dashboard -> Server Control -> Install Service.
 After confirmation the service will be installed as described below for manual setup.
 If the setup fails, please install the service manually.
 
-#### Manual Service Setup
+##### Manual Service Setup
 
 Now that you have made sure that the photobooth application is working properly, it's time to set up the application as a service.
 If you installed the application according to the instructions above, the template .service file will work for you.
@@ -233,22 +153,22 @@ WantedBy=default.target
 
 Now reload systemctl and enable the service:
 
-```zsh
+```sh
 systemctl --user daemon-reload
 systemctl --user enable photobooth-app.service
 ```
 
-#### Start/Stop the Service
+##### Start/Stop the Service
 
 Independent if automatic or manual installation of the service, the app can be started using the service as follows.
 
-```zsh
+```sh
 systemctl --user start photobooth-app.service
 ```
 
 If you want to check the service started properly, invoke systemctl with the `status` parameter:
 
-```zsh
+```sh
 systemctl --user status photobooth-app.service
 ```
 
@@ -259,9 +179,9 @@ It could be helpful to stop the service and start the app manually.
 Check the [troubleshooting guide](/help/troubleshooting.md#manually-start-the-app).
 :::
 
-### Desktop shortcut and autostart (Debian Trixie)
+#### Desktop shortcut and autostart
 
-#### Desktop Icon
+##### Desktop Icon
 
 Create the following file in the specified location:
 
@@ -275,7 +195,7 @@ Exec=chromium --kiosk --password-store=basic --disable-pinch --disable-features=
 StartupNotify=false
 ```
 
-#### Autostart on system startup
+##### Autostart on system startup
 
 To autostart the app, chromium needs to start automatically after boot.
 The latest Raspberry Pi OS has several window manager - the most recent is labwc. Prior wayland was used, both are described below.
@@ -285,3 +205,70 @@ Create the file below as indicated. The file autostart may not exist yet, so you
 ```bash title="~/.config/labwc/autostart" hl_lines="1"
 until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium --kiosk --password-store=basic --disable-pinch --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
 ```
+
+## Other Debian/Ubuntu Systems
+
+There is no dedicated installation guide.
+It should work similar to a Raspberry Pi installation, so please use the Pi installation method as reference.
+
+## Windows
+
+Install Python including the development headers (tick the box during the installation).
+
+::: note
+Digicamcontrol is integrated to support DSLR cameras on Windows platform. The Digicamcontrol is not maintained any more,
+so if the software fails to work in the future, the backend is removed from the app. Until then you can use it to use it, but it will not receive new features.
+
+Of course, you can use Webcams on Windows any time.
+:::
+
+### System Preparation
+
+- Ensure the system has standby disabled and the monitor is not turned off.
+- Consider using [autologin to windows desktop](https://learn.microsoft.com/de-de/sysinternals/downloads/autologon).
+
+#### Install system dependencies
+
+To use the photobooth first install following system dependencies:
+
+- [Latest stable Python](https://www.python.org/downloads/) Please use the link, the Microsoft Store version is not recommended.
+- That's it ✔️
+
+### Install using pip
+
+On Windows, using a global installation is most conventient. The global installation is described below. Of course, you can install the app using pipx or venvs on Windows also.
+
+```sh
+pip install --prefer-binary photobooth-app
+```
+
+### First start
+
+#### Create data folder
+
+The photobooth application automatically uses the current folder as the data folder.
+All images, logs, and configuration files are stored in this folder.
+
+```sh
+mkdir ~/photobooth-data && cd ~/photobooth-data
+```
+
+#### Start the app
+
+Launch the application. The current directory will be used as the working directory. If you start the application again later, make sure you start it from the same directory.
+
+```sh
+photobooth
+```
+
+Browse to <http://localhost:8000> and see if the application works properly.
+By default, the application uses a generated image and streams a demonstration video. No camera is started at this time.
+You will need to [continue setting up the cameras](./configuration/camera_setup.md).
+
+::: info
+Having trouble accessing the website or seeing error messages during installation and application launch? Check the [troubleshooting guide](../help/troubleshooting.md).
+:::
+
+### Setup Kiosk Mode
+
+There is no dedicated description to setup a kiosk mode on, yet.
