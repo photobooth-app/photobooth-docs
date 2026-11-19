@@ -26,6 +26,16 @@ to be bound to events.
 
 The configuration is highly specific to your individual setup. Following is an example for a Shelly device accessible via HTTP.
 
+### Using the presented mediaitem
+
+Command and HTTP parameter values support the `{filepath}` placeholder. It expands to the absolute path of the presented, processed mediaitem for the `finished` event; for other events it is an empty string. For example, to print presented images or collages with a configured system print command, add a command task for `finished` and set its command to:
+
+```shell
+lp "{filepath}"
+```
+
+Use the task's mediaitem type filter to select which media types should be printed. The `{event}` and `{mediaitem_type}` placeholders are also available.
+
 <figure>
   <img src="./assets/commander_video_on.png" width="400">
   <figcaption>Example using an external HTTP device to turn on a relay when a video is captured</figcaption>
