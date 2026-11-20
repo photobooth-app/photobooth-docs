@@ -15,6 +15,8 @@ This way, sharing/printing works on all platforms for which a command is availab
 There is no feedback to the photobooth app about the status of the print job or the printer itself.
 If the paper is empty, the photobooth app will not know.
 
+The configured command is split into an executable and arguments; it is **not run through a shell**. Placeholders such as `{filename}` and user-entered values are passed as single arguments, so values containing spaces remain intact. Shell features such as pipes, redirection, variable expansion, and command chaining are not supported. Put those operations in a separate script and configure the script path and its arguments here.
+
 ## Example Setup to Print
 
 The configuration is made in the Admin Center -> Config -> Tab: Share.
@@ -36,7 +38,7 @@ The following is an example print command using [`lp`](https://www.man7.org/linu
 You can replace `{filename}` with a path to some image on the computer for manual testing.
 
 ```sh title="Example command to print on linux"
-lp -d PRINTER_NAME_HERE -o landscape -o fit-to-page {filename}
+lp -d PRINTER_NAME_HERE -o landscape -o fit-to-page "{filename}"
 ```
 
 Set the command verified in the terminal to work well now in the app including the `{filename}` placeholder.
@@ -54,7 +56,7 @@ Also you might need a ppd file. Here is one for [Canon Selphy CP1300](https://gi
 As first start use mspaint to test printing. Use following print command on windows.
 
 ```ps title="example command to print on windows"
-mspaint /p {filename}
+mspaint /p "{filename}"
 ```
 
 Set the command verified in the terminal to work well now in the app including the `{filename}` placeholder.
