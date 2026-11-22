@@ -70,6 +70,10 @@ It is to remove background parts from captured images so the removed parts of th
 Apply a default color filter. Choose from [pilgram2's available filters](https://github.com/mgineer85/pilgram2).
 There is also the option for the user to change the filter in the gallery.
 
+### AI Restyler
+
+Restyle a photo with an AI provider while aiming to preserve the people and composition. Configure the provider and styles in the AI Restyler plugin; users can choose enabled styles in the gallery. Cloud providers send images to an external service and may charge per request. Replicate was tested at about 4 seconds and approximately $0.04 per image; actual time and price depend on the model and provider.
+
 ### Fill Background using a Solid Color
 
 When using the background removal step, the removed background is empty and transparent. Applying this step, the transparent area is filled with a solid color.
