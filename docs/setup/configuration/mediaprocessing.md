@@ -2,7 +2,6 @@
 
 When all captures of the action (like normal capture, collage, animations, etc) have been completed, the media is post-processed. Every action offers additional settings to adjust the post-processing to your needs. During finalization, the app applies all steps consecutively to a copy of the captures and finally the item is presented to the user. This way, the original capture always remains intact so it can be downloaded from the photobooth after the event.
 
-
 ## Pipelines
 
 Each action has a predefined post-processing pipeline consisting of several predefined steps. The steps can be enabled or disabled and offer additional settings like colors, texts, fonts, etc.
@@ -19,7 +18,8 @@ The single image pipeline runs steps in the following sequence:
 3. Fill the background with a solid color
 4. Add a background image. This is useful only if no solid color was added prior.
 5. Overlay a frame with transparent areas. The captured image is mounted to cover the transparent area while keeping the aspect ratio. If required the capture will be cropped to match the transparent area. Use PNGs with transparency.
-6. Place optional text overlays.
+6. Place optional text and image overlays.
+7. Apply the optional watermark to the final image.
 
 ### Collage
 
@@ -30,7 +30,8 @@ The collage pipeline runs steps in the following sequence:
 3. Fill the canvas background with a solid color
 4. Add a background image to the canvas. This is useful only if no solid color was added prior.
 5. Place a PNG image on top. Captured images are visible in the transparent areas of the PNG.
-6. Place optional text overlays.
+6. Place optional text and image overlays.
+7. Apply the optional watermark to the final collage, not the individual captures.
 
 ![collage pipeline example](../../assets/mediaprocessing/collage_pipeline_example.png)
 
@@ -56,7 +57,6 @@ The wigglegram pipeline runs steps in the following sequence:
 
 1. Run single image steps (Pilgram2 filter currently only).
 2. Build a sequence of the captures to create the wigglegram an animation. The sequence for a 4 camera array is 1-2-3-4-3-2 and then repeat. The wigglegram can be exported in several fileformats like MP4, GIF, WebP, AVIF. In this step an additional mediaitem is generated.
-
 
 ## Steps
 
@@ -85,3 +85,7 @@ Images captured can be overlaid by a frame. For this step you provide a PNG with
 ### Texts
 
 Texts that are overlaid the finished image. Use it to easily individualize the images without having to create a new background images where a picture would get inserted to. Custom fonts are supported.
+
+### Watermark
+
+Image and collage actions can overlay a watermark as the final processing step. Select an image from `userdata`, preferably a PNG with transparency. The watermark is centered and scaled to the final image while preserving its aspect ratio: **cover** fills the image and may crop the watermark, while **contain** shows the entire watermark and may leave space around it. The original capture remains unchanged.
