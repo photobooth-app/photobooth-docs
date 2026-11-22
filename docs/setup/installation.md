@@ -22,11 +22,11 @@ Let's go...
     - Raspberry Pi [camera modules](https://www.raspberrypi.com/documentation/accessories/camera.html) via [picamera2](https://github.com/raspberrypi/picamera2).
     - USB-webcameras via [linuxpy](https://github.com/tiagocoutinho/linuxpy) or PyAV/ffmpeg.
 
-## Raspberry Pi OS
+## Raspberry Pi OS Trixie
 
 ### System Preparation
 
-On a fresh Raspberry Pi OS Bookworm/Trixie 64bit system, run following commands:
+On a fresh 64-bit Raspberry Pi OS Trixie system, run following commands:
 
 #### Update System
 
@@ -42,7 +42,7 @@ Customize for debian/ubuntu. Picamera2 is only available for Raspberry Pi.
 
 ```sh
 sudo apt -y install ffmpeg libturbojpeg0 libgl1 libgphoto2-dev fonts-noto-color-emoji
-sudo apt -y install libexif12 libgphoto2-6 libgphoto2-port12 libltdl7
+sudo apt -y install libexif12 libgphoto2-6t64 libgphoto2-port12t64 libltdl7
 sudo apt -y install python3-dev
 ```
 
@@ -181,29 +181,39 @@ Check the [troubleshooting guide](/help/troubleshooting.md#manually-start-the-ap
 
 #### Desktop shortcut and autostart
 
+##### Disable Chromium translation
+
+To prevent Chromium's translation popup from appearing in kiosk mode, create a managed policy:
+
+```sh
+sudo install -d -m 0755 /etc/chromium/policies/managed
+echo '{"TranslateEnabled": false}' | sudo tee /etc/chromium/policies/managed/photobooth-translate.json > /dev/null
+sudo chmod 644 /etc/chromium/policies/managed/photobooth-translate.json
+```
+
+This disables Chromium translation for all users of the browser, not the application's language selection. Restart Chromium and check `chrome://policy` to confirm that `TranslateEnabled` is set to `false`.
+
 ##### Desktop Icon
 
 Create the following file in the specified location:
 
-```ini title="~/Desktop/photobooth-app.desktop" hl_lines="6"
+```ini title="~/Desktop/photobooth-app.desktop" hl_lines="5"
 [Desktop Entry]
 Terminal=false
 Type=Application
 Name=Photobooth-App
-# for older Debian systems, the browser is "chromium-browser", since Trixie it's "chromium"
-Exec=chromium --kiosk --password-store=basic --disable-pinch --disable-features=Translate,OverscrollHistoryNavigation --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+Exec=chromium --kiosk --password-store=basic --disable-pinch --disable-features=OverscrollHistoryNavigation --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
 StartupNotify=false
 ```
 
 ##### Autostart on system startup
 
-To autostart the app, chromium needs to start automatically after boot.
-The latest Raspberry Pi OS has several window manager - the most recent is labwc. Prior wayland was used, both are described below.
+To start the app automatically after boot on Raspberry Pi OS Trixie, configure Chromium in the labwc autostart file.
 
-Create the file below as indicated. The file autostart may not exist yet, so you need to create it.
+Create the file below if it does not exist yet:
 
 ```bash title="~/.config/labwc/autostart" hl_lines="1"
-until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium --kiosk --password-store=basic --disable-pinch --disable-features=Translate --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
+until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium --kiosk --password-store=basic --disable-pinch --disable-features=OverscrollHistoryNavigation --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
 ```
 
 ## Other Debian/Ubuntu Systems
