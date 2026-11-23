@@ -58,9 +58,13 @@ If scrolling doesn't work, consider to [switch back to multitouch instead mouse 
 By default, the Pi OS has a power-save mode enabled for the WiFi adapter. This causes the WiFi do disconnect after some time and leads to unreliable connectivity.
 It's recommended to disable the power-save mode. Add the following line to `/etc/rc.local` right before the `exit` line:
 
-```sh title="/etc/rc.local"
+::: code-group
+
+```sh [/etc/rc.local]
 iw dev wlan0 set power_save off
 ```
+
+:::
 
 Afterwards confirm the power management is `off` by checking the output of `iwconfig` in the terminal for the wifi adapter.
 
@@ -135,7 +139,9 @@ If you installed the application according to the instructions above, the templa
 
 Create the following file in the specified location:
 
-```ini title="~/.local/share/systemd/user/photobooth-app.service" hl_lines="8 9"
+::: code-group
+
+```ini [~/.local/share/systemd/user/photobooth-app.service] {9,10}
 [Unit]
 Description=photobooth-app
 After=default.target
@@ -150,6 +156,8 @@ ExecStart=python -O -m photobooth
 [Install]
 WantedBy=default.target
 ```
+
+:::
 
 Now reload systemctl and enable the service:
 
@@ -197,7 +205,9 @@ This disables Chromium translation for all users of the browser, not the applica
 
 Create the following file in the specified location:
 
-```ini title="~/Desktop/photobooth-app.desktop" hl_lines="5"
+::: code-group
+
+```ini [~/Desktop/photobooth-app.desktop] {5}
 [Desktop Entry]
 Terminal=false
 Type=Application
@@ -206,15 +216,21 @@ Exec=chromium --kiosk --password-store=basic --disable-pinch --disable-features=
 StartupNotify=false
 ```
 
+:::
+
 ##### Autostart on system startup
 
 To start the app automatically after boot on Raspberry Pi OS Trixie, configure Chromium in the labwc autostart file.
 
 Create the file below if it does not exist yet:
 
-```bash title="~/.config/labwc/autostart" hl_lines="1"
+::: code-group
+
+```bash [~/.config/labwc/autostart] {1}
 until curl -s http://localhost:8000 >/dev/null; do sleep 1; done; chromium --kiosk --password-store=basic --disable-pinch --disable-features=OverscrollHistoryNavigation --noerrdialogs --disable-infobars --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized http://localhost:8000/
 ```
+
+:::
 
 ## Other Debian/Ubuntu Systems
 

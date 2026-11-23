@@ -36,13 +36,17 @@ cd ansible-wigglenodes
 
 Now create `hosts.ini` in the newly created directory.
 
-```sh title="hosts.ini"
+::: code-group
+
+```sh [hosts.ini]
 [wigglenodes] # group
 wiggle0 ansible_user=pi software_sync_role=server device_id=0 camera=picam
 wiggle1 ansible_user=pi software_sync_role=client device_id=1 camera=picam
 wiggle2 ansible_user=pi software_sync_role=client device_id=2 camera=picam
 wiggle3 ansible_user=pi software_sync_role=client device_id=3 camera=picam
 ```
+
+:::
 
 Now test that the nodes can be accessed using ansible by sending a simple ping. It will send a ping-pong request to the group `wigglenodes` defined in the `hosts.ini` inventory file.
 

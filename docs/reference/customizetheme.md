@@ -9,7 +9,9 @@ To customize, you can use the browsers web development tool and inspect the page
 
 Depending on your screen you might want to reduce the size of the buttons on the frontpage. First rule changes the text, second the icon size.
 
-```css title="private.css"
+::: code-group
+
+```css [private.css]
 .action-button {
     font-size: 1rem;
 }
@@ -18,14 +20,20 @@ Depending on your screen you might want to reduce the size of the buttons on the
 }
 ```
 
+:::
+
 ## Adjust the font-size of the countdown
 
-```css title="private.css"
+::: code-group
+
+```css [private.css]
 #countdown-circular-progress {
     font-size: 50vh !important;
     font-weight: normal !important;
 }
 ```
+
+:::
 
 ## Example: Colorize the Buttons on the Frontpage
 
@@ -35,7 +43,9 @@ This feature is natively included starting from v5. Below is only for reference 
 
 Individual colors can be applied, first button is -0. `.action-button` selects all buttons.
 
-```css title="private.css"
+::: code-group
+
+```css [private.css]
 .action-buttons {
     .action-button {
         background-color: grey !important;
@@ -53,6 +63,8 @@ Individual colors can be applied, first button is -0. `.action-button` selects a
 }
 ```
 
+:::
+
 ## Adjust the Livestream
 
 You may want to change the preview video element to cover the full screen and zoom in a bit. Zooming in is useful in a two camera setup to adjust the image window of the livepreview (needs to capture a larger scene) to the camera capturing the still images.
@@ -61,7 +73,9 @@ While the livestream looks nicer if it covers the full screen, some parts of the
 Thus the resulting photo shows a different aspect ratio and might not match the endusers intention.
 So the default is to `contain` the background. If you want to change to `cover`, add the following rule to `private.css`.
 
-```css title="private.css"
+::: code-group
+
+```css [private.css]
 #overlay-image {
     width: 100vw;
     height: 100vh;
@@ -71,6 +85,8 @@ So the default is to `contain` the background. If you want to change to `cover`,
     ); /* default: 1.0 to apply no zoom. 1.5 zooms in, smaller values than 1.0 usually make no sense */
 }
 ```
+
+:::
 
 ## Add a frame to the frontpage
 

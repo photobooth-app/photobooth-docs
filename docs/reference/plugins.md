@@ -24,7 +24,9 @@ There are some plugins built in and can be used as reference to build your own p
 
 Plugins listen to [event-hooks](https://github.com/photobooth-app/photobooth-app/blob/main/src/photobooth/plugins/__init__.py) triggered by the [pluggy](https://pluggy.readthedocs.io/en/latest/) package.
 
-```text title="Basic folder structure for a plugin" hl_lines="4-6"
+::: code-group
+
+```text [Basic folder structure for a plugin] {4-6}
 - photobooth-data (working directory)
   - plugins
     - plugin_name              <-\
@@ -32,6 +34,8 @@ Plugins listen to [event-hooks](https://github.com/photobooth-app/photobooth-app
         - plugin_name.py       <-/
         - config.py (optional)
 ```
+
+:::
 
 ### Available hooks
 
@@ -46,7 +50,9 @@ Plugins can register to hooks, so called [hookspecs](https://github.com/photoboo
 
 In this very basic example the plugin only prints to the console during app startup:
 
-```python title="plugin_name.py"
+::: code-group
+
+```python [plugin_name.py]
 import logging
 from photobooth.plugins import hookimpl
 from photobooth.plugins.base_plugin import BasePlugin
@@ -70,9 +76,13 @@ class PluginName(BasePlugin[PluginNameConfig]):
             print("Message is printed when not enabled in config!")
 ```
 
+:::
+
 The configuration consists of a class and one bool variable to enable the plugin.
 
-```python title="config.py"
+::: code-group
+
+```python [config.py]
 from pydantic import Field
 from pydantic_settings import SettingsConfigDict
 
@@ -90,6 +100,8 @@ class PluginNameConfig(BaseConfig):
     # ... add more configuration here...
 ```
 
+:::
+
 ## Filter Plugin Skeleton
 
 The filters drawer can be extended by plugins since v6. Check following example for a basic understanding,
@@ -97,7 +109,9 @@ also have a look at the integrated pilgram2 filter for reference.
 
 Most of the file below is boilerplate, the relevant functions to modify and hook your filter are `mp_filter_pipeline_step` and `do_filter`.
 
-```python title="plugin_filter.py"
+::: code-group
+
+```python [plugin_filter.py]
 import logging
 from typing import cast, get_args
 
@@ -143,9 +157,13 @@ class PluginFilter(BaseFilter[FilterStableConfig]):
 
 ```
 
+:::
+
 The configuration consists of a class and one bool variable to enable the plugin.
 
-```python title="config.py"
+::: code-group
+
+```python [config.py]
 import typing
 
 from pydantic import Field
@@ -175,6 +193,8 @@ class FilterStableConfig(BaseConfig):
 
     # ... add more configuration here...
 ```
+
+:::
 
 ## Publish Plugins
 

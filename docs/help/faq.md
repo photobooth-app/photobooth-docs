@@ -24,12 +24,16 @@ Consider adding this directory to PATH.
 
 See following is fine, might just need a restart after installation because the path .local/bin did not exist on newly installed systems.
 
-```sh  title="~/.profile"
+::: code-group
+
+```sh [~/.profile]
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 ```
+
+:::
 
 ## Gphoto2 camera found but no access
 
@@ -125,10 +129,14 @@ OSError: cannot open camera index 1
 If you have issues with the WiFi connection on a Raspberry Pi, it might be due to the power management settings of the WiFi adapter.
 You can disable power management by creating a configuration file:
 
-```bash title="/etc/rc.local"
+::: code-group
+
+```bash [/etc/rc.local]
 # Disable WiFi power management might resolve connection issues
 iw dev wlan0 set power_save off
 ```
+
+:::
 
 Check if power management is off by checking the output of the following command:
 ```bash

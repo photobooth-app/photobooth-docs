@@ -41,14 +41,17 @@ Time to find out which resolutions to use! Issue in the terminal following comma
 rpicam-hello --list-cameras
 ```
 
-```bash {4-5}
+::: code-group
+
+```text [Raspberry Pi Camera Module 3 (imx708)] {4-5}
 pi@photobooth:~ $ rpicam-hello --list-cameras
 0 : imx708 [4608x2592] (/base/soc/i2c0mux/i2c@1/imx708@1a)
     Modes: 'SRGGB10_CSI2P' : 1536x864 [120.13 fps - (0, 0)/4608x2592 crop]
                              2304x1296 [56.03 fps - (0, 0)/4608x2592 crop]
                              4608x2592 [14.35 fps - (0, 0)/4608x2592 crop]
-
 ```
+
+:::
 
 In this case, the last two modes will have feasible resolutions:
 
@@ -107,24 +110,28 @@ Ensure the camera is recognized on the USB hub using `lsusb`.
 Check the devices and get more information about the device, here `/dev/video0` is the device endpoint:
 To setup the backend you need device path on Linux and the device name on Windows platform.
 
-```bash title="Linux"
+::: code-group
+
+```bash [Linux]
 lsusb
 v4l2-ctl --list-devices
 v4l2-ctl -D -d /dev/video0 --list-formats
 ffmpeg -hide_banner -f v4l2 -list_formats all -i /dev/video0
 ```
 
-```bash title="Windows"
+```bash [Windows]
 
 ffmpeg -hide_banner -f dshow -list_devices true -i dummy
 ffmpeg -hide_banner -f dshow -list_options true -i "video=Insta360 Link 2C"
 ```
 
-```bash title="Mac"
+```bash [Mac]
 
 ffmpeg -hide_banner -f avfoundation -list_devices true -i ""
 
 ```
+
+:::
 
 Now finish setup:
 

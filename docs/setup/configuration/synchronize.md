@@ -54,12 +54,16 @@ It should display the Rclone WebUI Dashboard. You can use it to administer all R
 
 The result is an entry in the rclone config similar as follows, given for your reference here:
 
-```ini title="~/.config/rclone.conf"
+::: code-group
+
+```ini [~/.config/rclone.conf]
 [ftp-server]
 type = ftp
 host = ftpserver.example.com
 pass = GP**************BqKY5
 ```
+
+:::
 
 After the configuration is finished, please ensure in the Rclone WebUI → Explorer that the remote loads properly.
 If you encounter issues, please research the internet to properly setup Rclone remotes.

@@ -37,9 +37,13 @@ Try to install on your own. In the end, make sure that you have a command that p
 The following is an example print command using [`lp`](https://www.man7.org/linux/man-pages/man1/lp.1.html) to print a file.
 You can replace `{filename}` with a path to some image on the computer for manual testing.
 
-```sh title="Example command to print on linux"
+::: code-group
+
+```sh [Example command to print on linux]
 lp -d PRINTER_NAME_HERE -o landscape -o fit-to-page "{filename}"
 ```
+
+:::
 
 Set the command verified in the terminal to work well now in the app including the `{filename}` placeholder.
 
@@ -55,9 +59,13 @@ Also you might need a ppd file. Here is one for [Canon Selphy CP1300](https://gi
 
 As first start use mspaint to test printing. Use following print command on windows.
 
-```ps title="example command to print on windows"
+::: code-group
+
+```ps [example command to print on windows]
 mspaint /p "{filename}"
 ```
+
+:::
 
 Set the command verified in the terminal to work well now in the app including the `{filename}` placeholder.
 
@@ -65,7 +73,9 @@ If you use other commands, that work better in your installation, let me know in
 
 ### Example Share to Telegram Group
 
-```bash title="/usr/local/bin/send_photo_to_tg" hl_lines="11-12"
+::: code-group
+
+```bash [/usr/local/bin/send_photo_to_tg] {11-12}
 #!/bin/bash
 ##############################################################
 # use arguments:
@@ -98,6 +108,8 @@ send_photo() {
 send_photo "$1" "$2" > /dev/null
 
 ```
+
+:::
 
 Set following as command in the configuration of the app:
 
